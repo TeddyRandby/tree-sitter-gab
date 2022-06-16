@@ -1,0 +1,25 @@
+def fib(n): do
+  return (1)
+end
+
+for i in things: do
+  i + 1
+end
+
+i {
+  b = 2
+}
+
+i(a, b, c)
+
+#hello
+
+"hello"
+
+'hi'
+
+a,b = 1,2
+
+|a|: a.b
+
+obj->!print("hello")
