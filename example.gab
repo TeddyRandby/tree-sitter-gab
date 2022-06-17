@@ -1,25 +1,30 @@
-def fib(n): do
-  return (1)
+def iter(i): do
+  v = -1
+  ||: return ((v = v + 1), i[v])
 end
 
-for i in things: do
-  i + 1
-end
 
-i {
-  b = 2
+def Node: {
+  shape = {
+    children
+    size
+  }?
+
+  def new(): { children size }
+
+  def add(self, content): do
+    self.children[self.size] = content
+    self.size = self.size + 1
+    self
+  end
 }
 
-i(a, b, c)
+def div(content):  '<div>{content}</div>'
 
-#hello
+def h(content, size):  '<h{size}>{content}</h{size}>'
 
-"hello"
-
-'hi'
-
-a,b = 1,2
-
-|a|: a.b
-
-obj->!print("hello")
+{
+    Node
+    div
+    h
+}

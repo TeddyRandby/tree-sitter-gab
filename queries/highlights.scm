@@ -3,15 +3,10 @@
 "def" @keyword.function
 
 [
-  "do"
-  "end"
-] @keyword
-
-[
  "for"
  "in"
  "while"
-] @keyword.repeat
+] @repeat
 
 [
   "or"
@@ -19,11 +14,64 @@
   "not"
 ] @keyword.operator
 
-"return" @keyword.return
+[
+  "if"
+  "match"
+  "else"
+] @conditional
+
+[
+  "let"
+] @keyword
+
+[
+ ","
+ ":"
+] @punctuation.delimiter
+
+[
+  "+"
+  "-"
+  "%"
+  "*"
+  "/"
+  "="
+  "=="
+  "<"
+  "<="
+  ">"
+  ">="
+  "!"
+  "?"
+  ".."
+] @operator
+
+[
+  "."
+  "->"
+] @field
+
+[
+  "{"
+  "}"
+  "["
+  "]"
+  "("
+  ")"
+  "|"
+  "do"
+  "end"
+] @punctuation.bracket
+
+[
+ "return"
+ "=>"
+] @keyword.return
 
 (comment) @comment
 
 (number) @number
+
 [
  (bool)
  (null)
@@ -36,23 +84,17 @@
 
 (identifier) @variable
 
-(function_definition name: (identifier) @definition.function)
-(object_definition name: (identifier) @definition.type)
-(list_definition name: (identifier) @definition.enum)
+(function_definition name: (identifier) @type.definition)
+(object_definition name: (identifier) @type.definition)
+(list_definition name: (identifier) @type.definition)
 
-(lambda parameters: (identifier) @parameter)
-(function_definition parameters: (identifier) @parameter)
-(method parameters: (identifier) @parameter)
 (call parameters: (identifier) @parameter)
 
 (object key: (identifier) @property)
-(object value: (identifier) @value)
+(property name: (identifier) @property)
 
-(obj_call receiver: (identifier) @receiver)
-(call receiver: (identifier) @receiver)
-(method receiver: (identifier) @receiver)
-
-(property property: (identifier) @property)
+(call receiver: (identifier) @function)
 (method name: (identifier) @method)
 
 (global name: (identifier) @variable.builtin)
+(global bang: ("!") @variable.builtin)

@@ -5,8 +5,6 @@ const PREC_OR = 3
 const PREC_AND = 4
 const PREC_EQUALITY = 5
 const PREC_COMPARISON = 6
-const PREC_BITWISE_OR = 7
-const PREC_BITWISE_AND = 8
 const PREC_TERM = 9
 const PREC_FACTOR = 10
 const PREC_UNARY = 11
@@ -16,18 +14,25 @@ const PREC_PROPERTY = 13
 module.exports = grammar({
   name: 'gab',
 
+  word: $ => $.identifier,
+
   rules: {
-    source_file: $ => $._block_body,
+    source_file: $ => $.block_body,
 
     _expressions: $ => prec.right(seq(
       repeat(
         seq(
-          $._expression,
-          ',',
+          $._expression, ',',
         ),
       ),
       $._expression,
     )),
+
+    _definition: $ => choice(
+      $.function_definition,
+      $.object_definition,
+      $.list_definition,
+    ),
 
     _tuple: $ => seq(
       '(',
@@ -35,19 +40,22 @@ module.exports = grammar({
       ')',
     ),
 
-    _ids: $ => prec.right(seq(
+    _ids: $ => seq(
       repeat(
         seq(
-          $.identifier,
+          choice(
+            $.identifier,
+          ),
           ',',
         ),
       ),
       $.identifier,
-    )),
+    ),
 
     _object_kvp: $ => prec(3, seq(
       choice(
         field('key', $.identifier),
+        $._definition,
         seq(
           field('key', $.identifier),
           '=',
@@ -56,7 +64,7 @@ module.exports = grammar({
       ),
     )),
 
-    _block_body: $ => seq(
+    block_body: $ => seq(
       repeat('\n'),
       repeat1(
         seq(
@@ -94,13 +102,20 @@ module.exports = grammar({
       $.assignment,
       $.method,
       $.global,
+      $.match,
+      $.if,
     )),
 
-    global: $ => seq('!', field('name', $.identifier)),
+    global: $ => seq(field('bang', '!'), field('name', $.identifier)),
 
     unary: $ => prec(PREC_UNARY, choice(
       seq('-', $._expression),
       seq('not', $._expression),
+    )),
+
+    post: $ => prec(PREC_TERM, seq(
+      seq($._expression, '!'),
+      seq($._expression, '?'),
     )),
 
     binary: $ => choice(
@@ -112,8 +127,6 @@ module.exports = grammar({
       prec.left(PREC_FACTOR, seq($._expression, '%', $._expression)),
       prec.left(PREC_OR, seq($._expression, 'or', $._expression)),
       prec.left(PREC_AND, seq($._expression, 'and', $._expression)),
-      prec.left(PREC_BITWISE_OR, seq($._expression, '|', $._expression)),
-      prec.left(PREC_BITWISE_AND, seq($._expression, '&', $._expression)),
       prec.left(PREC_COMPARISON, seq($._expression, '<', $._expression)),
       prec.left(PREC_COMPARISON, seq($._expression, '>', $._expression)),
       prec.left(PREC_EQUALITY, seq($._expression, '==', $._expression)),
@@ -141,7 +154,8 @@ module.exports = grammar({
     lambda: $ => seq(
       '|',
       field('parameters', optional($._expressions)),
-      '|:',
+      '|',
+      ':',
       optional('\n'),
       field('body', $._expression),
     ),
@@ -174,7 +188,7 @@ module.exports = grammar({
     property: $ => prec(PREC_PROPERTY, seq(
       field('receiver', $._expression),
       '.',
-      field('property', $.identifier),
+      field('name', $.identifier),
     )),
 
     index: $ => prec(PREC_PROPERTY, seq(
@@ -184,8 +198,15 @@ module.exports = grammar({
       ']'
     )),
 
-    assignment: $ => prec(PREC_ASSIGNMENT, seq(
-      field('left', $._ids),
+    assignment: $ => prec.right(PREC_ASSIGNMENT, seq(
+      field('left', $._expression),
+      '=',
+      field('right', $._expression),
+    )),
+
+    let: $ => prec(PREC_ASSIGNMENT, seq(
+      'let',
+      field('left', $._expressions),
       '=',
       field('right', $._expressions),
     )),
@@ -198,7 +219,7 @@ module.exports = grammar({
 
     for: $ => seq(
       'for',
-      $._ids,
+      field('names', $._ids),
       'in',
       $._expression,
       ':',
@@ -212,9 +233,41 @@ module.exports = grammar({
       field('body', $._expression)
     ),
 
+    if: $ => seq(
+      'if',
+      $._expression,
+      ':',
+      $._expression,
+      '\n',
+      optional(seq(
+        'else',
+        ':',
+        $._expression,
+        '\n'
+      )),
+    ),
+
+    _matchoption: $ => seq(
+      $._expression,
+      '=>',
+      $._expression,
+      '\n',
+    ),
+
+    match: $ => prec.right(seq(
+      'match',
+      $._expression,
+      ':',
+      optional('\n'),
+      field('case', repeat1($._matchoption)),
+      '?',
+      '=>',
+      $._expression,
+    )),
+
     block: $ => seq(
       'do',
-      $._block_body,
+      $.block_body,
       'end',
     ),
 
@@ -265,7 +318,7 @@ module.exports = grammar({
       )
     ),
 
-    identifier: $ => /[a-z_]+/,
+    identifier: $ => /[a-zA-Z_]+/,
     number: $ => /\d+/
   }
 })
