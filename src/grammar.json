@@ -853,7 +853,7 @@
       }
     },
     "method": {
-      "type": "PREC",
+      "type": "PREC_LEFT",
       "value": 13,
       "content": {
         "type": "SEQ",
@@ -874,25 +874,8 @@
             "type": "FIELD",
             "name": "name",
             "content": {
-              "type": "CHOICE",
-              "members": [
-                {
-                  "type": "SYMBOL",
-                  "name": "global"
-                },
-                {
-                  "type": "SYMBOL",
-                  "name": "identifier"
-                }
-              ]
-            }
-          },
-          {
-            "type": "FIELD",
-            "name": "parameters",
-            "content": {
               "type": "SYMBOL",
-              "name": "_tuple"
+              "name": "_expression"
             }
           }
         ]
@@ -900,7 +883,7 @@
     },
     "property": {
       "type": "PREC",
-      "value": 13,
+      "value": 14,
       "content": {
         "type": "SEQ",
         "members": [
@@ -929,7 +912,7 @@
     },
     "index": {
       "type": "PREC",
-      "value": 13,
+      "value": 14,
       "content": {
         "type": "SEQ",
         "members": [
@@ -984,39 +967,6 @@
             "content": {
               "type": "SYMBOL",
               "name": "_expression"
-            }
-          }
-        ]
-      }
-    },
-    "let": {
-      "type": "PREC",
-      "value": 2,
-      "content": {
-        "type": "SEQ",
-        "members": [
-          {
-            "type": "STRING",
-            "value": "let"
-          },
-          {
-            "type": "FIELD",
-            "name": "left",
-            "content": {
-              "type": "SYMBOL",
-              "name": "_expressions"
-            }
-          },
-          {
-            "type": "STRING",
-            "value": "="
-          },
-          {
-            "type": "FIELD",
-            "name": "right",
-            "content": {
-              "type": "SYMBOL",
-              "name": "_expressions"
             }
           }
         ]

@@ -1,30 +1,3 @@
-def iter(i): do
-  v = -1
-  ||: return ((v = v + 1), i[v])
-end
 
 
-def Node: {
-  shape = {
-    children
-    size
-  }?
-
-  def new(): { children size }
-
-  def add(self, content): do
-    self.children[self.size] = content
-    self.size = self.size + 1
-    self
-  end
-}
-
-def div(content):  '<div>{content}</div>'
-
-def h(content, size):  '<h{size}>{content}</h{size}>'
-
-{
-    Node
-    div
-    h
-}
+output = page->node.add(div('New Div'))

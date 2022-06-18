@@ -2525,32 +2525,6 @@
         "required": true,
         "types": [
           {
-            "type": "global",
-            "named": true
-          },
-          {
-            "type": "identifier",
-            "named": true
-          }
-        ]
-      },
-      "parameters": {
-        "multiple": true,
-        "required": true,
-        "types": [
-          {
-            "type": "(",
-            "named": false
-          },
-          {
-            "type": ")",
-            "named": false
-          },
-          {
-            "type": ",",
-            "named": false
-          },
-          {
             "type": "assignment",
             "named": true
           },
@@ -3925,10 +3899,6 @@
   },
   {
     "type": "in",
-    "named": false
-  },
-  {
-    "type": "let",
     "named": false
   },
   {
