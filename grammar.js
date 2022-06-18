@@ -9,8 +9,8 @@ const PREC_TERM = 9
 const PREC_FACTOR = 10
 const PREC_UNARY = 11
 const PREC_CALL = 12
-const PREC_METHOD = 13
-const PREC_PROPERTY = 14
+const PREC_PROPERTY = 13
+const PREC_METHOD = 14
 
 module.exports = grammar({
   name: 'gab',
@@ -101,7 +101,6 @@ module.exports = grammar({
       $.index,
       $.comment,
       $.assignment,
-      // $.let,
       $.method,
       $.global,
       $.match,
@@ -177,16 +176,16 @@ module.exports = grammar({
       field('parameters', $._tuple),
     )),
 
-    method: $ => prec.left(PREC_METHOD, seq(
+    method: $ => prec.right(PREC_METHOD, seq(
       field('receiver', $._expression),
       '->',
-      field('name', $._expression),
+      field('method', $._expression),
     )),
 
     property: $ => prec(PREC_PROPERTY, seq(
       field('receiver', $._expression),
       '.',
-      field('name', $.identifier),
+      field('property', $.identifier),
     )),
 
     index: $ => prec(PREC_PROPERTY, seq(
@@ -197,15 +196,11 @@ module.exports = grammar({
     )),
 
     assignment: $ => prec.right(PREC_ASSIGNMENT, seq(
-      field('left', $._expression),
+      'let',
+      field('left', $._expressions),
       '=',
-      field('right', $._expression),
+      field('right', $._expressions),
     )),
-
-    // let: $ => prec(PREC_ASSIGNMENT, seq(
-    //   'let',
-    //   $.assignment,
-    // )),
 
     group: $ => seq(
       '(',

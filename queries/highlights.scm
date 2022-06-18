@@ -91,10 +91,10 @@
 (call parameters: (identifier) @parameter)
 
 (object key: (identifier) @property)
-(property name: (identifier) @property)
+(property property: (identifier) @property)
 
 (call receiver: (identifier) @function)
-(method name: (identifier) @method)
+(method method: (identifier) @method)
 
 (global name: (identifier) @variable.builtin)
 (global bang: ("!") @variable.builtin)
