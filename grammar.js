@@ -101,6 +101,7 @@ module.exports = grammar({
       $.index,
       $.comment,
       $.assignment,
+      $.let,
       $.method,
       $.global,
       $.match,
@@ -195,11 +196,17 @@ module.exports = grammar({
       ']'
     )),
 
-    assignment: $ => prec.right(PREC_ASSIGNMENT, seq(
+    let: $ => prec.right(PREC_ASSIGNMENT, seq(
       'let',
       field('left', $._expressions),
       '=',
       field('right', $._expressions),
+    )),
+
+    assignment: $ => prec.right(PREC_ASSIGNMENT, seq(
+      field('left', $._expression),
+      '=',
+      field('right', $._expression),
     )),
 
     group: $ => seq(

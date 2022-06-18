@@ -4,13 +4,9 @@
     "named": true,
     "fields": {
       "left": {
-        "multiple": true,
+        "multiple": false,
         "required": true,
         "types": [
-          {
-            "type": ",",
-            "named": false
-          },
           {
             "type": "assignment",
             "named": true
@@ -65,6 +61,10 @@
           },
           {
             "type": "lambda",
+            "named": true
+          },
+          {
+            "type": "let",
             "named": true
           },
           {
@@ -130,13 +130,9 @@
         ]
       },
       "right": {
-        "multiple": true,
+        "multiple": false,
         "required": true,
         "types": [
-          {
-            "type": ",",
-            "named": false
-          },
           {
             "type": "assignment",
             "named": true
@@ -191,6 +187,10 @@
           },
           {
             "type": "lambda",
+            "named": true
+          },
+          {
+            "type": "let",
             "named": true
           },
           {
@@ -319,6 +319,10 @@
         },
         {
           "type": "lambda",
+          "named": true
+        },
+        {
+          "type": "let",
           "named": true
         },
         {
@@ -461,6 +465,10 @@
         },
         {
           "type": "lambda",
+          "named": true
+        },
+        {
+          "type": "let",
           "named": true
         },
         {
@@ -608,6 +616,10 @@
             "named": true
           },
           {
+            "type": "let",
+            "named": true
+          },
+          {
             "type": "list",
             "named": true
           },
@@ -727,6 +739,10 @@
           },
           {
             "type": "lambda",
+            "named": true
+          },
+          {
+            "type": "let",
             "named": true
           },
           {
@@ -855,6 +871,10 @@
           },
           {
             "type": "lambda",
+            "named": true
+          },
+          {
+            "type": "let",
             "named": true
           },
           {
@@ -995,6 +1015,10 @@
           "named": true
         },
         {
+          "type": "let",
+          "named": true
+        },
+        {
           "type": "list",
           "named": true
         },
@@ -1119,6 +1143,10 @@
           },
           {
             "type": "lambda",
+            "named": true
+          },
+          {
+            "type": "let",
             "named": true
           },
           {
@@ -1263,6 +1291,10 @@
           },
           {
             "type": "lambda",
+            "named": true
+          },
+          {
+            "type": "let",
             "named": true
           },
           {
@@ -1420,6 +1452,10 @@
           "named": true
         },
         {
+          "type": "let",
+          "named": true
+        },
+        {
           "type": "list",
           "named": true
         },
@@ -1544,6 +1580,10 @@
         },
         {
           "type": "lambda",
+          "named": true
+        },
+        {
+          "type": "let",
           "named": true
         },
         {
@@ -1674,6 +1714,10 @@
             "named": true
           },
           {
+            "type": "let",
+            "named": true
+          },
+          {
             "type": "list",
             "named": true
           },
@@ -1793,6 +1837,10 @@
           },
           {
             "type": "lambda",
+            "named": true
+          },
+          {
+            "type": "let",
             "named": true
           },
           {
@@ -1924,6 +1972,10 @@
             "named": true
           },
           {
+            "type": "let",
+            "named": true
+          },
+          {
             "type": "list",
             "named": true
           },
@@ -2047,6 +2099,276 @@
           },
           {
             "type": "lambda",
+            "named": true
+          },
+          {
+            "type": "let",
+            "named": true
+          },
+          {
+            "type": "list",
+            "named": true
+          },
+          {
+            "type": "list_definition",
+            "named": true
+          },
+          {
+            "type": "match",
+            "named": true
+          },
+          {
+            "type": "method",
+            "named": true
+          },
+          {
+            "type": "null",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "obj_call",
+            "named": true
+          },
+          {
+            "type": "object",
+            "named": true
+          },
+          {
+            "type": "object_definition",
+            "named": true
+          },
+          {
+            "type": "property",
+            "named": true
+          },
+          {
+            "type": "rawstring",
+            "named": true
+          },
+          {
+            "type": "return",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "unary",
+            "named": true
+          },
+          {
+            "type": "while",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "let",
+    "named": true,
+    "fields": {
+      "left": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": ",",
+            "named": false
+          },
+          {
+            "type": "assignment",
+            "named": true
+          },
+          {
+            "type": "binary",
+            "named": true
+          },
+          {
+            "type": "block",
+            "named": true
+          },
+          {
+            "type": "bool",
+            "named": true
+          },
+          {
+            "type": "call",
+            "named": true
+          },
+          {
+            "type": "comment",
+            "named": true
+          },
+          {
+            "type": "for",
+            "named": true
+          },
+          {
+            "type": "function_definition",
+            "named": true
+          },
+          {
+            "type": "global",
+            "named": true
+          },
+          {
+            "type": "group",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "if",
+            "named": true
+          },
+          {
+            "type": "index",
+            "named": true
+          },
+          {
+            "type": "lambda",
+            "named": true
+          },
+          {
+            "type": "let",
+            "named": true
+          },
+          {
+            "type": "list",
+            "named": true
+          },
+          {
+            "type": "list_definition",
+            "named": true
+          },
+          {
+            "type": "match",
+            "named": true
+          },
+          {
+            "type": "method",
+            "named": true
+          },
+          {
+            "type": "null",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "obj_call",
+            "named": true
+          },
+          {
+            "type": "object",
+            "named": true
+          },
+          {
+            "type": "object_definition",
+            "named": true
+          },
+          {
+            "type": "property",
+            "named": true
+          },
+          {
+            "type": "rawstring",
+            "named": true
+          },
+          {
+            "type": "return",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "unary",
+            "named": true
+          },
+          {
+            "type": "while",
+            "named": true
+          }
+        ]
+      },
+      "right": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": ",",
+            "named": false
+          },
+          {
+            "type": "assignment",
+            "named": true
+          },
+          {
+            "type": "binary",
+            "named": true
+          },
+          {
+            "type": "block",
+            "named": true
+          },
+          {
+            "type": "bool",
+            "named": true
+          },
+          {
+            "type": "call",
+            "named": true
+          },
+          {
+            "type": "comment",
+            "named": true
+          },
+          {
+            "type": "for",
+            "named": true
+          },
+          {
+            "type": "function_definition",
+            "named": true
+          },
+          {
+            "type": "global",
+            "named": true
+          },
+          {
+            "type": "group",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "if",
+            "named": true
+          },
+          {
+            "type": "index",
+            "named": true
+          },
+          {
+            "type": "lambda",
+            "named": true
+          },
+          {
+            "type": "let",
             "named": true
           },
           {
@@ -2175,6 +2497,10 @@
         },
         {
           "type": "lambda",
+          "named": true
+        },
+        {
+          "type": "let",
           "named": true
         },
         {
@@ -2339,6 +2665,10 @@
             "named": true
           },
           {
+            "type": "let",
+            "named": true
+          },
+          {
             "type": "list",
             "named": true
           },
@@ -2459,6 +2789,10 @@
         },
         {
           "type": "lambda",
+          "named": true
+        },
+        {
+          "type": "let",
           "named": true
         },
         {
@@ -2589,6 +2923,10 @@
             "named": true
           },
           {
+            "type": "let",
+            "named": true
+          },
+          {
             "type": "list",
             "named": true
           },
@@ -2708,6 +3046,10 @@
           },
           {
             "type": "lambda",
+            "named": true
+          },
+          {
+            "type": "let",
             "named": true
           },
           {
@@ -2836,6 +3178,10 @@
           },
           {
             "type": "lambda",
+            "named": true
+          },
+          {
+            "type": "let",
             "named": true
           },
           {
@@ -2984,6 +3330,10 @@
           },
           {
             "type": "lambda",
+            "named": true
+          },
+          {
+            "type": "let",
             "named": true
           },
           {
@@ -3169,6 +3519,10 @@
             "named": true
           },
           {
+            "type": "let",
+            "named": true
+          },
+          {
             "type": "list",
             "named": true
           },
@@ -3299,6 +3653,10 @@
         },
         {
           "type": "lambda",
+          "named": true
+        },
+        {
+          "type": "let",
           "named": true
         },
         {
@@ -3449,6 +3807,10 @@
           "named": true
         },
         {
+          "type": "let",
+          "named": true
+        },
+        {
           "type": "list",
           "named": true
         },
@@ -3576,6 +3938,10 @@
             "named": true
           },
           {
+            "type": "let",
+            "named": true
+          },
+          {
             "type": "list",
             "named": true
           },
@@ -3696,6 +4062,10 @@
         },
         {
           "type": "lambda",
+          "named": true
+        },
+        {
+          "type": "let",
           "named": true
         },
         {

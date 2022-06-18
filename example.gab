@@ -18,5 +18,6 @@ page->node.add(div('New Div'))
 
 let output = page->node.build()
 
-
-
+def example(self, msg): do
+  !print(self, msg)
+end
