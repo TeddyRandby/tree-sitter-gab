@@ -62,6 +62,15 @@ module.exports = grammar({
           '=',
           field('value', $._expression),
         ),
+        seq(
+          field('key', seq(
+            '[',
+            $._expression,
+            ']'
+          )),
+          '=',
+          field('value', $._expression),
+        )
       ),
     )),
 
@@ -89,6 +98,7 @@ module.exports = grammar({
       $.identifier,
       $.number,
       $.string,
+      $.interpstring,
       $.bool,
       $.null,
       $.rawstring,
@@ -199,7 +209,7 @@ module.exports = grammar({
     let: $ => prec.right(PREC_ASSIGNMENT, seq(
       'let',
       field('left', $._expressions),
-      '=',
+      ':=',
       field('right', $._expressions),
     )),
 
@@ -292,23 +302,52 @@ module.exports = grammar({
       field('body', $.list),
     ),
 
-    bool: $ => choice('true', 'false'),
+    bool: _ => choice('true', 'false'),
 
-    null: $ => 'null',
 
-    string: $ => seq(
+    null: _ => 'null',
+
+    _interpstart: $ => token(seq(
+      '\'',
+      /[^\{\']*/,
+      '{',
+    )),
+
+    _interpmiddle: $ => seq(
+      $._expression,
+      token(seq(
+        '}',
+        /[^\{]*/,
+        '{'
+      ))
+    ),
+
+    _interpend: _ => token(seq(
+      '}',
+      /[^\'\{]*/,
+      '\'',
+    )),
+
+    interpstring: $ => seq(
+      $._interpstart,
+      repeat($._interpmiddle),
+      $._expression,
+      $._interpend,
+    ),
+
+    string: _ => seq(
       '\'',
       /[^\']*/,
       '\'',
     ),
 
-    rawstring: $ => seq(
+    rawstring: _ => token(seq(
       '"',
       /[^\"]*/,
       '"',
-    ),
+    )),
 
-    comment: $ => token(
+    comment: _ => token(
       seq(
         '#',
         /[^\n]*/,
@@ -316,7 +355,7 @@ module.exports = grammar({
       )
     ),
 
-    identifier: $ => /[a-zA-Z_]+/,
-    number: $ => /\d+/
+    identifier: _ => token(/[a-zA-Z_]+/),
+    number: _ => token(/\d+/)
   }
 })

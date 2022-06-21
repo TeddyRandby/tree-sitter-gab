@@ -1,4 +1,19 @@
 ; Highlights.scm for gab
+(identifier) @variable
+
+(function_definition name: (identifier) @type)
+
+(object_definition name: (identifier) @type)
+(list_definition name: (identifier) @type)
+
+(object key: (identifier) @property)
+(property property: (identifier) @property)
+
+(call receiver: (identifier) @method)
+(method method: (identifier) @method)
+
+(global name: (identifier) @variable.builtin)
+
 (comment) @comment
 
 (number) @constant.numeric
@@ -11,7 +26,9 @@
 [
   (string)
   (rawstring)
+  (interpstring)
 ] @string
+
 
 "def" @keyword.function
 
@@ -76,24 +93,5 @@
   ".."
   "."
   "->"
+  ":="
 ] @operator
-
-(identifier) @variable
-
-(function_definition name: (identifier) @type)
-
-(function_definition parameters: (identifier) @parameter)
-(lambda parameters: (identifier) @parameter)
-
-(object_definition name: (identifier) @type)
-(list_definition name: (identifier) @type)
-
-
-(object key: (identifier) @property)
-(property property: (identifier) @property)
-
-(call receiver: (identifier) @method)
-(method method: (identifier) @method)
-
-(global name: (identifier) @variable.builtin)
-(global bang: ("!") @variable.builtin)
