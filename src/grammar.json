@@ -235,15 +235,7 @@
         "members": [
           {
             "type": "SYMBOL",
-            "name": "function_definition"
-          },
-          {
-            "type": "SYMBOL",
-            "name": "object_definition"
-          },
-          {
-            "type": "SYMBOL",
-            "name": "list_definition"
+            "name": "_definition"
           },
           {
             "type": "SYMBOL",
@@ -320,6 +312,10 @@
           {
             "type": "SYMBOL",
             "name": "unary"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "post"
           },
           {
             "type": "SYMBOL",
@@ -418,9 +414,9 @@
     },
     "post": {
       "type": "PREC",
-      "value": 9,
+      "value": 15,
       "content": {
-        "type": "SEQ",
+        "type": "CHOICE",
         "members": [
           {
             "type": "SEQ",
@@ -1440,7 +1436,7 @@
               },
               {
                 "type": "PATTERN",
-                "value": "[^\\{]*"
+                "value": "[^\\{\\']*"
               },
               {
                 "type": "STRING",

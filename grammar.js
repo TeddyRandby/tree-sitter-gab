@@ -11,6 +11,7 @@ const PREC_UNARY = 11
 const PREC_CALL = 12
 const PREC_PROPERTY = 13
 const PREC_METHOD = 14
+const PREC_POST = 15
 
 module.exports = grammar({
   name: 'gab',
@@ -85,9 +86,7 @@ module.exports = grammar({
     ),
 
     _expression: $ => prec(PREC_EXP, choice(
-      $.function_definition,
-      $.object_definition,
-      $.list_definition,
+      $._definition,
       $.lambda,
       $.object,
       $.list,
@@ -107,6 +106,7 @@ module.exports = grammar({
       $.group,
       $.binary,
       $.unary,
+      $.post,
       $.property,
       $.index,
       $.comment,
@@ -125,7 +125,7 @@ module.exports = grammar({
       seq('not', $._expression),
     )),
 
-    post: $ => prec(PREC_TERM, seq(
+    post: $ => prec(PREC_POST, choice(
       seq($._expression, '!'),
       seq($._expression, '?'),
     )),
@@ -317,7 +317,7 @@ module.exports = grammar({
       $._expression,
       token(seq(
         '}',
-        /[^\{]*/,
+        /[^\{\']*/,
         '{'
       ))
     ),
