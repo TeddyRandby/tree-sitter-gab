@@ -12,8 +12,6 @@
 (call receiver: (identifier) @method)
 (method method: (identifier) @method)
 
-(global name: (identifier) @variable.builtin)
-
 (comment) @comment
 
 (number) @constant.numeric
@@ -95,3 +93,6 @@
   "->"
   ":="
 ] @operator
+
+(global bang: ("!") @variable.builtin)
+(global name: (identifier) @variable.builtin)
