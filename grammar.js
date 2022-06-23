@@ -241,19 +241,18 @@ module.exports = grammar({
       field('body', $._expression)
     ),
 
-    if: $ => seq(
+    if: $ => prec.left(seq(
       'if',
       $._expression,
       ':',
+      optional('\n'),
       $._expression,
-      '\n',
       optional(seq(
         'else',
-        ':',
+        optional('\n'),
         $._expression,
-        '\n'
       )),
-    ),
+    )),
 
     _matchoption: $ => seq(
       $._expression,
