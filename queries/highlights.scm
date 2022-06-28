@@ -2,7 +2,6 @@
 (identifier) @variable
 
 (function_definition name: (identifier) @type)
-
 (object_definition name: (identifier) @type)
 (list_definition name: (identifier) @type)
 
@@ -50,6 +49,7 @@
 
 [
   "let"
+  "is"
 ] @keyword
 
 [

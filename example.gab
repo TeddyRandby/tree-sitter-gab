@@ -4,7 +4,13 @@ def fib(n): do
     fib(n - 1) + fib(n - 2)
 end
 
-def Node: {
+def Logged(obj): do
+  !info('Decorating {obj}') 
+
+  obj
+end
+
+def Node is Logged: {
   X: 0
   y: 0
 }

@@ -278,10 +278,16 @@ module.exports = grammar({
       'end',
     ),
 
+    _decorator: $ => seq(
+      'is',
+      $._expression,
+    ),
+
     function_definition: $ => seq(
       'def',
       field('name', $.identifier),
       field('parameters', $._tuple),
+      field('decorator', optional($._decorator)),
       ':',
       optional('\n'),
       field('body', $._expression),
@@ -290,6 +296,7 @@ module.exports = grammar({
     object_definition: $ => seq(
       'def',
       field('name', $.identifier),
+      field('decorator', optional($._decorator)),
       ':',
       field('body', $.object),
     ),
@@ -297,6 +304,7 @@ module.exports = grammar({
     list_definition: $ => seq(
       'def',
       field('name', $.identifier),
+      field('decorator', optional($._decorator)),
       ':',
       field('body', $.list),
     ),
