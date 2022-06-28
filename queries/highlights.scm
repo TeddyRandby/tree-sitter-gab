@@ -39,6 +39,7 @@
   "or"
   "and"
   "not"
+  "is"
 ] @keyword.operator
 
 [
@@ -49,7 +50,6 @@
 
 [
   "let"
-  "is"
 ] @keyword
 
 [

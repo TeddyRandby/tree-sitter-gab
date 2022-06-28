@@ -4925,6 +4925,10 @@
     "named": false
   },
   {
+    "type": "is",
+    "named": false
+  },
+  {
     "type": "let",
     "named": false
   },

@@ -141,6 +141,7 @@ module.exports = grammar({
       prec.left(PREC_AND, seq($._expression, 'and', $._expression)),
       prec.left(PREC_COMPARISON, seq($._expression, '<', $._expression)),
       prec.left(PREC_COMPARISON, seq($._expression, '>', $._expression)),
+      prec.left(PREC_EQUALITY, seq($._expression, 'is', $._expression)),
       prec.left(PREC_EQUALITY, seq($._expression, '==', $._expression)),
       prec.left(PREC_EQUALITY, seq($._expression, '<=', $._expression)),
       prec.left(PREC_EQUALITY, seq($._expression, '>=', $._expression)),

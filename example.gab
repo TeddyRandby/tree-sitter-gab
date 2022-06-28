@@ -10,7 +10,7 @@ def Logged(obj): do
   obj
 end
 
-def Node is Logged: {
+def Node: {
   X: 0
   y: 0
 }
