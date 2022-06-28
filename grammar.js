@@ -60,7 +60,7 @@ module.exports = grammar({
         $._definition,
         seq(
           field('key', $.identifier),
-          '=',
+          ':',
           field('value', $._expression),
         ),
         seq(
@@ -69,7 +69,7 @@ module.exports = grammar({
             $._expression,
             ']'
           )),
-          '=',
+          ':',
           field('value', $._expression),
         )
       ),
