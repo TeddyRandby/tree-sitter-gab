@@ -141,7 +141,7 @@
                   },
                   {
                     "type": "STRING",
-                    "value": ":"
+                    "value": "="
                   },
                   {
                     "type": "FIELD",
@@ -179,7 +179,7 @@
                   },
                   {
                     "type": "STRING",
-                    "value": ":"
+                    "value": "="
                   },
                   {
                     "type": "FIELD",
@@ -931,7 +931,7 @@
           },
           {
             "type": "STRING",
-            "value": "->"
+            "value": ":"
           },
           {
             "type": "FIELD",
@@ -1109,10 +1109,6 @@
           "name": "_expression"
         },
         {
-          "type": "STRING",
-          "value": ":"
-        },
-        {
           "type": "FIELD",
           "name": "body",
           "content": {
@@ -1132,10 +1128,6 @@
         {
           "type": "SYMBOL",
           "name": "_expression"
-        },
-        {
-          "type": "STRING",
-          "value": ":"
         },
         {
           "type": "FIELD",
@@ -1160,10 +1152,6 @@
           {
             "type": "SYMBOL",
             "name": "_expression"
-          },
-          {
-            "type": "STRING",
-            "value": ":"
           },
           {
             "type": "CHOICE",
@@ -1253,10 +1241,6 @@
             "name": "_expression"
           },
           {
-            "type": "STRING",
-            "value": ":"
-          },
-          {
             "type": "CHOICE",
             "members": [
               {
@@ -1335,10 +1319,6 @@
           }
         },
         {
-          "type": "STRING",
-          "value": ":"
-        },
-        {
           "type": "CHOICE",
           "members": [
             {
@@ -1376,10 +1356,6 @@
           }
         },
         {
-          "type": "STRING",
-          "value": ":"
-        },
-        {
           "type": "FIELD",
           "name": "body",
           "content": {
@@ -1403,10 +1379,6 @@
             "type": "SYMBOL",
             "name": "identifier"
           }
-        },
-        {
-          "type": "STRING",
-          "value": ":"
         },
         {
           "type": "FIELD",

@@ -1,16 +1,16 @@
-def fib(n): do
-  if n < 2:
+def fib(n) do
+  if n < 2
     n else
     fib(n - 1) + fib(n - 2)
 end
 
-def Logged(obj): do
+def Logged(obj) do
   !info('Decorating {obj}') 
 
   obj
 end
 
-def Node: {
-  X: 0
-  y: 0
+def Node {
+  X = 0
+  y = 0
 }

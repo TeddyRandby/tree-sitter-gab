@@ -60,7 +60,7 @@ module.exports = grammar({
         $._definition,
         seq(
           field('key', $.identifier),
-          ':',
+          '=',
           field('value', $._expression),
         ),
         seq(
@@ -69,7 +69,7 @@ module.exports = grammar({
             $._expression,
             ']'
           )),
-          ':',
+          '=',
           field('value', $._expression),
         )
       ),
@@ -190,7 +190,7 @@ module.exports = grammar({
 
     method: $ => prec.right(PREC_METHOD, seq(
       field('receiver', $._expression),
-      '->',
+      ':',
       field('method', $._expression),
     )),
 
@@ -231,21 +231,18 @@ module.exports = grammar({
       field('names', $._ids),
       'in',
       $._expression,
-      ':',
       field('body', $._expression)
     ),
 
     while: $ => seq(
       'while',
       $._expression,
-      ':',
       field('body', $._expression)
     ),
 
     if: $ => prec.left(seq(
       'if',
       $._expression,
-      ':',
       optional('\n'),
       $._expression,
       optional(seq(
@@ -265,7 +262,6 @@ module.exports = grammar({
     match: $ => prec.right(seq(
       'match',
       $._expression,
-      ':',
       optional('\n'),
       field('case', repeat1($._matchoption)),
       '?',
@@ -283,7 +279,6 @@ module.exports = grammar({
       'def',
       field('name', $.identifier),
       field('parameters', $._tuple),
-      ':',
       optional('\n'),
       field('body', $._expression),
     ),
@@ -291,14 +286,12 @@ module.exports = grammar({
     object_definition: $ => seq(
       'def',
       field('name', $.identifier),
-      ':',
       field('body', $.object),
     ),
 
     list_definition: $ => seq(
       'def',
       field('name', $.identifier),
-      ':',
       field('body', $.list),
     ),
 
