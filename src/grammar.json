@@ -379,7 +379,7 @@
     },
     "unary": {
       "type": "PREC",
-      "value": 11,
+      "value": 9,
       "content": {
         "type": "CHOICE",
         "members": [
@@ -414,7 +414,7 @@
     },
     "post": {
       "type": "PREC",
-      "value": 15,
+      "value": 13,
       "content": {
         "type": "CHOICE",
         "members": [
@@ -452,7 +452,7 @@
       "members": [
         {
           "type": "PREC_LEFT",
-          "value": 9,
+          "value": 7,
           "content": {
             "type": "SEQ",
             "members": [
@@ -473,7 +473,7 @@
         },
         {
           "type": "PREC_LEFT",
-          "value": 9,
+          "value": 7,
           "content": {
             "type": "SEQ",
             "members": [
@@ -494,7 +494,7 @@
         },
         {
           "type": "PREC_LEFT",
-          "value": 9,
+          "value": 7,
           "content": {
             "type": "SEQ",
             "members": [
@@ -515,7 +515,7 @@
         },
         {
           "type": "PREC_LEFT",
-          "value": 10,
+          "value": 8,
           "content": {
             "type": "SEQ",
             "members": [
@@ -536,7 +536,7 @@
         },
         {
           "type": "PREC_LEFT",
-          "value": 10,
+          "value": 8,
           "content": {
             "type": "SEQ",
             "members": [
@@ -557,7 +557,7 @@
         },
         {
           "type": "PREC_LEFT",
-          "value": 10,
+          "value": 8,
           "content": {
             "type": "SEQ",
             "members": [
@@ -871,7 +871,7 @@
     },
     "obj_call": {
       "type": "PREC",
-      "value": 14,
+      "value": 12,
       "content": {
         "type": "SEQ",
         "members": [
@@ -892,7 +892,7 @@
     },
     "call": {
       "type": "PREC",
-      "value": 14,
+      "value": 12,
       "content": {
         "type": "SEQ",
         "members": [
@@ -917,7 +917,7 @@
     },
     "method": {
       "type": "PREC_RIGHT",
-      "value": 12,
+      "value": 10,
       "content": {
         "type": "SEQ",
         "members": [
@@ -946,7 +946,7 @@
     },
     "property": {
       "type": "PREC",
-      "value": 13,
+      "value": 11,
       "content": {
         "type": "SEQ",
         "members": [
@@ -975,7 +975,7 @@
     },
     "index": {
       "type": "PREC",
-      "value": 13,
+      "value": 11,
       "content": {
         "type": "SEQ",
         "members": [
