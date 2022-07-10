@@ -8,9 +8,9 @@ const PREC_COMPARISON = 6
 const PREC_TERM = 9
 const PREC_FACTOR = 10
 const PREC_UNARY = 11
-const PREC_CALL = 12
+const PREC_METHOD = 12
 const PREC_PROPERTY = 13
-const PREC_METHOD = 14
+const PREC_CALL = 14
 const PREC_POST = 15
 
 module.exports = grammar({
