@@ -168,7 +168,7 @@ module.exports = grammar({
       '|',
       field('parameters', optional($._expressions)),
       '|',
-      ':',
+      '=>',
       optional('\n'),
       field('body', $._expression),
     ),
