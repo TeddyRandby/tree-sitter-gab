@@ -123,6 +123,7 @@ module.exports = grammar({
     unary: $ => prec(PREC_UNARY, choice(
       seq('-', $._expression),
       seq('not', $._expression),
+      seq('..', $._expression),
     )),
 
     post: $ => prec(PREC_POST, choice(
@@ -228,22 +229,30 @@ module.exports = grammar({
 
     for: $ => seq(
       'for',
+      '(',
       field('names', $._ids),
       'in',
       $._expression,
+      ')',
+      optional('\n'),
       field('body', $._expression)
     ),
 
     while: $ => seq(
       'while',
+      '(',
       $._expression,
+      ')',
+      optional('\n'),
       field('body', $._expression)
     ),
 
     if: $ => prec.left(seq(
       'if',
+      '(',
       $._expression,
       optional('\n'),
+      ')',
       $._expression,
       optional(seq(
         'else',
@@ -261,7 +270,9 @@ module.exports = grammar({
 
     match: $ => prec.right(seq(
       'match',
+      '(',
       $._expression,
+      ')',
       optional('\n'),
       field('case', repeat1($._matchoption)),
       '?',

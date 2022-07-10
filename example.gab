@@ -1,5 +1,52 @@
-def fib(n)
-  if n < 2 n else fib(n - 1) + fib(n - 2)
-  
+def HTTP {
+  Shape = { port routes }?
 
-fib(30):!info()
+  def New(port) do
+    {
+      port
+      routes = { get = {} post = {} }
+    }
+  end
+
+  def Start(self) do
+    let sock := !socket.sock()!
+
+    sock:!socket.bind(self.port)!
+
+    sock:!socket.listen(5)!
+
+    while (true) do
+      let conn := sock:!socket.accept()!
+
+      let req := conn:!socket.recv()!
+
+      let _, method, url, version := ..req:parseMeta()
+
+      let headers := req:parseHeaders()
+
+      for (_, header in iter(headers)) do
+        !info(header)
+      end
+
+      # Parse the msg and dispatch the request to the matching handler
+
+      conn:!socket.send("EMPTY")!
+
+      conn:!socket.close()!
+    end
+  end
+
+  def Get(self, url, handler) do
+    self.routes.get[url] = handler
+  end
+}
+
+let server := HTTP.New(5050)
+
+server:HTTP.Get("/", || => do
+  !info("Request sent for home")
+
+  !html('<h1>Hello World!</h1>')
+end)
+
+server:HTTP.Start()
