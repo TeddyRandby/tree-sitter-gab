@@ -30,6 +30,15 @@ module.exports = grammar({
       $._expression,
     )),
 
+    _identifiers: $ => prec.right(seq(
+      repeat(
+        seq(
+          $.identifier, ',',
+        )
+      ),
+      $.identifier
+    )),
+
     _definition: $ => choice(
       $.function_definition,
       $.object_definition,
@@ -60,7 +69,7 @@ module.exports = grammar({
         $._definition,
         seq(
           field('key', $.identifier),
-          '=',
+          ':',
           field('value', $._expression),
         ),
         seq(
@@ -69,7 +78,7 @@ module.exports = grammar({
             $._expression,
             ']'
           )),
-          '=',
+          ':',
           field('value', $._expression),
         )
       ),
@@ -210,8 +219,8 @@ module.exports = grammar({
 
     let: $ => prec.right(PREC_ASSIGNMENT, seq(
       'let',
-      field('left', $._expressions),
-      ':=',
+      field('left', $._identifiers),
+      '=',
       field('right', $._expressions),
     )),
 
