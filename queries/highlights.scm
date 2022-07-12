@@ -90,7 +90,6 @@
   "?"
   ".."
   "."
-  ":="
 ] @operator
 
 (global bang: ("!") @variable.builtin)
