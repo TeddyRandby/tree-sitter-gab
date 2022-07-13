@@ -88,7 +88,7 @@ module.exports = grammar({
       repeat('\n'),
       repeat1(
         seq(
-          $._expressions,
+          $._expression,
           repeat1('\n'),
         )
       ),

@@ -242,7 +242,7 @@
             "members": [
               {
                 "type": "SYMBOL",
-                "name": "_expressions"
+                "name": "_expression"
               },
               {
                 "type": "REPEAT1",
