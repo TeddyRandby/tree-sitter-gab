@@ -88,7 +88,7 @@ module.exports = grammar({
       repeat('\n'),
       repeat1(
         seq(
-          $._expression,
+          $._expressions,
           repeat1('\n'),
         )
       ),
@@ -180,12 +180,12 @@ module.exports = grammar({
       '|',
       '=>',
       optional('\n'),
-      field('body', $._expression),
+      field('body', $._expressions),
     ),
 
     return: $ => seq(
       'return',
-      $._tuple,
+      $._expressions,
     ),
 
     obj_call: $ => prec(PREC_CALL, seq(
@@ -300,7 +300,7 @@ module.exports = grammar({
       field('name', $.identifier),
       field('parameters', $._tuple),
       optional('\n'),
-      field('body', $._expression),
+      field('body', $._expressions),
     ),
 
     object_definition: $ => seq(

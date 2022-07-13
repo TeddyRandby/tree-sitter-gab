@@ -242,7 +242,7 @@
             "members": [
               {
                 "type": "SYMBOL",
-                "name": "_expression"
+                "name": "_expressions"
               },
               {
                 "type": "REPEAT1",
@@ -893,7 +893,7 @@
           "name": "body",
           "content": {
             "type": "SYMBOL",
-            "name": "_expression"
+            "name": "_expressions"
           }
         }
       ]
@@ -907,7 +907,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "_tuple"
+          "name": "_expressions"
         }
       ]
     },
@@ -1433,7 +1433,7 @@
           "name": "body",
           "content": {
             "type": "SYMBOL",
-            "name": "_expression"
+            "name": "_expressions"
           }
         }
       ]

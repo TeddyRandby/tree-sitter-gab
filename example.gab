@@ -1,5 +1,11 @@
 def Console {
- def log(msg) !info(msg)
+ def log(msg) !info(msg), !info(msg)
 }
 
 "Hello World":Console.log()
+
+let a,b = do
+ 1,2
+end
+
+return 1,2
