@@ -1,15 +1,18 @@
 ; Highlights.scm for gab
-(identifier) @variable
 
-(function_definition name: (identifier) @type)
+(method method: (identifier) @function)
+(function_definition name: (identifier) @function)
+
+(call receiver: (identifier) @function)
+(method method: (call receiver: (property receiver: (identifier) @type)))
+(call receiver: (property property: (identifier) @function ))
+
 (object_definition name: (identifier) @type)
 (list_definition name: (identifier) @type)
 
-(object key: (identifier) @property)
-(property property: (identifier) @property)
+(object key: (identifier) @variable.other.member)
+(property property: (identifier) @variable.other.member)
 
-(call receiver: (identifier) @method)
-(method method: (identifier) @method)
 
 (comment) @comment
 
@@ -27,13 +30,16 @@
 ] @string
 
 
-"def" @keyword.function
-
 [
  "for"
  "in"
  "while"
-] @keyword.control.repeat
+ "if"
+ "match"
+ "else"
+ "return"
+ "=>"
+] @keyword.control
 
 [
   "or"
@@ -42,20 +48,11 @@
   "is"
 ] @keyword.operator
 
-[
-  "if"
-  "match"
-  "else"
-] @keyword.control.conditional
 
 [
   "let"
-] @keyword
-
-[
- "return"
- "=>"
-] @keyword.control.return
+  "def"
+] @keyword.storage.type
 
 [
  ","
@@ -94,3 +91,6 @@
 
 (global bang: ("!") @variable.builtin)
 (global name: (identifier) @variable.builtin)
+
+
+(identifier) @variable
