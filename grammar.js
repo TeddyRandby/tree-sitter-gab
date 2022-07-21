@@ -183,10 +183,10 @@ module.exports = grammar({
       field('body', $._expressions),
     ),
 
-    return: $ => seq(
+    return: $ => prec.left(seq(
       'return',
-      $._expressions,
-    ),
+      optional($._expressions),
+    )),
 
     obj_call: $ => prec(PREC_CALL, seq(
       field('receiver', $._expression),
@@ -238,30 +238,24 @@ module.exports = grammar({
 
     for: $ => seq(
       'for',
-      '(',
       field('names', $._ids),
       'in',
       $._expression,
-      ')',
       optional('\n'),
       field('body', $._expression)
     ),
 
     while: $ => seq(
       'while',
-      '(',
       $._expression,
-      ')',
       optional('\n'),
       field('body', $._expression)
     ),
 
     if: $ => prec.left(seq(
       'if',
-      '(',
       $._expression,
       optional('\n'),
-      ')',
       $._expression,
       optional(seq(
         'else',
@@ -279,9 +273,7 @@ module.exports = grammar({
 
     match: $ => prec.right(seq(
       'match',
-      '(',
       $._expression,
-      ')',
       optional('\n'),
       field('case', repeat1($._matchoption)),
       '?',
