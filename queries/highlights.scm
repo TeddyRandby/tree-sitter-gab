@@ -80,10 +80,38 @@
 (object key: (identifier) @variable.other.member)
 (property property: (identifier) @variable.other.member)
 
-(call receiver: (identifier) @function)
-(call receiver: (property property: (identifier) @function ))
-(method method: (call receiver: (property receiver: (identifier) @type)))
-(method method: (post (call receiver: (property receiver: (identifier) @type))))
+(call
+  receiver: (identifier) @function)
+
+(call
+  receiver: (property
+    property: (identifier) @function))
+
+(method
+  method: (call
+    receiver: (property
+      receiver: (identifier) @type)))
+
+(method
+  method: (call
+    receiver: (property
+      receiver: (property
+        receiver: (identifier) @type
+        property: (identifier) @type))))
+
+(method
+  method: (post
+    (call
+      receiver: (property
+        receiver: (identifier) @type))))
+
+(method
+  method: (post
+    (call
+      receiver: (property
+        receiver: (property
+          receiver: (identifier) @type
+          property: (identifier) @type)))))
 
 (method method: (identifier) @function)
 (function_definition name: (identifier) @function)

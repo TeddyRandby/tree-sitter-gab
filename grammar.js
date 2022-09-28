@@ -136,7 +136,7 @@ module.exports = grammar({
     )),
 
     post: $ => prec(PREC_POST, choice(
-      seq(field('exp', $._expression), '!'),
+      seq($._expression, '!'),
       seq($._expression, '?'),
     )),
 
