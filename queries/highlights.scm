@@ -57,7 +57,6 @@
 
 [
  ","
- ":"
 ] @punctuation.delimiter
 
 [
@@ -88,6 +87,7 @@
   "?"
   ".."
   "."
+  ":"
 ] @operator
 
 (global bang: ("!") @variable.builtin)
