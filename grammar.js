@@ -254,7 +254,9 @@ module.exports = grammar({
 
     if: $ => prec.left(seq(
       'if',
+      '(',
       $._expression,
+      ')',
       optional('\n'),
       $._expression,
       optional(seq(
