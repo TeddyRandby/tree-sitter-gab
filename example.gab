@@ -1,8 +1,4 @@
-def Test {
-    def Math {
-      def add_one(num) num + 1
-    }
-
+{
+    test: 2,
+    other: 4,
 }
-
-2:Test.Math.add_one()

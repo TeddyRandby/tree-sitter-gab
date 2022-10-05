@@ -159,7 +159,11 @@ module.exports = grammar({
 
     object: $ => seq(
       '{',
-      repeat($._object_kvp),
+      repeat(
+        seq($._object_kvp,
+          optional(','),
+          optional(repeat('\n')),
+        )),
       '}',
     ),
 
@@ -168,7 +172,8 @@ module.exports = grammar({
       repeat(
         seq(
           $._expression,
-          optional('\n'),
+          optional(','),
+          optional(repeat('\n')),
         )
       ),
       ']',
