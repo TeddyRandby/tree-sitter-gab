@@ -1,4 +1,7 @@
-{
-    test: 2,
-    other: 4,
+def Test {
+    def Nested {
+      def Function() do
+        
+      end
+    }
 }

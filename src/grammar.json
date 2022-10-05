@@ -1468,7 +1468,7 @@
           "name": "body",
           "content": {
             "type": "SYMBOL",
-            "name": "_expressions"
+            "name": "_expression"
           }
         }
       ]

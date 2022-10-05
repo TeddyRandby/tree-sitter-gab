@@ -299,7 +299,7 @@ module.exports = grammar({
       field('name', $.identifier),
       field('parameters', $._tuple),
       optional('\n'),
-      field('body', $._expressions),
+      field('body', $._expression),
     ),
 
     object_definition: $ => seq(
@@ -315,7 +315,6 @@ module.exports = grammar({
     ),
 
     bool: _ => choice('true', 'false'),
-
 
     null: _ => 'null',
 
