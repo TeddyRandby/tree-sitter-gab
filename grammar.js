@@ -183,7 +183,7 @@ module.exports = grammar({
       '|',
       field('parameters', optional($._expressions)),
       '|',
-      '=>',
+      'then',
       optional('\n'),
       field('body', $._expressions),
     ),
@@ -246,6 +246,7 @@ module.exports = grammar({
       field('names', $._ids),
       'in',
       $._expression,
+      'then',
       optional('\n'),
       field('body', $._expression)
     ),
@@ -253,15 +254,15 @@ module.exports = grammar({
     while: $ => seq(
       'while',
       $._expression,
+      'then',
       optional('\n'),
       field('body', $._expression)
     ),
 
     if: $ => prec.left(seq(
       'if',
-      '(',
       $._expression,
-      ')',
+      'then',
       optional('\n'),
       $._expression,
       optional(seq(
@@ -281,6 +282,7 @@ module.exports = grammar({
     match: $ => prec.right(seq(
       'match',
       $._expression,
+      'then',
       optional('\n'),
       field('case', repeat1($._matchoption)),
       '?',
@@ -298,6 +300,7 @@ module.exports = grammar({
       'def',
       field('name', $.identifier),
       field('parameters', $._tuple),
+      'then',
       optional('\n'),
       field('body', $._expression),
     ),

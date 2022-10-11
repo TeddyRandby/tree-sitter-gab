@@ -921,7 +921,7 @@
         },
         {
           "type": "STRING",
-          "value": "=>"
+          "value": "then"
         },
         {
           "type": "CHOICE",
@@ -1210,6 +1210,10 @@
           "name": "_expression"
         },
         {
+          "type": "STRING",
+          "value": "then"
+        },
+        {
           "type": "CHOICE",
           "members": [
             {
@@ -1241,6 +1245,10 @@
         {
           "type": "SYMBOL",
           "name": "_expression"
+        },
+        {
+          "type": "STRING",
+          "value": "then"
         },
         {
           "type": "CHOICE",
@@ -1275,16 +1283,12 @@
             "value": "if"
           },
           {
-            "type": "STRING",
-            "value": "("
-          },
-          {
             "type": "SYMBOL",
             "name": "_expression"
           },
           {
             "type": "STRING",
-            "value": ")"
+            "value": "then"
           },
           {
             "type": "CHOICE",
@@ -1374,6 +1378,10 @@
             "name": "_expression"
           },
           {
+            "type": "STRING",
+            "value": "then"
+          },
+          {
             "type": "CHOICE",
             "members": [
               {
@@ -1450,6 +1458,10 @@
             "type": "SYMBOL",
             "name": "_tuple"
           }
+        },
+        {
+          "type": "STRING",
+          "value": "then"
         },
         {
           "type": "CHOICE",

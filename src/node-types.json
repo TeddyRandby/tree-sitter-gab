@@ -4833,6 +4833,10 @@
     "named": false
   },
   {
+    "type": "then",
+    "named": false
+  },
+  {
     "type": "true",
     "named": false
   },
