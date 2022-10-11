@@ -15,23 +15,24 @@
   (interpstring)
 ] @string
 
-
 [
  "for"
- "in"
  "while"
+] @repeat
+
+[
  "if"
- "match"
  "else"
- "return"
- "=>"
-] @keyword.control
+ "match"
+] @conditional
 
 [
   "or"
   "and"
   "not"
   "is"
+  "in"
+  "=>"
 ] @keyword.operator
 
 
@@ -41,8 +42,15 @@
 ] @keyword.storage.type
 
 [
- ","
+  ","
+  "."
 ] @punctuation.delimiter
+
+[
+  "do"
+  "end"
+  "then"
+] @keyword
 
 [
   "{"
@@ -52,8 +60,6 @@
   "("
   ")"
   "|"
-  "do"
-  "end"
 ] @punctuation.bracket
 
 [
@@ -71,11 +77,11 @@
   "!"
   "?"
   ".."
-  "."
   ":"
 ] @operator
-(identifier) @variable
 
+(identifier) @variable
+(parameters (identifier) @parameter)
 
 (object key: (identifier) @variable.other.member)
 (property property: (identifier) @variable.other.member)
