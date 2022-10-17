@@ -1,5 +1,5 @@
-def Mod {
-  def square(number) then number * number 
-}
+def square(number)
+  number * number 
+end
 
-2:Mod.square()
+2:square()
