@@ -19,9 +19,9 @@ module.exports = grammar({
   word: $ => $.identifier,
 
   rules: {
-    source_file: $ => $.block_body,
+    source_file: $ => $._block_body,
 
-    _expressions: $ => prec.right(seq(
+    _tuple: $ => prec.right(seq(
       repeat(
         seq(
           $._expression, ',',
@@ -47,7 +47,7 @@ module.exports = grammar({
 
     _tuple: $ => seq(
       '(',
-      optional($._expressions),
+      optional($._tuple),
       ')',
     ),
 
@@ -84,7 +84,7 @@ module.exports = grammar({
       ),
     )),
 
-    block_body: $ => seq(
+    _block_body: $ => seq(
       repeat('\n'),
       repeat1(
         seq(
@@ -92,6 +92,7 @@ module.exports = grammar({
           repeat1('\n'),
         )
       ),
+      'end',
     ),
 
     _expression: $ => prec(PREC_EXP, choice(
@@ -180,17 +181,17 @@ module.exports = grammar({
     ),
 
     lambda: $ => seq(
+      'do',
       '|',
-      field('parameters', optional($._expressions)),
+      field('parameters', optional($._tuple)),
       '|',
-      'then',
-      optional('\n'),
-      field('body', $._expressions),
+      '\n',
+      field('body', $._block_body),
     ),
 
     return: $ => prec.left(seq(
       'return',
-      optional($._expressions),
+      optional($._tuple),
     )),
 
     obj_call: $ => prec(PREC_CALL, seq(
@@ -226,7 +227,7 @@ module.exports = grammar({
       'let',
       field('left', $._identifiers),
       '=',
-      field('right', $._expressions),
+      field('right', $._tuple),
     )),
 
     assignment: $ => prec.right(PREC_ASSIGNMENT, seq(
@@ -246,29 +247,26 @@ module.exports = grammar({
       field('names', $._ids),
       'in',
       $._expression,
-      'then',
-      optional('\n'),
-      field('body', $._expression)
+      '\n',
+      field('body', $._block_body)
     ),
 
     while: $ => seq(
       'while',
       $._expression,
-      'then',
-      optional('\n'),
-      field('body', $._expression)
+      '\n',
+      field('body', $._block_body)
     ),
 
     if: $ => prec.left(seq(
       'if',
       $._expression,
-      'then',
-      optional('\n'),
-      $._expression,
+      '\n',
+      $._block_body,
       optional(seq(
         'else',
-        optional('\n'),
-        $._expression,
+        '\n',
+        $._block_body,
       )),
     )),
 
@@ -292,17 +290,15 @@ module.exports = grammar({
 
     block: $ => seq(
       'do',
-      $.block_body,
-      'end',
+      $._block_body,
     ),
 
     function_definition: $ => seq(
       'def',
       field('name', $.identifier),
       field('parameters', $._tuple),
-      'then',
-      optional('\n'),
-      field('body', $._expression),
+      '\n',
+      field('body', $._block_body),
     ),
 
     object_definition: $ => seq(
