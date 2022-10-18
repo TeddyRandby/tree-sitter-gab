@@ -1,5 +1,15 @@
-def square(number)
-  number * number 
+def odd(num)
+  if not (num is 'number')
+    return null, 'expected a number'
+  end
+  
+  match num % 2
+    0 => return true, null 
+    1 => return false, null
+    ? => return null, null
+
 end
 
-2:square()
+!print(odd(2))
+!print(odd(3))
+!print(odd('hello'))
