@@ -279,7 +279,6 @@ module.exports = grammar({
     match: $ => prec.right(seq(
       'match',
       $._expression,
-      'then',
       optional('\n'),
       field('case', repeat1($._matchoption)),
       '?',
