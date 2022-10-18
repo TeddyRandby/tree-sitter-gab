@@ -1334,19 +1334,7 @@
           },
           {
             "type": "STRING",
-            "value": "then"
-          },
-          {
-            "type": "CHOICE",
-            "members": [
-              {
-                "type": "STRING",
-                "value": "\n"
-              },
-              {
-                "type": "BLANK"
-              }
-            ]
+            "value": "\n"
           },
           {
             "type": "FIELD",
