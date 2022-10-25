@@ -26,6 +26,7 @@
  "if"
  "else"
  "match"
+ "return"
 ] @conditional
 
 [
@@ -50,7 +51,6 @@
 [
   "do"
   "end"
-  "then"
 ] @keyword
 
 [
@@ -92,8 +92,9 @@
       property: (identifier) @function))
 
 (method method: (identifier) @function)
-(function_definition name: (identifier) @function)
 (function_definition parameters: (identifier) @parameter)
+(function_definition name: (identifier) @function)
+(lambda parameters: (identifier) @parameter)
 (object_definition name: (identifier) @type)
 (list_definition name: (identifier) @type)
 

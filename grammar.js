@@ -195,7 +195,7 @@ module.exports = grammar({
     call: $ => prec(PREC_CALL, seq(
       field('receiver', $._expression),
       '(',
-      optional(field('parameters', $._tuple)),
+      optional($._tuple),
       ')',
     )),
 
@@ -296,7 +296,7 @@ module.exports = grammar({
       'def',
       field('name', $.identifier),
       '(',
-      optional(field('parameters', $._tuple)),
+      field('parameters', optional($._tuple)),
       ')',
       '\n',
       field('body', $._block_body),

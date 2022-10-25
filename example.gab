@@ -1,4 +1,4 @@
-def odd(num)
+def odd(num, other, another)
   if not (num is 'number')
     return null, 'expected a number'
   end
@@ -7,9 +7,10 @@ def odd(num)
     0 => return true, null 
     1 => return false, null
     ? => return null, null
-
 end
 
-!print(odd(2))
-!print(odd(3))
-!print(odd('hello'))
+do |arg, another|
+  !print(odd(2))
+  !print(odd(3))
+  !print(odd('hello'))
+end()
