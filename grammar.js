@@ -30,6 +30,20 @@ module.exports = grammar({
       $._expression,
     )),
 
+    parameters: $ => seq(
+      repeat(
+        seq(
+          $._parameter, ',',
+        ),
+      ),
+      $._parameter,
+
+    ),
+
+    _parameter: $ => choice(
+      $.identifier,
+    ),
+
     _identifiers: $ => prec.right(seq(
       repeat(
         seq(
@@ -176,7 +190,7 @@ module.exports = grammar({
     lambda: $ => seq(
       'do',
       '|',
-      field('parameters', optional($._tuple)),
+      optional($.parameters),
       '|',
       field('body', $._block_body),
       'end',
@@ -296,7 +310,7 @@ module.exports = grammar({
       'def',
       field('name', $.identifier),
       '(',
-      field('parameters', optional($._tuple)),
+      optional($.parameters),
       ')',
       '\n',
       field('body', $._block_body),

@@ -35,6 +35,40 @@
         ]
       }
     },
+    "parameters": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "_parameter"
+              },
+              {
+                "type": "STRING",
+                "value": ","
+              }
+            ]
+          }
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_parameter"
+        }
+      ]
+    },
+    "_parameter": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "identifier"
+        }
+      ]
+    },
     "_identifiers": {
       "type": "PREC_RIGHT",
       "value": 0,
@@ -879,20 +913,16 @@
           "value": "|"
         },
         {
-          "type": "FIELD",
-          "name": "parameters",
-          "content": {
-            "type": "CHOICE",
-            "members": [
-              {
-                "type": "SYMBOL",
-                "name": "_tuple"
-              },
-              {
-                "type": "BLANK"
-              }
-            ]
-          }
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "parameters"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
         },
         {
           "type": "STRING",
@@ -980,12 +1010,8 @@
             "type": "CHOICE",
             "members": [
               {
-                "type": "FIELD",
-                "name": "parameters",
-                "content": {
-                  "type": "SYMBOL",
-                  "name": "_tuple"
-                }
+                "type": "SYMBOL",
+                "name": "_tuple"
               },
               {
                 "type": "BLANK"
@@ -1402,12 +1428,8 @@
           "type": "CHOICE",
           "members": [
             {
-              "type": "FIELD",
-              "name": "parameters",
-              "content": {
-                "type": "SYMBOL",
-                "name": "_tuple"
-              }
+              "type": "SYMBOL",
+              "name": "parameters"
             },
             {
               "type": "BLANK"
