@@ -19,8 +19,9 @@
 
 [
  "for"
- "while"
-] @repeat
+ "loop"
+ "until"
+] @keyword.repeat
 
 [
  "if"

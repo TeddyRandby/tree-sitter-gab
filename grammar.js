@@ -108,7 +108,7 @@ module.exports = grammar({
       $.object,
       $.list,
       $.for,
-      $.while,
+      $.loop,
       $.block,
       $.return,
       $.identifier,
@@ -261,12 +261,15 @@ module.exports = grammar({
       'end',
     ),
 
-    while: $ => seq(
-      'while',
-      $._expression,
+    loop: $ => seq(
+      'loop',
       '\n',
       field('body', $._block_body),
       'end',
+      optional(seq(
+        'until',
+        $._expression,
+      ))
     ),
 
     if: $ => prec.left(seq(
