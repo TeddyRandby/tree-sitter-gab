@@ -293,7 +293,7 @@
           },
           {
             "type": "SYMBOL",
-            "name": "while"
+            "name": "loop"
           },
           {
             "type": "SYMBOL",
@@ -1236,16 +1236,12 @@
         }
       ]
     },
-    "while": {
+    "loop": {
       "type": "SEQ",
       "members": [
         {
           "type": "STRING",
-          "value": "while"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "_expression"
+          "value": "loop"
         },
         {
           "type": "STRING",
@@ -1262,6 +1258,27 @@
         {
           "type": "STRING",
           "value": "end"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "STRING",
+                  "value": "until"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "_expression"
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
         }
       ]
     },

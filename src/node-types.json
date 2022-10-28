@@ -80,6 +80,10 @@
             "named": true
           },
           {
+            "type": "loop",
+            "named": true
+          },
+          {
             "type": "match",
             "named": true
           },
@@ -129,10 +133,6 @@
           },
           {
             "type": "unary",
-            "named": true
-          },
-          {
-            "type": "while",
             "named": true
           }
         ]
@@ -214,6 +214,10 @@
             "named": true
           },
           {
+            "type": "loop",
+            "named": true
+          },
+          {
             "type": "match",
             "named": true
           },
@@ -263,10 +267,6 @@
           },
           {
             "type": "unary",
-            "named": true
-          },
-          {
-            "type": "while",
             "named": true
           }
         ]
@@ -354,6 +354,10 @@
           "named": true
         },
         {
+          "type": "loop",
+          "named": true
+        },
+        {
           "type": "match",
           "named": true
         },
@@ -403,10 +407,6 @@
         },
         {
           "type": "unary",
-          "named": true
-        },
-        {
-          "type": "while",
           "named": true
         }
       ]
@@ -493,6 +493,10 @@
           "named": true
         },
         {
+          "type": "loop",
+          "named": true
+        },
+        {
           "type": "match",
           "named": true
         },
@@ -542,10 +546,6 @@
         },
         {
           "type": "unary",
-          "named": true
-        },
-        {
-          "type": "while",
           "named": true
         }
       ]
@@ -637,6 +637,10 @@
             "named": true
           },
           {
+            "type": "loop",
+            "named": true
+          },
+          {
             "type": "match",
             "named": true
           },
@@ -686,10 +690,6 @@
           },
           {
             "type": "unary",
-            "named": true
-          },
-          {
-            "type": "while",
             "named": true
           }
         ]
@@ -772,6 +772,10 @@
           "named": true
         },
         {
+          "type": "loop",
+          "named": true
+        },
+        {
           "type": "match",
           "named": true
         },
@@ -821,10 +825,6 @@
         },
         {
           "type": "unary",
-          "named": true
-        },
-        {
-          "type": "while",
           "named": true
         }
       ]
@@ -915,6 +915,10 @@
             "named": true
           },
           {
+            "type": "loop",
+            "named": true
+          },
+          {
             "type": "match",
             "named": true
           },
@@ -964,10 +968,6 @@
           },
           {
             "type": "unary",
-            "named": true
-          },
-          {
-            "type": "while",
             "named": true
           }
         ]
@@ -1064,6 +1064,10 @@
           "named": true
         },
         {
+          "type": "loop",
+          "named": true
+        },
+        {
           "type": "match",
           "named": true
         },
@@ -1113,10 +1117,6 @@
         },
         {
           "type": "unary",
-          "named": true
-        },
-        {
-          "type": "while",
           "named": true
         }
       ]
@@ -1207,6 +1207,10 @@
             "named": true
           },
           {
+            "type": "loop",
+            "named": true
+          },
+          {
             "type": "match",
             "named": true
           },
@@ -1256,10 +1260,6 @@
           },
           {
             "type": "unary",
-            "named": true
-          },
-          {
-            "type": "while",
             "named": true
           }
         ]
@@ -1393,6 +1393,10 @@
           "named": true
         },
         {
+          "type": "loop",
+          "named": true
+        },
+        {
           "type": "match",
           "named": true
         },
@@ -1442,10 +1446,6 @@
         },
         {
           "type": "unary",
-          "named": true
-        },
-        {
-          "type": "while",
           "named": true
         }
       ]
@@ -1532,6 +1532,10 @@
           "named": true
         },
         {
+          "type": "loop",
+          "named": true
+        },
+        {
           "type": "match",
           "named": true
         },
@@ -1581,10 +1585,6 @@
         },
         {
           "type": "unary",
-          "named": true
-        },
-        {
-          "type": "while",
           "named": true
         }
       ]
@@ -1671,6 +1671,10 @@
             "named": true
           },
           {
+            "type": "loop",
+            "named": true
+          },
+          {
             "type": "match",
             "named": true
           },
@@ -1720,10 +1724,6 @@
           },
           {
             "type": "unary",
-            "named": true
-          },
-          {
-            "type": "while",
             "named": true
           }
         ]
@@ -1805,6 +1805,10 @@
             "named": true
           },
           {
+            "type": "loop",
+            "named": true
+          },
+          {
             "type": "match",
             "named": true
           },
@@ -1854,10 +1858,6 @@
           },
           {
             "type": "unary",
-            "named": true
-          },
-          {
-            "type": "while",
             "named": true
           }
         ]
@@ -1945,6 +1945,10 @@
           "named": true
         },
         {
+          "type": "loop",
+          "named": true
+        },
+        {
           "type": "match",
           "named": true
         },
@@ -1994,10 +1998,6 @@
         },
         {
           "type": "unary",
-          "named": true
-        },
-        {
-          "type": "while",
           "named": true
         }
       ]
@@ -2088,6 +2088,10 @@
             "named": true
           },
           {
+            "type": "loop",
+            "named": true
+          },
+          {
             "type": "match",
             "named": true
           },
@@ -2137,10 +2141,6 @@
           },
           {
             "type": "unary",
-            "named": true
-          },
-          {
-            "type": "while",
             "named": true
           }
         ]
@@ -2256,6 +2256,10 @@
             "named": true
           },
           {
+            "type": "loop",
+            "named": true
+          },
+          {
             "type": "match",
             "named": true
           },
@@ -2305,10 +2309,6 @@
           },
           {
             "type": "unary",
-            "named": true
-          },
-          {
-            "type": "while",
             "named": true
           }
         ]
@@ -2396,6 +2396,10 @@
           "named": true
         },
         {
+          "type": "loop",
+          "named": true
+        },
+        {
           "type": "match",
           "named": true
         },
@@ -2446,10 +2450,6 @@
         {
           "type": "unary",
           "named": true
-        },
-        {
-          "type": "while",
-          "named": true
         }
       ]
     }
@@ -2478,6 +2478,284 @@
           }
         ]
       }
+    }
+  },
+  {
+    "type": "loop",
+    "named": true,
+    "fields": {
+      "body": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "\n",
+            "named": false
+          },
+          {
+            "type": "assignment",
+            "named": true
+          },
+          {
+            "type": "binary",
+            "named": true
+          },
+          {
+            "type": "block",
+            "named": true
+          },
+          {
+            "type": "bool",
+            "named": true
+          },
+          {
+            "type": "call",
+            "named": true
+          },
+          {
+            "type": "comment",
+            "named": true
+          },
+          {
+            "type": "for",
+            "named": true
+          },
+          {
+            "type": "function_definition",
+            "named": true
+          },
+          {
+            "type": "global",
+            "named": true
+          },
+          {
+            "type": "group",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "if",
+            "named": true
+          },
+          {
+            "type": "index",
+            "named": true
+          },
+          {
+            "type": "interpstring",
+            "named": true
+          },
+          {
+            "type": "lambda",
+            "named": true
+          },
+          {
+            "type": "let",
+            "named": true
+          },
+          {
+            "type": "list",
+            "named": true
+          },
+          {
+            "type": "list_definition",
+            "named": true
+          },
+          {
+            "type": "loop",
+            "named": true
+          },
+          {
+            "type": "match",
+            "named": true
+          },
+          {
+            "type": "method",
+            "named": true
+          },
+          {
+            "type": "null",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "obj_call",
+            "named": true
+          },
+          {
+            "type": "object",
+            "named": true
+          },
+          {
+            "type": "object_definition",
+            "named": true
+          },
+          {
+            "type": "post",
+            "named": true
+          },
+          {
+            "type": "property",
+            "named": true
+          },
+          {
+            "type": "rawstring",
+            "named": true
+          },
+          {
+            "type": "return",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "unary",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "assignment",
+          "named": true
+        },
+        {
+          "type": "binary",
+          "named": true
+        },
+        {
+          "type": "block",
+          "named": true
+        },
+        {
+          "type": "bool",
+          "named": true
+        },
+        {
+          "type": "call",
+          "named": true
+        },
+        {
+          "type": "comment",
+          "named": true
+        },
+        {
+          "type": "for",
+          "named": true
+        },
+        {
+          "type": "function_definition",
+          "named": true
+        },
+        {
+          "type": "global",
+          "named": true
+        },
+        {
+          "type": "group",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "if",
+          "named": true
+        },
+        {
+          "type": "index",
+          "named": true
+        },
+        {
+          "type": "interpstring",
+          "named": true
+        },
+        {
+          "type": "lambda",
+          "named": true
+        },
+        {
+          "type": "let",
+          "named": true
+        },
+        {
+          "type": "list",
+          "named": true
+        },
+        {
+          "type": "list_definition",
+          "named": true
+        },
+        {
+          "type": "loop",
+          "named": true
+        },
+        {
+          "type": "match",
+          "named": true
+        },
+        {
+          "type": "method",
+          "named": true
+        },
+        {
+          "type": "null",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "obj_call",
+          "named": true
+        },
+        {
+          "type": "object",
+          "named": true
+        },
+        {
+          "type": "object_definition",
+          "named": true
+        },
+        {
+          "type": "post",
+          "named": true
+        },
+        {
+          "type": "property",
+          "named": true
+        },
+        {
+          "type": "rawstring",
+          "named": true
+        },
+        {
+          "type": "return",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "unary",
+          "named": true
+        }
+      ]
     }
   },
   {
@@ -2569,6 +2847,10 @@
             "named": true
           },
           {
+            "type": "loop",
+            "named": true
+          },
+          {
             "type": "match",
             "named": true
           },
@@ -2618,10 +2900,6 @@
           },
           {
             "type": "unary",
-            "named": true
-          },
-          {
-            "type": "while",
             "named": true
           }
         ]
@@ -2704,6 +2982,10 @@
           "named": true
         },
         {
+          "type": "loop",
+          "named": true
+        },
+        {
           "type": "match",
           "named": true
         },
@@ -2753,10 +3035,6 @@
         },
         {
           "type": "unary",
-          "named": true
-        },
-        {
-          "type": "while",
           "named": true
         }
       ]
@@ -2843,6 +3121,10 @@
             "named": true
           },
           {
+            "type": "loop",
+            "named": true
+          },
+          {
             "type": "match",
             "named": true
           },
@@ -2892,10 +3174,6 @@
           },
           {
             "type": "unary",
-            "named": true
-          },
-          {
-            "type": "while",
             "named": true
           }
         ]
@@ -2977,6 +3255,10 @@
             "named": true
           },
           {
+            "type": "loop",
+            "named": true
+          },
+          {
             "type": "match",
             "named": true
           },
@@ -3026,10 +3308,6 @@
           },
           {
             "type": "unary",
-            "named": true
-          },
-          {
-            "type": "while",
             "named": true
           }
         ]
@@ -3117,6 +3395,10 @@
             "named": true
           },
           {
+            "type": "loop",
+            "named": true
+          },
+          {
             "type": "match",
             "named": true
           },
@@ -3166,10 +3448,6 @@
           },
           {
             "type": "unary",
-            "named": true
-          },
-          {
-            "type": "while",
             "named": true
           }
         ]
@@ -3275,6 +3553,10 @@
             "named": true
           },
           {
+            "type": "loop",
+            "named": true
+          },
+          {
             "type": "match",
             "named": true
           },
@@ -3324,10 +3606,6 @@
           },
           {
             "type": "unary",
-            "named": true
-          },
-          {
-            "type": "while",
             "named": true
           }
         ]
@@ -3409,6 +3687,10 @@
             "named": true
           },
           {
+            "type": "loop",
+            "named": true
+          },
+          {
             "type": "match",
             "named": true
           },
@@ -3458,10 +3740,6 @@
           },
           {
             "type": "unary",
-            "named": true
-          },
-          {
-            "type": "while",
             "named": true
           }
         ]
@@ -3608,6 +3886,10 @@
           "named": true
         },
         {
+          "type": "loop",
+          "named": true
+        },
+        {
           "type": "match",
           "named": true
         },
@@ -3657,10 +3939,6 @@
         },
         {
           "type": "unary",
-          "named": true
-        },
-        {
-          "type": "while",
           "named": true
         }
       ]
@@ -3757,6 +4035,10 @@
             "named": true
           },
           {
+            "type": "loop",
+            "named": true
+          },
+          {
             "type": "match",
             "named": true
           },
@@ -3806,10 +4088,6 @@
           },
           {
             "type": "unary",
-            "named": true
-          },
-          {
-            "type": "while",
             "named": true
           }
         ]
@@ -3897,6 +4175,10 @@
           "named": true
         },
         {
+          "type": "loop",
+          "named": true
+        },
+        {
           "type": "match",
           "named": true
         },
@@ -3946,10 +4228,6 @@
         },
         {
           "type": "unary",
-          "named": true
-        },
-        {
-          "type": "while",
           "named": true
         }
       ]
@@ -4036,6 +4314,10 @@
           "named": true
         },
         {
+          "type": "loop",
+          "named": true
+        },
+        {
           "type": "match",
           "named": true
         },
@@ -4085,10 +4367,6 @@
         },
         {
           "type": "unary",
-          "named": true
-        },
-        {
-          "type": "while",
           "named": true
         }
       ]
@@ -4180,281 +4458,7 @@
           "named": true
         },
         {
-          "type": "match",
-          "named": true
-        },
-        {
-          "type": "method",
-          "named": true
-        },
-        {
-          "type": "null",
-          "named": true
-        },
-        {
-          "type": "number",
-          "named": true
-        },
-        {
-          "type": "obj_call",
-          "named": true
-        },
-        {
-          "type": "object",
-          "named": true
-        },
-        {
-          "type": "object_definition",
-          "named": true
-        },
-        {
-          "type": "post",
-          "named": true
-        },
-        {
-          "type": "property",
-          "named": true
-        },
-        {
-          "type": "rawstring",
-          "named": true
-        },
-        {
-          "type": "return",
-          "named": true
-        },
-        {
-          "type": "string",
-          "named": true
-        },
-        {
-          "type": "unary",
-          "named": true
-        },
-        {
-          "type": "while",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "while",
-    "named": true,
-    "fields": {
-      "body": {
-        "multiple": true,
-        "required": true,
-        "types": [
-          {
-            "type": "\n",
-            "named": false
-          },
-          {
-            "type": "assignment",
-            "named": true
-          },
-          {
-            "type": "binary",
-            "named": true
-          },
-          {
-            "type": "block",
-            "named": true
-          },
-          {
-            "type": "bool",
-            "named": true
-          },
-          {
-            "type": "call",
-            "named": true
-          },
-          {
-            "type": "comment",
-            "named": true
-          },
-          {
-            "type": "for",
-            "named": true
-          },
-          {
-            "type": "function_definition",
-            "named": true
-          },
-          {
-            "type": "global",
-            "named": true
-          },
-          {
-            "type": "group",
-            "named": true
-          },
-          {
-            "type": "identifier",
-            "named": true
-          },
-          {
-            "type": "if",
-            "named": true
-          },
-          {
-            "type": "index",
-            "named": true
-          },
-          {
-            "type": "interpstring",
-            "named": true
-          },
-          {
-            "type": "lambda",
-            "named": true
-          },
-          {
-            "type": "let",
-            "named": true
-          },
-          {
-            "type": "list",
-            "named": true
-          },
-          {
-            "type": "list_definition",
-            "named": true
-          },
-          {
-            "type": "match",
-            "named": true
-          },
-          {
-            "type": "method",
-            "named": true
-          },
-          {
-            "type": "null",
-            "named": true
-          },
-          {
-            "type": "number",
-            "named": true
-          },
-          {
-            "type": "obj_call",
-            "named": true
-          },
-          {
-            "type": "object",
-            "named": true
-          },
-          {
-            "type": "object_definition",
-            "named": true
-          },
-          {
-            "type": "post",
-            "named": true
-          },
-          {
-            "type": "property",
-            "named": true
-          },
-          {
-            "type": "rawstring",
-            "named": true
-          },
-          {
-            "type": "return",
-            "named": true
-          },
-          {
-            "type": "string",
-            "named": true
-          },
-          {
-            "type": "unary",
-            "named": true
-          },
-          {
-            "type": "while",
-            "named": true
-          }
-        ]
-      }
-    },
-    "children": {
-      "multiple": false,
-      "required": true,
-      "types": [
-        {
-          "type": "assignment",
-          "named": true
-        },
-        {
-          "type": "binary",
-          "named": true
-        },
-        {
-          "type": "block",
-          "named": true
-        },
-        {
-          "type": "bool",
-          "named": true
-        },
-        {
-          "type": "call",
-          "named": true
-        },
-        {
-          "type": "comment",
-          "named": true
-        },
-        {
-          "type": "for",
-          "named": true
-        },
-        {
-          "type": "function_definition",
-          "named": true
-        },
-        {
-          "type": "global",
-          "named": true
-        },
-        {
-          "type": "group",
-          "named": true
-        },
-        {
-          "type": "identifier",
-          "named": true
-        },
-        {
-          "type": "if",
-          "named": true
-        },
-        {
-          "type": "index",
-          "named": true
-        },
-        {
-          "type": "interpstring",
-          "named": true
-        },
-        {
-          "type": "lambda",
-          "named": true
-        },
-        {
-          "type": "let",
-          "named": true
-        },
-        {
-          "type": "list",
-          "named": true
-        },
-        {
-          "type": "list_definition",
+          "type": "loop",
           "named": true
         },
         {
@@ -4507,10 +4511,6 @@
         },
         {
           "type": "unary",
-          "named": true
-        },
-        {
-          "type": "while",
           "named": true
         }
       ]
@@ -4665,6 +4665,10 @@
     "named": false
   },
   {
+    "type": "loop",
+    "named": false
+  },
+  {
     "type": "match",
     "named": false
   },
@@ -4697,7 +4701,7 @@
     "named": false
   },
   {
-    "type": "while",
+    "type": "until",
     "named": false
   },
   {
