@@ -670,10 +670,22 @@
     "type": "empty_method",
     "named": true,
     "fields": {
-      "method": {
-        "multiple": false,
-        "required": true,
+      "args": {
+        "multiple": true,
+        "required": false,
         "types": [
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": ",",
+            "named": false
+          },
           {
             "type": "assignment",
             "named": true
@@ -792,6 +804,20 @@
           },
           {
             "type": "unary",
+            "named": true
+          }
+        ]
+      },
+      "method": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": ".",
+            "named": false
+          },
+          {
+            "type": "identifier",
             "named": true
           }
         ]
@@ -2960,10 +2986,22 @@
     "type": "method",
     "named": true,
     "fields": {
-      "method": {
-        "multiple": false,
-        "required": true,
+      "args": {
+        "multiple": true,
+        "required": false,
         "types": [
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": ",",
+            "named": false
+          },
           {
             "type": "assignment",
             "named": true
@@ -3082,6 +3120,20 @@
           },
           {
             "type": "unary",
+            "named": true
+          }
+        ]
+      },
+      "method": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": ".",
+            "named": false
+          },
+          {
+            "type": "identifier",
             "named": true
           }
         ]

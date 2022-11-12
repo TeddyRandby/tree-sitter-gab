@@ -30,6 +30,24 @@ module.exports = grammar({
       $._expression,
     )),
 
+    _chain: $ => prec.right(seq(
+      repeat(
+        seq(
+          $.identifier, '.',
+        ),
+      ),
+      $.identifier,
+    )),
+
+    _args: $ => choice(
+      seq(
+        '(',
+        optional($._tuple),
+        ')',
+      ),
+      $.record,
+    ),
+
     parameters: $ => seq(
       repeat(
         seq(
@@ -196,15 +214,17 @@ module.exports = grammar({
       optional($._tuple),
     )),
 
-    empty_method: $ => seq(
+    empty_method: $ => prec.left(PREC_METHOD, seq(
       ':',
-      field('method', $._expression),
-    ),
+      field('method', $._chain),
+      field('args', optional($._args)),
+    )),
 
     method: $ => prec.left(PREC_METHOD, seq(
       field('receiver', $._expression),
       ':',
-      field('method', $._expression),
+      field('method', $._chain),
+      field('args', optional($._args)),
     )),
 
     property: $ => prec(PREC_PROPERTY, seq(

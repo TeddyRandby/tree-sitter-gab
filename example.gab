@@ -11,6 +11,6 @@ end
 
 let i = 0
 loop
-  print(i:odd())
+  i:odd:print
 end until (i = i + 1) == 20
 
