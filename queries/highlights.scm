@@ -82,22 +82,9 @@
   ":"
 ] @operator
 
-(property
-  receiver: (identifier) @type)
-
-(call
-  receiver: (identifier) @function)
-
-(call
-  receiver: (property 
-      property: (identifier) @function))
+(chain: (identifier) @type)
+(chain_final: (identifier) @function)
 
 (parameters (identifier) @parameter)
-(method method: (identifier) @function)
 (function_definition name: (identifier) @function)
 (object_definition name: (identifier) @type)
-(list_definition name: (identifier) @type)
-
-(global bang: ("!") @variable.builtin)
-(global name: (identifier) @variable.builtin)
-

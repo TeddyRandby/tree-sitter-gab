@@ -1,16 +1,5 @@
-def odd(num, other, another)
-  if not (num is 'number')
-    return null, 'expected a number'
-  end
-  
-  match num % 2
-    0 => return true, null 
-    1 => return false, null
-    ? => return null, null
-end
+def io = "io":require
 
-let i = 0
-loop
-  i:odd:print
-end until (i = i + 1) == 20
+def FILE = "test.txt":io.open('w+')
 
+FILE:io.write('this is a test')

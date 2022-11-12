@@ -31,12 +31,12 @@ module.exports = grammar({
     )),
 
     _chain: $ => prec.right(seq(
-      repeat(
+      field('chain', repeat(
         seq(
           $.identifier, '.',
         ),
-      ),
-      $.identifier,
+      )),
+      field('chain_final', $.identifier),
     )),
 
     _args: $ => choice(
@@ -320,13 +320,13 @@ module.exports = grammar({
     function_definition: $ => seq(
       'def',
       field('name', $.identifier),
-      optional(
+      field('type', optional(
         seq(
           '[',
           $._expression,
           ']',
         )
-      ),
+      )),
       '(',
       optional($.parameters),
       ')',
