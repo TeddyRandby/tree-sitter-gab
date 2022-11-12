@@ -525,6 +525,36 @@
     "fields": {}
   },
   {
+    "type": "chain",
+    "named": true,
+    "fields": {
+      "chain": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": ".",
+            "named": false
+          },
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "final": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "const_definition",
     "named": true,
     "fields": {
@@ -807,45 +837,17 @@
             "named": true
           }
         ]
-      },
-      "chain": {
-        "multiple": true,
-        "required": false,
-        "types": [
-          {
-            "type": ".",
-            "named": false
-          },
-          {
-            "type": "identifier",
-            "named": true
-          }
-        ]
-      },
-      "chain_final": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "identifier",
-            "named": true
-          }
-        ]
-      },
-      "method": {
-        "multiple": true,
-        "required": true,
-        "types": [
-          {
-            "type": ".",
-            "named": false
-          },
-          {
-            "type": "identifier",
-            "named": true
-          }
-        ]
       }
+    },
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "chain",
+          "named": true
+        }
+      ]
     }
   },
   {
@@ -3162,44 +3164,6 @@
           }
         ]
       },
-      "chain": {
-        "multiple": true,
-        "required": false,
-        "types": [
-          {
-            "type": ".",
-            "named": false
-          },
-          {
-            "type": "identifier",
-            "named": true
-          }
-        ]
-      },
-      "chain_final": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "identifier",
-            "named": true
-          }
-        ]
-      },
-      "method": {
-        "multiple": true,
-        "required": true,
-        "types": [
-          {
-            "type": ".",
-            "named": false
-          },
-          {
-            "type": "identifier",
-            "named": true
-          }
-        ]
-      },
       "receiver": {
         "multiple": false,
         "required": true,
@@ -3326,6 +3290,16 @@
           }
         ]
       }
+    },
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "chain",
+          "named": true
+        }
+      ]
     }
   },
   {

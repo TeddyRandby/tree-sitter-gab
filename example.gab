@@ -3,3 +3,7 @@ def io = "io":require
 def FILE = "test.txt":io.open('w+')
 
 FILE:io.write('this is a test')
+
+def add(n)
+  n + 1
+end

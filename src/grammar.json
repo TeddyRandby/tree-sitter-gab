@@ -35,7 +35,7 @@
         ]
       }
     },
-    "_chain": {
+    "chain": {
       "type": "PREC_RIGHT",
       "value": 0,
       "content": {
@@ -63,7 +63,7 @@
           },
           {
             "type": "FIELD",
-            "name": "chain_final",
+            "name": "final",
             "content": {
               "type": "SYMBOL",
               "name": "identifier"
@@ -1020,12 +1020,8 @@
             "value": ":"
           },
           {
-            "type": "FIELD",
-            "name": "method",
-            "content": {
-              "type": "SYMBOL",
-              "name": "_chain"
-            }
+            "type": "SYMBOL",
+            "name": "chain"
           },
           {
             "type": "FIELD",
@@ -1065,12 +1061,8 @@
             "value": ":"
           },
           {
-            "type": "FIELD",
-            "name": "method",
-            "content": {
-              "type": "SYMBOL",
-              "name": "_chain"
-            }
+            "type": "SYMBOL",
+            "name": "chain"
           },
           {
             "type": "FIELD",

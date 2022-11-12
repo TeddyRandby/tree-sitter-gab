@@ -82,9 +82,10 @@
   ":"
 ] @operator
 
-(chain: (identifier) @type)
-(chain_final: (identifier) @function)
-
 (parameters (identifier) @parameter)
+
+(chain chain: (identifier) @type)
+(chain final: (identifier) @function)
+
 (function_definition name: (identifier) @function)
 (object_definition name: (identifier) @type)
