@@ -111,7 +111,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "list_definition"
+          "name": "const_definition"
         }
       ]
     },
@@ -145,7 +145,7 @@
         }
       ]
     },
-    "_object_kvp": {
+    "_record_kvp": {
       "type": "PREC",
       "value": 3,
       "content": {
@@ -281,7 +281,7 @@
           },
           {
             "type": "SYMBOL",
-            "name": "object"
+            "name": "record"
           },
           {
             "type": "SYMBOL",
@@ -337,14 +337,6 @@
           },
           {
             "type": "SYMBOL",
-            "name": "call"
-          },
-          {
-            "type": "SYMBOL",
-            "name": "obj_call"
-          },
-          {
-            "type": "SYMBOL",
             "name": "group"
           },
           {
@@ -381,7 +373,7 @@
           },
           {
             "type": "SYMBOL",
-            "name": "global"
+            "name": "empty_method"
           },
           {
             "type": "SYMBOL",
@@ -393,27 +385,6 @@
           }
         ]
       }
-    },
-    "global": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "FIELD",
-          "name": "bang",
-          "content": {
-            "type": "STRING",
-            "value": "!"
-          }
-        },
-        {
-          "type": "FIELD",
-          "name": "name",
-          "content": {
-            "type": "SYMBOL",
-            "name": "identifier"
-          }
-        }
-      ]
     },
     "unary": {
       "type": "PREC",
@@ -797,7 +768,7 @@
         }
       ]
     },
-    "object": {
+    "record": {
       "type": "SEQ",
       "members": [
         {
@@ -811,7 +782,7 @@
             "members": [
               {
                 "type": "SYMBOL",
-                "name": "_object_kvp"
+                "name": "_record_kvp"
               },
               {
                 "type": "CHOICE",
@@ -967,63 +938,22 @@
         ]
       }
     },
-    "obj_call": {
-      "type": "PREC",
-      "value": 12,
-      "content": {
-        "type": "SEQ",
-        "members": [
-          {
-            "type": "FIELD",
-            "name": "receiver",
-            "content": {
-              "type": "SYMBOL",
-              "name": "_expression"
-            }
-          },
-          {
+    "empty_method": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": ":"
+        },
+        {
+          "type": "FIELD",
+          "name": "method",
+          "content": {
             "type": "SYMBOL",
-            "name": "object"
+            "name": "_expression"
           }
-        ]
-      }
-    },
-    "call": {
-      "type": "PREC",
-      "value": 12,
-      "content": {
-        "type": "SEQ",
-        "members": [
-          {
-            "type": "FIELD",
-            "name": "receiver",
-            "content": {
-              "type": "SYMBOL",
-              "name": "_expression"
-            }
-          },
-          {
-            "type": "STRING",
-            "value": "("
-          },
-          {
-            "type": "CHOICE",
-            "members": [
-              {
-                "type": "SYMBOL",
-                "name": "_tuple"
-              },
-              {
-                "type": "BLANK"
-              }
-            ]
-          },
-          {
-            "type": "STRING",
-            "value": ")"
-          }
-        ]
-      }
+        }
+      ]
     },
     "method": {
       "type": "PREC_LEFT",
@@ -1438,6 +1368,31 @@
           }
         },
         {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "STRING",
+                  "value": "["
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "_expression"
+                },
+                {
+                  "type": "STRING",
+                  "value": "]"
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
           "type": "STRING",
           "value": "("
         },
@@ -1495,12 +1450,12 @@
           "name": "body",
           "content": {
             "type": "SYMBOL",
-            "name": "object"
+            "name": "record"
           }
         }
       ]
     },
-    "list_definition": {
+    "const_definition": {
       "type": "SEQ",
       "members": [
         {
@@ -1516,11 +1471,15 @@
           }
         },
         {
+          "type": "STRING",
+          "value": "="
+        },
+        {
           "type": "FIELD",
-          "name": "body",
+          "name": "value",
           "content": {
             "type": "SYMBOL",
-            "name": "list"
+            "name": "_expression"
           }
         }
       ]

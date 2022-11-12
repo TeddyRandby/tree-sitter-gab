@@ -37,7 +37,6 @@ module.exports = grammar({
         ),
       ),
       $._parameter,
-
     ),
 
     _parameter: $ => choice(
@@ -56,7 +55,7 @@ module.exports = grammar({
     _definition: $ => choice(
       $.function_definition,
       $.object_definition,
-      $.list_definition,
+      $.const_definition,
     ),
 
     _ids: $ => seq(
@@ -71,7 +70,7 @@ module.exports = grammar({
       $.identifier,
     ),
 
-    _object_kvp: $ => prec(3, seq(
+    _record_kvp: $ => prec(3, seq(
       choice(
         field('key', $.identifier),
         $._definition,
@@ -105,7 +104,7 @@ module.exports = grammar({
     _expression: $ => prec(PREC_EXP, choice(
       $._definition,
       $.lambda,
-      $.object,
+      $.record,
       $.list,
       $.for,
       $.loop,
@@ -119,8 +118,6 @@ module.exports = grammar({
       $.null,
       $.property,
       $.rawstring,
-      $.call,
-      $.obj_call,
       $.group,
       $.binary,
       $.unary,
@@ -130,12 +127,10 @@ module.exports = grammar({
       $.assignment,
       $.let,
       $.method,
-      $.global,
+      $.empty_method,
       $.match,
       $.if,
     )),
-
-    global: $ => seq(field('bang', '!'), field('name', $.identifier)),
 
     unary: $ => prec(PREC_UNARY, choice(
       seq('-', $._expression),
@@ -165,10 +160,10 @@ module.exports = grammar({
       prec.left(PREC_EQUALITY, seq($._expression, '>=', $._expression)),
     ),
 
-    object: $ => seq(
+    record: $ => seq(
       '{',
       repeat(
-        seq($._object_kvp,
+        seq($._record_kvp,
           optional(','),
           optional(repeat('\n')),
         )),
@@ -201,17 +196,10 @@ module.exports = grammar({
       optional($._tuple),
     )),
 
-    obj_call: $ => prec(PREC_CALL, seq(
-      field('receiver', $._expression),
-      $.object,
-    )),
-
-    call: $ => prec(PREC_CALL, seq(
-      field('receiver', $._expression),
-      '(',
-      optional($._tuple),
-      ')',
-    )),
+    empty_method: $ => seq(
+      ':',
+      field('method', $._expression),
+    ),
 
     method: $ => prec.left(PREC_METHOD, seq(
       field('receiver', $._expression),
@@ -312,6 +300,13 @@ module.exports = grammar({
     function_definition: $ => seq(
       'def',
       field('name', $.identifier),
+      optional(
+        seq(
+          '[',
+          $._expression,
+          ']',
+        )
+      ),
       '(',
       optional($.parameters),
       ')',
@@ -323,13 +318,14 @@ module.exports = grammar({
     object_definition: $ => seq(
       'def',
       field('name', $.identifier),
-      field('body', $.object),
+      field('body', $.record),
     ),
 
-    list_definition: $ => seq(
+    const_definition: $ => seq(
       'def',
       field('name', $.identifier),
-      field('body', $.list),
+      '=',
+      field('value', $._expression),
     ),
 
     bool: _ => choice('true', 'false'),

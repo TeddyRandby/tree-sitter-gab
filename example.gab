@@ -9,8 +9,8 @@ def odd(num, other, another)
     ? => return null, null
 end
 
-do |arg, another|
-  !print(odd(2))
-  !print(odd(3))
-  !print(odd('hello'))
-end()
+let i = 0
+loop
+  print(i:odd())
+end until (i = i + 1) == 20
+

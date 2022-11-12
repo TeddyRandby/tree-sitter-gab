@@ -24,11 +24,15 @@
             "named": true
           },
           {
-            "type": "call",
+            "type": "comment",
             "named": true
           },
           {
-            "type": "comment",
+            "type": "const_definition",
+            "named": true
+          },
+          {
+            "type": "empty_method",
             "named": true
           },
           {
@@ -37,10 +41,6 @@
           },
           {
             "type": "function_definition",
-            "named": true
-          },
-          {
-            "type": "global",
             "named": true
           },
           {
@@ -76,10 +76,6 @@
             "named": true
           },
           {
-            "type": "list_definition",
-            "named": true
-          },
-          {
             "type": "loop",
             "named": true
           },
@@ -100,14 +96,6 @@
             "named": true
           },
           {
-            "type": "obj_call",
-            "named": true
-          },
-          {
-            "type": "object",
-            "named": true
-          },
-          {
             "type": "object_definition",
             "named": true
           },
@@ -121,6 +109,10 @@
           },
           {
             "type": "rawstring",
+            "named": true
+          },
+          {
+            "type": "record",
             "named": true
           },
           {
@@ -158,11 +150,15 @@
             "named": true
           },
           {
-            "type": "call",
+            "type": "comment",
             "named": true
           },
           {
-            "type": "comment",
+            "type": "const_definition",
+            "named": true
+          },
+          {
+            "type": "empty_method",
             "named": true
           },
           {
@@ -171,10 +167,6 @@
           },
           {
             "type": "function_definition",
-            "named": true
-          },
-          {
-            "type": "global",
             "named": true
           },
           {
@@ -210,10 +202,6 @@
             "named": true
           },
           {
-            "type": "list_definition",
-            "named": true
-          },
-          {
             "type": "loop",
             "named": true
           },
@@ -234,14 +222,6 @@
             "named": true
           },
           {
-            "type": "obj_call",
-            "named": true
-          },
-          {
-            "type": "object",
-            "named": true
-          },
-          {
             "type": "object_definition",
             "named": true
           },
@@ -255,6 +235,10 @@
           },
           {
             "type": "rawstring",
+            "named": true
+          },
+          {
+            "type": "record",
             "named": true
           },
           {
@@ -298,11 +282,15 @@
           "named": true
         },
         {
-          "type": "call",
+          "type": "comment",
           "named": true
         },
         {
-          "type": "comment",
+          "type": "const_definition",
+          "named": true
+        },
+        {
+          "type": "empty_method",
           "named": true
         },
         {
@@ -311,10 +299,6 @@
         },
         {
           "type": "function_definition",
-          "named": true
-        },
-        {
-          "type": "global",
           "named": true
         },
         {
@@ -350,10 +334,6 @@
           "named": true
         },
         {
-          "type": "list_definition",
-          "named": true
-        },
-        {
           "type": "loop",
           "named": true
         },
@@ -374,14 +354,6 @@
           "named": true
         },
         {
-          "type": "obj_call",
-          "named": true
-        },
-        {
-          "type": "object",
-          "named": true
-        },
-        {
           "type": "object_definition",
           "named": true
         },
@@ -395,6 +367,10 @@
         },
         {
           "type": "rawstring",
+          "named": true
+        },
+        {
+          "type": "record",
           "named": true
         },
         {
@@ -437,11 +413,15 @@
           "named": true
         },
         {
-          "type": "call",
+          "type": "comment",
           "named": true
         },
         {
-          "type": "comment",
+          "type": "const_definition",
+          "named": true
+        },
+        {
+          "type": "empty_method",
           "named": true
         },
         {
@@ -450,10 +430,6 @@
         },
         {
           "type": "function_definition",
-          "named": true
-        },
-        {
-          "type": "global",
           "named": true
         },
         {
@@ -489,10 +465,6 @@
           "named": true
         },
         {
-          "type": "list_definition",
-          "named": true
-        },
-        {
           "type": "loop",
           "named": true
         },
@@ -513,14 +485,6 @@
           "named": true
         },
         {
-          "type": "obj_call",
-          "named": true
-        },
-        {
-          "type": "object",
-          "named": true
-        },
-        {
           "type": "object_definition",
           "named": true
         },
@@ -534,6 +498,10 @@
         },
         {
           "type": "rawstring",
+          "named": true
+        },
+        {
+          "type": "record",
           "named": true
         },
         {
@@ -557,10 +525,20 @@
     "fields": {}
   },
   {
-    "type": "call",
+    "type": "const_definition",
     "named": true,
     "fields": {
-      "receiver": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "value": {
         "multiple": false,
         "required": true,
         "types": [
@@ -581,11 +559,15 @@
             "named": true
           },
           {
-            "type": "call",
+            "type": "comment",
             "named": true
           },
           {
-            "type": "comment",
+            "type": "const_definition",
+            "named": true
+          },
+          {
+            "type": "empty_method",
             "named": true
           },
           {
@@ -594,10 +576,6 @@
           },
           {
             "type": "function_definition",
-            "named": true
-          },
-          {
-            "type": "global",
             "named": true
           },
           {
@@ -633,7 +611,135 @@
             "named": true
           },
           {
-            "type": "list_definition",
+            "type": "loop",
+            "named": true
+          },
+          {
+            "type": "match",
+            "named": true
+          },
+          {
+            "type": "method",
+            "named": true
+          },
+          {
+            "type": "null",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "object_definition",
+            "named": true
+          },
+          {
+            "type": "post",
+            "named": true
+          },
+          {
+            "type": "property",
+            "named": true
+          },
+          {
+            "type": "rawstring",
+            "named": true
+          },
+          {
+            "type": "record",
+            "named": true
+          },
+          {
+            "type": "return",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "unary",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "empty_method",
+    "named": true,
+    "fields": {
+      "method": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "assignment",
+            "named": true
+          },
+          {
+            "type": "binary",
+            "named": true
+          },
+          {
+            "type": "block",
+            "named": true
+          },
+          {
+            "type": "bool",
+            "named": true
+          },
+          {
+            "type": "comment",
+            "named": true
+          },
+          {
+            "type": "const_definition",
+            "named": true
+          },
+          {
+            "type": "empty_method",
+            "named": true
+          },
+          {
+            "type": "for",
+            "named": true
+          },
+          {
+            "type": "function_definition",
+            "named": true
+          },
+          {
+            "type": "group",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "if",
+            "named": true
+          },
+          {
+            "type": "index",
+            "named": true
+          },
+          {
+            "type": "interpstring",
+            "named": true
+          },
+          {
+            "type": "lambda",
+            "named": true
+          },
+          {
+            "type": "let",
+            "named": true
+          },
+          {
+            "type": "list",
             "named": true
           },
           {
@@ -657,14 +763,6 @@
             "named": true
           },
           {
-            "type": "obj_call",
-            "named": true
-          },
-          {
-            "type": "object",
-            "named": true
-          },
-          {
             "type": "object_definition",
             "named": true
           },
@@ -681,6 +779,10 @@
             "named": true
           },
           {
+            "type": "record",
+            "named": true
+          },
+          {
             "type": "return",
             "named": true
           },
@@ -694,140 +796,6 @@
           }
         ]
       }
-    },
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "assignment",
-          "named": true
-        },
-        {
-          "type": "binary",
-          "named": true
-        },
-        {
-          "type": "block",
-          "named": true
-        },
-        {
-          "type": "bool",
-          "named": true
-        },
-        {
-          "type": "call",
-          "named": true
-        },
-        {
-          "type": "comment",
-          "named": true
-        },
-        {
-          "type": "for",
-          "named": true
-        },
-        {
-          "type": "function_definition",
-          "named": true
-        },
-        {
-          "type": "global",
-          "named": true
-        },
-        {
-          "type": "group",
-          "named": true
-        },
-        {
-          "type": "identifier",
-          "named": true
-        },
-        {
-          "type": "if",
-          "named": true
-        },
-        {
-          "type": "index",
-          "named": true
-        },
-        {
-          "type": "interpstring",
-          "named": true
-        },
-        {
-          "type": "lambda",
-          "named": true
-        },
-        {
-          "type": "let",
-          "named": true
-        },
-        {
-          "type": "list",
-          "named": true
-        },
-        {
-          "type": "list_definition",
-          "named": true
-        },
-        {
-          "type": "loop",
-          "named": true
-        },
-        {
-          "type": "match",
-          "named": true
-        },
-        {
-          "type": "method",
-          "named": true
-        },
-        {
-          "type": "null",
-          "named": true
-        },
-        {
-          "type": "number",
-          "named": true
-        },
-        {
-          "type": "obj_call",
-          "named": true
-        },
-        {
-          "type": "object",
-          "named": true
-        },
-        {
-          "type": "object_definition",
-          "named": true
-        },
-        {
-          "type": "post",
-          "named": true
-        },
-        {
-          "type": "property",
-          "named": true
-        },
-        {
-          "type": "rawstring",
-          "named": true
-        },
-        {
-          "type": "return",
-          "named": true
-        },
-        {
-          "type": "string",
-          "named": true
-        },
-        {
-          "type": "unary",
-          "named": true
-        }
-      ]
     }
   },
   {
@@ -859,11 +827,15 @@
             "named": true
           },
           {
-            "type": "call",
+            "type": "comment",
             "named": true
           },
           {
-            "type": "comment",
+            "type": "const_definition",
+            "named": true
+          },
+          {
+            "type": "empty_method",
             "named": true
           },
           {
@@ -872,10 +844,6 @@
           },
           {
             "type": "function_definition",
-            "named": true
-          },
-          {
-            "type": "global",
             "named": true
           },
           {
@@ -911,10 +879,6 @@
             "named": true
           },
           {
-            "type": "list_definition",
-            "named": true
-          },
-          {
             "type": "loop",
             "named": true
           },
@@ -935,14 +899,6 @@
             "named": true
           },
           {
-            "type": "obj_call",
-            "named": true
-          },
-          {
-            "type": "object",
-            "named": true
-          },
-          {
             "type": "object_definition",
             "named": true
           },
@@ -956,6 +912,10 @@
           },
           {
             "type": "rawstring",
+            "named": true
+          },
+          {
+            "type": "record",
             "named": true
           },
           {
@@ -1008,11 +968,15 @@
           "named": true
         },
         {
-          "type": "call",
+          "type": "comment",
           "named": true
         },
         {
-          "type": "comment",
+          "type": "const_definition",
+          "named": true
+        },
+        {
+          "type": "empty_method",
           "named": true
         },
         {
@@ -1021,10 +985,6 @@
         },
         {
           "type": "function_definition",
-          "named": true
-        },
-        {
-          "type": "global",
           "named": true
         },
         {
@@ -1060,10 +1020,6 @@
           "named": true
         },
         {
-          "type": "list_definition",
-          "named": true
-        },
-        {
           "type": "loop",
           "named": true
         },
@@ -1084,14 +1040,6 @@
           "named": true
         },
         {
-          "type": "obj_call",
-          "named": true
-        },
-        {
-          "type": "object",
-          "named": true
-        },
-        {
           "type": "object_definition",
           "named": true
         },
@@ -1105,6 +1053,10 @@
         },
         {
           "type": "rawstring",
+          "named": true
+        },
+        {
+          "type": "record",
           "named": true
         },
         {
@@ -1151,11 +1103,15 @@
             "named": true
           },
           {
-            "type": "call",
+            "type": "comment",
             "named": true
           },
           {
-            "type": "comment",
+            "type": "const_definition",
+            "named": true
+          },
+          {
+            "type": "empty_method",
             "named": true
           },
           {
@@ -1164,10 +1120,6 @@
           },
           {
             "type": "function_definition",
-            "named": true
-          },
-          {
-            "type": "global",
             "named": true
           },
           {
@@ -1203,10 +1155,6 @@
             "named": true
           },
           {
-            "type": "list_definition",
-            "named": true
-          },
-          {
             "type": "loop",
             "named": true
           },
@@ -1227,14 +1175,6 @@
             "named": true
           },
           {
-            "type": "obj_call",
-            "named": true
-          },
-          {
-            "type": "object",
-            "named": true
-          },
-          {
             "type": "object_definition",
             "named": true
           },
@@ -1248,6 +1188,10 @@
           },
           {
             "type": "rawstring",
+            "named": true
+          },
+          {
+            "type": "record",
             "named": true
           },
           {
@@ -1276,49 +1220,8 @@
       }
     },
     "children": {
-      "multiple": false,
+      "multiple": true,
       "required": false,
-      "types": [
-        {
-          "type": "parameters",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "global",
-    "named": true,
-    "fields": {
-      "bang": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "!",
-            "named": false
-          }
-        ]
-      },
-      "name": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "identifier",
-            "named": true
-          }
-        ]
-      }
-    }
-  },
-  {
-    "type": "group",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": false,
-      "required": true,
       "types": [
         {
           "type": "assignment",
@@ -1337,11 +1240,15 @@
           "named": true
         },
         {
-          "type": "call",
+          "type": "comment",
           "named": true
         },
         {
-          "type": "comment",
+          "type": "const_definition",
+          "named": true
+        },
+        {
+          "type": "empty_method",
           "named": true
         },
         {
@@ -1350,10 +1257,6 @@
         },
         {
           "type": "function_definition",
-          "named": true
-        },
-        {
-          "type": "global",
           "named": true
         },
         {
@@ -1389,7 +1292,138 @@
           "named": true
         },
         {
-          "type": "list_definition",
+          "type": "loop",
+          "named": true
+        },
+        {
+          "type": "match",
+          "named": true
+        },
+        {
+          "type": "method",
+          "named": true
+        },
+        {
+          "type": "null",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "object_definition",
+          "named": true
+        },
+        {
+          "type": "parameters",
+          "named": true
+        },
+        {
+          "type": "post",
+          "named": true
+        },
+        {
+          "type": "property",
+          "named": true
+        },
+        {
+          "type": "rawstring",
+          "named": true
+        },
+        {
+          "type": "record",
+          "named": true
+        },
+        {
+          "type": "return",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "unary",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "group",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "assignment",
+          "named": true
+        },
+        {
+          "type": "binary",
+          "named": true
+        },
+        {
+          "type": "block",
+          "named": true
+        },
+        {
+          "type": "bool",
+          "named": true
+        },
+        {
+          "type": "comment",
+          "named": true
+        },
+        {
+          "type": "const_definition",
+          "named": true
+        },
+        {
+          "type": "empty_method",
+          "named": true
+        },
+        {
+          "type": "for",
+          "named": true
+        },
+        {
+          "type": "function_definition",
+          "named": true
+        },
+        {
+          "type": "group",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "if",
+          "named": true
+        },
+        {
+          "type": "index",
+          "named": true
+        },
+        {
+          "type": "interpstring",
+          "named": true
+        },
+        {
+          "type": "lambda",
+          "named": true
+        },
+        {
+          "type": "let",
+          "named": true
+        },
+        {
+          "type": "list",
           "named": true
         },
         {
@@ -1413,14 +1447,6 @@
           "named": true
         },
         {
-          "type": "obj_call",
-          "named": true
-        },
-        {
-          "type": "object",
-          "named": true
-        },
-        {
           "type": "object_definition",
           "named": true
         },
@@ -1434,6 +1460,10 @@
         },
         {
           "type": "rawstring",
+          "named": true
+        },
+        {
+          "type": "record",
           "named": true
         },
         {
@@ -1476,11 +1506,15 @@
           "named": true
         },
         {
-          "type": "call",
+          "type": "comment",
           "named": true
         },
         {
-          "type": "comment",
+          "type": "const_definition",
+          "named": true
+        },
+        {
+          "type": "empty_method",
           "named": true
         },
         {
@@ -1489,10 +1523,6 @@
         },
         {
           "type": "function_definition",
-          "named": true
-        },
-        {
-          "type": "global",
           "named": true
         },
         {
@@ -1528,10 +1558,6 @@
           "named": true
         },
         {
-          "type": "list_definition",
-          "named": true
-        },
-        {
           "type": "loop",
           "named": true
         },
@@ -1552,14 +1578,6 @@
           "named": true
         },
         {
-          "type": "obj_call",
-          "named": true
-        },
-        {
-          "type": "object",
-          "named": true
-        },
-        {
           "type": "object_definition",
           "named": true
         },
@@ -1573,6 +1591,10 @@
         },
         {
           "type": "rawstring",
+          "named": true
+        },
+        {
+          "type": "record",
           "named": true
         },
         {
@@ -1615,11 +1637,15 @@
             "named": true
           },
           {
-            "type": "call",
+            "type": "comment",
             "named": true
           },
           {
-            "type": "comment",
+            "type": "const_definition",
+            "named": true
+          },
+          {
+            "type": "empty_method",
             "named": true
           },
           {
@@ -1628,10 +1654,6 @@
           },
           {
             "type": "function_definition",
-            "named": true
-          },
-          {
-            "type": "global",
             "named": true
           },
           {
@@ -1667,10 +1689,6 @@
             "named": true
           },
           {
-            "type": "list_definition",
-            "named": true
-          },
-          {
             "type": "loop",
             "named": true
           },
@@ -1691,14 +1709,6 @@
             "named": true
           },
           {
-            "type": "obj_call",
-            "named": true
-          },
-          {
-            "type": "object",
-            "named": true
-          },
-          {
             "type": "object_definition",
             "named": true
           },
@@ -1712,6 +1722,10 @@
           },
           {
             "type": "rawstring",
+            "named": true
+          },
+          {
+            "type": "record",
             "named": true
           },
           {
@@ -1749,11 +1763,15 @@
             "named": true
           },
           {
-            "type": "call",
+            "type": "comment",
             "named": true
           },
           {
-            "type": "comment",
+            "type": "const_definition",
+            "named": true
+          },
+          {
+            "type": "empty_method",
             "named": true
           },
           {
@@ -1762,10 +1780,6 @@
           },
           {
             "type": "function_definition",
-            "named": true
-          },
-          {
-            "type": "global",
             "named": true
           },
           {
@@ -1801,10 +1815,6 @@
             "named": true
           },
           {
-            "type": "list_definition",
-            "named": true
-          },
-          {
             "type": "loop",
             "named": true
           },
@@ -1825,14 +1835,6 @@
             "named": true
           },
           {
-            "type": "obj_call",
-            "named": true
-          },
-          {
-            "type": "object",
-            "named": true
-          },
-          {
             "type": "object_definition",
             "named": true
           },
@@ -1846,6 +1848,10 @@
           },
           {
             "type": "rawstring",
+            "named": true
+          },
+          {
+            "type": "record",
             "named": true
           },
           {
@@ -1889,11 +1895,15 @@
           "named": true
         },
         {
-          "type": "call",
+          "type": "comment",
           "named": true
         },
         {
-          "type": "comment",
+          "type": "const_definition",
+          "named": true
+        },
+        {
+          "type": "empty_method",
           "named": true
         },
         {
@@ -1902,10 +1912,6 @@
         },
         {
           "type": "function_definition",
-          "named": true
-        },
-        {
-          "type": "global",
           "named": true
         },
         {
@@ -1941,10 +1947,6 @@
           "named": true
         },
         {
-          "type": "list_definition",
-          "named": true
-        },
-        {
           "type": "loop",
           "named": true
         },
@@ -1965,14 +1967,6 @@
           "named": true
         },
         {
-          "type": "obj_call",
-          "named": true
-        },
-        {
-          "type": "object",
-          "named": true
-        },
-        {
           "type": "object_definition",
           "named": true
         },
@@ -1986,6 +1980,10 @@
         },
         {
           "type": "rawstring",
+          "named": true
+        },
+        {
+          "type": "record",
           "named": true
         },
         {
@@ -2032,11 +2030,15 @@
             "named": true
           },
           {
-            "type": "call",
+            "type": "comment",
             "named": true
           },
           {
-            "type": "comment",
+            "type": "const_definition",
+            "named": true
+          },
+          {
+            "type": "empty_method",
             "named": true
           },
           {
@@ -2045,10 +2047,6 @@
           },
           {
             "type": "function_definition",
-            "named": true
-          },
-          {
-            "type": "global",
             "named": true
           },
           {
@@ -2084,10 +2082,6 @@
             "named": true
           },
           {
-            "type": "list_definition",
-            "named": true
-          },
-          {
             "type": "loop",
             "named": true
           },
@@ -2108,14 +2102,6 @@
             "named": true
           },
           {
-            "type": "obj_call",
-            "named": true
-          },
-          {
-            "type": "object",
-            "named": true
-          },
-          {
             "type": "object_definition",
             "named": true
           },
@@ -2129,6 +2115,10 @@
           },
           {
             "type": "rawstring",
+            "named": true
+          },
+          {
+            "type": "record",
             "named": true
           },
           {
@@ -2200,11 +2190,15 @@
             "named": true
           },
           {
-            "type": "call",
+            "type": "comment",
             "named": true
           },
           {
-            "type": "comment",
+            "type": "const_definition",
+            "named": true
+          },
+          {
+            "type": "empty_method",
             "named": true
           },
           {
@@ -2213,10 +2207,6 @@
           },
           {
             "type": "function_definition",
-            "named": true
-          },
-          {
-            "type": "global",
             "named": true
           },
           {
@@ -2252,10 +2242,6 @@
             "named": true
           },
           {
-            "type": "list_definition",
-            "named": true
-          },
-          {
             "type": "loop",
             "named": true
           },
@@ -2276,14 +2262,6 @@
             "named": true
           },
           {
-            "type": "obj_call",
-            "named": true
-          },
-          {
-            "type": "object",
-            "named": true
-          },
-          {
             "type": "object_definition",
             "named": true
           },
@@ -2297,6 +2275,10 @@
           },
           {
             "type": "rawstring",
+            "named": true
+          },
+          {
+            "type": "record",
             "named": true
           },
           {
@@ -2340,11 +2322,15 @@
           "named": true
         },
         {
-          "type": "call",
+          "type": "comment",
           "named": true
         },
         {
-          "type": "comment",
+          "type": "const_definition",
+          "named": true
+        },
+        {
+          "type": "empty_method",
           "named": true
         },
         {
@@ -2353,10 +2339,6 @@
         },
         {
           "type": "function_definition",
-          "named": true
-        },
-        {
-          "type": "global",
           "named": true
         },
         {
@@ -2392,10 +2374,6 @@
           "named": true
         },
         {
-          "type": "list_definition",
-          "named": true
-        },
-        {
           "type": "loop",
           "named": true
         },
@@ -2416,14 +2394,6 @@
           "named": true
         },
         {
-          "type": "obj_call",
-          "named": true
-        },
-        {
-          "type": "object",
-          "named": true
-        },
-        {
           "type": "object_definition",
           "named": true
         },
@@ -2440,6 +2410,10 @@
           "named": true
         },
         {
+          "type": "record",
+          "named": true
+        },
+        {
           "type": "return",
           "named": true
         },
@@ -2452,32 +2426,6 @@
           "named": true
         }
       ]
-    }
-  },
-  {
-    "type": "list_definition",
-    "named": true,
-    "fields": {
-      "body": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "list",
-            "named": true
-          }
-        ]
-      },
-      "name": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "identifier",
-            "named": true
-          }
-        ]
-      }
     }
   },
   {
@@ -2509,11 +2457,15 @@
             "named": true
           },
           {
-            "type": "call",
+            "type": "comment",
             "named": true
           },
           {
-            "type": "comment",
+            "type": "const_definition",
+            "named": true
+          },
+          {
+            "type": "empty_method",
             "named": true
           },
           {
@@ -2522,10 +2474,6 @@
           },
           {
             "type": "function_definition",
-            "named": true
-          },
-          {
-            "type": "global",
             "named": true
           },
           {
@@ -2561,10 +2509,6 @@
             "named": true
           },
           {
-            "type": "list_definition",
-            "named": true
-          },
-          {
             "type": "loop",
             "named": true
           },
@@ -2585,14 +2529,6 @@
             "named": true
           },
           {
-            "type": "obj_call",
-            "named": true
-          },
-          {
-            "type": "object",
-            "named": true
-          },
-          {
             "type": "object_definition",
             "named": true
           },
@@ -2606,6 +2542,10 @@
           },
           {
             "type": "rawstring",
+            "named": true
+          },
+          {
+            "type": "record",
             "named": true
           },
           {
@@ -2644,11 +2584,15 @@
           "named": true
         },
         {
-          "type": "call",
+          "type": "comment",
           "named": true
         },
         {
-          "type": "comment",
+          "type": "const_definition",
+          "named": true
+        },
+        {
+          "type": "empty_method",
           "named": true
         },
         {
@@ -2657,10 +2601,6 @@
         },
         {
           "type": "function_definition",
-          "named": true
-        },
-        {
-          "type": "global",
           "named": true
         },
         {
@@ -2696,10 +2636,6 @@
           "named": true
         },
         {
-          "type": "list_definition",
-          "named": true
-        },
-        {
           "type": "loop",
           "named": true
         },
@@ -2720,14 +2656,6 @@
           "named": true
         },
         {
-          "type": "obj_call",
-          "named": true
-        },
-        {
-          "type": "object",
-          "named": true
-        },
-        {
           "type": "object_definition",
           "named": true
         },
@@ -2741,6 +2669,10 @@
         },
         {
           "type": "rawstring",
+          "named": true
+        },
+        {
+          "type": "record",
           "named": true
         },
         {
@@ -2791,11 +2723,15 @@
             "named": true
           },
           {
-            "type": "call",
+            "type": "comment",
             "named": true
           },
           {
-            "type": "comment",
+            "type": "const_definition",
+            "named": true
+          },
+          {
+            "type": "empty_method",
             "named": true
           },
           {
@@ -2804,10 +2740,6 @@
           },
           {
             "type": "function_definition",
-            "named": true
-          },
-          {
-            "type": "global",
             "named": true
           },
           {
@@ -2843,10 +2775,6 @@
             "named": true
           },
           {
-            "type": "list_definition",
-            "named": true
-          },
-          {
             "type": "loop",
             "named": true
           },
@@ -2867,14 +2795,6 @@
             "named": true
           },
           {
-            "type": "obj_call",
-            "named": true
-          },
-          {
-            "type": "object",
-            "named": true
-          },
-          {
             "type": "object_definition",
             "named": true
           },
@@ -2888,6 +2808,10 @@
           },
           {
             "type": "rawstring",
+            "named": true
+          },
+          {
+            "type": "record",
             "named": true
           },
           {
@@ -2926,11 +2850,15 @@
           "named": true
         },
         {
-          "type": "call",
+          "type": "comment",
           "named": true
         },
         {
-          "type": "comment",
+          "type": "const_definition",
+          "named": true
+        },
+        {
+          "type": "empty_method",
           "named": true
         },
         {
@@ -2939,10 +2867,6 @@
         },
         {
           "type": "function_definition",
-          "named": true
-        },
-        {
-          "type": "global",
           "named": true
         },
         {
@@ -2978,10 +2902,6 @@
           "named": true
         },
         {
-          "type": "list_definition",
-          "named": true
-        },
-        {
           "type": "loop",
           "named": true
         },
@@ -3002,14 +2922,6 @@
           "named": true
         },
         {
-          "type": "obj_call",
-          "named": true
-        },
-        {
-          "type": "object",
-          "named": true
-        },
-        {
           "type": "object_definition",
           "named": true
         },
@@ -3023,6 +2935,10 @@
         },
         {
           "type": "rawstring",
+          "named": true
+        },
+        {
+          "type": "record",
           "named": true
         },
         {
@@ -3065,11 +2981,15 @@
             "named": true
           },
           {
-            "type": "call",
+            "type": "comment",
             "named": true
           },
           {
-            "type": "comment",
+            "type": "const_definition",
+            "named": true
+          },
+          {
+            "type": "empty_method",
             "named": true
           },
           {
@@ -3078,10 +2998,6 @@
           },
           {
             "type": "function_definition",
-            "named": true
-          },
-          {
-            "type": "global",
             "named": true
           },
           {
@@ -3117,10 +3033,6 @@
             "named": true
           },
           {
-            "type": "list_definition",
-            "named": true
-          },
-          {
             "type": "loop",
             "named": true
           },
@@ -3141,14 +3053,6 @@
             "named": true
           },
           {
-            "type": "obj_call",
-            "named": true
-          },
-          {
-            "type": "object",
-            "named": true
-          },
-          {
             "type": "object_definition",
             "named": true
           },
@@ -3162,6 +3066,10 @@
           },
           {
             "type": "rawstring",
+            "named": true
+          },
+          {
+            "type": "record",
             "named": true
           },
           {
@@ -3199,11 +3107,15 @@
             "named": true
           },
           {
-            "type": "call",
+            "type": "comment",
             "named": true
           },
           {
-            "type": "comment",
+            "type": "const_definition",
+            "named": true
+          },
+          {
+            "type": "empty_method",
             "named": true
           },
           {
@@ -3212,10 +3124,6 @@
           },
           {
             "type": "function_definition",
-            "named": true
-          },
-          {
-            "type": "global",
             "named": true
           },
           {
@@ -3251,10 +3159,6 @@
             "named": true
           },
           {
-            "type": "list_definition",
-            "named": true
-          },
-          {
             "type": "loop",
             "named": true
           },
@@ -3275,14 +3179,6 @@
             "named": true
           },
           {
-            "type": "obj_call",
-            "named": true
-          },
-          {
-            "type": "object",
-            "named": true
-          },
-          {
             "type": "object_definition",
             "named": true
           },
@@ -3296,6 +3192,10 @@
           },
           {
             "type": "rawstring",
+            "named": true
+          },
+          {
+            "type": "record",
             "named": true
           },
           {
@@ -3312,456 +3212,6 @@
           }
         ]
       }
-    }
-  },
-  {
-    "type": "obj_call",
-    "named": true,
-    "fields": {
-      "receiver": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "assignment",
-            "named": true
-          },
-          {
-            "type": "binary",
-            "named": true
-          },
-          {
-            "type": "block",
-            "named": true
-          },
-          {
-            "type": "bool",
-            "named": true
-          },
-          {
-            "type": "call",
-            "named": true
-          },
-          {
-            "type": "comment",
-            "named": true
-          },
-          {
-            "type": "for",
-            "named": true
-          },
-          {
-            "type": "function_definition",
-            "named": true
-          },
-          {
-            "type": "global",
-            "named": true
-          },
-          {
-            "type": "group",
-            "named": true
-          },
-          {
-            "type": "identifier",
-            "named": true
-          },
-          {
-            "type": "if",
-            "named": true
-          },
-          {
-            "type": "index",
-            "named": true
-          },
-          {
-            "type": "interpstring",
-            "named": true
-          },
-          {
-            "type": "lambda",
-            "named": true
-          },
-          {
-            "type": "let",
-            "named": true
-          },
-          {
-            "type": "list",
-            "named": true
-          },
-          {
-            "type": "list_definition",
-            "named": true
-          },
-          {
-            "type": "loop",
-            "named": true
-          },
-          {
-            "type": "match",
-            "named": true
-          },
-          {
-            "type": "method",
-            "named": true
-          },
-          {
-            "type": "null",
-            "named": true
-          },
-          {
-            "type": "number",
-            "named": true
-          },
-          {
-            "type": "obj_call",
-            "named": true
-          },
-          {
-            "type": "object",
-            "named": true
-          },
-          {
-            "type": "object_definition",
-            "named": true
-          },
-          {
-            "type": "post",
-            "named": true
-          },
-          {
-            "type": "property",
-            "named": true
-          },
-          {
-            "type": "rawstring",
-            "named": true
-          },
-          {
-            "type": "return",
-            "named": true
-          },
-          {
-            "type": "string",
-            "named": true
-          },
-          {
-            "type": "unary",
-            "named": true
-          }
-        ]
-      }
-    },
-    "children": {
-      "multiple": false,
-      "required": true,
-      "types": [
-        {
-          "type": "object",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "object",
-    "named": true,
-    "fields": {
-      "key": {
-        "multiple": true,
-        "required": false,
-        "types": [
-          {
-            "type": "[",
-            "named": false
-          },
-          {
-            "type": "]",
-            "named": false
-          },
-          {
-            "type": "assignment",
-            "named": true
-          },
-          {
-            "type": "binary",
-            "named": true
-          },
-          {
-            "type": "block",
-            "named": true
-          },
-          {
-            "type": "bool",
-            "named": true
-          },
-          {
-            "type": "call",
-            "named": true
-          },
-          {
-            "type": "comment",
-            "named": true
-          },
-          {
-            "type": "for",
-            "named": true
-          },
-          {
-            "type": "function_definition",
-            "named": true
-          },
-          {
-            "type": "global",
-            "named": true
-          },
-          {
-            "type": "group",
-            "named": true
-          },
-          {
-            "type": "identifier",
-            "named": true
-          },
-          {
-            "type": "if",
-            "named": true
-          },
-          {
-            "type": "index",
-            "named": true
-          },
-          {
-            "type": "interpstring",
-            "named": true
-          },
-          {
-            "type": "lambda",
-            "named": true
-          },
-          {
-            "type": "let",
-            "named": true
-          },
-          {
-            "type": "list",
-            "named": true
-          },
-          {
-            "type": "list_definition",
-            "named": true
-          },
-          {
-            "type": "loop",
-            "named": true
-          },
-          {
-            "type": "match",
-            "named": true
-          },
-          {
-            "type": "method",
-            "named": true
-          },
-          {
-            "type": "null",
-            "named": true
-          },
-          {
-            "type": "number",
-            "named": true
-          },
-          {
-            "type": "obj_call",
-            "named": true
-          },
-          {
-            "type": "object",
-            "named": true
-          },
-          {
-            "type": "object_definition",
-            "named": true
-          },
-          {
-            "type": "post",
-            "named": true
-          },
-          {
-            "type": "property",
-            "named": true
-          },
-          {
-            "type": "rawstring",
-            "named": true
-          },
-          {
-            "type": "return",
-            "named": true
-          },
-          {
-            "type": "string",
-            "named": true
-          },
-          {
-            "type": "unary",
-            "named": true
-          }
-        ]
-      },
-      "value": {
-        "multiple": true,
-        "required": false,
-        "types": [
-          {
-            "type": "assignment",
-            "named": true
-          },
-          {
-            "type": "binary",
-            "named": true
-          },
-          {
-            "type": "block",
-            "named": true
-          },
-          {
-            "type": "bool",
-            "named": true
-          },
-          {
-            "type": "call",
-            "named": true
-          },
-          {
-            "type": "comment",
-            "named": true
-          },
-          {
-            "type": "for",
-            "named": true
-          },
-          {
-            "type": "function_definition",
-            "named": true
-          },
-          {
-            "type": "global",
-            "named": true
-          },
-          {
-            "type": "group",
-            "named": true
-          },
-          {
-            "type": "identifier",
-            "named": true
-          },
-          {
-            "type": "if",
-            "named": true
-          },
-          {
-            "type": "index",
-            "named": true
-          },
-          {
-            "type": "interpstring",
-            "named": true
-          },
-          {
-            "type": "lambda",
-            "named": true
-          },
-          {
-            "type": "let",
-            "named": true
-          },
-          {
-            "type": "list",
-            "named": true
-          },
-          {
-            "type": "list_definition",
-            "named": true
-          },
-          {
-            "type": "loop",
-            "named": true
-          },
-          {
-            "type": "match",
-            "named": true
-          },
-          {
-            "type": "method",
-            "named": true
-          },
-          {
-            "type": "null",
-            "named": true
-          },
-          {
-            "type": "number",
-            "named": true
-          },
-          {
-            "type": "obj_call",
-            "named": true
-          },
-          {
-            "type": "object",
-            "named": true
-          },
-          {
-            "type": "object_definition",
-            "named": true
-          },
-          {
-            "type": "post",
-            "named": true
-          },
-          {
-            "type": "property",
-            "named": true
-          },
-          {
-            "type": "rawstring",
-            "named": true
-          },
-          {
-            "type": "return",
-            "named": true
-          },
-          {
-            "type": "string",
-            "named": true
-          },
-          {
-            "type": "unary",
-            "named": true
-          }
-        ]
-      }
-    },
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "function_definition",
-          "named": true
-        },
-        {
-          "type": "list_definition",
-          "named": true
-        },
-        {
-          "type": "object_definition",
-          "named": true
-        }
-      ]
     }
   },
   {
@@ -3773,7 +3223,7 @@
         "required": true,
         "types": [
           {
-            "type": "object",
+            "type": "record",
             "named": true
           }
         ]
@@ -3830,11 +3280,15 @@
           "named": true
         },
         {
-          "type": "call",
+          "type": "comment",
           "named": true
         },
         {
-          "type": "comment",
+          "type": "const_definition",
+          "named": true
+        },
+        {
+          "type": "empty_method",
           "named": true
         },
         {
@@ -3843,10 +3297,6 @@
         },
         {
           "type": "function_definition",
-          "named": true
-        },
-        {
-          "type": "global",
           "named": true
         },
         {
@@ -3882,10 +3332,6 @@
           "named": true
         },
         {
-          "type": "list_definition",
-          "named": true
-        },
-        {
           "type": "loop",
           "named": true
         },
@@ -3906,14 +3352,6 @@
           "named": true
         },
         {
-          "type": "obj_call",
-          "named": true
-        },
-        {
-          "type": "object",
-          "named": true
-        },
-        {
           "type": "object_definition",
           "named": true
         },
@@ -3927,6 +3365,10 @@
         },
         {
           "type": "rawstring",
+          "named": true
+        },
+        {
+          "type": "record",
           "named": true
         },
         {
@@ -3979,11 +3421,15 @@
             "named": true
           },
           {
-            "type": "call",
+            "type": "comment",
             "named": true
           },
           {
-            "type": "comment",
+            "type": "const_definition",
+            "named": true
+          },
+          {
+            "type": "empty_method",
             "named": true
           },
           {
@@ -3992,10 +3438,6 @@
           },
           {
             "type": "function_definition",
-            "named": true
-          },
-          {
-            "type": "global",
             "named": true
           },
           {
@@ -4031,7 +3473,143 @@
             "named": true
           },
           {
-            "type": "list_definition",
+            "type": "loop",
+            "named": true
+          },
+          {
+            "type": "match",
+            "named": true
+          },
+          {
+            "type": "method",
+            "named": true
+          },
+          {
+            "type": "null",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "object_definition",
+            "named": true
+          },
+          {
+            "type": "post",
+            "named": true
+          },
+          {
+            "type": "property",
+            "named": true
+          },
+          {
+            "type": "rawstring",
+            "named": true
+          },
+          {
+            "type": "record",
+            "named": true
+          },
+          {
+            "type": "return",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "unary",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "record",
+    "named": true,
+    "fields": {
+      "key": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "[",
+            "named": false
+          },
+          {
+            "type": "]",
+            "named": false
+          },
+          {
+            "type": "assignment",
+            "named": true
+          },
+          {
+            "type": "binary",
+            "named": true
+          },
+          {
+            "type": "block",
+            "named": true
+          },
+          {
+            "type": "bool",
+            "named": true
+          },
+          {
+            "type": "comment",
+            "named": true
+          },
+          {
+            "type": "const_definition",
+            "named": true
+          },
+          {
+            "type": "empty_method",
+            "named": true
+          },
+          {
+            "type": "for",
+            "named": true
+          },
+          {
+            "type": "function_definition",
+            "named": true
+          },
+          {
+            "type": "group",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "if",
+            "named": true
+          },
+          {
+            "type": "index",
+            "named": true
+          },
+          {
+            "type": "interpstring",
+            "named": true
+          },
+          {
+            "type": "lambda",
+            "named": true
+          },
+          {
+            "type": "let",
+            "named": true
+          },
+          {
+            "type": "list",
             "named": true
           },
           {
@@ -4055,11 +3633,129 @@
             "named": true
           },
           {
-            "type": "obj_call",
+            "type": "object_definition",
             "named": true
           },
           {
-            "type": "object",
+            "type": "post",
+            "named": true
+          },
+          {
+            "type": "property",
+            "named": true
+          },
+          {
+            "type": "rawstring",
+            "named": true
+          },
+          {
+            "type": "record",
+            "named": true
+          },
+          {
+            "type": "return",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "unary",
+            "named": true
+          }
+        ]
+      },
+      "value": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "assignment",
+            "named": true
+          },
+          {
+            "type": "binary",
+            "named": true
+          },
+          {
+            "type": "block",
+            "named": true
+          },
+          {
+            "type": "bool",
+            "named": true
+          },
+          {
+            "type": "comment",
+            "named": true
+          },
+          {
+            "type": "const_definition",
+            "named": true
+          },
+          {
+            "type": "empty_method",
+            "named": true
+          },
+          {
+            "type": "for",
+            "named": true
+          },
+          {
+            "type": "function_definition",
+            "named": true
+          },
+          {
+            "type": "group",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "if",
+            "named": true
+          },
+          {
+            "type": "index",
+            "named": true
+          },
+          {
+            "type": "interpstring",
+            "named": true
+          },
+          {
+            "type": "lambda",
+            "named": true
+          },
+          {
+            "type": "let",
+            "named": true
+          },
+          {
+            "type": "list",
+            "named": true
+          },
+          {
+            "type": "loop",
+            "named": true
+          },
+          {
+            "type": "match",
+            "named": true
+          },
+          {
+            "type": "method",
+            "named": true
+          },
+          {
+            "type": "null",
+            "named": true
+          },
+          {
+            "type": "number",
             "named": true
           },
           {
@@ -4079,6 +3775,10 @@
             "named": true
           },
           {
+            "type": "record",
+            "named": true
+          },
+          {
             "type": "return",
             "named": true
           },
@@ -4092,6 +3792,24 @@
           }
         ]
       }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "const_definition",
+          "named": true
+        },
+        {
+          "type": "function_definition",
+          "named": true
+        },
+        {
+          "type": "object_definition",
+          "named": true
+        }
+      ]
     }
   },
   {
@@ -4119,11 +3837,15 @@
           "named": true
         },
         {
-          "type": "call",
+          "type": "comment",
           "named": true
         },
         {
-          "type": "comment",
+          "type": "const_definition",
+          "named": true
+        },
+        {
+          "type": "empty_method",
           "named": true
         },
         {
@@ -4132,10 +3854,6 @@
         },
         {
           "type": "function_definition",
-          "named": true
-        },
-        {
-          "type": "global",
           "named": true
         },
         {
@@ -4171,10 +3889,6 @@
           "named": true
         },
         {
-          "type": "list_definition",
-          "named": true
-        },
-        {
           "type": "loop",
           "named": true
         },
@@ -4195,14 +3909,6 @@
           "named": true
         },
         {
-          "type": "obj_call",
-          "named": true
-        },
-        {
-          "type": "object",
-          "named": true
-        },
-        {
           "type": "object_definition",
           "named": true
         },
@@ -4216,6 +3922,10 @@
         },
         {
           "type": "rawstring",
+          "named": true
+        },
+        {
+          "type": "record",
           "named": true
         },
         {
@@ -4258,11 +3968,15 @@
           "named": true
         },
         {
-          "type": "call",
+          "type": "comment",
           "named": true
         },
         {
-          "type": "comment",
+          "type": "const_definition",
+          "named": true
+        },
+        {
+          "type": "empty_method",
           "named": true
         },
         {
@@ -4271,10 +3985,6 @@
         },
         {
           "type": "function_definition",
-          "named": true
-        },
-        {
-          "type": "global",
           "named": true
         },
         {
@@ -4310,10 +4020,6 @@
           "named": true
         },
         {
-          "type": "list_definition",
-          "named": true
-        },
-        {
           "type": "loop",
           "named": true
         },
@@ -4334,14 +4040,6 @@
           "named": true
         },
         {
-          "type": "obj_call",
-          "named": true
-        },
-        {
-          "type": "object",
-          "named": true
-        },
-        {
           "type": "object_definition",
           "named": true
         },
@@ -4355,6 +4053,10 @@
         },
         {
           "type": "rawstring",
+          "named": true
+        },
+        {
+          "type": "record",
           "named": true
         },
         {
@@ -4402,11 +4104,15 @@
           "named": true
         },
         {
-          "type": "call",
+          "type": "comment",
           "named": true
         },
         {
-          "type": "comment",
+          "type": "const_definition",
+          "named": true
+        },
+        {
+          "type": "empty_method",
           "named": true
         },
         {
@@ -4415,10 +4121,6 @@
         },
         {
           "type": "function_definition",
-          "named": true
-        },
-        {
-          "type": "global",
           "named": true
         },
         {
@@ -4454,10 +4156,6 @@
           "named": true
         },
         {
-          "type": "list_definition",
-          "named": true
-        },
-        {
           "type": "loop",
           "named": true
         },
@@ -4478,14 +4176,6 @@
           "named": true
         },
         {
-          "type": "obj_call",
-          "named": true
-        },
-        {
-          "type": "object",
-          "named": true
-        },
-        {
           "type": "object_definition",
           "named": true
         },
@@ -4499,6 +4189,10 @@
         },
         {
           "type": "rawstring",
+          "named": true
+        },
+        {
+          "type": "record",
           "named": true
         },
         {
