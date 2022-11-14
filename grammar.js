@@ -39,6 +39,11 @@ module.exports = grammar({
       field('final', $.identifier),
     )),
 
+    symbol: $ => seq(
+      '$',
+      $.identifier,
+    ),
+
     _args: $ => choice(
       seq(
         '(',
@@ -114,14 +119,15 @@ module.exports = grammar({
       repeat1(
         seq(
           $._expression,
-          repeat1('\n'),
+          choice($.comment, '\n'),
+          repeat('\n'),
         )
       ),
     ),
 
     _expression: $ => prec(PREC_EXP, choice(
       $._definition,
-      $.lambda,
+      $.symbol,
       $.record,
       $.list,
       $.for,
@@ -148,6 +154,7 @@ module.exports = grammar({
       $.empty_method,
       $.match,
       $.if,
+      $.comment,
     )),
 
     unary: $ => prec(PREC_UNARY, choice(
@@ -200,15 +207,6 @@ module.exports = grammar({
       ']',
     ),
 
-    lambda: $ => seq(
-      'do',
-      '|',
-      optional($.parameters),
-      '|',
-      field('body', $._block_body),
-      'end',
-    ),
-
     return: $ => prec.left(seq(
       'return',
       optional($._tuple),
@@ -217,14 +215,14 @@ module.exports = grammar({
     empty_method: $ => prec.left(PREC_METHOD, seq(
       ':',
       $.chain,
-      field('args', optional($._args)),
+      optional(field('args', $._args)),
     )),
 
     method: $ => prec.left(PREC_METHOD, seq(
       field('receiver', $._expression),
       ':',
       $.chain,
-      field('args', optional($._args)),
+      optional(field('args', $._args)),
     )),
 
     property: $ => prec(PREC_PROPERTY, seq(
@@ -284,7 +282,7 @@ module.exports = grammar({
       'if',
       $._expression,
       '\n',
-      $._block_body,
+      optional($._block_body),
       'end',
       optional(seq(
         'else',
@@ -313,7 +311,13 @@ module.exports = grammar({
 
     block: $ => seq(
       'do',
-      $._block_body,
+      optional(seq(
+        '(',
+        optional($.parameters),
+        ')',
+      )),
+      '\n',
+      optional($._block_body),
       'end',
     ),
 
@@ -331,7 +335,7 @@ module.exports = grammar({
       optional($.parameters),
       ')',
       '\n',
-      field('body', $._block_body),
+      optional(field('body', $._block_body)),
       'end',
     ),
 

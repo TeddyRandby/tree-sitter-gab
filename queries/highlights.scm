@@ -61,7 +61,6 @@
   "]"
   "("
   ")"
-  "|"
 ] @punctuation.bracket
 
 [
@@ -82,10 +81,14 @@
   ":"
 ] @operator
 
+(symbol (identifier) @variable.builtin)
+
 (parameters (identifier) @parameter)
 
 (chain chain: (identifier) @type)
 (chain final: (identifier) @function)
+
+(function_definition type: (identifier) @type)
 
 (function_definition name: (identifier) @function)
 (object_definition name: (identifier) @type)

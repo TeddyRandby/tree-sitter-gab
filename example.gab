@@ -1,9 +1,35 @@
-def io = "io":require
+def IStack {
+  top
+  data
+}
 
-def FILE = "test.txt":io.open('w+')
+def stack = $stack
 
-FILE:io.write('this is a test')
-
-def add(n)
-  n + 1
+def make[stack]()
+  {
+    top: 0
+    data: []
+  }
 end
+
+def push[IStack?](element)
+  self.data[self.top] = element
+  self.top = self.top + 1
+end
+
+def pop[IStack?]()
+  self.top = self.top - 1
+  self.data[self.top]
+end
+
+# Testing
+
+let test_stack = stack:make
+
+test_stack:push(1)
+test_stack:push(2)
+test_stack:push(3)
+
+test_stack:pop:print # prints 3
+test_stack:pop:print # prints 2
+test_stack:pop:print # prints 1
