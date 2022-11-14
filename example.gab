@@ -12,12 +12,12 @@ def make[stack]()
   }
 end
 
-def push[IStack?](element)
+def push[IStack](element)
   self.data[self.top] = element
   self.top = self.top + 1
 end
 
-def pop[IStack?]()
+def pop[IStack]()
   self.top = self.top - 1
   self.data[self.top]
 end
