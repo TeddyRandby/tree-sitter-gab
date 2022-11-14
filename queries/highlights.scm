@@ -103,3 +103,5 @@
 
 (function_definition name: (identifier) @method)
 (object_definition name: (identifier) @type)
+
+(record key: (identifier) @field)
