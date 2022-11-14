@@ -6,7 +6,7 @@
 
 (identifier) @variable
 
-(eq (identifer) "self" @variable.builtin)
+((identifier) @variable.builtin (#eq? @variable.builtin "self"))
 
 [
  (bool)
@@ -86,7 +86,11 @@
   "=>"
 ] @operator
 
-(symbol (identifier) @variable.builtin)
+[
+ "$"
+] @string.special
+
+(symbol (identifier) @string.special)
 
 (parameters (identifier) @parameter)
 
