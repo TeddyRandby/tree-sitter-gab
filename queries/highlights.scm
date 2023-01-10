@@ -97,6 +97,7 @@
 (property property: (identifier) @field)
 
 (method message: (identifier) @method.call)
+(empty_method message: (identifier) @method.call)
 
 (function_definition type: (identifier) @type)
 

@@ -9,3 +9,5 @@ def push[IStack](element)
   self.data[self.top] = element
   self.top = self.top + 1
 end
+
+:print(1)
