@@ -332,10 +332,12 @@ module.exports = grammar({
           ']',
         )
       ),
-      seq(
-        '(',
-        optional($.parameters),
-        ')',
+      field('parameters', 
+        seq(
+          '(',
+          optional($.parameters),
+          ')',
+        ),
       ),
       seq(
         field('type', 
@@ -345,9 +347,13 @@ module.exports = grammar({
             ']',
           )
         ),
-        '(',
-        optional($.parameters),
-        ')',
+        field('parameters', 
+          seq(
+            '(',
+            optional($.parameters),
+            ')',
+          ),
+        ),
       ),
     ),
 
