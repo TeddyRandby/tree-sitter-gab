@@ -338,9 +338,13 @@ module.exports = grammar({
         ')',
       ),
       seq(
-        '[',
-        $._expression,
-        ']',
+        field('type', 
+          seq(
+            '[',
+            $._expression,
+            ']',
+          )
+        ),
         '(',
         optional($.parameters),
         ')',
