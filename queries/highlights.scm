@@ -96,8 +96,7 @@
 
 (property property: (identifier) @field)
 
-(chain chain: (identifier) @type)
-(chain final: (identifier) @method.call)
+(method message: (identifier) @method.call)
 
 (function_definition type: (identifier) @type)
 
