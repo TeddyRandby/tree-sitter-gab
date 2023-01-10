@@ -214,7 +214,10 @@ module.exports = grammar({
 
     empty_method: $ => prec.left(PREC_METHOD, seq(
       ':',
-      $.chain,
+      field('message', choice(
+        $.identifier,
+        $._expression,
+      )),
       optional(field('args', $._args)),
     )),
 
