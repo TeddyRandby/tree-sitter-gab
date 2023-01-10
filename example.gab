@@ -38,4 +38,4 @@ loop
   def str = s:pop
 
   f:write(str)
-end until s:empty
+until s:empty

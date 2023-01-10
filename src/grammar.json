@@ -1287,10 +1287,6 @@
           }
         },
         {
-          "type": "STRING",
-          "value": "end"
-        },
-        {
           "type": "CHOICE",
           "members": [
             {
@@ -1307,7 +1303,8 @@
               ]
             },
             {
-              "type": "BLANK"
+              "type": "STRING",
+              "value": "end"
             }
           ]
         }
@@ -1344,10 +1341,6 @@
             ]
           },
           {
-            "type": "STRING",
-            "value": "end"
-          },
-          {
             "type": "CHOICE",
             "members": [
               {
@@ -1372,7 +1365,8 @@
                 ]
               },
               {
-                "type": "BLANK"
+                "type": "STRING",
+                "value": "end"
               }
             ]
           }

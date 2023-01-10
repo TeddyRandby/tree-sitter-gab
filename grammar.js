@@ -274,11 +274,13 @@ module.exports = grammar({
       'loop',
       '\n',
       field('body', $._block_body),
-      'end',
-      optional(seq(
-        'until',
-        $._expression,
-      ))
+      choice(
+        seq(
+          'until',
+          $._expression,
+        ),
+        'end',
+      )
     ),
 
     if: $ => prec.left(seq(
@@ -286,13 +288,15 @@ module.exports = grammar({
       $._expression,
       '\n',
       optional($._block_body),
-      'end',
-      optional(seq(
-        'else',
-        '\n',
-        $._block_body,
-        'end',
-      )),
+      choice(
+        seq(
+          'else',
+          '\n',
+          $._block_body,
+          'end',
+        ),
+        'end'
+      ),
     )),
 
     _matchoption: $ => seq(
