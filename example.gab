@@ -5,7 +5,7 @@ def IStack {
 
 def stack = $stack
 
-def make[stack]()
+def make[stack]
   {
     top: 0
     data: []
@@ -17,7 +17,7 @@ def push[IStack](element)
   self.top = self.top + 1
 end
 
-def pop[IStack]()
+def pop[IStack]
   self.top = self.top - 1
   self.data[self.top]
 end

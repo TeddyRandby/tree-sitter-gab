@@ -311,29 +311,39 @@ module.exports = grammar({
 
     block: $ => seq(
       'do',
-      optional(seq(
-        '(',
-        optional($.parameters),
-        ')',
-      )),
+      $._specialization,
       '\n',
       optional($._block_body),
       'end',
     ),
 
-    function_definition: $ => seq(
-      'def',
-      field('name', $.identifier),
-      field('type', optional(
+    _specialization: $ => choice(
+      field('type', 
         seq(
           '[',
           $._expression,
           ']',
         )
-      )),
-      '(',
-      optional($.parameters),
-      ')',
+      ),
+      seq(
+        '(',
+        optional($.parameters),
+        ')',
+      ),
+      seq(
+        '[',
+        $._expression,
+        ']',
+        '(',
+        optional($.parameters),
+        ')',
+      ),
+    ),
+
+    function_definition: $ => seq(
+      'def',
+      field('name', $.identifier),
+      $._specialization,
       '\n',
       optional(field('body', $._block_body)),
       'end',
