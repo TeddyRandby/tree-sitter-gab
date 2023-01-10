@@ -24,7 +24,7 @@ end
 
 # Testing
 
-let test_stack = stack:make
+let test_stack = stack:(make)
 
 test_stack:push(1)
 test_stack:push(2)
@@ -33,3 +33,9 @@ test_stack:push(3)
 test_stack:pop:print # prints 3
 test_stack:pop:print # prints 2
 test_stack:pop:print # prints 1
+
+loop
+  def str = s:pop
+
+  f:write(str)
+end until s:empty
