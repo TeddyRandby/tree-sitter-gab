@@ -35,43 +35,6 @@
         ]
       }
     },
-    "chain": {
-      "type": "PREC_RIGHT",
-      "value": 0,
-      "content": {
-        "type": "SEQ",
-        "members": [
-          {
-            "type": "FIELD",
-            "name": "chain",
-            "content": {
-              "type": "REPEAT",
-              "content": {
-                "type": "SEQ",
-                "members": [
-                  {
-                    "type": "SYMBOL",
-                    "name": "identifier"
-                  },
-                  {
-                    "type": "STRING",
-                    "value": "."
-                  }
-                ]
-              }
-            }
-          },
-          {
-            "type": "FIELD",
-            "name": "final",
-            "content": {
-              "type": "SYMBOL",
-              "name": "identifier"
-            }
-          }
-        ]
-      }
-    },
     "symbol": {
       "type": "SEQ",
       "members": [
@@ -537,7 +500,7 @@
     },
     "post": {
       "type": "PREC",
-      "value": 13,
+      "value": 12,
       "content": {
         "type": "CHOICE",
         "members": [
@@ -1000,7 +963,7 @@
     },
     "empty_method": {
       "type": "PREC_LEFT",
-      "value": 10,
+      "value": 11,
       "content": {
         "type": "SEQ",
         "members": [
@@ -1044,9 +1007,34 @@
         ]
       }
     },
+    "call": {
+      "type": "PREC_LEFT",
+      "value": 11,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "FIELD",
+            "name": "message",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_expression"
+            }
+          },
+          {
+            "type": "FIELD",
+            "name": "args",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_args"
+            }
+          }
+        ]
+      }
+    },
     "method": {
       "type": "PREC_LEFT",
-      "value": 10,
+      "value": 11,
       "content": {
         "type": "SEQ",
         "members": [
@@ -1100,7 +1088,7 @@
     },
     "property": {
       "type": "PREC",
-      "value": 11,
+      "value": 10,
       "content": {
         "type": "SEQ",
         "members": [
@@ -1129,7 +1117,7 @@
     },
     "index": {
       "type": "PREC",
-      "value": 11,
+      "value": 10,
       "content": {
         "type": "SEQ",
         "members": [

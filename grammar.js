@@ -8,10 +8,9 @@ const PREC_COMPARISON = 6
 const PREC_TERM = 7
 const PREC_FACTOR = 8
 const PREC_UNARY = 9
-const PREC_METHOD = 10
-const PREC_PROPERTY = 11
-const PREC_CALL = 12
-const PREC_POST = 13
+const PREC_PROPERTY = 10
+const PREC_METHOD = 11
+const PREC_POST = 12
 
 module.exports = grammar({
   name: 'gab',
@@ -28,15 +27,6 @@ module.exports = grammar({
         ),
       ),
       $._expression,
-    )),
-
-    chain: $ => prec.right(seq(
-      field('chain', repeat(
-        seq(
-          $.identifier, '.',
-        ),
-      )),
-      field('final', $.identifier),
     )),
 
     symbol: $ => seq(
@@ -221,6 +211,14 @@ module.exports = grammar({
       optional(field('args', $._args)),
     )),
 
+    call: $ => prec.left(PREC_METHOD, seq(
+      field('message', choice(
+        $.identifier,
+        $._expression,
+      )),
+      field('args', $._args),
+    )),
+
     method: $ => prec.left(PREC_METHOD, seq(
       field('receiver', $._expression),
       ':',
@@ -229,6 +227,11 @@ module.exports = grammar({
         $._expression,
       )),
       optional(field('args', $._args)),
+    )),
+
+    call: $ => prec.left(PREC_METHOD, seq(
+      field('message', $._expression),
+      field('args', $._args),
     )),
 
     property: $ => prec(PREC_PROPERTY, seq(

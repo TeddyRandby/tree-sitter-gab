@@ -96,6 +96,7 @@
 
 (property property: (identifier) @field)
 
+(call message: (identifier) @method.call)
 (method message: (identifier) @method.call)
 (empty_method message: (identifier) @method.call)
 
