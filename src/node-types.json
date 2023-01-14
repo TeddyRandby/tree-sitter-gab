@@ -24,6 +24,10 @@
             "named": true
           },
           {
+            "type": "call",
+            "named": true
+          },
+          {
             "type": "comment",
             "named": true
           },
@@ -147,6 +151,10 @@
           },
           {
             "type": "bool",
+            "named": true
+          },
+          {
+            "type": "call",
             "named": true
           },
           {
@@ -279,6 +287,10 @@
         },
         {
           "type": "bool",
+          "named": true
+        },
+        {
+          "type": "call",
           "named": true
         },
         {
@@ -439,6 +451,10 @@
             "named": true
           },
           {
+            "type": "call",
+            "named": true
+          },
+          {
             "type": "comment",
             "named": true
           },
@@ -566,6 +582,10 @@
           "named": true
         },
         {
+          "type": "call",
+          "named": true
+        },
+        {
           "type": "comment",
           "named": true
         },
@@ -678,6 +698,284 @@
     "fields": {}
   },
   {
+    "type": "call",
+    "named": true,
+    "fields": {
+      "args": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": ",",
+            "named": false
+          },
+          {
+            "type": "assignment",
+            "named": true
+          },
+          {
+            "type": "binary",
+            "named": true
+          },
+          {
+            "type": "block",
+            "named": true
+          },
+          {
+            "type": "bool",
+            "named": true
+          },
+          {
+            "type": "call",
+            "named": true
+          },
+          {
+            "type": "comment",
+            "named": true
+          },
+          {
+            "type": "const_definition",
+            "named": true
+          },
+          {
+            "type": "empty_method",
+            "named": true
+          },
+          {
+            "type": "for",
+            "named": true
+          },
+          {
+            "type": "function_definition",
+            "named": true
+          },
+          {
+            "type": "group",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "if",
+            "named": true
+          },
+          {
+            "type": "index",
+            "named": true
+          },
+          {
+            "type": "interpstring",
+            "named": true
+          },
+          {
+            "type": "let",
+            "named": true
+          },
+          {
+            "type": "list",
+            "named": true
+          },
+          {
+            "type": "loop",
+            "named": true
+          },
+          {
+            "type": "match",
+            "named": true
+          },
+          {
+            "type": "method",
+            "named": true
+          },
+          {
+            "type": "null",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "object_definition",
+            "named": true
+          },
+          {
+            "type": "post",
+            "named": true
+          },
+          {
+            "type": "property",
+            "named": true
+          },
+          {
+            "type": "rawstring",
+            "named": true
+          },
+          {
+            "type": "record",
+            "named": true
+          },
+          {
+            "type": "return",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "unary",
+            "named": true
+          }
+        ]
+      },
+      "message": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "assignment",
+            "named": true
+          },
+          {
+            "type": "binary",
+            "named": true
+          },
+          {
+            "type": "block",
+            "named": true
+          },
+          {
+            "type": "bool",
+            "named": true
+          },
+          {
+            "type": "call",
+            "named": true
+          },
+          {
+            "type": "comment",
+            "named": true
+          },
+          {
+            "type": "const_definition",
+            "named": true
+          },
+          {
+            "type": "empty_method",
+            "named": true
+          },
+          {
+            "type": "for",
+            "named": true
+          },
+          {
+            "type": "function_definition",
+            "named": true
+          },
+          {
+            "type": "group",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "if",
+            "named": true
+          },
+          {
+            "type": "index",
+            "named": true
+          },
+          {
+            "type": "interpstring",
+            "named": true
+          },
+          {
+            "type": "let",
+            "named": true
+          },
+          {
+            "type": "list",
+            "named": true
+          },
+          {
+            "type": "loop",
+            "named": true
+          },
+          {
+            "type": "match",
+            "named": true
+          },
+          {
+            "type": "method",
+            "named": true
+          },
+          {
+            "type": "null",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "object_definition",
+            "named": true
+          },
+          {
+            "type": "post",
+            "named": true
+          },
+          {
+            "type": "property",
+            "named": true
+          },
+          {
+            "type": "rawstring",
+            "named": true
+          },
+          {
+            "type": "record",
+            "named": true
+          },
+          {
+            "type": "return",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "unary",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "const_definition",
     "named": true,
     "fields": {
@@ -709,6 +1007,10 @@
           },
           {
             "type": "bool",
+            "named": true
+          },
+          {
+            "type": "call",
             "named": true
           },
           {
@@ -853,6 +1155,10 @@
           },
           {
             "type": "bool",
+            "named": true
+          },
+          {
+            "type": "call",
             "named": true
           },
           {
@@ -1002,6 +1308,10 @@
             "named": true
           },
           {
+            "type": "call",
+            "named": true
+          },
+          {
             "type": "comment",
             "named": true
           },
@@ -1143,6 +1453,10 @@
           "named": true
         },
         {
+          "type": "call",
+          "named": true
+        },
+        {
           "type": "comment",
           "named": true
         },
@@ -1275,6 +1589,10 @@
           },
           {
             "type": "bool",
+            "named": true
+          },
+          {
+            "type": "call",
             "named": true
           },
           {
@@ -1440,6 +1758,10 @@
             "named": true
           },
           {
+            "type": "call",
+            "named": true
+          },
+          {
             "type": "comment",
             "named": true
           },
@@ -1569,6 +1891,10 @@
         },
         {
           "type": "bool",
+          "named": true
+        },
+        {
+          "type": "call",
           "named": true
         },
         {
@@ -1703,6 +2029,10 @@
           "named": true
         },
         {
+          "type": "call",
+          "named": true
+        },
+        {
           "type": "comment",
           "named": true
         },
@@ -1834,6 +2164,10 @@
             "named": true
           },
           {
+            "type": "call",
+            "named": true
+          },
+          {
             "type": "comment",
             "named": true
           },
@@ -1957,6 +2291,10 @@
           },
           {
             "type": "bool",
+            "named": true
+          },
+          {
+            "type": "call",
             "named": true
           },
           {
@@ -2089,6 +2427,10 @@
         },
         {
           "type": "bool",
+          "named": true
+        },
+        {
+          "type": "call",
           "named": true
         },
         {
@@ -2241,6 +2583,10 @@
             "named": true
           },
           {
+            "type": "call",
+            "named": true
+          },
+          {
             "type": "comment",
             "named": true
           },
@@ -2370,6 +2716,10 @@
         },
         {
           "type": "bool",
+          "named": true
+        },
+        {
+          "type": "call",
           "named": true
         },
         {
@@ -2508,6 +2858,10 @@
             "named": true
           },
           {
+            "type": "call",
+            "named": true
+          },
+          {
             "type": "comment",
             "named": true
           },
@@ -2632,6 +2986,10 @@
         },
         {
           "type": "bool",
+          "named": true
+        },
+        {
+          "type": "call",
           "named": true
         },
         {
@@ -2774,6 +3132,10 @@
             "named": true
           },
           {
+            "type": "call",
+            "named": true
+          },
+          {
             "type": "comment",
             "named": true
           },
@@ -2898,6 +3260,10 @@
         },
         {
           "type": "bool",
+          "named": true
+        },
+        {
+          "type": "call",
           "named": true
         },
         {
@@ -3044,6 +3410,10 @@
             "named": true
           },
           {
+            "type": "call",
+            "named": true
+          },
+          {
             "type": "comment",
             "named": true
           },
@@ -3177,6 +3547,10 @@
           },
           {
             "type": "bool",
+            "named": true
+          },
+          {
+            "type": "call",
             "named": true
           },
           {
@@ -3353,6 +3727,10 @@
           "named": true
         },
         {
+          "type": "call",
+          "named": true
+        },
+        {
           "type": "comment",
           "named": true
         },
@@ -3491,6 +3869,10 @@
           },
           {
             "type": "bool",
+            "named": true
+          },
+          {
+            "type": "call",
             "named": true
           },
           {
@@ -3634,6 +4016,10 @@
             "named": true
           },
           {
+            "type": "call",
+            "named": true
+          },
+          {
             "type": "comment",
             "named": true
           },
@@ -3757,6 +4143,10 @@
           },
           {
             "type": "bool",
+            "named": true
+          },
+          {
+            "type": "call",
             "named": true
           },
           {
@@ -3910,6 +4300,10 @@
           "named": true
         },
         {
+          "type": "call",
+          "named": true
+        },
+        {
           "type": "comment",
           "named": true
         },
@@ -4038,6 +4432,10 @@
         },
         {
           "type": "bool",
+          "named": true
+        },
+        {
+          "type": "call",
           "named": true
         },
         {
@@ -4189,6 +4587,10 @@
         },
         {
           "type": "bool",
+          "named": true
+        },
+        {
+          "type": "call",
           "named": true
         },
         {

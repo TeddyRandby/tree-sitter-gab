@@ -142,6 +142,7 @@ module.exports = grammar({
       $.let,
       $.method,
       $.empty_method,
+      $.call,
       $.match,
       $.if,
       $.comment,
