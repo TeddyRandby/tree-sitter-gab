@@ -26,3 +26,7 @@ def log[''?]()
     'String: {self}':print
 end
 'hi':dolog
+
+def test()
+  yield 2
+end

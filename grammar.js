@@ -146,6 +146,7 @@ module.exports = grammar({
       $.match,
       $.if,
       $.comment,
+      $.yield,
     )),
 
     unary: $ => prec(PREC_UNARY, choice(
