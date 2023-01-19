@@ -32,6 +32,7 @@
 ] @conditional
 
 [
+ "yield"
  "return"
 ] @keyword.return
 

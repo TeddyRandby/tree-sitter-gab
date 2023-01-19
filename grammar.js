@@ -198,6 +198,11 @@ module.exports = grammar({
       ']',
     ),
 
+    yield: $ => prec.left(seq(
+      'yield',
+      optional($._tuple),
+    )),
+
     return: $ => prec.left(seq(
       'return',
       optional($._tuple),

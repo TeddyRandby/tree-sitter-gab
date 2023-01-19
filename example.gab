@@ -1,13 +1,28 @@
-def make[stack]
-  {
-    top: 0
-    data: []
-  }
+def onetwo()
+    return 1,2
 end
 
-def push[IStack](element)
-  self.data[self.top] = element
-  self.top = self.top + 1
+def dolog()
+    self:log
+    :print(onetwo())
 end
 
-:print(1)
+def log()
+    self:print
+end
+
+1:dolog
+1:dolog
+1:dolog
+
+def log[1?]()
+    'Num: {self}':print
+end
+
+1:dolog
+'hi':dolog
+
+def log[''?]()
+    'String: {self}':print
+end
+'hi':dolog

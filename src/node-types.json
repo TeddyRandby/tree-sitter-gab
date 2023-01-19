@@ -4893,6 +4893,10 @@
     "named": false
   },
   {
+    "type": "yield",
+    "named": false
+  },
+  {
     "type": "{",
     "named": false
   },
