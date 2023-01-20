@@ -86,7 +86,11 @@ module.exports = grammar({
     _record_kvp: $ => prec(3, seq(
       choice(
         field('key', $.identifier),
-        $._definition,
+        field('key', seq(
+          '[',
+          $._expression,
+          ']'
+        )),
         seq(
           field('key', $.identifier),
           ':',
@@ -382,7 +386,7 @@ module.exports = grammar({
 
     null: _ => 'null',
 
-    _interpstart: $ => token(seq(
+    _interpstart: _ => token(seq(
       '\'',
       /[^\{\']*/,
       '{',
