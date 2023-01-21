@@ -133,7 +133,7 @@ module.exports = grammar({
       $.string,
       $.interpstring,
       $.bool,
-      $.null,
+      $.nil,
       $.property,
       $.rawstring,
       $.group,
@@ -384,7 +384,7 @@ module.exports = grammar({
 
     bool: _ => choice('true', 'false'),
 
-    null: _ => 'null',
+    nil: _ => 'nil',
 
     _interpstart: _ => token(seq(
       '\'',

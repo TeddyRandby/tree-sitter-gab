@@ -402,7 +402,7 @@
           },
           {
             "type": "SYMBOL",
-            "name": "null"
+            "name": "nil"
           },
           {
             "type": "SYMBOL",
@@ -1726,9 +1726,9 @@
         }
       ]
     },
-    "null": {
+    "nil": {
       "type": "STRING",
-      "value": "null"
+      "value": "nil"
     },
     "_interpstart": {
       "type": "TOKEN",

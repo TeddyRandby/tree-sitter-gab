@@ -88,7 +88,7 @@
             "named": true
           },
           {
-            "type": "null",
+            "type": "nil",
             "named": true
           },
           {
@@ -222,7 +222,7 @@
             "named": true
           },
           {
-            "type": "null",
+            "type": "nil",
             "named": true
           },
           {
@@ -362,7 +362,7 @@
           "named": true
         },
         {
-          "type": "null",
+          "type": "nil",
           "named": true
         },
         {
@@ -527,7 +527,7 @@
             "named": true
           },
           {
-            "type": "null",
+            "type": "nil",
             "named": true
           },
           {
@@ -662,7 +662,7 @@
           "named": true
         },
         {
-          "type": "null",
+          "type": "nil",
           "named": true
         },
         {
@@ -818,7 +818,7 @@
             "named": true
           },
           {
-            "type": "null",
+            "type": "nil",
             "named": true
           },
           {
@@ -952,7 +952,7 @@
             "named": true
           },
           {
-            "type": "null",
+            "type": "nil",
             "named": true
           },
           {
@@ -1102,7 +1102,7 @@
             "named": true
           },
           {
-            "type": "null",
+            "type": "nil",
             "named": true
           },
           {
@@ -1254,7 +1254,7 @@
             "named": true
           },
           {
-            "type": "null",
+            "type": "nil",
             "named": true
           },
           {
@@ -1408,7 +1408,7 @@
             "named": true
           },
           {
-            "type": "null",
+            "type": "nil",
             "named": true
           },
           {
@@ -1557,7 +1557,7 @@
           "named": true
         },
         {
-          "type": "null",
+          "type": "nil",
           "named": true
         },
         {
@@ -1700,7 +1700,7 @@
             "named": true
           },
           {
-            "type": "null",
+            "type": "nil",
             "named": true
           },
           {
@@ -1870,7 +1870,7 @@
             "named": true
           },
           {
-            "type": "null",
+            "type": "nil",
             "named": true
           },
           {
@@ -2010,7 +2010,7 @@
           "named": true
         },
         {
-          "type": "null",
+          "type": "nil",
           "named": true
         },
         {
@@ -2149,7 +2149,7 @@
           "named": true
         },
         {
-          "type": "null",
+          "type": "nil",
           "named": true
         },
         {
@@ -2288,7 +2288,7 @@
             "named": true
           },
           {
-            "type": "null",
+            "type": "nil",
             "named": true
           },
           {
@@ -2422,7 +2422,7 @@
             "named": true
           },
           {
-            "type": "null",
+            "type": "nil",
             "named": true
           },
           {
@@ -2562,7 +2562,7 @@
           "named": true
         },
         {
-          "type": "null",
+          "type": "nil",
           "named": true
         },
         {
@@ -2719,7 +2719,7 @@
             "named": true
           },
           {
-            "type": "null",
+            "type": "nil",
             "named": true
           },
           {
@@ -2859,7 +2859,7 @@
           "named": true
         },
         {
-          "type": "null",
+          "type": "nil",
           "named": true
         },
         {
@@ -3002,7 +3002,7 @@
             "named": true
           },
           {
-            "type": "null",
+            "type": "nil",
             "named": true
           },
           {
@@ -3137,7 +3137,7 @@
           "named": true
         },
         {
-          "type": "null",
+          "type": "nil",
           "named": true
         },
         {
@@ -3284,7 +3284,7 @@
             "named": true
           },
           {
-            "type": "null",
+            "type": "nil",
             "named": true
           },
           {
@@ -3419,7 +3419,7 @@
           "named": true
         },
         {
-          "type": "null",
+          "type": "nil",
           "named": true
         },
         {
@@ -3570,7 +3570,7 @@
             "named": true
           },
           {
-            "type": "null",
+            "type": "nil",
             "named": true
           },
           {
@@ -3714,7 +3714,7 @@
             "named": true
           },
           {
-            "type": "null",
+            "type": "nil",
             "named": true
           },
           {
@@ -3895,7 +3895,7 @@
           "named": true
         },
         {
-          "type": "null",
+          "type": "nil",
           "named": true
         },
         {
@@ -4044,7 +4044,7 @@
             "named": true
           },
           {
-            "type": "null",
+            "type": "nil",
             "named": true
           },
           {
@@ -4192,7 +4192,7 @@
             "named": true
           },
           {
-            "type": "null",
+            "type": "nil",
             "named": true
           },
           {
@@ -4326,7 +4326,7 @@
             "named": true
           },
           {
-            "type": "null",
+            "type": "nil",
             "named": true
           },
           {
@@ -4466,7 +4466,7 @@
           "named": true
         },
         {
-          "type": "null",
+          "type": "nil",
           "named": true
         },
         {
@@ -4605,7 +4605,7 @@
           "named": true
         },
         {
-          "type": "null",
+          "type": "nil",
           "named": true
         },
         {
@@ -4764,7 +4764,7 @@
           "named": true
         },
         {
-          "type": "null",
+          "type": "nil",
           "named": true
         },
         {
@@ -4903,7 +4903,7 @@
           "named": true
         },
         {
-          "type": "null",
+          "type": "nil",
           "named": true
         },
         {
@@ -5114,12 +5114,12 @@
     "named": false
   },
   {
-    "type": "not",
-    "named": false
+    "type": "nil",
+    "named": true
   },
   {
-    "type": "null",
-    "named": true
+    "type": "not",
+    "named": false
   },
   {
     "type": "number",

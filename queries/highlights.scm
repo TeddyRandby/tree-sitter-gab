@@ -10,7 +10,7 @@
 
 [
  (bool)
- (null)
+ (nil)
 ] @boolean
 
 [
