@@ -439,11 +439,11 @@
         "required": false,
         "types": [
           {
-            "type": "[",
+            "type": "<",
             "named": false
           },
           {
-            "type": "]",
+            "type": ">",
             "named": false
           },
           {
@@ -1782,11 +1782,11 @@
         "required": false,
         "types": [
           {
-            "type": "[",
+            "type": "<",
             "named": false
           },
           {
-            "type": "]",
+            "type": ">",
             "named": false
           },
           {

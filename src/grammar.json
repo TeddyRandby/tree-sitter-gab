@@ -1515,15 +1515,23 @@
             "members": [
               {
                 "type": "STRING",
-                "value": "["
+                "value": "<"
               },
               {
-                "type": "SYMBOL",
-                "name": "_expression"
+                "type": "CHOICE",
+                "members": [
+                  {
+                    "type": "SYMBOL",
+                    "name": "_expression"
+                  },
+                  {
+                    "type": "BLANK"
+                  }
+                ]
               },
               {
                 "type": "STRING",
-                "value": "]"
+                "value": ">"
               }
             ]
           }
@@ -1568,15 +1576,23 @@
                 "members": [
                   {
                     "type": "STRING",
-                    "value": "["
+                    "value": "<"
                   },
                   {
-                    "type": "SYMBOL",
-                    "name": "_expression"
+                    "type": "CHOICE",
+                    "members": [
+                      {
+                        "type": "SYMBOL",
+                        "name": "_expression"
+                      },
+                      {
+                        "type": "BLANK"
+                      }
+                    ]
                   },
                   {
                     "type": "STRING",
-                    "value": "]"
+                    "value": ">"
                   }
                 ]
               }

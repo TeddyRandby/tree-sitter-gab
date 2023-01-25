@@ -330,9 +330,9 @@ module.exports = grammar({
     _specialization: $ => choice(
       field('type', 
         seq(
-          '[',
-          $._expression,
-          ']',
+          '<',
+          optional($._expression),
+          '>',
         )
       ),
       field('parameters', 
@@ -345,9 +345,9 @@ module.exports = grammar({
       seq(
         field('type', 
           seq(
-            '[',
-            $._expression,
-            ']',
+            '<',
+            optional($._expression),
+            '>',
           )
         ),
         field('parameters', 
