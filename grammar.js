@@ -46,14 +46,17 @@ module.exports = grammar({
     parameters: $ => seq(
       repeat(
         seq(
-          $._parameter, ',',
+          $.identifier, ',',
         ),
       ),
-      $._parameter,
-    ),
-
-    _parameter: $ => choice(
-      $.identifier,
+      choice(
+        $.identifier,
+        seq(
+          "[",
+          $.identifier,
+          "]",
+        ),
+      ),
     ),
 
     _identifiers: $ => prec.right(seq(
@@ -328,14 +331,14 @@ module.exports = grammar({
     ),
 
     _specialization: $ => choice(
-      field('type', 
+      field('type',
         seq(
           '[',
           optional($._expression),
           ']',
         )
       ),
-      field('parameters', 
+      field('parameters',
         seq(
           '(',
           optional($.parameters),
@@ -343,14 +346,14 @@ module.exports = grammar({
         ),
       ),
       seq(
-        field('type', 
+        field('type',
           seq(
             '[',
             optional($._expression),
             ']',
           )
         ),
-        field('parameters', 
+        field('parameters',
           seq(
             '(',
             optional($.parameters),

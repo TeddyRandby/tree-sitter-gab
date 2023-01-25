@@ -92,7 +92,7 @@
             "members": [
               {
                 "type": "SYMBOL",
-                "name": "_parameter"
+                "name": "identifier"
               },
               {
                 "type": "STRING",
@@ -102,17 +102,30 @@
           }
         },
         {
-          "type": "SYMBOL",
-          "name": "_parameter"
-        }
-      ]
-    },
-    "_parameter": {
-      "type": "CHOICE",
-      "members": [
-        {
-          "type": "SYMBOL",
-          "name": "identifier"
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "identifier"
+            },
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "STRING",
+                  "value": "["
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "identifier"
+                },
+                {
+                  "type": "STRING",
+                  "value": "]"
+                }
+              ]
+            }
+          ]
         }
       ]
     },
