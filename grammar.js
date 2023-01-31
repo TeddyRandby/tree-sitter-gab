@@ -317,7 +317,7 @@ module.exports = grammar({
       $._expression,
       '\n',
       field('case', repeat1($._matchoption)),
-      '?',
+      'else',
       '=>',
       $._expression,
     )),
