@@ -96,7 +96,7 @@ module.exports = grammar({
         )),
         seq(
           field('key', $.identifier),
-          ':',
+          '=',
           field('value', $._expression),
         ),
         seq(
@@ -105,7 +105,7 @@ module.exports = grammar({
             $._expression,
             ']'
           )),
-          ':',
+          '=',
           field('value', $._expression),
         )
       ),
