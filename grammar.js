@@ -217,15 +217,13 @@ module.exports = grammar({
     )),
 
     empty_method: $ => prec.left(PREC_METHOD, seq(
-      ':',
-      field('message', $.identifier),
+      field('message', $._message),
       optional(field('args', $._args)),
     )),
 
     method: $ => prec.left(PREC_METHOD, seq(
       field('receiver', $._expression),
-      ':',
-      field('message', $.identifier),
+      field('message', $._message),
       optional(field('args', $._args)),
     )),
 
@@ -421,6 +419,11 @@ module.exports = grammar({
       '\'',
       /[^\']*/,
       '\'',
+    ),
+
+    _message: _ => seq(
+      ':',
+      /[_a-zA-Z]*/,
     ),
 
     rawstring: _ => token(seq(

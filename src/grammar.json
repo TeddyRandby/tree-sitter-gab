@@ -1031,15 +1031,11 @@
         "type": "SEQ",
         "members": [
           {
-            "type": "STRING",
-            "value": ":"
-          },
-          {
             "type": "FIELD",
             "name": "message",
             "content": {
               "type": "SYMBOL",
-              "name": "identifier"
+              "name": "_message"
             }
           },
           {
@@ -1076,15 +1072,11 @@
             }
           },
           {
-            "type": "STRING",
-            "value": ":"
-          },
-          {
             "type": "FIELD",
             "name": "message",
             "content": {
               "type": "SYMBOL",
-              "name": "identifier"
+              "name": "_message"
             }
           },
           {
@@ -1866,6 +1858,19 @@
         {
           "type": "STRING",
           "value": "'"
+        }
+      ]
+    },
+    "_message": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": ":"
+        },
+        {
+          "type": "PATTERN",
+          "value": "[_a-zA-Z]*"
         }
       ]
     },

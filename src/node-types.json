@@ -1308,8 +1308,8 @@
         "required": true,
         "types": [
           {
-            "type": "identifier",
-            "named": true
+            "type": ":",
+            "named": false
           }
         ]
       }
@@ -3624,8 +3624,8 @@
         "required": true,
         "types": [
           {
-            "type": "identifier",
-            "named": true
+            "type": ":",
+            "named": false
           }
         ]
       },
