@@ -1308,8 +1308,8 @@
         "required": true,
         "types": [
           {
-            "type": ":",
-            "named": false
+            "type": "message",
+            "named": true
           }
         ]
       }
@@ -3624,8 +3624,8 @@
         "required": true,
         "types": [
           {
-            "type": ":",
-            "named": false
+            "type": "message",
+            "named": true
           }
         ]
       },
@@ -5010,10 +5010,6 @@
     "named": false
   },
   {
-    "type": ":",
-    "named": false
-  },
-  {
     "type": "<",
     "named": false
   },
@@ -5112,6 +5108,10 @@
   {
     "type": "match",
     "named": false
+  },
+  {
+    "type": "message",
+    "named": true
   },
   {
     "type": "nil",

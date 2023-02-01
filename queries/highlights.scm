@@ -7,6 +7,14 @@
 (identifier) @variable
 
 ((identifier) @variable.builtin (#eq? @variable.builtin "self"))
+((identifier) @variable.builtin (#eq? @variable.builtin "panic"))
+((identifier) @variable.builtin (#eq? @variable.builtin "print"))
+((identifier) @type (#eq? @type "Number"))
+((identifier) @type (#eq? @type "String"))
+((identifier) @type (#eq? @type "Block"))
+((identifier) @type (#eq? @type "Message"))
+((identifier) @type (#eq? @type "Boolean"))
+((identifier) @type (#eq? @type "Effect"))
 
 [
  (bool)
@@ -82,8 +90,6 @@
   ">="
   "!"
   "?"
-  ".."
-  ":"
   "=>"
 ] @operator
 

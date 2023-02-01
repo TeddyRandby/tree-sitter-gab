@@ -1035,7 +1035,7 @@
             "name": "message",
             "content": {
               "type": "SYMBOL",
-              "name": "_message"
+              "name": "message"
             }
           },
           {
@@ -1076,7 +1076,7 @@
             "name": "message",
             "content": {
               "type": "SYMBOL",
-              "name": "_message"
+              "name": "message"
             }
           },
           {
@@ -1861,18 +1861,21 @@
         }
       ]
     },
-    "_message": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": ":"
-        },
-        {
-          "type": "PATTERN",
-          "value": "[_a-zA-Z]*"
-        }
-      ]
+    "message": {
+      "type": "TOKEN",
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "STRING",
+            "value": ":"
+          },
+          {
+            "type": "PATTERN",
+            "value": "[_a-zA-Z]*"
+          }
+        ]
+      }
     },
     "rawstring": {
       "type": "TOKEN",
