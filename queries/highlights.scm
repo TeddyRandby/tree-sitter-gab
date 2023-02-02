@@ -30,6 +30,7 @@
 [
  "and"
  "or"
+ "then"
  "else"
  "match"
 ] @conditional
