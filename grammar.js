@@ -3,14 +3,16 @@ const PREC_EXP = 1
 const PREC_ASSIGNMENT = 2
 const PREC_OR = 3
 const PREC_AND = 4
-const PREC_EQUALITY = 5
-const PREC_COMPARISON = 6
-const PREC_TERM = 7
-const PREC_FACTOR = 8
-const PREC_UNARY = 9
-const PREC_PROPERTY = 10
-const PREC_METHOD = 11
-const PREC_POST = 12
+const PREC_MATCH = 5
+const PREC_EQUALITY = 6
+const PREC_COMPARISON = 7
+const PREC_TERM = 8
+const PREC_FACTOR = 9
+const PREC_UNARY = 10
+const PREC_PROPERTY = 11
+const PREC_METHOD = 12
+const PREC_POST = 13
+const PREC_SPEC = 14
 
 module.exports = grammar({
   name: 'gab',
@@ -290,10 +292,9 @@ module.exports = grammar({
       '\n',
     ),
 
-    match: $ => prec.right(seq(
-      'match',
+    match: $ => prec.right(PREC_MATCH, seq(
       $._expression,
-      '\n',
+      'for',
       field('case', repeat1($._matchoption)),
       'else',
       '=>',
@@ -302,13 +303,12 @@ module.exports = grammar({
 
     block: $ => seq(
       'do',
-      $._specialization,
-      '\n',
-      optional($._block_body),
+      optional($._specialization),
+      $._block_body,
       'end',
     ),
 
-    _specialization: $ => prec.right(choice(
+    _specialization: $ => prec.right(PREC_SPEC, choice(
       field('type',
         seq(
           '[',
@@ -355,12 +355,12 @@ module.exports = grammar({
       field('body', $.record),
     ),
 
-    const_definition: $ => seq(
+    const_definition: $ => prec.left(seq(
       'def',
       field('name', $.identifier),
       '=',
       field('value', $._expression),
-    ),
+    )),
 
     bool: _ => choice('true', 'false'),
 

@@ -563,7 +563,7 @@
     },
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
         {
           "type": "assignment",
@@ -4825,10 +4825,6 @@
   },
   {
     "type": "loop",
-    "named": false
-  },
-  {
-    "type": "match",
     "named": false
   },
   {
