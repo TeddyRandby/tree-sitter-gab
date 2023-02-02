@@ -6,6 +6,10 @@
 
 (identifier) @variable
 
+(symbol) @string.special
+
+(message) @method.call
+
 [
  (bool)
  (nil)
@@ -24,7 +28,8 @@
 ] @repeat
 
 [
- "if"
+ "and"
+ "or"
  "else"
  "match"
 ] @conditional
@@ -35,8 +40,6 @@
 ] @keyword.return
 
 [
-  "or"
-  "and"
   "not"
   "is"
   "in"
@@ -50,6 +53,7 @@
 [
   ","
   "."
+  ";"
 ] @punctuation.delimiter
 
 [
@@ -83,24 +87,17 @@
   "=>"
 ] @operator
 
-[
- "$"
-] @string.special
+(function_definition name: (identifier) @method)
 
-(symbol (identifier) @string.special)
+(call message: (identifier) @method.call)
 
 (parameters (identifier) @parameter)
 
-(property property: (identifier) @field)
-
-(call message: (identifier) @method.call)
-(method message: (message) @method.call)
-(empty_method message: (message) @method.call)
-
 (function_definition type: (identifier) @type)
 
-(function_definition name: (identifier) @method)
 (object_definition name: (identifier) @type)
+
+(property property: (identifier) @field)
 
 (record key: (identifier) @field)
 

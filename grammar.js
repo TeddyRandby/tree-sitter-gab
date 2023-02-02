@@ -29,11 +29,6 @@ module.exports = grammar({
       $._expression,
     )),
 
-    symbol: $ => seq(
-      '$',
-      $.identifier,
-    ),
-
     _args: $ => choice(
       seq(
         '(',
@@ -116,7 +111,7 @@ module.exports = grammar({
       repeat1(
         seq(
           $._expression,
-          choice($.comment, '\n'),
+          choice($.comment, ';', '\n'),
           repeat('\n'),
         )
       ),
@@ -151,7 +146,6 @@ module.exports = grammar({
       $.empty_method,
       $.call,
       $.match,
-      $.if,
       $.comment,
       $.yield,
     )),
@@ -287,22 +281,6 @@ module.exports = grammar({
       )
     ),
 
-    if: $ => prec.left(seq(
-      'if',
-      $._expression,
-      '\n',
-      optional($._block_body),
-      choice(
-        seq(
-          'else',
-          '\n',
-          $._block_body,
-          'end',
-        ),
-        'end'
-      ),
-    )),
-
     _matchoption: $ => seq(
       $._expression,
       '=>',
@@ -328,7 +306,7 @@ module.exports = grammar({
       'end',
     ),
 
-    _specialization: $ => choice(
+    _specialization: $ => prec.right(choice(
       field('type',
         seq(
           '[',
@@ -359,13 +337,12 @@ module.exports = grammar({
           ),
         ),
       ),
-    ),
+    )),
 
     function_definition: $ => seq(
       'def',
       field('name', $.identifier),
       $._specialization,
-      '\n',
       optional(field('body', $._block_body)),
       'end',
     ),
@@ -420,6 +397,11 @@ module.exports = grammar({
       /[^\']*/,
       '\'',
     ),
+
+    symbol: _ => token(seq(
+      '$',
+      /[_a-zA-Z]*/,
+    )),
 
     message: _ => token(seq(
       ':',
