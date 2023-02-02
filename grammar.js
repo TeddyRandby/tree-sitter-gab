@@ -170,6 +170,8 @@ module.exports = grammar({
       prec.left(PREC_FACTOR, seq($._expression, '%', $._expression)),
       prec.left(PREC_AND, seq($._expression, 'and', $._expression)),
       prec.left(PREC_OR, seq($._expression, 'or', $._expression)),
+      prec.left(PREC_AND, seq($._expression, 'then', $._block_body, 'end')),
+      prec.left(PREC_OR, seq($._expression, 'else', $._block_body, 'end')),
       prec.left(PREC_COMPARISON, seq($._expression, '<', $._expression)),
       prec.left(PREC_COMPARISON, seq($._expression, '>', $._expression)),
       prec.left(PREC_EQUALITY, seq($._expression, 'is', $._expression)),
