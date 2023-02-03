@@ -1,4 +1,3 @@
-
 const PREC_EXP = 1
 const PREC_ASSIGNMENT = 2
 const PREC_OR = 3
@@ -294,7 +293,7 @@ module.exports = grammar({
 
     match: $ => prec.right(PREC_MATCH, seq(
       $._expression,
-      'for',
+      'match',
       field('case', repeat1($._matchoption)),
       'else',
       '=>',
