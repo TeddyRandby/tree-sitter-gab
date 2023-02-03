@@ -48,9 +48,8 @@ module.exports = grammar({
       choice(
         $.identifier,
         seq(
-          "[",
+          "..",
           $.identifier,
-          "]",
         ),
       ),
     ),

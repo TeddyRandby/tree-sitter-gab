@@ -100,15 +100,11 @@
               "members": [
                 {
                   "type": "STRING",
-                  "value": "["
+                  "value": ".."
                 },
                 {
                   "type": "SYMBOL",
                   "name": "identifier"
-                },
-                {
-                  "type": "STRING",
-                  "value": "]"
                 }
               ]
             }
