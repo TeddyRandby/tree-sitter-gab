@@ -1,32 +1,11 @@
-def onetwo()
-    return 1,2
-end
+def globals = {}
 
-def dolog()
-    self:log
-    :print(onetwo())
-end
+def PRY = $pry
 
-def log()
-    self:print
-end
+def pry[] PRY end
 
-1:dolog
-1:dolog
-1:dolog
+def __set__[PRY](key, value) globals[key] = value end
 
-def log[1?]()
-    'Num: {self}':print
-end
+def __get__[PRY](key) globals[key] end
 
-1:dolog
-'hi':dolog
-
-def log[''?]()
-    'String: {self}':print
-end
-'hi':dolog
-
-def test()
-  yield 2
-end
+PRY

@@ -54,7 +54,6 @@
 [
   ","
   "."
-  ";"
 ] @punctuation.delimiter
 
 [
@@ -111,4 +110,3 @@
 ((identifier) @type (#eq? @type "Message"))
 ((identifier) @type (#eq? @type "Boolean"))
 ((identifier) @type (#eq? @type "Effect"))
-
