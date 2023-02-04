@@ -321,12 +321,7 @@
                     "name": "comment"
                   },
                   {
-                    "type": "STRING",
-                    "value": ";"
-                  },
-                  {
-                    "type": "STRING",
-                    "value": "\n"
+                    "type": "BLANK"
                   }
                 ]
               },

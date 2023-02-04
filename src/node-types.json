@@ -1292,10 +1292,6 @@
             "named": false
           },
           {
-            "type": ";",
-            "named": false
-          },
-          {
             "type": "assignment",
             "named": true
           },
@@ -1577,10 +1573,6 @@
         "types": [
           {
             "type": "\n",
-            "named": false
-          },
-          {
-            "type": ";",
             "named": false
           },
           {
@@ -2712,10 +2704,6 @@
         "types": [
           {
             "type": "\n",
-            "named": false
-          },
-          {
-            "type": ";",
             "named": false
           },
           {
@@ -4729,10 +4717,6 @@
   },
   {
     "type": "/",
-    "named": false
-  },
-  {
-    "type": ";",
     "named": false
   },
   {
