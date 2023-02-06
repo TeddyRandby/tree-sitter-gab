@@ -403,10 +403,10 @@ module.exports = grammar({
       /[_a-zA-Z]*/,
     )),
 
-    message: _ => token(seq(
+    message: $ => seq(
       ':',
-      /[_a-zA-Z]*/,
-    )),
+      field('name', $.identifier),
+    ),
 
     rawstring: _ => token(seq(
       '"',

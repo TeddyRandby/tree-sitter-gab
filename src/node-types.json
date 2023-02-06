@@ -3239,6 +3239,22 @@
     }
   },
   {
+    "type": "message",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "method",
     "named": true,
     "fields": {
@@ -4720,6 +4736,10 @@
     "named": false
   },
   {
+    "type": ":",
+    "named": false
+  },
+  {
     "type": "<",
     "named": false
   },
@@ -4814,10 +4834,6 @@
   {
     "type": "match",
     "named": false
-  },
-  {
-    "type": "message",
-    "named": true
   },
   {
     "type": "nil",

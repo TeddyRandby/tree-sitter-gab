@@ -8,8 +8,6 @@
 
 (symbol) @string.special
 
-(message) @method.call
-
 [
  (bool)
  (nil)
@@ -54,6 +52,7 @@
 [
   ","
   "."
+  ":"
 ] @punctuation.delimiter
 
 [
@@ -86,6 +85,8 @@
   "?"
   "=>"
 ] @operator
+
+(message name: (identifier) @method.call)
 
 (function_definition name: (identifier) @method)
 
