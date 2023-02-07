@@ -1054,35 +1054,14 @@
     },
     "empty_method": {
       "type": "PREC_LEFT",
-      "value": 12,
+      "value": 1,
       "content": {
-        "type": "SEQ",
-        "members": [
-          {
-            "type": "FIELD",
-            "name": "message",
-            "content": {
-              "type": "SYMBOL",
-              "name": "message"
-            }
-          },
-          {
-            "type": "CHOICE",
-            "members": [
-              {
-                "type": "FIELD",
-                "name": "args",
-                "content": {
-                  "type": "SYMBOL",
-                  "name": "_args"
-                }
-              },
-              {
-                "type": "BLANK"
-              }
-            ]
-          }
-        ]
+        "type": "FIELD",
+        "name": "message",
+        "content": {
+          "type": "SYMBOL",
+          "name": "message"
+        }
       }
     },
     "method": {

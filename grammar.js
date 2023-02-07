@@ -212,10 +212,9 @@ module.exports = grammar({
       optional($._tuple),
     )),
 
-    empty_method: $ => prec.left(PREC_METHOD, seq(
+    empty_method: $ => prec.left(PREC_EXP,
       field('message', $.message),
-      optional(field('args', $._args)),
-    )),
+    ),
 
     method: $ => prec.left(PREC_METHOD, seq(
       field('receiver', $._expression),
