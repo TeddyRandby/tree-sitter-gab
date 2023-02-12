@@ -371,9 +371,9 @@ module.exports = grammar({
 
     const_definition: $ => prec.left(seq(
       'def',
-      field('name', $.identifier),
+      field('name', $._identifiers),
       '=',
-      field('value', $._expression),
+      field('value', $._tuple),
     )),
 
     bool: _ => choice('true', 'false'),

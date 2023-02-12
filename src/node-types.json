@@ -815,9 +815,13 @@
     "named": true,
     "fields": {
       "name": {
-        "multiple": false,
+        "multiple": true,
         "required": true,
         "types": [
+          {
+            "type": ",",
+            "named": false
+          },
           {
             "type": "identifier",
             "named": true
@@ -825,9 +829,13 @@
         ]
       },
       "value": {
-        "multiple": false,
+        "multiple": true,
         "required": true,
         "types": [
+          {
+            "type": ",",
+            "named": false
+          },
           {
             "type": "assignment",
             "named": true
