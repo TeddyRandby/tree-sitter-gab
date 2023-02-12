@@ -1407,6 +1407,50 @@
         "required": true,
         "types": [
           {
+            "type": "*",
+            "named": false
+          },
+          {
+            "type": "+",
+            "named": false
+          },
+          {
+            "type": "-",
+            "named": false
+          },
+          {
+            "type": "/",
+            "named": false
+          },
+          {
+            "type": "<",
+            "named": false
+          },
+          {
+            "type": "<<",
+            "named": false
+          },
+          {
+            "type": "==",
+            "named": false
+          },
+          {
+            "type": ">",
+            "named": false
+          },
+          {
+            "type": ">>",
+            "named": false
+          },
+          {
+            "type": "[=]",
+            "named": false
+          },
+          {
+            "type": "[]",
+            "named": false
+          },
+          {
             "type": "identifier",
             "named": true
           }
@@ -4493,6 +4537,14 @@
   },
   {
     "type": "[",
+    "named": false
+  },
+  {
+    "type": "[=]",
+    "named": false
+  },
+  {
+    "type": "[]",
     "named": false
   },
   {

@@ -327,7 +327,20 @@ module.exports = grammar({
 
     function_definition: $ => prec(PREC_SPEC, seq(
       'def',
-      field('name', $.identifier),
+      field('name', choice(
+        $.identifier,
+        '+',
+        '-',
+        '*',
+        '/',
+        '<',
+        '<<',
+        '>',
+        '>>',
+        '==',
+        '[]',
+        '[=]',
+      )),
       optional(
         field('type',
           seq(
