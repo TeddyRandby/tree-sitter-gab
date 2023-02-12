@@ -10,8 +10,8 @@ const PREC_FACTOR = 9
 const PREC_UNARY = 10
 const PREC_PROPERTY = 11
 const PREC_METHOD = 12
-const PREC_POST = 13
-const PREC_SPEC = 14
+const PREC_SPEC = 13
+const PREC_OBJ = 14
 
 module.exports = grammar({
   name: 'gab',
@@ -350,11 +350,11 @@ module.exports = grammar({
       'end',
     )),
 
-    object_definition: $ => seq(
+    object_definition: $ => prec(PREC_OBJ, seq(
       'def',
       field('name', $.identifier),
       field('body', $.record),
-    ),
+    )),
 
     const_definition: $ => prec.left(seq(
       'def',
