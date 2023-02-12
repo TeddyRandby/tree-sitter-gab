@@ -102,6 +102,7 @@ module.exports = grammar({
       repeat1(
         seq(
           $._expression,
+          optional(';'),
           optional($.comment),
           repeat('\n'),
         )

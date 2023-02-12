@@ -985,6 +985,10 @@
             "named": false
           },
           {
+            "type": ";",
+            "named": false
+          },
+          {
             "type": "assignment",
             "named": true
           },
@@ -1266,6 +1270,10 @@
         "types": [
           {
             "type": "\n",
+            "named": false
+          },
+          {
+            "type": ";",
             "named": false
           },
           {
@@ -1703,7 +1711,7 @@
     "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
         {
           "type": "assignment",
@@ -2532,6 +2540,10 @@
         "types": [
           {
             "type": "\n",
+            "named": false
+          },
+          {
+            "type": ";",
             "named": false
           },
           {
@@ -4422,6 +4434,10 @@
   },
   {
     "type": ":",
+    "named": false
+  },
+  {
+    "type": ";",
     "named": false
   },
   {

@@ -98,7 +98,7 @@
 
 (function_definition name: (identifier) @method)
 
-(call message: (identifier) @method.call)
+(call callee: (identifier) @method.call)
 
 (parameters (identifier) @parameter)
 
