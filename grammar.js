@@ -30,15 +30,6 @@ module.exports = grammar({
       $._expression,
     )),
 
-    _args: $ => choice(
-      seq(
-        '(',
-        optional($._tuple),
-        ')',
-      ),
-      $.record,
-    ),
-
     parameters: $ => seq(
       repeat(
         seq(
@@ -117,6 +108,12 @@ module.exports = grammar({
       ),
     ),
 
+    impl: $ => seq(
+      'impl',
+      $._block_body,
+      'end',
+    ),
+
     _expression: $ => prec(PREC_EXP, choice(
       $._definition,
       $.symbol,
@@ -137,7 +134,6 @@ module.exports = grammar({
       $.group,
       $.binary,
       $.unary,
-      $.post,
       $.index,
       $.comment,
       $.assignment,
@@ -148,17 +144,14 @@ module.exports = grammar({
       $.match,
       $.comment,
       $.yield,
+      $.impl,
     )),
 
     unary: $ => prec(PREC_UNARY, choice(
       seq('-', $._expression),
       seq('not', $._expression),
-      seq('..', $._expression),
-    )),
-
-    post: $ => prec(PREC_POST, choice(
-      seq($._expression, '!'),
-      seq($._expression, '?'),
+      seq('?', $._expression),
+      seq('&', $.message),
     )),
 
     binary: $ => choice(
@@ -168,6 +161,10 @@ module.exports = grammar({
       prec.left(PREC_FACTOR, seq($._expression, '*', $._expression)),
       prec.left(PREC_FACTOR, seq($._expression, '/', $._expression)),
       prec.left(PREC_FACTOR, seq($._expression, '%', $._expression)),
+      prec.left(PREC_FACTOR, seq($._expression, '&', $._expression)),
+      prec.left(PREC_FACTOR, seq($._expression, '|', $._expression)),
+      prec.left(PREC_FACTOR, seq($._expression, '<<', $._expression)),
+      prec.left(PREC_FACTOR, seq($._expression, '>>', $._expression)),
       prec.left(PREC_AND, seq($._expression, 'and', $._expression)),
       prec.left(PREC_OR, seq($._expression, 'or', $._expression)),
       prec.left(PREC_AND, seq($._expression, 'then', $._block_body, 'end')),
@@ -219,12 +216,28 @@ module.exports = grammar({
     method: $ => prec.left(PREC_METHOD, seq(
       field('receiver', $._expression),
       field('message', $.message),
-      optional(field('args', $._args)),
+      seq(
+        optional(seq(
+          '(',
+          optional($._tuple),
+          ')',
+        )),
+        optional($.record),
+        optional($.block),
+      ),
     )),
 
     call: $ => prec.left(PREC_METHOD, seq(
-      field('message', $._expression),
-      field('args', $._args),
+      field('callee', $._expression),
+      seq(
+        seq(
+          '(',
+          optional($._tuple),
+          ')',
+        ),
+        optional($.record),
+        optional($.block),
+      ),
     )),
 
     property: $ => prec(PREC_PROPERTY, seq(
@@ -264,7 +277,6 @@ module.exports = grammar({
       field('names', $._ids),
       'in',
       $._expression,
-      '\n',
       field('body', $._block_body),
       'end',
     ),
@@ -300,34 +312,30 @@ module.exports = grammar({
 
     block: $ => seq(
       'do',
-      optional($._specialization),
-      $._block_body,
-      'end',
-    ),
-
-    _specialization: $ => prec.right(PREC_SPEC, choice(
-      field('type',
-        seq(
-          '[',
-          optional($._expression),
-          ']',
-        )
-      ),
-      field('parameters',
+      optional(
         seq(
           '(',
           optional($.parameters),
           ')',
         ),
       ),
-      seq(
+      $._block_body,
+      'end',
+    ),
+
+    function_definition: $ => prec(PREC_SPEC, seq(
+      'def',
+      field('name', $.identifier),
+      optional(
         field('type',
           seq(
             '[',
             optional($._expression),
             ']',
-          )
+          ),
         ),
+      ),
+      optional(
         field('parameters',
           seq(
             '(',
@@ -336,15 +344,9 @@ module.exports = grammar({
           ),
         ),
       ),
-    )),
-
-    function_definition: $ => seq(
-      'def',
-      field('name', $.identifier),
-      $._specialization,
-      optional(field('body', $._block_body)),
+      field('body', $._block_body),
       'end',
-    ),
+    )),
 
     object_definition: $ => seq(
       'def',
@@ -421,7 +423,7 @@ module.exports = grammar({
       )
     ),
 
-    identifier: _ => token(/[a-zA-Z_]+/),
+    identifier: _ => token(/[a-zA-Z_]+[?!]?/),
     number: _ => token(/\d+/)
   }
 })

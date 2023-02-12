@@ -20,6 +20,10 @@
 ] @string
 
 [
+ "impl"
+] @type.definition
+
+[
  "for"
  "loop"
  "until"
@@ -53,6 +57,7 @@
   ","
   "."
   ":"
+  ";"
 ] @punctuation.delimiter
 
 [
@@ -81,9 +86,12 @@
   "<="
   ">"
   ">="
-  "!"
   "?"
   "=>"
+  "&"
+  "|"
+  ">>"
+  "<<"
 ] @operator
 
 (message name: (identifier) @method.call)
@@ -96,7 +104,7 @@
 
 (function_definition type: (identifier) @type)
 
-(object_definition name: (identifier) @type)
+(object_definition name: (identifier) @type.definition)
 
 (property property: (identifier) @field)
 

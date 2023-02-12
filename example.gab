@@ -1,11 +1,1 @@
-def globals = {}
-
-def PRY = $pry
-
-def pry[] PRY end
-
-def __set__[PRY](key, value) globals[key] = value end
-
-def __get__[PRY](key) globals[key] end
-
-PRY
+'hi'
