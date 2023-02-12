@@ -323,6 +323,14 @@
           "value": "impl"
         },
         {
+          "type": "FIELD",
+          "name": "name",
+          "content": {
+            "type": "SYMBOL",
+            "name": "identifier"
+          }
+        },
+        {
           "type": "SYMBOL",
           "name": "_block_body"
         },

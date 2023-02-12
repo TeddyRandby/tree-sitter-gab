@@ -94,6 +94,8 @@
   "<<"
 ] @operator
 
+(impl name: (identifier) @type)
+
 (message name: (identifier) @method.call)
 
 (function_definition name: (identifier) @method)
@@ -104,7 +106,7 @@
 
 (function_definition type: (identifier) @type)
 
-(object_definition name: (identifier) @type.definition)
+(object_definition name: (identifier) @type)
 
 (property property: (identifier) @field)
 
