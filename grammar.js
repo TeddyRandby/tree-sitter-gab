@@ -30,7 +30,7 @@ module.exports = grammar({
       $._expression,
     )),
 
-    parameters: $ => seq(
+    parameters: $ => prec(PREC_SPEC, seq(
       repeat(
         seq(
           $.identifier, ',',
@@ -43,7 +43,7 @@ module.exports = grammar({
           $.identifier,
         ),
       ),
-    ),
+    )),
 
     _identifiers: $ => prec.right(seq(
       repeat(
@@ -350,8 +350,8 @@ module.exports = grammar({
           ),
         ),
       ),
-      optional(
-        field('parameters',
+      field('parameters',
+        optional(
           seq(
             '(',
             optional($.parameters),
