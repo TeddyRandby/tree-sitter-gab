@@ -1525,11 +1525,11 @@
         },
         {
           "type": "SYMBOL",
-          "name": "_expression"
+          "name": "_block_body"
         },
         {
           "type": "STRING",
-          "value": "\n"
+          "value": "end"
         }
       ]
     },
@@ -1568,7 +1568,11 @@
           },
           {
             "type": "SYMBOL",
-            "name": "_expression"
+            "name": "_block_body"
+          },
+          {
+            "type": "STRING",
+            "value": "end"
           }
         ]
       }

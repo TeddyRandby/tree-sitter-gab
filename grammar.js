@@ -299,8 +299,8 @@ module.exports = grammar({
     _matchoption: $ => seq(
       $._expression,
       '=>',
-      $._expression,
-      '\n',
+      $._block_body,
+      'end',
     ),
 
     match: $ => prec.right(PREC_MATCH, seq(
@@ -309,7 +309,8 @@ module.exports = grammar({
       field('case', repeat1($._matchoption)),
       'else',
       '=>',
-      $._expression,
+      $._block_body,
+      'end',
     )),
 
     block: $ => seq(

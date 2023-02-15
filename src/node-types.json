@@ -2880,6 +2880,10 @@
             "named": false
           },
           {
+            "type": ";",
+            "named": false
+          },
+          {
             "type": "=>",
             "named": false
           },
@@ -2914,6 +2918,10 @@
           {
             "type": "empty_method",
             "named": true
+          },
+          {
+            "type": "end",
+            "named": false
           },
           {
             "type": "for",
