@@ -341,6 +341,7 @@ module.exports = grammar({
         '==',
         '[]',
         '[=]',
+        '()',
       )),
       optional(
         field('type',
