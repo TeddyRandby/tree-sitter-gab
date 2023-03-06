@@ -111,7 +111,7 @@ module.exports = grammar({
 
     impl: $ => seq(
       'impl',
-      field("name", $.identifier),
+      field("name", $._expression),
       $._block_body,
       'end',
     ),
