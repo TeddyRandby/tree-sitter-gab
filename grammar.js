@@ -285,7 +285,6 @@ module.exports = grammar({
 
     loop: $ => seq(
       'loop',
-      '\n',
       field('body', $._block_body),
       choice(
         seq(

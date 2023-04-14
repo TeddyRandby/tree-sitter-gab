@@ -1477,10 +1477,6 @@
           "value": "loop"
         },
         {
-          "type": "STRING",
-          "value": "\n"
-        },
-        {
           "type": "FIELD",
           "name": "body",
           "content": {
