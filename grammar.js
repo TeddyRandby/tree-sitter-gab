@@ -18,13 +18,17 @@ module.exports = grammar({
 
   word: $ => $.identifier,
 
+  conflicts: $ => [[$.tuple]],
+
   rules: {
     source_file: $ => $._block_body,
 
-    _tuple: $ => prec.right(seq(
+    tuple: $ => prec.left(seq(
       repeat(
         seq(
-          $._expression, ',',
+          $._expression,
+          ',',
+          optional(repeat('\n')),
         ),
       ),
       $._expression,
@@ -139,7 +143,6 @@ module.exports = grammar({
       $.index,
       $.comment,
       $.assignment,
-      $.let,
       $.method,
       $.empty_method,
       $.call,
@@ -191,24 +194,18 @@ module.exports = grammar({
 
     list: $ => seq(
       '[',
-      repeat(
-        seq(
-          $._expression,
-          optional(','),
-          optional(repeat('\n')),
-        )
-      ),
+      $.tuple,
       ']',
     ),
 
     yield: $ => prec.left(seq(
       'yield',
-      optional($._tuple),
+      optional($.tuple),
     )),
 
     return: $ => prec.left(seq(
       'return',
-      optional($._tuple),
+      optional($.tuple),
     )),
 
     empty_method: $ => prec.left(PREC_EXP,
@@ -221,7 +218,7 @@ module.exports = grammar({
       seq(
         optional(seq(
           '(',
-          optional($._tuple),
+          optional($.tuple),
           ')',
         )),
         optional($.record),
@@ -234,7 +231,7 @@ module.exports = grammar({
       seq(
         seq(
           '(',
-          optional($._tuple),
+          optional($.tuple),
           ')',
         ),
         optional($.record),
@@ -255,17 +252,10 @@ module.exports = grammar({
       ']'
     )),
 
-    let: $ => prec.right(PREC_ASSIGNMENT, seq(
-      'let',
-      field('left', $._identifiers),
-      '=',
-      field('right', $._tuple),
-    )),
-
     assignment: $ => prec.right(PREC_ASSIGNMENT, seq(
-      field('left', $._expression),
+      field('left', $.tuple),
       '=',
-      field('right', $._expression),
+      field('right', $.tuple),
     )),
 
     group: $ => seq(
@@ -286,13 +276,13 @@ module.exports = grammar({
     loop: $ => seq(
       'loop',
       field('body', $._block_body),
-      choice(
+      optional(
         seq(
           'until',
           $._expression,
         ),
-        'end',
-      )
+      ),
+      'end',
     ),
 
     _matchoption: $ => seq(
@@ -374,7 +364,7 @@ module.exports = grammar({
       'def',
       field('name', $._identifiers),
       '=',
-      field('value', $._tuple),
+      field('value', $.tuple),
     )),
 
     bool: _ => choice('true', 'false'),
@@ -440,6 +430,8 @@ module.exports = grammar({
     ),
 
     identifier: _ => token(/[a-zA-Z_]+[?!]?/),
-    number: _ => token(/\d+/)
+
+    number: _ => token(/\d+/),
+
   }
 })

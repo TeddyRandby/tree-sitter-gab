@@ -49,7 +49,6 @@
 ] @keyword.operator
 
 [
-  "let"
   "def"
 ] @keyword.storage.type
 
