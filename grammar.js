@@ -228,14 +228,29 @@ module.exports = grammar({
 
     call: $ => prec.left(PREC_METHOD, seq(
       field('callee', $._expression),
-      seq(
+      choice(
         seq(
           '(',
           optional($.tuple),
           ')',
         ),
-        optional($.record),
-        optional($.block),
+
+        $.record,
+
+        $.block,
+
+        seq(
+          $.record,
+          $.block,
+        ),
+
+        seq(
+          '(',
+          optional($.tuple),
+          ')',
+          $.record,
+          $.block,
+        ),
       ),
     )),
 
