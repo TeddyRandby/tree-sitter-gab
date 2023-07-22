@@ -421,7 +421,7 @@ module.exports = grammar({
     ),
 
     symbol: _ => token(seq(
-      '$',
+      '.',
       /[_a-zA-Z]*/,
     )),
 

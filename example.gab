@@ -1,15 +1,13 @@
-impl Map
-
-  def [](key)
-    self:at(key)
-  end
-
+def do_twice = do (cb)
+    yield cb()
+    cb()
 end
 
-def test(hi)
-  test
+first_result, suspense = do_twice do ()
+    "Hello":print
+    return 42
 end
 
-def [][Number](hi)
-  test
-end
+second_result = suspense()
+
+'{first_result}, {second_result}':print
