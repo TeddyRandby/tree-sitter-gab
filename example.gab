@@ -1,5 +1,3 @@
-def do_twice = do (cb, ..args)
-    yield cb()
-    cb()
-end
-
+status, val = .ok, 'value' ! match
+    .ok  => val:print    end
+    else => status:panic end

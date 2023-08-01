@@ -14,440 +14,417 @@ const PREC_SPEC = 13
 const PREC_OBJ = 14
 
 module.exports = grammar({
-  name: 'gab',
+    name: 'gab',
 
-  word: $ => $.identifier,
+    word: $ => $.identifier,
 
-  conflicts: $ => [[$.tuple]],
+    conflicts: $ => [[$._tuple]],
 
-  rules: {
-    source_file: $ => $._block_body,
+    rules: {
+        source_file: $ => $._block_body,
 
-    tuple: $ => prec.left(seq(
-      repeat(
-        seq(
-          $._expression,
-          ',',
-          optional(repeat('\n')),
-        ),
-      ),
-      $._expression,
-    )),
-
-    parameters: $ => prec(PREC_SPEC, seq(
-      $.identifier,
-      repeat(
-        seq(
-          ',',
-          choice(
-            $.identifier,
-            seq(
-              "..",
-              $.identifier,
+        _tuple: $ => prec.right(seq(
+            repeat(
+                seq(
+                    $._expression,
+                    ',',
+                    repeat('\n'),
+                ),
             ),
-          ),
-        ),
-      ),
-    )),
-
-    _identifiers: $ => prec.right(seq(
-      repeat(
-        seq(
-          $.identifier, ',',
-        )
-      ),
-      $.identifier
-    )),
-
-    _definition: $ => choice(
-      $.function_definition,
-      $.object_definition,
-      $.const_definition,
-    ),
-
-    _ids: $ => seq(
-      repeat(
-        seq(
-          choice(
-            $.identifier,
-          ),
-          ',',
-        ),
-      ),
-      $.identifier,
-    ),
-
-    _record_kvp: $ => prec(3, seq(
-      choice(
-        field('key', $.identifier),
-        field('key', seq(
-          '[',
-          $._expression,
-          ']'
-        )),
-        seq(
-          field('key', $.identifier),
-          '=',
-          field('value', $._expression),
-        ),
-        seq(
-          field('key', seq(
-            '[',
             $._expression,
-            ']'
-          )),
-          '=',
-          field('value', $._expression),
-        )
-      ),
-    )),
-
-    _block_body: $ => seq(
-      repeat('\n'),
-      repeat1(
-        seq(
-          $._expression,
-          optional(';'),
-          optional($.comment),
-          repeat('\n'),
-        )
-      ),
-    ),
-
-    impl: $ => seq(
-      'impl',
-      field("name", $._expression),
-      $._block_body,
-      'end',
-    ),
-
-    _expression: $ => prec(PREC_EXP, choice(
-      $._definition,
-      $.symbol,
-      $.record,
-      $.list,
-      $.for,
-      $.loop,
-      $.block,
-      $.return,
-      $.identifier,
-      $.number,
-      $.string,
-      $.interpstring,
-      $.bool,
-      $.nil,
-      $.property,
-      $.rawstring,
-      $.group,
-      $.binary,
-      $.unary,
-      $.index,
-      $.comment,
-      $.assignment,
-      $.method,
-      $.empty_method,
-      $.call,
-      $.match,
-      $.comment,
-      $.yield,
-      $.impl,
-    )),
-
-    unary: $ => prec(PREC_UNARY, choice(
-      seq('-', $._expression),
-      seq('not', $._expression),
-      seq('?', $._expression),
-      seq('&', $.message),
-    )),
-
-    binary: $ => choice(
-      prec.left(PREC_TERM, seq($._expression, '+', $._expression)),
-      prec.left(PREC_TERM, seq($._expression, '-', $._expression)),
-      prec.left(PREC_TERM, seq($._expression, '..', $._expression)),
-      prec.left(PREC_FACTOR, seq($._expression, '*', $._expression)),
-      prec.left(PREC_FACTOR, seq($._expression, '/', $._expression)),
-      prec.left(PREC_FACTOR, seq($._expression, '%', $._expression)),
-      prec.left(PREC_FACTOR, seq($._expression, '&', $._expression)),
-      prec.left(PREC_FACTOR, seq($._expression, '|', $._expression)),
-      prec.left(PREC_FACTOR, seq($._expression, '<<', $._expression)),
-      prec.left(PREC_FACTOR, seq($._expression, '>>', $._expression)),
-      prec.left(PREC_AND, seq($._expression, 'and', $._expression)),
-      prec.left(PREC_OR, seq($._expression, 'or', $._expression)),
-      prec.left(PREC_AND, seq($._expression, 'then', $._block_body, 'end')),
-      prec.left(PREC_OR, seq($._expression, 'else', $._block_body, 'end')),
-      prec.left(PREC_COMPARISON, seq($._expression, '<', $._expression)),
-      prec.left(PREC_COMPARISON, seq($._expression, '>', $._expression)),
-      prec.left(PREC_EQUALITY, seq($._expression, 'is', $._expression)),
-      prec.left(PREC_EQUALITY, seq($._expression, '==', $._expression)),
-      prec.left(PREC_EQUALITY, seq($._expression, '<=', $._expression)),
-      prec.left(PREC_EQUALITY, seq($._expression, '>=', $._expression)),
-    ),
-
-    record: $ => seq(
-      '{',
-      repeat(
-        seq($._record_kvp,
-          optional(','),
-          optional(repeat('\n')),
         )),
-      '}',
-    ),
 
-    list: $ => seq(
-      '[',
-      $.tuple,
-      ']',
-    ),
+        parameters: $ => prec(PREC_SPEC, $._identifiers),
 
-    yield: $ => prec.left(seq(
-      'yield',
-      optional($.tuple),
-    )),
-
-    return: $ => prec.left(seq(
-      'return',
-      optional($.tuple),
-    )),
-
-    empty_method: $ => prec.left(PREC_EXP,
-      field('message', $.message),
-    ),
-
-    method: $ => prec.left(PREC_METHOD, seq(
-      field('receiver', $._expression),
-      field('message', $.message),
-      seq(
-        optional(seq(
-          '(',
-          optional($.tuple),
-          ')',
+        _identifiers: $ => prec.right(seq(
+            repeat(
+                seq(
+                    $.identifier, ',',
+                )
+            ),
+            $.identifier
         )),
-        optional($.record),
-        optional($.block),
-      ),
-    )),
 
-    call: $ => prec.left(PREC_METHOD, seq(
-      field('callee', $._expression),
-      choice(
-        seq(
-          '(',
-          optional($.tuple),
-          ')',
+        _definition: $ => choice(
+            $.function_definition,
+            $.object_definition,
+            $.const_definition,
         ),
 
-        $.record,
+        _record_kvp: $ => prec(3, seq(
+            choice(
+                field('key', $.identifier),
+                field('key', seq(
+                    '[',
+                    $._expression,
+                    ']'
+                )),
+                seq(
+                    field('key', $.identifier),
+                    '=',
+                    field('value', $._expression),
+                ),
+                seq(
+                    field('key', seq(
+                        '[',
+                        $._expression,
+                        ']'
+                    )),
+                    '=',
+                    field('value', $._expression),
+                )
+            ),
+        )),
 
-        $.block,
-
-        seq(
-          $.record,
-          $.block,
+        _block_body: $ => seq(
+            repeat('\n'),
+            repeat1(
+                seq(
+                    $._expression,
+                    optional(';'),
+                    optional($.comment),
+                    repeat('\n'),
+                )
+            ),
         ),
 
-        seq(
-          '(',
-          optional($.tuple),
-          ')',
-          $.record,
-          $.block,
+        impl: $ => seq(
+            'impl',
+            field("name", $._expression),
+            $._block_body,
+            'end',
         ),
-      ),
-    )),
 
-    property: $ => prec(PREC_PROPERTY, seq(
-      field('receiver', $._expression),
-      '.',
-      field('property', $.identifier),
-    )),
+        _expression: $ => prec.left(PREC_EXP, seq(choice(
+            $._definition,
+            $.symbol,
+            $.record,
+            $.list,
+            $.for,
+            $.loop,
+            $.block,
+            $.return,
+            $.identifier,
+            $.number,
+            $.string,
+            $.interpstring,
+            $.bool,
+            $.nil,
+            $.property,
+            $.rawstring,
+            $.group,
+            $.binary,
+            $.unary,
+            $.index,
+            $.comment,
+            $.assignment,
+            $.method,
+            $.empty_method,
+            $.call,
+            $.match,
+            $.comment,
+            $.yield,
+            $.impl,
+        ), optional('!'))),
 
-    index: $ => prec(PREC_PROPERTY, seq(
-      field('receiver', $._expression),
-      '[',
-      field('property', $._expression),
-      ']'
-    )),
+        unary: $ => prec(PREC_UNARY, choice(
+            seq('-', $._expression),
+            seq('not', $._expression),
+            seq('?', $._expression),
+            seq('&', $.message),
+        )),
 
-    assignment: $ => prec.right(PREC_ASSIGNMENT, seq(
-      field('left', $.tuple),
-      '=',
-      field('right', $.tuple),
-    )),
-
-    group: $ => seq(
-      '(',
-      $._expression,
-      ')',
-    ),
-
-    for: $ => seq(
-      'for',
-      field('names', $._ids),
-      'in',
-      $._expression,
-      field('body', $._block_body),
-      'end',
-    ),
-
-    loop: $ => seq(
-      'loop',
-      field('body', $._block_body),
-      optional(
-        seq(
-          'until',
-          $._expression,
+        binary: $ => choice(
+            prec.left(PREC_TERM, seq($._expression, '+', $._expression)),
+            prec.left(PREC_TERM, seq($._expression, '-', $._expression)),
+            prec.left(PREC_TERM, seq($._expression, '..', $._expression)),
+            prec.left(PREC_FACTOR, seq($._expression, '*', $._expression)),
+            prec.left(PREC_FACTOR, seq($._expression, '/', $._expression)),
+            prec.left(PREC_FACTOR, seq($._expression, '%', $._expression)),
+            prec.left(PREC_FACTOR, seq($._expression, '&', $._expression)),
+            prec.left(PREC_FACTOR, seq($._expression, '|', $._expression)),
+            prec.left(PREC_FACTOR, seq($._expression, '<<', $._expression)),
+            prec.left(PREC_FACTOR, seq($._expression, '>>', $._expression)),
+            prec.left(PREC_AND, seq($._expression, 'and', $._expression)),
+            prec.left(PREC_OR, seq($._expression, 'or', $._expression)),
+            prec.left(PREC_AND, seq($._expression, 'then', $._block_body, 'end')),
+            prec.left(PREC_OR, seq($._expression, 'else', $._block_body, 'end')),
+            prec.left(PREC_COMPARISON, seq($._expression, '<', $._expression)),
+            prec.left(PREC_COMPARISON, seq($._expression, '>', $._expression)),
+            prec.left(PREC_EQUALITY, seq($._expression, 'is', $._expression)),
+            prec.left(PREC_EQUALITY, seq($._expression, '==', $._expression)),
+            prec.left(PREC_EQUALITY, seq($._expression, '<=', $._expression)),
+            prec.left(PREC_EQUALITY, seq($._expression, '>=', $._expression)),
         ),
-      ),
-      'end',
-    ),
 
-    _matchoption: $ => seq(
-      $._expression,
-      '=>',
-      $._block_body,
-      'end',
-    ),
-
-    match: $ => prec.right(PREC_MATCH, seq(
-      $._expression,
-      'match',
-      field('case', repeat1($._matchoption)),
-      'else',
-      '=>',
-      $._block_body,
-      'end',
-    )),
-
-    block: $ => seq(
-      'do',
-      optional(
-        seq(
-          '(',
-          optional($.parameters),
-          ')',
+        record: $ => seq(
+            '{',
+            repeat(
+                seq($._record_kvp,
+                    optional(','),
+                    optional(repeat('\n')),
+                )),
+            '}',
         ),
-      ),
-      $._block_body,
-      'end',
-    ),
 
-    function_definition: $ => prec(PREC_SPEC, seq(
-      'def',
-      field('name', choice(
-        $.identifier,
-        '+',
-        '-',
-        '*',
-        '/',
-        '<',
-        '<<',
-        '>',
-        '>>',
-        '==',
-        '[]',
-        '[=]',
-        '()',
-      )),
-      optional(
-        field('type',
-          seq(
+        list: $ => seq(
             '[',
-            optional($._expression),
+            $._tuple,
             ']',
-          ),
         ),
-      ),
-      field('parameters',
-        optional(
-          seq(
+
+        yield: $ => prec.left(seq(
+            'yield',
+            optional($._tuple),
+        )),
+
+        return: $ => prec.left(seq(
+            'return',
+            optional($._tuple),
+        )),
+
+        empty_method: $ => prec.left(PREC_EXP,
+            field('message', $.message),
+        ),
+
+        method: $ => prec.left(PREC_METHOD, seq(
+            field('receiver', $._expression),
+            field('message', $.message),
+            seq(
+                optional(seq(
+                    '(',
+                    optional($._tuple),
+                    ')',
+                )),
+                optional($.record),
+                optional($.block),
+            ),
+        )),
+
+        call: $ => prec.left(PREC_METHOD, seq(
+            field('callee', $._expression),
+            choice(
+                seq(
+                    '(',
+                    optional($._tuple),
+                    ')',
+                ),
+
+                $.record,
+
+                $.block,
+
+                seq(
+                    $.record,
+                    $.block,
+                ),
+
+                seq(
+                    '(',
+                    optional($._tuple),
+                    ')',
+                    $.record,
+                    $.block,
+                ),
+            ),
+        )),
+
+        property: $ => prec(PREC_PROPERTY, seq(
+            field('receiver', $._expression),
+            '.',
+            field('property', $.identifier),
+        )),
+
+        index: $ => prec(PREC_PROPERTY, seq(
+            field('receiver', $._expression),
+            '[',
+            field('property', $._expression),
+            ']'
+        )),
+
+        assignment: $ => prec.right(PREC_ASSIGNMENT, seq(
+            field('left', $._tuple),
+            '=',
+            field('right', $._tuple),
+        )),
+
+        group: $ => seq(
             '(',
-            optional($.parameters),
+            $._expression,
             ')',
-          ),
         ),
-      ),
-      field('body', $._block_body),
-      'end',
-    )),
 
-    object_definition: $ => prec(PREC_OBJ, seq(
-      'def',
-      field('name', $.identifier),
-      field('body', $.record),
-    )),
+        for: $ => seq(
+            'for',
+            field('names', $._identifiers),
+            'in',
+            $._expression,
+            field('body', $._block_body),
+            'end',
+        ),
 
-    const_definition: $ => prec.left(seq(
-      'def',
-      field('name', $._identifiers),
-      '=',
-      field('value', $.tuple),
-    )),
+        loop: $ => seq(
+            'loop',
+            field('body', $._block_body),
+            optional(
+                seq(
+                    'until',
+                    $._expression,
+                ),
+            ),
+            'end',
+        ),
 
-    bool: _ => choice('true', 'false'),
+        _matchoption: $ => seq(
+            $._expression,
+            '=>',
+            $._block_body,
+            'end',
+        ),
 
-    nil: _ => 'nil',
+        match: $ => prec.right(PREC_MATCH, seq(
+            $._expression,
+            'match',
+            field('case', repeat($._matchoption)),
+            'else',
+            '=>',
+            $._block_body,
+            'end',
+        )),
 
-    _interpstart: _ => token(seq(
-      '\'',
-      /[^\{\']*/,
-      '{',
-    )),
+        block: $ => seq(
+            'do',
+            optional(
+                seq(
+                    '(',
+                    optional($.parameters),
+                    ')',
+                ),
+            ),
+            $._block_body,
+            'end',
+        ),
 
-    _interpmiddle: $ => seq(
-      $._expression,
-      token(seq(
-        '}',
-        /[^\{\']*/,
-        '{'
-      ))
-    ),
+        function_definition: $ => prec(PREC_SPEC, seq(
+            'def',
+            field('name', choice(
+                $.identifier,
+                '+',
+                '-',
+                '*',
+                '/',
+                '<',
+                '<<',
+                '>',
+                '>>',
+                '==',
+                '[]',
+                '[=]',
+                '()',
+            )),
+            optional(
+                field('type',
+                    seq(
+                        '[',
+                        optional($._expression),
+                        ']',
+                    ),
+                ),
+            ),
+            field('parameters',
+                optional(
+                    seq(
+                        '(',
+                        optional($.parameters),
+                        ')',
+                    ),
+                ),
+            ),
+            field('body', $._block_body),
+            'end',
+        )),
 
-    _interpend: _ => token(seq(
-      '}',
-      /[^\'\{]*/,
-      '\'',
-    )),
+        object_definition: $ => prec(PREC_OBJ, seq(
+            'def',
+            field('name', $.identifier),
+            field('body', $.record),
+        )),
 
-    interpstring: $ => seq(
-      $._interpstart,
-      repeat($._interpmiddle),
-      $._expression,
-      $._interpend,
-    ),
+        const_definition: $ => prec.left(seq(
+            'def',
+            field('name', $._identifiers),
+            '=',
+            field('value', $._tuple),
+        )),
 
-    string: _ => seq(
-      '\'',
-      /[^\']*/,
-      '\'',
-    ),
+        bool: _ => choice('true', 'false'),
 
-    symbol: _ => token(seq(
-      '.',
-      /[_a-zA-Z]*/,
-    )),
+        nil: _ => 'nil',
 
-    message: $ => seq(
-      ':',
-      field('name', $.identifier),
-    ),
+        _interpstart: _ => token(seq(
+            '\'',
+            /[^\{\']*/,
+            '{',
+        )),
 
-    rawstring: _ => token(seq(
-      '"',
-      /[^\"]*/,
-      '"',
-    )),
+        _interpmiddle: $ => seq(
+            $._expression,
+            token(seq(
+                '}',
+                /[^\{\']*/,
+                '{'
+            ))
+        ),
 
-    comment: _ => token(
-      seq(
-        '#',
-        /[^\n]*/,
-        '\n'
-      )
-    ),
+        _interpend: _ => token(seq(
+            '}',
+            /[^\'\{]*/,
+            '\'',
+        )),
 
-    identifier: _ => token(/[a-zA-Z_]+[?!]?/),
+        interpstring: $ => seq(
+            $._interpstart,
+            repeat($._interpmiddle),
+            $._expression,
+            $._interpend,
+        ),
 
-    number: _ => token(/\d+/),
+        string: _ => seq(
+            '\'',
+            /[^\']*/,
+            '\'',
+        ),
 
-  }
+        symbol: _ => token(seq(
+            '.',
+            /[_a-zA-Z]*/,
+        )),
+
+        message: $ => seq(
+            ':',
+            field('name', $.identifier),
+        ),
+
+        rawstring: _ => token(seq(
+            '"',
+            /[^\"]*/,
+            '"',
+        )),
+
+        comment: _ => token(
+            seq(
+                '#',
+                /[^\n]*/,
+                '\n'
+            )
+        ),
+
+        identifier: _ => token(seq(
+            optional('..'),
+            /[a-zA-Z_]+[?!]?/,
+        )),
+
+        number: _ => token(/\d+/),
+
+    }
 })
