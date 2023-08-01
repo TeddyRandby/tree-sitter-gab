@@ -25,6 +25,7 @@
 
 [
  "for"
+ "in"
  "loop"
  "until"
 ] @repeat
@@ -44,8 +45,6 @@
 
 [
   "not"
-  "is"
-  "in"
 ] @keyword.operator
 
 [
