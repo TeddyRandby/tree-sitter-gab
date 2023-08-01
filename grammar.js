@@ -35,16 +35,17 @@ module.exports = grammar({
     )),
 
     parameters: $ => prec(PREC_SPEC, seq(
+      $.identifier,
       repeat(
         seq(
-          $.identifier, ',',
-        ),
-      ),
-      choice(
-        $.identifier,
-        seq(
-          "..",
-          $.identifier,
+          ',',
+          choice(
+            $.identifier,
+            seq(
+              "..",
+              $.identifier,
+            ),
+          ),
         ),
       ),
     )),
