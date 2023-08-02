@@ -8,10 +8,6 @@
         "required": true,
         "types": [
           {
-            "type": "\n",
-            "named": false
-          },
-          {
             "type": "!",
             "named": false
           },
@@ -37,10 +33,6 @@
           },
           {
             "type": "call",
-            "named": true
-          },
-          {
-            "type": "comment",
             "named": true
           },
           {
@@ -142,10 +134,6 @@
         "required": true,
         "types": [
           {
-            "type": "\n",
-            "named": false
-          },
-          {
             "type": "!",
             "named": false
           },
@@ -171,10 +159,6 @@
           },
           {
             "type": "call",
-            "named": true
-          },
-          {
-            "type": "comment",
             "named": true
           },
           {
@@ -302,10 +286,6 @@
           "named": true
         },
         {
-          "type": "comment",
-          "named": true
-        },
-        {
           "type": "const_definition",
           "named": true
         },
@@ -409,10 +389,6 @@
         "required": true,
         "types": [
           {
-            "type": "\n",
-            "named": false
-          },
-          {
             "type": "!",
             "named": false
           },
@@ -438,10 +414,6 @@
           },
           {
             "type": "call",
-            "named": true
-          },
-          {
-            "type": "comment",
             "named": true
           },
           {
@@ -588,10 +560,6 @@
             "named": true
           },
           {
-            "type": "comment",
-            "named": true
-          },
-          {
             "type": "const_definition",
             "named": true
           },
@@ -708,10 +676,6 @@
         },
         {
           "type": "call",
-          "named": true
-        },
-        {
-          "type": "comment",
           "named": true
         },
         {
@@ -832,10 +796,6 @@
         "required": true,
         "types": [
           {
-            "type": "\n",
-            "named": false
-          },
-          {
             "type": "!",
             "named": false
           },
@@ -861,10 +821,6 @@
           },
           {
             "type": "call",
-            "named": true
-          },
-          {
-            "type": "comment",
             "named": true
           },
           {
@@ -972,10 +928,6 @@
         "required": true,
         "types": [
           {
-            "type": "\n",
-            "named": false
-          },
-          {
             "type": "!",
             "named": false
           },
@@ -1001,10 +953,6 @@
           },
           {
             "type": "call",
-            "named": true
-          },
-          {
-            "type": "comment",
             "named": true
           },
           {
@@ -1141,10 +1089,6 @@
           "named": true
         },
         {
-          "type": "comment",
-          "named": true
-        },
-        {
           "type": "const_definition",
           "named": true
         },
@@ -1248,10 +1192,6 @@
         "required": true,
         "types": [
           {
-            "type": "\n",
-            "named": false
-          },
-          {
             "type": "!",
             "named": false
           },
@@ -1277,10 +1217,6 @@
           },
           {
             "type": "call",
-            "named": true
-          },
-          {
-            "type": "comment",
             "named": true
           },
           {
@@ -1472,10 +1408,6 @@
             "named": true
           },
           {
-            "type": "comment",
-            "named": true
-          },
-          {
             "type": "const_definition",
             "named": true
           },
@@ -1610,10 +1542,6 @@
           "named": true
         },
         {
-          "type": "comment",
-          "named": true
-        },
-        {
           "type": "const_definition",
           "named": true
         },
@@ -1741,10 +1669,6 @@
             "named": true
           },
           {
-            "type": "comment",
-            "named": true
-          },
-          {
             "type": "const_definition",
             "named": true
           },
@@ -1841,7 +1765,7 @@
     },
     "children": {
       "multiple": true,
-      "required": true,
+      "required": false,
       "types": [
         {
           "type": "assignment",
@@ -1861,10 +1785,6 @@
         },
         {
           "type": "call",
-          "named": true
-        },
-        {
-          "type": "comment",
           "named": true
         },
         {
@@ -1995,10 +1915,6 @@
             "named": true
           },
           {
-            "type": "comment",
-            "named": true
-          },
-          {
             "type": "const_definition",
             "named": true
           },
@@ -2118,10 +2034,6 @@
           },
           {
             "type": "call",
-            "named": true
-          },
-          {
-            "type": "comment",
             "named": true
           },
           {
@@ -2249,10 +2161,6 @@
           "named": true
         },
         {
-          "type": "comment",
-          "named": true
-        },
-        {
           "type": "const_definition",
           "named": true
         },
@@ -2376,10 +2284,6 @@
           "named": true
         },
         {
-          "type": "comment",
-          "named": true
-        },
-        {
           "type": "const_definition",
           "named": true
         },
@@ -2483,10 +2387,6 @@
         "required": true,
         "types": [
           {
-            "type": "\n",
-            "named": false
-          },
-          {
             "type": "!",
             "named": false
           },
@@ -2512,10 +2412,6 @@
           },
           {
             "type": "call",
-            "named": true
-          },
-          {
-            "type": "comment",
             "named": true
           },
           {
@@ -2638,10 +2534,6 @@
           "named": true
         },
         {
-          "type": "comment",
-          "named": true
-        },
-        {
           "type": "const_definition",
           "named": true
         },
@@ -2745,10 +2637,6 @@
         "required": false,
         "types": [
           {
-            "type": "\n",
-            "named": false
-          },
-          {
             "type": "!",
             "named": false
           },
@@ -2778,10 +2666,6 @@
           },
           {
             "type": "call",
-            "named": true
-          },
-          {
-            "type": "comment",
             "named": true
           },
           {
@@ -2905,10 +2789,6 @@
         },
         {
           "type": "call",
-          "named": true
-        },
-        {
-          "type": "comment",
           "named": true
         },
         {
@@ -3065,10 +2945,6 @@
             "named": true
           },
           {
-            "type": "comment",
-            "named": true
-          },
-          {
             "type": "const_definition",
             "named": true
           },
@@ -3185,10 +3061,6 @@
         },
         {
           "type": "call",
-          "named": true
-        },
-        {
-          "type": "comment",
           "named": true
         },
         {
@@ -3318,7 +3190,7 @@
     "fields": {},
     "children": {
       "multiple": true,
-      "required": true,
+      "required": false,
       "types": [
         {
           "type": "identifier",
@@ -3367,10 +3239,6 @@
           },
           {
             "type": "call",
-            "named": true
-          },
-          {
-            "type": "comment",
             "named": true
           },
           {
@@ -3510,10 +3378,6 @@
             "named": true
           },
           {
-            "type": "comment",
-            "named": true
-          },
-          {
             "type": "const_definition",
             "named": true
           },
@@ -3633,10 +3497,6 @@
           },
           {
             "type": "call",
-            "named": true
-          },
-          {
-            "type": "comment",
             "named": true
           },
           {
@@ -3764,10 +3624,6 @@
           "named": true
         },
         {
-          "type": "comment",
-          "named": true
-        },
-        {
           "type": "const_definition",
           "named": true
         },
@@ -3888,10 +3744,6 @@
         },
         {
           "type": "call",
-          "named": true
-        },
-        {
-          "type": "comment",
           "named": true
         },
         {
@@ -4023,10 +3875,6 @@
           "named": true
         },
         {
-          "type": "comment",
-          "named": true
-        },
-        {
           "type": "const_definition",
           "named": true
         },
@@ -4154,10 +4002,6 @@
           "named": true
         },
         {
-          "type": "comment",
-          "named": true
-        },
-        {
           "type": "const_definition",
           "named": true
         },
@@ -4251,10 +4095,6 @@
         }
       ]
     }
-  },
-  {
-    "type": "\n",
-    "named": false
   },
   {
     "type": "!",
