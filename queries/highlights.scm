@@ -1,5 +1,4 @@
 ; Highlights.scm for gab
-
 (comment) @comment
 
 (number) @number
@@ -52,6 +51,7 @@
 ] @keyword.storage.type
 
 [
+  "!"
   ","
   "."
   ":"
@@ -98,11 +98,11 @@
 
 (message name: (identifier) @method.call)
 
+(parameters (identifier) @parameter)
+
 (function_definition name: (identifier) @method)
 
 (function_definition type: (identifier) @type)
-
-(parameters (identifier) @parameter)
 
 (object_definition name: (identifier) @type)
 
