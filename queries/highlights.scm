@@ -47,7 +47,6 @@
 ] @keyword.storage.type
 
 [
-  "!"
   ","
   "."
   ":"
