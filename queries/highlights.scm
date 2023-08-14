@@ -88,8 +88,6 @@
   "<<"
 ] @operator
 
-(impl name: (identifier) @type)
-
 (call callee: (identifier) @method.call)
 
 (message name: (identifier) @method.call)
