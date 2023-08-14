@@ -264,35 +264,6 @@
         }
       ]
     },
-    "impl": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "impl"
-        },
-        {
-          "type": "FIELD",
-          "name": "name",
-          "content": {
-            "type": "SYMBOL",
-            "name": "_expression"
-          }
-        },
-        {
-          "type": "SYMBOL",
-          "name": "_newlines"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "_block_body"
-        },
-        {
-          "type": "STRING",
-          "value": "end"
-        }
-      ]
-    },
     "_expression": {
       "type": "PREC_RIGHT",
       "value": 1,
@@ -401,10 +372,6 @@
               {
                 "type": "SYMBOL",
                 "name": "yield"
-              },
-              {
-                "type": "SYMBOL",
-                "name": "impl"
               }
             ]
           },
