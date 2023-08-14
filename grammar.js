@@ -121,7 +121,7 @@ module.exports = grammar({
       $.match,
       $.yield,
       $.impl,
-    ), optional('!'))),
+    ), optional('in'))),
 
     unary: $ => prec(PREC_UNARY, choice(
       seq('-', $._expression),

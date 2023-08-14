@@ -413,7 +413,7 @@
             "members": [
               {
                 "type": "STRING",
-                "value": "!"
+                "value": "in"
               },
               {
                 "type": "BLANK"
