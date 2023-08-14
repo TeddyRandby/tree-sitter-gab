@@ -86,14 +86,6 @@ module.exports = grammar({
 
     _block_body: $ => seq(repeat1($._statement)),
 
-    impl: $ => seq(
-      'impl',
-      field("name", $._expression),
-      $._newlines,
-      $._block_body,
-      'end',
-    ),
-
     _expression: $ => prec.right(PREC_EXP, seq(choice(
       $._definition,
       $.symbol,
@@ -120,7 +112,6 @@ module.exports = grammar({
       $.call,
       $.match,
       $.yield,
-      $.impl,
     ), optional('in'))),
 
     unary: $ => prec(PREC_UNARY, choice(

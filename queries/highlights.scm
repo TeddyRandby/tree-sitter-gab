@@ -19,10 +19,6 @@
 ] @string
 
 [
- "impl"
-] @type.definition
-
-[
  "for"
  "in"
  "loop"
