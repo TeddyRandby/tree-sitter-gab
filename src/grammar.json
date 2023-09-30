@@ -323,6 +323,10 @@
               },
               {
                 "type": "SYMBOL",
+                "name": "tagstring"
+              },
+              {
+                "type": "SYMBOL",
                 "name": "bool"
               },
               {
@@ -1804,6 +1808,49 @@
         }
       ]
     },
+    "tagstring": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "FIELD",
+          "name": "tag",
+          "content": {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "STRING",
+                "value": "@"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "identifier"
+              }
+            ]
+          }
+        },
+        {
+          "type": "FIELD",
+          "name": "body",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "string"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "rawstring"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "interpstring"
+              }
+            ]
+          }
+        }
+      ]
+    },
     "string": {
       "type": "SEQ",
       "members": [
@@ -1855,24 +1902,21 @@
       ]
     },
     "rawstring": {
-      "type": "TOKEN",
-      "content": {
-        "type": "SEQ",
-        "members": [
-          {
-            "type": "STRING",
-            "value": "\""
-          },
-          {
-            "type": "PATTERN",
-            "value": "[^\\\"]*"
-          },
-          {
-            "type": "STRING",
-            "value": "\""
-          }
-        ]
-      }
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "\""
+        },
+        {
+          "type": "PATTERN",
+          "value": "[^\\\"]*"
+        },
+        {
+          "type": "STRING",
+          "value": "\""
+        }
+      ]
     },
     "comment": {
       "type": "TOKEN",

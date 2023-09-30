@@ -99,6 +99,7 @@ module.exports = grammar({
       $.number,
       $.string,
       $.interpstring,
+      $.tagstring,
       $.bool,
       $.nil,
       $.property,
@@ -361,6 +362,17 @@ module.exports = grammar({
       $._interpend,
     ),
 
+    tagstring: $ => seq(
+      field('tag', seq('@', $.identifier)),
+      field('body',
+        choice(
+          $.string,
+          $.rawstring,
+          $.interpstring,
+        ),
+      ),
+    ),
+
     string: _ => seq(
       '\'',
       /[^\']*/,
@@ -377,11 +389,11 @@ module.exports = grammar({
       field('name', $.identifier),
     ),
 
-    rawstring: _ => token(seq(
+    rawstring: $ => seq(
       '"',
       /[^\"]*/,
       '"',
-    )),
+    ),
 
     comment: _ => token(
       seq(

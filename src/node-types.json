@@ -116,6 +116,10 @@
             "named": true
           },
           {
+            "type": "tagstring",
+            "named": true
+          },
+          {
             "type": "unary",
             "named": true
           },
@@ -238,6 +242,10 @@
             "named": true
           },
           {
+            "type": "tagstring",
+            "named": true
+          },
+          {
             "type": "unary",
             "named": true
           },
@@ -355,6 +363,10 @@
         },
         {
           "type": "symbol",
+          "named": true
+        },
+        {
+          "type": "tagstring",
           "named": true
         },
         {
@@ -482,6 +494,10 @@
           },
           {
             "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "tagstring",
             "named": true
           },
           {
@@ -624,6 +640,10 @@
             "named": true
           },
           {
+            "type": "tagstring",
+            "named": true
+          },
+          {
             "type": "unary",
             "named": true
           },
@@ -736,6 +756,10 @@
         },
         {
           "type": "symbol",
+          "named": true
+        },
+        {
+          "type": "tagstring",
           "named": true
         },
         {
@@ -880,6 +904,10 @@
             "named": true
           },
           {
+            "type": "tagstring",
+            "named": true
+          },
+          {
             "type": "unary",
             "named": true
           },
@@ -1005,6 +1033,10 @@
           },
           {
             "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "tagstring",
             "named": true
           },
           {
@@ -1137,6 +1169,10 @@
           "named": true
         },
         {
+          "type": "tagstring",
+          "named": true
+        },
+        {
           "type": "unary",
           "named": true
         },
@@ -1261,6 +1297,10 @@
           },
           {
             "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "tagstring",
             "named": true
           },
           {
@@ -1448,6 +1488,10 @@
             "named": true
           },
           {
+            "type": "tagstring",
+            "named": true
+          },
+          {
             "type": "unary",
             "named": true
           },
@@ -1578,6 +1622,10 @@
           "named": true
         },
         {
+          "type": "tagstring",
+          "named": true
+        },
+        {
           "type": "unary",
           "named": true
         },
@@ -1701,6 +1749,10 @@
             "named": true
           },
           {
+            "type": "tagstring",
+            "named": true
+          },
+          {
             "type": "unary",
             "named": true
           },
@@ -1816,6 +1868,10 @@
           },
           {
             "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "tagstring",
             "named": true
           },
           {
@@ -1939,6 +1995,10 @@
           "named": true
         },
         {
+          "type": "tagstring",
+          "named": true
+        },
+        {
           "type": "unary",
           "named": true
         },
@@ -2055,6 +2115,10 @@
         },
         {
           "type": "symbol",
+          "named": true
+        },
+        {
+          "type": "tagstring",
           "named": true
         },
         {
@@ -2185,6 +2249,10 @@
             "named": true
           },
           {
+            "type": "tagstring",
+            "named": true
+          },
+          {
             "type": "unary",
             "named": true
           },
@@ -2297,6 +2365,10 @@
         },
         {
           "type": "symbol",
+          "named": true
+        },
+        {
+          "type": "tagstring",
           "named": true
         },
         {
@@ -2435,6 +2507,10 @@
             "named": true
           },
           {
+            "type": "tagstring",
+            "named": true
+          },
+          {
             "type": "unary",
             "named": true
           },
@@ -2547,6 +2623,10 @@
         },
         {
           "type": "symbol",
+          "named": true
+        },
+        {
+          "type": "tagstring",
           "named": true
         },
         {
@@ -2699,6 +2779,10 @@
             "named": true
           },
           {
+            "type": "tagstring",
+            "named": true
+          },
+          {
             "type": "unary",
             "named": true
           },
@@ -2811,6 +2895,10 @@
         },
         {
           "type": "symbol",
+          "named": true
+        },
+        {
+          "type": "tagstring",
           "named": true
         },
         {
@@ -2988,6 +3076,10 @@
             "named": true
           },
           {
+            "type": "tagstring",
+            "named": true
+          },
+          {
             "type": "unary",
             "named": true
           },
@@ -2998,6 +3090,11 @@
         ]
       }
     }
+  },
+  {
+    "type": "rawstring",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "record",
@@ -3120,6 +3217,10 @@
             "named": true
           },
           {
+            "type": "tagstring",
+            "named": true
+          },
+          {
             "type": "unary",
             "named": true
           },
@@ -3235,6 +3336,10 @@
           },
           {
             "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "tagstring",
             "named": true
           },
           {
@@ -3358,6 +3463,10 @@
           "named": true
         },
         {
+          "type": "tagstring",
+          "named": true
+        },
+        {
           "type": "unary",
           "named": true
         },
@@ -3477,6 +3586,10 @@
           "named": true
         },
         {
+          "type": "tagstring",
+          "named": true
+        },
+        {
           "type": "unary",
           "named": true
         },
@@ -3491,6 +3604,44 @@
     "type": "string",
     "named": true,
     "fields": {}
+  },
+  {
+    "type": "tagstring",
+    "named": true,
+    "fields": {
+      "body": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "interpstring",
+            "named": true
+          },
+          {
+            "type": "rawstring",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          }
+        ]
+      },
+      "tag": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "@",
+            "named": false
+          },
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    }
   },
   {
     "type": "unary",
@@ -3602,6 +3753,10 @@
         },
         {
           "type": "symbol",
+          "named": true
+        },
+        {
+          "type": "tagstring",
           "named": true
         },
         {
@@ -3724,6 +3879,10 @@
           "named": true
         },
         {
+          "type": "tagstring",
+          "named": true
+        },
+        {
           "type": "unary",
           "named": true
         },
@@ -3733,6 +3892,10 @@
         }
       ]
     }
+  },
+  {
+    "type": "\"",
+    "named": false
   },
   {
     "type": "%",
@@ -3835,6 +3998,10 @@
     "named": false
   },
   {
+    "type": "@",
+    "named": false
+  },
+  {
     "type": "[",
     "named": false
   },
@@ -3917,10 +4084,6 @@
   {
     "type": "or",
     "named": false
-  },
-  {
-    "type": "rawstring",
-    "named": true
   },
   {
     "type": "return",

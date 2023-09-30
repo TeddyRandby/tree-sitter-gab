@@ -7,6 +7,10 @@
 
 (symbol) @string.special
 
+(tagstring
+  tag: (identifier) @injection.language
+  body: [(string) (rawstring) (interpstring)] @injection.content)
+
 [
  (bool)
  (nil)
