@@ -319,10 +319,6 @@
               },
               {
                 "type": "SYMBOL",
-                "name": "interpstring"
-              },
-              {
-                "type": "SYMBOL",
                 "name": "tagstring"
               },
               {
@@ -1715,91 +1711,6 @@
       "type": "STRING",
       "value": "nil"
     },
-    "interpstringtext": {
-      "type": "PATTERN",
-      "value": "[^\\{\\}\\']*"
-    },
-    "_interpstart": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "'"
-        },
-        {
-          "type": "FIELD",
-          "name": "text",
-          "content": {
-            "type": "SYMBOL",
-            "name": "interpstringtext"
-          }
-        },
-        {
-          "type": "STRING",
-          "value": "{"
-        }
-      ]
-    },
-    "_interpmiddle": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "SYMBOL",
-          "name": "_expression"
-        },
-        {
-          "type": "SEQ",
-          "members": [
-            {
-              "type": "STRING",
-              "value": "}"
-            },
-            {
-              "type": "FIELD",
-              "name": "text",
-              "content": {
-                "type": "SYMBOL",
-                "name": "interpstringtext"
-              }
-            },
-            {
-              "type": "STRING",
-              "value": "{"
-            }
-          ]
-        }
-      ]
-    },
-    "_interpend": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "}"
-        },
-        {
-          "type": "FIELD",
-          "name": "text",
-          "content": {
-            "type": "SYMBOL",
-            "name": "interpstringtext"
-          }
-        },
-        {
-          "type": "STRING",
-          "value": "'"
-        }
-      ]
-    },
-    "interpstring": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "^"
-        }
-      ]
-    },
     "tagstring": {
       "type": "SEQ",
       "members": [
@@ -1833,30 +1744,9 @@
               {
                 "type": "SYMBOL",
                 "name": "rawstring"
-              },
-              {
-                "type": "SYMBOL",
-                "name": "interpstring"
               }
             ]
           }
-        }
-      ]
-    },
-    "string": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "'"
-        },
-        {
-          "type": "PATTERN",
-          "value": "[^\\']*"
-        },
-        {
-          "type": "STRING",
-          "value": "'"
         }
       ]
     },
@@ -1893,6 +1783,64 @@
         }
       ]
     },
+    "stringcontent": {
+      "type": "PATTERN",
+      "value": "[^\\{\\}\\']*"
+    },
+    "_interp": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "stringcontent"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "STRING",
+                "value": "{"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "_expression"
+              },
+              {
+                "type": "STRING",
+                "value": "}"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "stringcontent"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "string": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "'"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_interp"
+        },
+        {
+          "type": "STRING",
+          "value": "'"
+        }
+      ]
+    },
+    "rawstringcontent": {
+      "type": "PATTERN",
+      "value": "[^\\\"]*"
+    },
     "rawstring": {
       "type": "SEQ",
       "members": [
@@ -1901,8 +1849,8 @@
           "value": "\""
         },
         {
-          "type": "PATTERN",
-          "value": "[^\\\"]*"
+          "type": "SYMBOL",
+          "name": "rawstringcontent"
         },
         {
           "type": "STRING",

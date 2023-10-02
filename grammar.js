@@ -98,7 +98,6 @@ module.exports = grammar({
       $.identifier,
       $.number,
       $.string,
-      $.interpstring,
       $.tagstring,
       $.bool,
       $.nil,
@@ -334,37 +333,6 @@ module.exports = grammar({
 
     nil: _ => 'nil',
 
-    interpstringtext: _ => (/[^\{\}\']*/),
-
-    _interpstart: $ => (seq(
-      '\'',
-      field('text', $.interpstringtext),
-      '{',
-    )),
-
-    _interpmiddle: $ => seq(
-      $._expression,
-      (seq(
-        '}',
-        field('text', $.interpstringtext),
-        '{'
-      ))
-    ),
-
-    _interpend: $ => (seq(
-      '}',
-      field('text', $.interpstringtext),
-      '\'',
-    )),
-
-    interpstring: $ => seq(
-      // $._interpstart,
-      // repeat($._interpmiddle),
-      // $._expression,
-      // $._interpend,
-      '^',
-    ),
-
     tagstring: $ => seq(
       field('tag', seq(
         '@',
@@ -373,14 +341,7 @@ module.exports = grammar({
       field('body', choice(
         $.string,
         $.rawstring,
-        $.interpstring,
       )),
-    ),
-
-    string: _ => seq(
-      '\'',
-      /[^\']*/,
-      '\'',
     ),
 
     symbol: _ => token(seq(
@@ -393,9 +354,29 @@ module.exports = grammar({
       field('name', $.identifier),
     ),
 
+    stringcontent: _ => /[^\{\}\']*/,
+
+    _interp: $ => seq(
+      $.stringcontent,
+      repeat(seq(
+        '{',
+        $._expression,
+        '}',
+        $.stringcontent,
+      )),
+    ),
+
+    string: $ => seq(
+      '\'',
+      $._interp,
+      '\'',
+    ),
+
+    rawstringcontent: _ => /[^\"]*/,
+
     rawstring: $ => seq(
       '"',
-    /[^\"]*/,
+      $.rawstringcontent,
       '"',
     ),
 

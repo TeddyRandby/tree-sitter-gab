@@ -1,3 +1,3 @@
 (tagstring
   tag: (identifier) @injection.language
-  body: (string) @injection.content)
+  body: (string (stringcontent)  @injection.content))

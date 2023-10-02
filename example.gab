@@ -1,1 +1,3 @@
 @html'<div>foo</div>'
+
+@bash'echo "{2}" {1}'

@@ -15,7 +15,6 @@
 [
   (string)
   (rawstring)
-  (interpstring)
 ] @string
 
 [
