@@ -14,6 +14,7 @@ const PREC_METHOD = 12
 const PREC_SPEC = 13
 const PREC_OBJ = 14
 const PREC_TUP = 15
+const PREC_TAGSTR = 16
 
 module.exports = grammar({
   name: 'gab',
@@ -95,10 +96,10 @@ module.exports = grammar({
       $.loop,
       $.block,
       $.return,
+      $.tagstring,
       $.identifier,
       $.number,
       $.string,
-      $.tagstring,
       $.bool,
       $.nil,
       $.property,
@@ -333,16 +334,13 @@ module.exports = grammar({
 
     nil: _ => 'nil',
 
-    tagstring: $ => seq(
-      field('tag', seq(
-        '@',
-        $.identifier,
-      )),
+    tagstring: $ => prec(PREC_TAGSTR, seq(
+      field('tag', $.identifier),
       field('body', choice(
         $.string,
         $.rawstring,
       )),
-    ),
+    )),
 
     symbol: _ => token(seq(
       '.',

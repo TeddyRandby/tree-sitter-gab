@@ -1,3 +1,8 @@
-@html'<div>foo</div>'
+html'<div>foo</div>'
 
-@bash'echo "{2}" {1}'
+bash'echo "{2}" {1}'
+
+python'print("foo")'
+
+bash"{2}"
+

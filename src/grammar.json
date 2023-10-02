@@ -307,6 +307,10 @@
               },
               {
                 "type": "SYMBOL",
+                "name": "tagstring"
+              },
+              {
+                "type": "SYMBOL",
                 "name": "identifier"
               },
               {
@@ -316,10 +320,6 @@
               {
                 "type": "SYMBOL",
                 "name": "string"
-              },
-              {
-                "type": "SYMBOL",
-                "name": "tagstring"
               },
               {
                 "type": "SYMBOL",
@@ -1712,43 +1712,38 @@
       "value": "nil"
     },
     "tagstring": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "FIELD",
-          "name": "tag",
-          "content": {
-            "type": "SEQ",
-            "members": [
-              {
-                "type": "STRING",
-                "value": "@"
-              },
-              {
-                "type": "SYMBOL",
-                "name": "identifier"
-              }
-            ]
+      "type": "PREC",
+      "value": 16,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "FIELD",
+            "name": "tag",
+            "content": {
+              "type": "SYMBOL",
+              "name": "identifier"
+            }
+          },
+          {
+            "type": "FIELD",
+            "name": "body",
+            "content": {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "string"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "rawstring"
+                }
+              ]
+            }
           }
-        },
-        {
-          "type": "FIELD",
-          "name": "body",
-          "content": {
-            "type": "CHOICE",
-            "members": [
-              {
-                "type": "SYMBOL",
-                "name": "string"
-              },
-              {
-                "type": "SYMBOL",
-                "name": "rawstring"
-              }
-            ]
-          }
-        }
-      ]
+        ]
+      }
     },
     "symbol": {
       "type": "TOKEN",
