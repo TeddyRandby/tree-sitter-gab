@@ -1715,25 +1715,30 @@
       "type": "STRING",
       "value": "nil"
     },
+    "interpstringtext": {
+      "type": "PATTERN",
+      "value": "[^\\{\\}\\']*"
+    },
     "_interpstart": {
-      "type": "TOKEN",
-      "content": {
-        "type": "SEQ",
-        "members": [
-          {
-            "type": "STRING",
-            "value": "'"
-          },
-          {
-            "type": "PATTERN",
-            "value": "[^\\{\\']*"
-          },
-          {
-            "type": "STRING",
-            "value": "{"
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "'"
+        },
+        {
+          "type": "FIELD",
+          "name": "text",
+          "content": {
+            "type": "SYMBOL",
+            "name": "interpstringtext"
           }
-        ]
-      }
+        },
+        {
+          "type": "STRING",
+          "value": "{"
+        }
+      ]
     },
     "_interpmiddle": {
       "type": "SEQ",
@@ -1743,68 +1748,55 @@
           "name": "_expression"
         },
         {
-          "type": "TOKEN",
-          "content": {
-            "type": "SEQ",
-            "members": [
-              {
-                "type": "STRING",
-                "value": "}"
-              },
-              {
-                "type": "PATTERN",
-                "value": "[^\\{\\']*"
-              },
-              {
-                "type": "STRING",
-                "value": "{"
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "}"
+            },
+            {
+              "type": "FIELD",
+              "name": "text",
+              "content": {
+                "type": "SYMBOL",
+                "name": "interpstringtext"
               }
-            ]
-          }
+            },
+            {
+              "type": "STRING",
+              "value": "{"
+            }
+          ]
         }
       ]
     },
     "_interpend": {
-      "type": "TOKEN",
-      "content": {
-        "type": "SEQ",
-        "members": [
-          {
-            "type": "STRING",
-            "value": "}"
-          },
-          {
-            "type": "PATTERN",
-            "value": "[^\\'\\{]*"
-          },
-          {
-            "type": "STRING",
-            "value": "'"
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "}"
+        },
+        {
+          "type": "FIELD",
+          "name": "text",
+          "content": {
+            "type": "SYMBOL",
+            "name": "interpstringtext"
           }
-        ]
-      }
+        },
+        {
+          "type": "STRING",
+          "value": "'"
+        }
+      ]
     },
     "interpstring": {
       "type": "SEQ",
       "members": [
         {
-          "type": "SYMBOL",
-          "name": "_interpstart"
-        },
-        {
-          "type": "REPEAT",
-          "content": {
-            "type": "SYMBOL",
-            "name": "_interpmiddle"
-          }
-        },
-        {
-          "type": "SYMBOL",
-          "name": "_expression"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "_interpend"
+          "type": "STRING",
+          "value": "^"
         }
       ]
     },
@@ -1851,6 +1843,13 @@
         }
       ]
     },
+    "stringtext": {
+      "type": "TOKEN",
+      "content": {
+        "type": "PATTERN",
+        "value": "[^\\']*"
+      }
+    },
     "string": {
       "type": "SEQ",
       "members": [
@@ -1859,8 +1858,8 @@
           "value": "'"
         },
         {
-          "type": "PATTERN",
-          "value": "[^\\']*"
+          "type": "SYMBOL",
+          "name": "stringtext"
         },
         {
           "type": "STRING",
@@ -1901,6 +1900,10 @@
         }
       ]
     },
+    "rawstringtext": {
+      "type": "PATTERN",
+      "value": "[^\\\"]*"
+    },
     "rawstring": {
       "type": "SEQ",
       "members": [
@@ -1909,8 +1912,12 @@
           "value": "\""
         },
         {
-          "type": "PATTERN",
-          "value": "[^\\\"]*"
+          "type": "FIELD",
+          "name": "text",
+          "content": {
+            "type": "SYMBOL",
+            "name": "rawstringtext"
+          }
         },
         {
           "type": "STRING",
@@ -2001,6 +2008,10 @@
     {
       "type": "PATTERN",
       "value": "\\s"
+    },
+    {
+      "type": "SYMBOL",
+      "name": "_newline"
     }
   ],
   "conflicts": [

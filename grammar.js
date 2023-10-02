@@ -22,7 +22,7 @@ module.exports = grammar({
 
   conflicts: $ => [[$._tuple]],
 
-  extras: $ => [$.comment, /\s/],
+  extras: $ => [$.comment, /\s/, $._newline],
 
   rules: {
     source_file: $ => $._block_body,
@@ -334,48 +334,54 @@ module.exports = grammar({
 
     nil: _ => 'nil',
 
-    _interpstart: _ => token(seq(
+    interpstringtext: _ => (/[^\{\}\']*/),
+
+    _interpstart: $ => (seq(
       '\'',
-      /[^\{\']*/,
+      field('text', $.interpstringtext),
       '{',
     )),
 
     _interpmiddle: $ => seq(
       $._expression,
-      token(seq(
+      (seq(
         '}',
-        /[^\{\']*/,
+        field('text', $.interpstringtext),
         '{'
       ))
     ),
 
-    _interpend: _ => token(seq(
+    _interpend: $ => (seq(
       '}',
-      /[^\'\{]*/,
+      field('text', $.interpstringtext),
       '\'',
     )),
 
     interpstring: $ => seq(
-      $._interpstart,
-      repeat($._interpmiddle),
-      $._expression,
-      $._interpend,
+      // $._interpstart,
+      // repeat($._interpmiddle),
+      // $._expression,
+      // $._interpend,
+      '^',
     ),
 
     tagstring: $ => seq(
-      field('tag', seq('@', $.identifier)),
-      field('body',
-        choice(
-          $.string,
-          $.rawstring,
-          $.interpstring,
-        ),
-      ),
+      field('tag', seq(
+        '@',
+        $.identifier,
+      )),
+      field('body', choice(
+        $.string,
+        $.rawstring,
+        $.interpstring,
+      )),
     ),
 
-    string: _ => seq(
+    stringtext: _ => token(/[^\']*/),
+
+    string: $ => seq(
       '\'',
-      /[^\']*/,
+      $.stringtext,
       '\'',
     ),
 
@@ -389,9 +395,12 @@ module.exports = grammar({
       field('name', $.identifier),
     ),
 
+    rawstringtext: _ => /[^\"]*/,
+
+
     rawstring: $ => seq(
       '"',
-      /[^\"]*/,
+      field('text', $.rawstringtext),
       '"',
     ),
 
