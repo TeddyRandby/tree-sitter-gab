@@ -1843,13 +1843,6 @@
         }
       ]
     },
-    "stringtext": {
-      "type": "TOKEN",
-      "content": {
-        "type": "PATTERN",
-        "value": "[^\\']*"
-      }
-    },
     "string": {
       "type": "SEQ",
       "members": [
@@ -1858,8 +1851,8 @@
           "value": "'"
         },
         {
-          "type": "SYMBOL",
-          "name": "stringtext"
+          "type": "PATTERN",
+          "value": "[^\\']*"
         },
         {
           "type": "STRING",
@@ -1900,10 +1893,6 @@
         }
       ]
     },
-    "rawstringtext": {
-      "type": "PATTERN",
-      "value": "[^\\\"]*"
-    },
     "rawstring": {
       "type": "SEQ",
       "members": [
@@ -1912,12 +1901,8 @@
           "value": "\""
         },
         {
-          "type": "FIELD",
-          "name": "text",
-          "content": {
-            "type": "SYMBOL",
-            "name": "rawstringtext"
-          }
+          "type": "PATTERN",
+          "value": "[^\\\"]*"
         },
         {
           "type": "STRING",

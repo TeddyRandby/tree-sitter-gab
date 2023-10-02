@@ -2976,18 +2976,7 @@
   {
     "type": "rawstring",
     "named": true,
-    "fields": {
-      "text": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "rawstringtext",
-            "named": true
-          }
-        ]
-      }
-    }
+    "fields": {}
   },
   {
     "type": "record",
@@ -3496,17 +3485,7 @@
   {
     "type": "string",
     "named": true,
-    "fields": {},
-    "children": {
-      "multiple": false,
-      "required": true,
-      "types": [
-        {
-          "type": "stringtext",
-          "named": true
-        }
-      ]
-    }
+    "fields": {}
   },
   {
     "type": "tagstring",
@@ -3997,16 +3976,8 @@
     "named": false
   },
   {
-    "type": "rawstringtext",
-    "named": true
-  },
-  {
     "type": "return",
     "named": false
-  },
-  {
-    "type": "stringtext",
-    "named": true
   },
   {
     "type": "symbol",

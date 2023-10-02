@@ -377,11 +377,9 @@ module.exports = grammar({
       )),
     ),
 
-    stringtext: _ => token(/[^\']*/),
-
-    string: $ => seq(
+    string: _ => seq(
       '\'',
-      $.stringtext,
+      /[^\']*/,
       '\'',
     ),
 
@@ -395,12 +393,9 @@ module.exports = grammar({
       field('name', $.identifier),
     ),
 
-    rawstringtext: _ => /[^\"]*/,
-
-
     rawstring: $ => seq(
       '"',
-      field('text', $.rawstringtext),
+    /[^\"]*/,
       '"',
     ),
 
