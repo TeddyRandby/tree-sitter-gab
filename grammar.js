@@ -101,7 +101,6 @@ module.exports = grammar({
       $.bool,
       $.nil,
       $.property,
-      $.rawstring,
       $.group,
       $.binary,
       $.unary,
@@ -443,15 +442,18 @@ module.exports = grammar({
       )),
     ),
 
-    string: $ => seq(
-      '\'',
-      $._interp,
-      '\'',
+    string: $ => choice(
+      seq(
+        '\'',
+        $._interp,
+        '\'',
+      ),
+      $._rawstring,
     ),
 
     rawstringcontent: _ => /[^\"]*/,
 
-    rawstring: $ => seq(
+    _rawstring: $ => seq(
       '"',
       $.rawstringcontent,
       '"',

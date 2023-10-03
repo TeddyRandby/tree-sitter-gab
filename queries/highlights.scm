@@ -6,7 +6,6 @@
 (identifier) @variable
 
 (symbol) @string.special
-(tagstring tag: (identifier) @string.special)
 
 [
  (bool)
@@ -15,7 +14,6 @@
 
 [
   (string)
-  (rawstring)
 ] @string
 
 [

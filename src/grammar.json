@@ -331,10 +331,6 @@
               },
               {
                 "type": "SYMBOL",
-                "name": "rawstring"
-              },
-              {
-                "type": "SYMBOL",
                 "name": "group"
               },
               {
@@ -2136,19 +2132,28 @@
       ]
     },
     "string": {
-      "type": "SEQ",
+      "type": "CHOICE",
       "members": [
         {
-          "type": "STRING",
-          "value": "'"
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "'"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "_interp"
+            },
+            {
+              "type": "STRING",
+              "value": "'"
+            }
+          ]
         },
         {
           "type": "SYMBOL",
-          "name": "_interp"
-        },
-        {
-          "type": "STRING",
-          "value": "'"
+          "name": "_rawstring"
         }
       ]
     },
@@ -2156,7 +2161,7 @@
       "type": "PATTERN",
       "value": "[^\\\"]*"
     },
-    "rawstring": {
+    "_rawstring": {
       "type": "SEQ",
       "members": [
         {
