@@ -72,10 +72,6 @@
             "named": true
           },
           {
-            "type": "method",
-            "named": true
-          },
-          {
             "type": "nil",
             "named": true
           },
@@ -104,15 +100,15 @@
             "named": true
           },
           {
+            "type": "send",
+            "named": true
+          },
+          {
             "type": "string",
             "named": true
           },
           {
             "type": "symbol",
-            "named": true
-          },
-          {
-            "type": "tagstring",
             "named": true
           },
           {
@@ -194,10 +190,6 @@
             "named": true
           },
           {
-            "type": "method",
-            "named": true
-          },
-          {
             "type": "nil",
             "named": true
           },
@@ -226,15 +218,15 @@
             "named": true
           },
           {
+            "type": "send",
+            "named": true
+          },
+          {
             "type": "string",
             "named": true
           },
           {
             "type": "symbol",
-            "named": true
-          },
-          {
-            "type": "tagstring",
             "named": true
           },
           {
@@ -314,10 +306,6 @@
           "named": true
         },
         {
-          "type": "method",
-          "named": true
-        },
-        {
           "type": "nil",
           "named": true
         },
@@ -346,15 +334,15 @@
           "named": true
         },
         {
+          "type": "send",
+          "named": true
+        },
+        {
           "type": "string",
           "named": true
         },
         {
           "type": "symbol",
-          "named": true
-        },
-        {
-          "type": "tagstring",
           "named": true
         },
         {
@@ -441,10 +429,6 @@
             "named": true
           },
           {
-            "type": "method",
-            "named": true
-          },
-          {
             "type": "nil",
             "named": true
           },
@@ -473,15 +457,15 @@
             "named": true
           },
           {
+            "type": "send",
+            "named": true
+          },
+          {
             "type": "string",
             "named": true
           },
           {
             "type": "symbol",
-            "named": true
-          },
-          {
-            "type": "tagstring",
             "named": true
           },
           {
@@ -580,10 +564,6 @@
             "named": true
           },
           {
-            "type": "method",
-            "named": true
-          },
-          {
             "type": "nil",
             "named": true
           },
@@ -612,15 +592,15 @@
             "named": true
           },
           {
+            "type": "send",
+            "named": true
+          },
+          {
             "type": "string",
             "named": true
           },
           {
             "type": "symbol",
-            "named": true
-          },
-          {
-            "type": "tagstring",
             "named": true
           },
           {
@@ -695,10 +675,6 @@
           "named": true
         },
         {
-          "type": "method",
-          "named": true
-        },
-        {
           "type": "nil",
           "named": true
         },
@@ -727,15 +703,15 @@
           "named": true
         },
         {
+          "type": "send",
+          "named": true
+        },
+        {
           "type": "string",
           "named": true
         },
         {
           "type": "symbol",
-          "named": true
-        },
-        {
-          "type": "tagstring",
           "named": true
         },
         {
@@ -836,10 +812,6 @@
             "named": true
           },
           {
-            "type": "method",
-            "named": true
-          },
-          {
             "type": "nil",
             "named": true
           },
@@ -868,15 +840,15 @@
             "named": true
           },
           {
+            "type": "send",
+            "named": true
+          },
+          {
             "type": "string",
             "named": true
           },
           {
             "type": "symbol",
-            "named": true
-          },
-          {
-            "type": "tagstring",
             "named": true
           },
           {
@@ -964,10 +936,6 @@
             "named": true
           },
           {
-            "type": "method",
-            "named": true
-          },
-          {
             "type": "nil",
             "named": true
           },
@@ -996,15 +964,15 @@
             "named": true
           },
           {
+            "type": "send",
+            "named": true
+          },
+          {
             "type": "string",
             "named": true
           },
           {
             "type": "symbol",
-            "named": true
-          },
-          {
-            "type": "tagstring",
             "named": true
           },
           {
@@ -1093,10 +1061,6 @@
           "named": true
         },
         {
-          "type": "method",
-          "named": true
-        },
-        {
           "type": "nil",
           "named": true
         },
@@ -1125,15 +1089,15 @@
           "named": true
         },
         {
+          "type": "send",
+          "named": true
+        },
+        {
           "type": "string",
           "named": true
         },
         {
           "type": "symbol",
-          "named": true
-        },
-        {
-          "type": "tagstring",
           "named": true
         },
         {
@@ -1220,10 +1184,6 @@
             "named": true
           },
           {
-            "type": "method",
-            "named": true
-          },
-          {
             "type": "nil",
             "named": true
           },
@@ -1252,15 +1212,15 @@
             "named": true
           },
           {
+            "type": "send",
+            "named": true
+          },
+          {
             "type": "string",
             "named": true
           },
           {
             "type": "symbol",
-            "named": true
-          },
-          {
-            "type": "tagstring",
             "named": true
           },
           {
@@ -1404,10 +1364,6 @@
             "named": true
           },
           {
-            "type": "method",
-            "named": true
-          },
-          {
             "type": "nil",
             "named": true
           },
@@ -1436,15 +1392,15 @@
             "named": true
           },
           {
+            "type": "send",
+            "named": true
+          },
+          {
             "type": "string",
             "named": true
           },
           {
             "type": "symbol",
-            "named": true
-          },
-          {
-            "type": "tagstring",
             "named": true
           },
           {
@@ -1534,10 +1490,6 @@
           "named": true
         },
         {
-          "type": "method",
-          "named": true
-        },
-        {
           "type": "nil",
           "named": true
         },
@@ -1566,15 +1518,15 @@
           "named": true
         },
         {
+          "type": "send",
+          "named": true
+        },
+        {
           "type": "string",
           "named": true
         },
         {
           "type": "symbol",
-          "named": true
-        },
-        {
-          "type": "tagstring",
           "named": true
         },
         {
@@ -1657,10 +1609,6 @@
             "named": true
           },
           {
-            "type": "method",
-            "named": true
-          },
-          {
             "type": "nil",
             "named": true
           },
@@ -1689,15 +1637,15 @@
             "named": true
           },
           {
+            "type": "send",
+            "named": true
+          },
+          {
             "type": "string",
             "named": true
           },
           {
             "type": "symbol",
-            "named": true
-          },
-          {
-            "type": "tagstring",
             "named": true
           },
           {
@@ -1775,10 +1723,6 @@
             "named": true
           },
           {
-            "type": "method",
-            "named": true
-          },
-          {
             "type": "nil",
             "named": true
           },
@@ -1807,15 +1751,15 @@
             "named": true
           },
           {
+            "type": "send",
+            "named": true
+          },
+          {
             "type": "string",
             "named": true
           },
           {
             "type": "symbol",
-            "named": true
-          },
-          {
-            "type": "tagstring",
             "named": true
           },
           {
@@ -1895,10 +1839,6 @@
           "named": true
         },
         {
-          "type": "method",
-          "named": true
-        },
-        {
           "type": "nil",
           "named": true
         },
@@ -1927,15 +1867,15 @@
           "named": true
         },
         {
+          "type": "send",
+          "named": true
+        },
+        {
           "type": "string",
           "named": true
         },
         {
           "type": "symbol",
-          "named": true
-        },
-        {
-          "type": "tagstring",
           "named": true
         },
         {
@@ -2022,10 +1962,6 @@
             "named": true
           },
           {
-            "type": "method",
-            "named": true
-          },
-          {
             "type": "nil",
             "named": true
           },
@@ -2054,15 +1990,15 @@
             "named": true
           },
           {
+            "type": "send",
+            "named": true
+          },
+          {
             "type": "string",
             "named": true
           },
           {
             "type": "symbol",
-            "named": true
-          },
-          {
-            "type": "tagstring",
             "named": true
           },
           {
@@ -2137,10 +2073,6 @@
           "named": true
         },
         {
-          "type": "method",
-          "named": true
-        },
-        {
           "type": "nil",
           "named": true
         },
@@ -2169,15 +2101,15 @@
           "named": true
         },
         {
+          "type": "send",
+          "named": true
+        },
+        {
           "type": "string",
           "named": true
         },
         {
           "type": "symbol",
-          "named": true
-        },
-        {
-          "type": "tagstring",
           "named": true
         },
         {
@@ -2272,10 +2204,6 @@
             "named": true
           },
           {
-            "type": "method",
-            "named": true
-          },
-          {
             "type": "nil",
             "named": true
           },
@@ -2304,15 +2232,15 @@
             "named": true
           },
           {
+            "type": "send",
+            "named": true
+          },
+          {
             "type": "string",
             "named": true
           },
           {
             "type": "symbol",
-            "named": true
-          },
-          {
-            "type": "tagstring",
             "named": true
           },
           {
@@ -2387,10 +2315,6 @@
           "named": true
         },
         {
-          "type": "method",
-          "named": true
-        },
-        {
           "type": "nil",
           "named": true
         },
@@ -2419,15 +2343,15 @@
           "named": true
         },
         {
+          "type": "send",
+          "named": true
+        },
+        {
           "type": "string",
           "named": true
         },
         {
           "type": "symbol",
-          "named": true
-        },
-        {
-          "type": "tagstring",
           "named": true
         },
         {
@@ -2455,254 +2379,6 @@
           }
         ]
       }
-    }
-  },
-  {
-    "type": "method",
-    "named": true,
-    "fields": {
-      "message": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "message",
-            "named": true
-          }
-        ]
-      },
-      "receiver": {
-        "multiple": true,
-        "required": false,
-        "types": [
-          {
-            "type": "assignment",
-            "named": true
-          },
-          {
-            "type": "binary",
-            "named": true
-          },
-          {
-            "type": "block",
-            "named": true
-          },
-          {
-            "type": "bool",
-            "named": true
-          },
-          {
-            "type": "call",
-            "named": true
-          },
-          {
-            "type": "const_definition",
-            "named": true
-          },
-          {
-            "type": "for",
-            "named": true
-          },
-          {
-            "type": "function_definition",
-            "named": true
-          },
-          {
-            "type": "group",
-            "named": true
-          },
-          {
-            "type": "identifier",
-            "named": true
-          },
-          {
-            "type": "in",
-            "named": false
-          },
-          {
-            "type": "index",
-            "named": true
-          },
-          {
-            "type": "list",
-            "named": true
-          },
-          {
-            "type": "loop",
-            "named": true
-          },
-          {
-            "type": "match",
-            "named": true
-          },
-          {
-            "type": "method",
-            "named": true
-          },
-          {
-            "type": "nil",
-            "named": true
-          },
-          {
-            "type": "number",
-            "named": true
-          },
-          {
-            "type": "object_definition",
-            "named": true
-          },
-          {
-            "type": "property",
-            "named": true
-          },
-          {
-            "type": "rawstring",
-            "named": true
-          },
-          {
-            "type": "record",
-            "named": true
-          },
-          {
-            "type": "return",
-            "named": true
-          },
-          {
-            "type": "string",
-            "named": true
-          },
-          {
-            "type": "symbol",
-            "named": true
-          },
-          {
-            "type": "tagstring",
-            "named": true
-          },
-          {
-            "type": "unary",
-            "named": true
-          },
-          {
-            "type": "yield",
-            "named": true
-          }
-        ]
-      }
-    },
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "assignment",
-          "named": true
-        },
-        {
-          "type": "binary",
-          "named": true
-        },
-        {
-          "type": "block",
-          "named": true
-        },
-        {
-          "type": "bool",
-          "named": true
-        },
-        {
-          "type": "call",
-          "named": true
-        },
-        {
-          "type": "const_definition",
-          "named": true
-        },
-        {
-          "type": "for",
-          "named": true
-        },
-        {
-          "type": "function_definition",
-          "named": true
-        },
-        {
-          "type": "group",
-          "named": true
-        },
-        {
-          "type": "identifier",
-          "named": true
-        },
-        {
-          "type": "index",
-          "named": true
-        },
-        {
-          "type": "list",
-          "named": true
-        },
-        {
-          "type": "loop",
-          "named": true
-        },
-        {
-          "type": "match",
-          "named": true
-        },
-        {
-          "type": "method",
-          "named": true
-        },
-        {
-          "type": "nil",
-          "named": true
-        },
-        {
-          "type": "number",
-          "named": true
-        },
-        {
-          "type": "object_definition",
-          "named": true
-        },
-        {
-          "type": "property",
-          "named": true
-        },
-        {
-          "type": "rawstring",
-          "named": true
-        },
-        {
-          "type": "record",
-          "named": true
-        },
-        {
-          "type": "return",
-          "named": true
-        },
-        {
-          "type": "string",
-          "named": true
-        },
-        {
-          "type": "symbol",
-          "named": true
-        },
-        {
-          "type": "tagstring",
-          "named": true
-        },
-        {
-          "type": "unary",
-          "named": true
-        },
-        {
-          "type": "yield",
-          "named": true
-        }
-      ]
     }
   },
   {
@@ -2825,10 +2501,6 @@
             "named": true
           },
           {
-            "type": "method",
-            "named": true
-          },
-          {
             "type": "nil",
             "named": true
           },
@@ -2857,15 +2529,15 @@
             "named": true
           },
           {
+            "type": "send",
+            "named": true
+          },
+          {
             "type": "string",
             "named": true
           },
           {
             "type": "symbol",
-            "named": true
-          },
-          {
-            "type": "tagstring",
             "named": true
           },
           {
@@ -2972,10 +2644,6 @@
             "named": true
           },
           {
-            "type": "method",
-            "named": true
-          },
-          {
             "type": "nil",
             "named": true
           },
@@ -3004,15 +2672,15 @@
             "named": true
           },
           {
+            "type": "send",
+            "named": true
+          },
+          {
             "type": "string",
             "named": true
           },
           {
             "type": "symbol",
-            "named": true
-          },
-          {
-            "type": "tagstring",
             "named": true
           },
           {
@@ -3090,10 +2758,6 @@
             "named": true
           },
           {
-            "type": "method",
-            "named": true
-          },
-          {
             "type": "nil",
             "named": true
           },
@@ -3122,15 +2786,15 @@
             "named": true
           },
           {
+            "type": "send",
+            "named": true
+          },
+          {
             "type": "string",
             "named": true
           },
           {
             "type": "symbol",
-            "named": true
-          },
-          {
-            "type": "tagstring",
             "named": true
           },
           {
@@ -3210,7 +2874,243 @@
           "named": true
         },
         {
-          "type": "method",
+          "type": "nil",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "object_definition",
+          "named": true
+        },
+        {
+          "type": "property",
+          "named": true
+        },
+        {
+          "type": "rawstring",
+          "named": true
+        },
+        {
+          "type": "record",
+          "named": true
+        },
+        {
+          "type": "return",
+          "named": true
+        },
+        {
+          "type": "send",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "symbol",
+          "named": true
+        },
+        {
+          "type": "unary",
+          "named": true
+        },
+        {
+          "type": "yield",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "send",
+    "named": true,
+    "fields": {
+      "message": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "message",
+            "named": true
+          }
+        ]
+      },
+      "receiver": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "assignment",
+            "named": true
+          },
+          {
+            "type": "binary",
+            "named": true
+          },
+          {
+            "type": "block",
+            "named": true
+          },
+          {
+            "type": "bool",
+            "named": true
+          },
+          {
+            "type": "call",
+            "named": true
+          },
+          {
+            "type": "const_definition",
+            "named": true
+          },
+          {
+            "type": "for",
+            "named": true
+          },
+          {
+            "type": "function_definition",
+            "named": true
+          },
+          {
+            "type": "group",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "in",
+            "named": false
+          },
+          {
+            "type": "index",
+            "named": true
+          },
+          {
+            "type": "list",
+            "named": true
+          },
+          {
+            "type": "loop",
+            "named": true
+          },
+          {
+            "type": "match",
+            "named": true
+          },
+          {
+            "type": "nil",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "object_definition",
+            "named": true
+          },
+          {
+            "type": "property",
+            "named": true
+          },
+          {
+            "type": "rawstring",
+            "named": true
+          },
+          {
+            "type": "record",
+            "named": true
+          },
+          {
+            "type": "return",
+            "named": true
+          },
+          {
+            "type": "send",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "unary",
+            "named": true
+          },
+          {
+            "type": "yield",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "assignment",
+          "named": true
+        },
+        {
+          "type": "binary",
+          "named": true
+        },
+        {
+          "type": "block",
+          "named": true
+        },
+        {
+          "type": "bool",
+          "named": true
+        },
+        {
+          "type": "call",
+          "named": true
+        },
+        {
+          "type": "const_definition",
+          "named": true
+        },
+        {
+          "type": "for",
+          "named": true
+        },
+        {
+          "type": "function_definition",
+          "named": true
+        },
+        {
+          "type": "group",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "index",
+          "named": true
+        },
+        {
+          "type": "list",
+          "named": true
+        },
+        {
+          "type": "loop",
+          "named": true
+        },
+        {
+          "type": "match",
           "named": true
         },
         {
@@ -3242,15 +3142,15 @@
           "named": true
         },
         {
+          "type": "send",
+          "named": true
+        },
+        {
           "type": "string",
           "named": true
         },
         {
           "type": "symbol",
-          "named": true
-        },
-        {
-          "type": "tagstring",
           "named": true
         },
         {
@@ -3329,10 +3229,6 @@
           "named": true
         },
         {
-          "type": "method",
-          "named": true
-        },
-        {
           "type": "nil",
           "named": true
         },
@@ -3361,15 +3257,15 @@
           "named": true
         },
         {
+          "type": "send",
+          "named": true
+        },
+        {
           "type": "string",
           "named": true
         },
         {
           "type": "symbol",
-          "named": true
-        },
-        {
-          "type": "tagstring",
           "named": true
         },
         {
@@ -3448,10 +3344,6 @@
           "named": true
         },
         {
-          "type": "method",
-          "named": true
-        },
-        {
           "type": "nil",
           "named": true
         },
@@ -3480,6 +3372,10 @@
           "named": true
         },
         {
+          "type": "send",
+          "named": true
+        },
+        {
           "type": "string",
           "named": true
         },
@@ -3492,10 +3388,6 @@
           "named": true
         },
         {
-          "type": "tagstring",
-          "named": true
-        },
-        {
           "type": "unary",
           "named": true
         },
@@ -3504,36 +3396,6 @@
           "named": true
         }
       ]
-    }
-  },
-  {
-    "type": "tagstring",
-    "named": true,
-    "fields": {
-      "body": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "rawstring",
-            "named": true
-          },
-          {
-            "type": "string",
-            "named": true
-          }
-        ]
-      },
-      "tag": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "identifier",
-            "named": true
-          }
-        ]
-      }
     }
   },
   {
@@ -3605,10 +3467,6 @@
           "named": true
         },
         {
-          "type": "method",
-          "named": true
-        },
-        {
           "type": "nil",
           "named": true
         },
@@ -3637,15 +3495,15 @@
           "named": true
         },
         {
+          "type": "send",
+          "named": true
+        },
+        {
           "type": "string",
           "named": true
         },
         {
           "type": "symbol",
-          "named": true
-        },
-        {
-          "type": "tagstring",
           "named": true
         },
         {
@@ -3724,10 +3582,6 @@
           "named": true
         },
         {
-          "type": "method",
-          "named": true
-        },
-        {
           "type": "nil",
           "named": true
         },
@@ -3756,15 +3610,15 @@
           "named": true
         },
         {
+          "type": "send",
+          "named": true
+        },
+        {
           "type": "string",
           "named": true
         },
         {
           "type": "symbol",
-          "named": true
-        },
-        {
-          "type": "tagstring",
           "named": true
         },
         {

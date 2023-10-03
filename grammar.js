@@ -10,11 +10,10 @@ const PREC_TERM = 8
 const PREC_FACTOR = 9
 const PREC_UNARY = 10
 const PREC_PROPERTY = 11
-const PREC_METHOD = 12
+const PREC_SEND = 12
 const PREC_SPEC = 13
 const PREC_OBJ = 14
 const PREC_TUP = 15
-const PREC_TAGSTR = 16
 
 module.exports = grammar({
   name: 'gab',
@@ -96,7 +95,6 @@ module.exports = grammar({
       $.loop,
       $.block,
       $.return,
-      $.tagstring,
       $.identifier,
       $.number,
       $.string,
@@ -109,7 +107,7 @@ module.exports = grammar({
       $.unary,
       $.index,
       $.assignment,
-      $.method,
+      $.send,
       $.call,
       $.match,
       $.yield,
@@ -171,7 +169,7 @@ module.exports = grammar({
       optional($._tuple),
     )),
 
-    method: $ => prec.right(PREC_METHOD, seq(
+    send: $ => prec.right(PREC_SEND, seq(
       optional(field('receiver', $._expression)),
       field('message', $.message),
       seq(
@@ -180,12 +178,13 @@ module.exports = grammar({
           optional($._tuple),
           ')',
         )),
+        optional($.string),
         optional($.record),
         optional($.block),
       ),
     )),
 
-    call: $ => prec.right(PREC_METHOD, seq(
+    call: $ => prec.right(PREC_SEND, seq(
       field('callee', $._expression),
       choice(
         seq(
@@ -194,22 +193,110 @@ module.exports = grammar({
           ')',
         ),
 
+        $.string,
+
         $.record,
 
         $.block,
 
         seq(
+          seq(
+            '(',
+            optional($._tuple),
+            ')',
+          ),
+          $.string,
+        ),
+
+        seq(
+          seq(
+            '(',
+            optional($._tuple),
+            ')',
+          ),
+          $.record,
+        ),
+
+        seq(
+          seq(
+            '(',
+            optional($._tuple),
+            ')',
+          ),
+          $.block,
+        ),
+
+        seq(
+          $.string,
+          $.record,
+        ),
+
+        seq(
+          $.string,
+          $.block,
+        ),
+
+        seq(
           $.record,
           $.block,
         ),
 
         seq(
-          '(',
-          optional($._tuple),
-          ')',
+          seq(
+            '(',
+            optional($._tuple),
+            ')',
+          ),
+          $.string,
+          $.record,
+        ),
+
+        seq(
+          seq(
+            '(',
+            optional($._tuple),
+            ')',
+          ),
+          $.string,
+          $.block,
+        ),
+
+        seq(
+          seq(
+            '(',
+            optional($._tuple),
+            ')',
+          ),
           $.record,
           $.block,
         ),
+
+        seq(
+          $.string,
+          $.record,
+          $.block,
+        ),
+
+        seq(
+          seq(
+            '(',
+            optional($._tuple),
+            ')',
+          ),
+          $.string,
+          $.record,
+          $.block,
+        ),
+     ),
+      seq(
+        optional(seq(
+          '(',
+          optional($._tuple),
+          ')',
+        )),
+        optional($.string),
+        optional($.record),
+        optional($.block),
       ),
     )),
 
@@ -333,14 +420,6 @@ module.exports = grammar({
     bool: _ => choice('true', 'false'),
 
     nil: _ => 'nil',
-
-    tagstring: $ => prec(PREC_TAGSTR, seq(
-      field('tag', $.identifier),
-      field('body', choice(
-        $.string,
-        $.rawstring,
-      )),
-    )),
 
     symbol: _ => token(seq(
       '.',

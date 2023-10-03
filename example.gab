@@ -2,7 +2,8 @@ html'<div>foo</div>'
 
 bash'echo "{2}" {1}'
 
-python'print("foo")'
+python 'print("foo")'
 
-bash"{2}"
+bash"hello {2}"
 
+command = :sql 'select * from %table' { table = 'foo' }

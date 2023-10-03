@@ -1,7 +1,13 @@
-(tagstring
-  tag: (identifier) @injection.language
-  body: (string (stringcontent)  @injection.content))
+(call
+  callee: (identifier) @injection.language
+  [
+   (string (stringcontent)  @injection.content)
+   (rawstring (rawstringcontent)  @injection.content)
+  ])
 
-(tagstring
-  tag: (identifier) @injection.language
-  body: (rawstring (rawstringcontent)  @injection.content))
+(send
+  message: (message (identifier) @injection.language)
+  [
+   (string (stringcontent)  @injection.content)
+   (rawstring (rawstringcontent)  @injection.content)
+  ])
