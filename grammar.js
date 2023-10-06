@@ -80,10 +80,7 @@ module.exports = grammar({
 
     _statement: $ => seq(
       $._expression,
-      choice(
-        ';',
-        $._newlines,
-      ),
+      $._newlines,
     ),
 
     _block_body: $ => seq(repeat1($._statement)),
@@ -339,13 +336,13 @@ module.exports = grammar({
       'in',
       $._expression,
       $._newlines,
-      field('body', $._block_body),
+      $._block_body,
       'end',
     ),
 
     loop: $ => seq(
       'loop',
-      field('body', $._block_body),
+      $._block_body,
       optional(
         seq(
           'until',
@@ -355,7 +352,7 @@ module.exports = grammar({
       'end',
     ),
 
-    _matchoption: $ => seq(
+    case: $ => seq(
       $._expression,
       '=>',
       $._block_body,
@@ -363,9 +360,9 @@ module.exports = grammar({
     ),
 
     match: $ => prec(PREC_MATCH, seq(
-      $._expression,
+      $._lhs,
       'match',
-      field('case', repeat($._matchoption)),
+      repeat($.case),
       'else',
       '=>',
       $._block_body,
@@ -376,7 +373,7 @@ module.exports = grammar({
       'do',
       optional($.parameters),
       $._newlines,
-      field('body', ($._block_body)),
+      $._block_body,
       'end',
     )),
 
@@ -408,14 +405,14 @@ module.exports = grammar({
       ),
       optional($.parameters),
       $._newlines,
-      field('body', $._block_body),
+      $._block_body,
       'end',
     )),
 
     object_definition: $ => prec(PREC_OBJ, seq(
       'def',
       field('name', $.identifier),
-      field('body', $.record),
+      $.record,
     )),
 
     const_definition: $ => (seq(

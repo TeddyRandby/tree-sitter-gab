@@ -227,17 +227,8 @@
           "name": "_expression"
         },
         {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "STRING",
-              "value": ";"
-            },
-            {
-              "type": "SYMBOL",
-              "name": "_newlines"
-            }
-          ]
+          "type": "SYMBOL",
+          "name": "_newlines"
         }
       ]
     },
@@ -1679,12 +1670,8 @@
           "name": "_newlines"
         },
         {
-          "type": "FIELD",
-          "name": "body",
-          "content": {
-            "type": "SYMBOL",
-            "name": "_block_body"
-          }
+          "type": "SYMBOL",
+          "name": "_block_body"
         },
         {
           "type": "STRING",
@@ -1700,12 +1687,8 @@
           "value": "loop"
         },
         {
-          "type": "FIELD",
-          "name": "body",
-          "content": {
-            "type": "SYMBOL",
-            "name": "_block_body"
-          }
+          "type": "SYMBOL",
+          "name": "_block_body"
         },
         {
           "type": "CHOICE",
@@ -1734,7 +1717,7 @@
         }
       ]
     },
-    "_matchoption": {
+    "case": {
       "type": "SEQ",
       "members": [
         {
@@ -1763,21 +1746,17 @@
         "members": [
           {
             "type": "SYMBOL",
-            "name": "_expression"
+            "name": "_lhs"
           },
           {
             "type": "STRING",
             "value": "match"
           },
           {
-            "type": "FIELD",
-            "name": "case",
+            "type": "REPEAT",
             "content": {
-              "type": "REPEAT",
-              "content": {
-                "type": "SYMBOL",
-                "name": "_matchoption"
-              }
+              "type": "SYMBOL",
+              "name": "case"
             }
           },
           {
@@ -1826,12 +1805,8 @@
             "name": "_newlines"
           },
           {
-            "type": "FIELD",
-            "name": "body",
-            "content": {
-              "type": "SYMBOL",
-              "name": "_block_body"
-            }
+            "type": "SYMBOL",
+            "name": "_block_body"
           },
           {
             "type": "STRING",
@@ -1965,12 +1940,8 @@
             "name": "_newlines"
           },
           {
-            "type": "FIELD",
-            "name": "body",
-            "content": {
-              "type": "SYMBOL",
-              "name": "_block_body"
-            }
+            "type": "SYMBOL",
+            "name": "_block_body"
           },
           {
             "type": "STRING",
@@ -1998,12 +1969,8 @@
             }
           },
           {
-            "type": "FIELD",
-            "name": "body",
-            "content": {
-              "type": "SYMBOL",
-              "name": "record"
-            }
+            "type": "SYMBOL",
+            "name": "record"
           }
         ]
       }
