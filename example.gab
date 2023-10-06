@@ -1,9 +1,14 @@
-html'<div>foo</div>'
+def http[](opts)
+  port = opts or 8080
 
-bash'echo "{2}" {1}'
+  status, socket = :socket in
+    == .ok or return status
 
-python 'print("foo")'
+  status = socket:bind(port) in
+    == .ok or return status
 
-bash"hello {2}"
+  status = socket:listen(15) in
+    == .ok or return status
 
-command = :sql 'select * from %table' { table = 'foo' }
+  return .ok, { port socket }
+end

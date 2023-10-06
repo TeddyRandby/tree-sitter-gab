@@ -52,10 +52,6 @@
             "named": true
           },
           {
-            "type": "in",
-            "named": false
-          },
-          {
             "type": "index",
             "named": true
           },
@@ -164,10 +160,6 @@
           {
             "type": "identifier",
             "named": true
-          },
-          {
-            "type": "in",
-            "named": false
           },
           {
             "type": "index",
@@ -397,10 +389,6 @@
             "named": true
           },
           {
-            "type": "in",
-            "named": false
-          },
-          {
             "type": "index",
             "named": true
           },
@@ -484,7 +472,7 @@
     "named": true,
     "fields": {
       "callee": {
-        "multiple": true,
+        "multiple": false,
         "required": true,
         "types": [
           {
@@ -526,10 +514,6 @@
           {
             "type": "identifier",
             "named": true
-          },
-          {
-            "type": "in",
-            "named": false
           },
           {
             "type": "index",
@@ -768,10 +752,6 @@
             "named": true
           },
           {
-            "type": "in",
-            "named": false
-          },
-          {
             "type": "index",
             "named": true
           },
@@ -886,10 +866,6 @@
           {
             "type": "identifier",
             "named": true
-          },
-          {
-            "type": "in",
-            "named": false
           },
           {
             "type": "index",
@@ -1128,10 +1104,6 @@
             "named": true
           },
           {
-            "type": "in",
-            "named": false
-          },
-          {
             "type": "index",
             "named": true
           },
@@ -1302,10 +1274,6 @@
           {
             "type": "identifier",
             "named": true
-          },
-          {
-            "type": "in",
-            "named": false
           },
           {
             "type": "index",
@@ -1497,7 +1465,7 @@
     "named": true,
     "fields": {
       "property": {
-        "multiple": true,
+        "multiple": false,
         "required": true,
         "types": [
           {
@@ -1539,10 +1507,6 @@
           {
             "type": "identifier",
             "named": true
-          },
-          {
-            "type": "in",
-            "named": false
           },
           {
             "type": "index",
@@ -1607,7 +1571,7 @@
         ]
       },
       "receiver": {
-        "multiple": true,
+        "multiple": false,
         "required": true,
         "types": [
           {
@@ -1649,10 +1613,6 @@
           {
             "type": "identifier",
             "named": true
-          },
-          {
-            "type": "in",
-            "named": false
           },
           {
             "type": "index",
@@ -1880,10 +1840,6 @@
           {
             "type": "identifier",
             "named": true
-          },
-          {
-            "type": "in",
-            "named": false
           },
           {
             "type": "index",
@@ -2114,10 +2070,6 @@
           {
             "type": "identifier",
             "named": true
-          },
-          {
-            "type": "in",
-            "named": false
           },
           {
             "type": "index",
@@ -2361,7 +2313,7 @@
         ]
       },
       "receiver": {
-        "multiple": true,
+        "multiple": false,
         "required": true,
         "types": [
           {
@@ -2403,10 +2355,6 @@
           {
             "type": "identifier",
             "named": true
-          },
-          {
-            "type": "in",
-            "named": false
           },
           {
             "type": "index",
@@ -2529,10 +2477,6 @@
             "named": true
           },
           {
-            "type": "in",
-            "named": false
-          },
-          {
             "type": "index",
             "named": true
           },
@@ -2637,10 +2581,6 @@
           {
             "type": "identifier",
             "named": true
-          },
-          {
-            "type": "in",
-            "named": false
           },
           {
             "type": "index",
@@ -2832,7 +2772,7 @@
         ]
       },
       "receiver": {
-        "multiple": true,
+        "multiple": false,
         "required": false,
         "types": [
           {
@@ -2874,10 +2814,6 @@
           {
             "type": "identifier",
             "named": true
-          },
-          {
-            "type": "in",
-            "named": false
           },
           {
             "type": "index",
