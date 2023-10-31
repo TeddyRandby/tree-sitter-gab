@@ -24,7 +24,7 @@ module.exports = grammar({
   extras: $ => [$.comment, /\s/, $._newline],
 
   rules: {
-    source_file: $ => $._block_body,
+    source_file: $ => $.body,
 
     _identifiers: $ => repeat1(seq($.identifier, optional(','))),
 
@@ -82,7 +82,7 @@ module.exports = grammar({
       $._newline,
     ),
 
-    _block_body: $ => repeat1($._statement),
+    body: $ => repeat1($._statement),
 
     _expression: $ => prec.right(PREC_EXP,
       choice(
@@ -154,8 +154,8 @@ module.exports = grammar({
       prec(PREC_FACTOR, seq($._lhs, '>>', $._expression)),
       prec(PREC_AND, seq($._lhs, 'and', $._expression)),
       prec(PREC_OR, seq($._lhs, 'or', $._expression)),
-      prec(PREC_AND, seq($._lhs, 'then', $._block_body, 'end')),
-      prec(PREC_OR, seq($._lhs, 'else', $._block_body, 'end')),
+      prec(PREC_AND, seq($._lhs, 'then', $.body, 'end')),
+      prec(PREC_OR, seq($._lhs, 'else', $.body, 'end')),
       prec(PREC_COMPARISON, seq($._lhs, '<', $._expression)),
       prec(PREC_COMPARISON, seq($._lhs, '>', $._expression)),
       prec(PREC_EQUALITY, seq($._lhs, '==', $._expression)),
@@ -345,13 +345,13 @@ module.exports = grammar({
       'in',
       $._expression,
       $._newlines,
-      $._block_body,
+      $.body,
       'end',
     ),
 
     loop: $ => seq(
       'loop',
-      $._block_body,
+      $.body,
       optional(
         seq(
           'until',
@@ -364,7 +364,7 @@ module.exports = grammar({
     case: $ => seq(
       $._expression,
       '=>',
-      $._block_body,
+      $.body,
       'end',
     ),
 
@@ -375,7 +375,7 @@ module.exports = grammar({
       repeat($.case),
       'else',
       '=>',
-      $._block_body,
+      $.body,
       'end',
     )),
 
@@ -383,7 +383,7 @@ module.exports = grammar({
       'do',
       optional($.parameters),
       $._newlines,
-      $._block_body,
+      $.body,
       'end',
     )),
 
@@ -415,7 +415,7 @@ module.exports = grammar({
       ),
       optional($.parameters),
       $._newlines,
-      $._block_body,
+      $.body,
       'end',
     )),
 

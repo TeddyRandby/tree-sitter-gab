@@ -85,7 +85,7 @@
 
 (call callee: (identifier) @method.call)
 
-(send (message name: (identifier) @function.constructor))
+(send (message name: (identifier) @constructor))
 
 (send
        receiver: (_)

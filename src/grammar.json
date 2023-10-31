@@ -4,7 +4,7 @@
   "rules": {
     "source_file": {
       "type": "SYMBOL",
-      "name": "_block_body"
+      "name": "body"
     },
     "_identifiers": {
       "type": "REPEAT1",
@@ -232,7 +232,7 @@
         }
       ]
     },
-    "_block_body": {
+    "body": {
       "type": "REPEAT1",
       "content": {
         "type": "SYMBOL",
@@ -745,7 +745,7 @@
               },
               {
                 "type": "SYMBOL",
-                "name": "_block_body"
+                "name": "body"
               },
               {
                 "type": "STRING",
@@ -770,7 +770,7 @@
               },
               {
                 "type": "SYMBOL",
-                "name": "_block_body"
+                "name": "body"
               },
               {
                 "type": "STRING",
@@ -1664,7 +1664,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "_block_body"
+          "name": "body"
         },
         {
           "type": "STRING",
@@ -1681,7 +1681,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "_block_body"
+          "name": "body"
         },
         {
           "type": "CHOICE",
@@ -1723,7 +1723,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "_block_body"
+          "name": "body"
         },
         {
           "type": "STRING",
@@ -1766,7 +1766,7 @@
           },
           {
             "type": "SYMBOL",
-            "name": "_block_body"
+            "name": "body"
           },
           {
             "type": "STRING",
@@ -1803,7 +1803,7 @@
           },
           {
             "type": "SYMBOL",
-            "name": "_block_body"
+            "name": "body"
           },
           {
             "type": "STRING",
@@ -1938,7 +1938,7 @@
           },
           {
             "type": "SYMBOL",
-            "name": "_block_body"
+            "name": "body"
           },
           {
             "type": "STRING",
