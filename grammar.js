@@ -26,7 +26,7 @@ module.exports = grammar({
   rules: {
     source_file: $ => $.body,
 
-    _identifiers: $ => repeat1(seq($.identifier, optional(','))),
+    _identifiers: $ => repeat1(seq(optional('..'), $.identifier, optional(','))),
 
     parameters: $ => (seq(
       '(',

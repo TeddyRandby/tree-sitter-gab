@@ -793,6 +793,10 @@
             "named": false
           },
           {
+            "type": "..",
+            "named": false
+          },
+          {
             "type": "identifier",
             "named": true
           }
@@ -916,6 +920,10 @@
         "types": [
           {
             "type": ",",
+            "named": false
+          },
+          {
+            "type": "..",
             "named": false
           },
           {
@@ -2862,6 +2870,10 @@
   },
   {
     "type": "-",
+    "named": false
+  },
+  {
+    "type": "..",
     "named": false
   },
   {
