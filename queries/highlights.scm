@@ -100,4 +100,4 @@
 
 (object_definition name: (identifier) @type)
 
-(record key: (identifier) @field)
+(record_item key: (identifier) @field)
