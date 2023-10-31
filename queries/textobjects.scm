@@ -12,7 +12,7 @@
 (loop (body) @loop.inner)
 
 (object_definition) @class.outer
-(object_definition value: _ @class.inner)
+(object_definition value: (record (record_item) @class.inner))
 
 (parameters) @parameters.outer
 (parameters (identifier) @parameters.inner)

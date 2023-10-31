@@ -4,8 +4,8 @@ def b, c = 1, 2
 
 { a }
 
-def test(a)
-  a:a
+def test(a, b, c)
+ a:a
 end
 
 def Class {

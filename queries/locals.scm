@@ -2,12 +2,12 @@
   (body)
   (function_definition)
   (block)
-] @local.scope
+] @scope
 
-(const_definition name: (identifier) @local.definition)
-(function_definition name: (identifier) @local.definition)
-(object_definition name: (identifier) @local.definition)
-(assignment left: (identifier) @local.definition)
-(parameters (identifier) @local.definition)
+(const_definition name: (identifier) @definition)
+(function_definition name: (identifier) @definition)
+(object_definition name: (identifier) @definition)
+(assignment left: (identifier) @definition)
+(parameters (identifier) @definition)
 
-(identifier) @local.reference
+(identifier) @reference

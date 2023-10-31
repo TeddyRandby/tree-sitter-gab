@@ -1950,10 +1950,25 @@
   {
     "type": "record",
     "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "record_item",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "record_item",
+    "named": true,
     "fields": {
       "key": {
         "multiple": true,
-        "required": false,
+        "required": true,
         "types": [
           {
             "type": "[",
@@ -2062,7 +2077,7 @@
         ]
       },
       "value": {
-        "multiple": true,
+        "multiple": false,
         "required": false,
         "types": [
           {

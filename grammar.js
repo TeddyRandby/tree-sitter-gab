@@ -52,7 +52,7 @@ module.exports = grammar({
       $.const_definition,
     ),
 
-    _record_kvp: $ => (seq(
+    record_item: $ => (seq(
       choice(
         field('key', $.identifier),
         field('key', seq(
@@ -166,7 +166,7 @@ module.exports = grammar({
     record: $ => seq(
       '{',
       repeat(
-        seq($._record_kvp,
+        seq($.record_item,
           optional(','),
           optional($._newlines),
         )),

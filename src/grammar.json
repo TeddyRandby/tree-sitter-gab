@@ -129,7 +129,7 @@
         }
       ]
     },
-    "_record_kvp": {
+    "record_item": {
       "type": "SEQ",
       "members": [
         {
@@ -912,7 +912,7 @@
             "members": [
               {
                 "type": "SYMBOL",
-                "name": "_record_kvp"
+                "name": "record_item"
               },
               {
                 "type": "CHOICE",
