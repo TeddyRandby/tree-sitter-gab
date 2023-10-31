@@ -186,137 +186,141 @@ module.exports = grammar({
 
     return: $ => prec.right(seq(
       'return',
-      optional($._tuple),
+      field('value', optional($._tuple)),
     )),
 
     send: $ => prec.right(PREC_SEND, seq(
       optional(field('receiver', $._expression)),
       field('message', $.message),
-      seq(
-        optional(seq(
-          '(',
-          optional($._tuple),
-          ')',
-        )),
-        optional($.string),
-        optional($.record),
-        optional($.block),
+      field('arguments',
+        seq(
+          optional(seq(
+            '(',
+            optional($._tuple),
+            ')',
+          )),
+          optional($.string),
+          optional($.record),
+          optional($.block),
+        ),
       ),
     )),
 
     call: $ => prec.right(PREC_SEND, seq(
       field('callee', $._expression),
-      choice(
-        seq(
-          '(',
-          optional($._tuple),
-          ')',
-        ),
-
-        $.string,
-
-        $.record,
-
-        $.block,
-
-        seq(
+      field('arguments',
+        choice(
           seq(
             '(',
             optional($._tuple),
             ')',
           ),
-          $.string,
-        ),
 
-        seq(
+          $.string,
+
+          $.record,
+
+          $.block,
+
           seq(
+            seq(
+              '(',
+              optional($._tuple),
+              ')',
+            ),
+            $.string,
+          ),
+
+          seq(
+            seq(
+              '(',
+              optional($._tuple),
+              ')',
+            ),
+            $.record,
+          ),
+
+          seq(
+            seq(
+              '(',
+              optional($._tuple),
+              ')',
+            ),
+            $.block,
+          ),
+
+          seq(
+            $.string,
+            $.record,
+          ),
+
+          seq(
+            $.string,
+            $.block,
+          ),
+
+          seq(
+            $.record,
+            $.block,
+          ),
+
+          seq(
+            seq(
+              '(',
+              optional($._tuple),
+              ')',
+            ),
+            $.string,
+            $.record,
+          ),
+
+          seq(
+            seq(
+              '(',
+              optional($._tuple),
+              ')',
+            ),
+            $.string,
+            $.block,
+          ),
+
+          seq(
+            seq(
+              '(',
+              optional($._tuple),
+              ')',
+            ),
+            $.record,
+            $.block,
+          ),
+
+          seq(
+            $.string,
+            $.record,
+            $.block,
+          ),
+
+          seq(
+            seq(
+              '(',
+              optional($._tuple),
+              ')',
+            ),
+            $.string,
+            $.record,
+            $.block,
+          ),
+        ),
+        seq(
+          optional(seq(
             '(',
             optional($._tuple),
             ')',
-          ),
-          $.record,
+          )),
+          optional($.string),
+          optional($.record),
+          optional($.block),
         ),
-
-        seq(
-          seq(
-            '(',
-            optional($._tuple),
-            ')',
-          ),
-          $.block,
-        ),
-
-        seq(
-          $.string,
-          $.record,
-        ),
-
-        seq(
-          $.string,
-          $.block,
-        ),
-
-        seq(
-          $.record,
-          $.block,
-        ),
-
-        seq(
-          seq(
-            '(',
-            optional($._tuple),
-            ')',
-          ),
-          $.string,
-          $.record,
-        ),
-
-        seq(
-          seq(
-            '(',
-            optional($._tuple),
-            ')',
-          ),
-          $.string,
-          $.block,
-        ),
-
-        seq(
-          seq(
-            '(',
-            optional($._tuple),
-            ')',
-          ),
-          $.record,
-          $.block,
-        ),
-
-        seq(
-          $.string,
-          $.record,
-          $.block,
-        ),
-
-        seq(
-          seq(
-            '(',
-            optional($._tuple),
-            ')',
-          ),
-          $.string,
-          $.record,
-          $.block,
-        ),
-      ),
-      seq(
-        optional(seq(
-          '(',
-          optional($._tuple),
-          ')',
-        )),
-        optional($.string),
-        optional($.record),
-        optional($.block),
       ),
     )),
 
@@ -422,7 +426,7 @@ module.exports = grammar({
     object_definition: $ => prec(PREC_OBJ, seq(
       'def',
       field('name', $.identifier),
-      $.record,
+      field('value', $.record),
     )),
 
     const_definition: $ => (seq(

@@ -1,3 +1,14 @@
 a = 2
 
+def b, c = 1, 2
+
 { a }
+
+def test(a)
+  a:a
+end
+
+def Class {
+  hello
+  world
+}
