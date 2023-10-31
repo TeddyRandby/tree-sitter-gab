@@ -9,7 +9,6 @@ const PREC_COMPARISON = 6
 const PREC_TERM = 7
 const PREC_FACTOR = 8
 const PREC_UNARY = 9
-const PREC_PROPERTY = 10
 const PREC_SEND = 11
 const PREC_SPEC = 12
 const PREC_OBJ = 13
@@ -80,10 +79,10 @@ module.exports = grammar({
 
     _statement: $ => seq(
       $._expression,
-      $._newlines,
+      $._newline,
     ),
 
-    _block_body: $ => seq(repeat1($._statement)),
+    _block_body: $ => repeat1($._statement),
 
     _expression: $ => prec.right(PREC_EXP,
       choice(
@@ -100,7 +99,6 @@ module.exports = grammar({
         $.string,
         $.bool,
         $.nil,
-        $.property,
         $.group,
         $.binary,
         $.unary,
@@ -117,7 +115,26 @@ module.exports = grammar({
       seq('-', $._expression),
       seq('not', $._expression),
       seq('?', $._expression),
-      seq('&', $.message),
+      seq('&', choice(
+        $.message, 
+        '[]',
+        '[=]',
+        '()',
+        '<<',
+        '>>',
+        '|',
+        '&',
+        '==',
+        '<=',
+        '>=',
+        '<',
+        '>',
+        '+',
+        '-',
+        '*',
+        '/',
+        '%',
+      )),
     )),
 
     _lhs: $ => prec(PREC_EXP, seq(
@@ -128,7 +145,6 @@ module.exports = grammar({
     binary: $ => (choice(
       prec(PREC_TERM, seq($._lhs, '+', $._expression)),
       prec(PREC_TERM, seq($._lhs, '-', $._expression)),
-      prec(PREC_TERM, seq($._lhs, '..', $._expression)),
       prec(PREC_FACTOR, seq($._lhs, '*', $._expression)),
       prec(PREC_FACTOR, seq($._lhs, '/', $._expression)),
       prec(PREC_FACTOR, seq($._lhs, '%', $._expression)),
@@ -142,7 +158,6 @@ module.exports = grammar({
       prec(PREC_OR, seq($._lhs, 'else', $._block_body, 'end')),
       prec(PREC_COMPARISON, seq($._lhs, '<', $._expression)),
       prec(PREC_COMPARISON, seq($._lhs, '>', $._expression)),
-      prec(PREC_EQUALITY, seq($._lhs, 'is', $._expression)),
       prec(PREC_EQUALITY, seq($._lhs, '==', $._expression)),
       prec(PREC_EQUALITY, seq($._lhs, '<=', $._expression)),
       prec(PREC_EQUALITY, seq($._lhs, '>=', $._expression)),
@@ -305,13 +320,7 @@ module.exports = grammar({
       ),
     )),
 
-    property: $ => prec(PREC_PROPERTY, seq(
-      field('receiver', $._expression),
-      '.',
-      field('property', $.identifier),
-    )),
-
-    index: $ => prec(PREC_PROPERTY, seq(
+    index: $ => prec(PREC_SEND, seq(
       field('receiver', $._expression),
       '[',
       field('property', $._expression),
@@ -362,6 +371,7 @@ module.exports = grammar({
     match: $ => prec(PREC_MATCH, seq(
       $._lhs,
       'match',
+      $._newlines,
       repeat($.case),
       'else',
       '=>',

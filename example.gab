@@ -1,24 +1,3 @@
-status, server = :http(8001) in match
-  .ok => 
-    for client in server:serve
-      :fiber do
-        'std/HTTP':require
-        'socket':require
+:list
 
-        s, buf = client:recv
-          
-        s == .ok else
-          s:print
-        end
-
-        def res = :res:status(200):html '<div>Hello, World!</div>'
-          
-        s = client:send(res)
-          
-        s == .ok else
-          s:print
-        end
-      end
-    end
-  end
-  else => status:print end
+'hi':list

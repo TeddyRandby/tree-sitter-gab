@@ -46,7 +46,6 @@
 
 [
   ","
-  "."
   ":"
 ] @punctuation.delimiter
 
@@ -86,7 +85,12 @@
 
 (call callee: (identifier) @method.call)
 
-(message name: (identifier) @method.call)
+(send (message name: (identifier) @function.constructor))
+
+(send
+       receiver: (_)
+       message: (message name: (identifier) @method.call)
+)
 
 (parameters (identifier) @parameter)
 
@@ -95,7 +99,5 @@
 (function_definition type: (identifier) @type)
 
 (object_definition name: (identifier) @type)
-
-(property property: (identifier) @field)
 
 (record key: (identifier) @field)
