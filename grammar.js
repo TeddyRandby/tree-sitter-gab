@@ -24,9 +24,9 @@ module.exports = grammar({
   extras: $ => [$.comment, /\s/, $._newline],
 
   rules: {
-    source_file: $ => $.body,
+    source_file: $ => repeat($._statement),
 
-    _identifiers: $ => repeat1(seq(optional('..'), $.identifier, optional(','))),
+    _identifiers: $ => repeat1(seq($.identifier, optional(','))),
 
     parameters: $ => (seq(
       '(',
@@ -35,15 +35,13 @@ module.exports = grammar({
     )),
 
     _tuple: $ => prec.right(PREC_TUP, seq(
-      repeat(
+      repeat1(
         prec(PREC_TUP, seq(
           $._expression,
-          ',',
-          optional($._newlines),
+          optional(','),
         ),
         ),
-      ),
-      $._expression,
+      )
     )),
 
     _definition: $ => choice(
@@ -79,7 +77,7 @@ module.exports = grammar({
 
     _statement: $ => seq(
       $._expression,
-      $._newline,
+      $._newlines,
     ),
 
     body: $ => repeat1($._statement),
@@ -116,7 +114,7 @@ module.exports = grammar({
       seq('not', $._expression),
       seq('?', $._expression),
       seq('&', choice(
-        $.message, 
+        $.message,
         '[]',
         '[=]',
         '()',
@@ -154,8 +152,8 @@ module.exports = grammar({
       prec(PREC_FACTOR, seq($._lhs, '>>', $._expression)),
       prec(PREC_AND, seq($._lhs, 'and', $._expression)),
       prec(PREC_OR, seq($._lhs, 'or', $._expression)),
-      prec(PREC_AND, seq($._lhs, 'then', $.body, 'end')),
-      prec(PREC_OR, seq($._lhs, 'else', $.body, 'end')),
+      prec(PREC_AND, seq($._lhs, 'then', $._newlines, optional($.body), 'end')),
+      prec(PREC_OR, seq($._lhs, 'else', $._newlines, optional($.body), 'end')),
       prec(PREC_COMPARISON, seq($._lhs, '<', $._expression)),
       prec(PREC_COMPARISON, seq($._lhs, '>', $._expression)),
       prec(PREC_EQUALITY, seq($._lhs, '==', $._expression)),
@@ -168,7 +166,6 @@ module.exports = grammar({
       repeat(
         seq($.record_item,
           optional(','),
-          optional($._newlines),
         )),
       '}',
     ),
@@ -192,7 +189,7 @@ module.exports = grammar({
     send: $ => prec.right(PREC_SEND, seq(
       optional(field('receiver', $._expression)),
       field('message', $.message),
-      field('arguments',
+      field('argument',
         seq(
           optional(seq(
             '(',
@@ -208,7 +205,7 @@ module.exports = grammar({
 
     call: $ => prec.right(PREC_SEND, seq(
       field('callee', $._expression),
-      field('arguments',
+      field('argument',
         choice(
           seq(
             '(',
@@ -345,21 +342,24 @@ module.exports = grammar({
 
     for: $ => seq(
       'for',
-      field('names', $._identifiers),
+      prec(PREC_EXP + 1, field('local', $._identifiers)), // Parse the identifiers with a higher precendence than an IN
       'in',
-      $._expression,
+      field('iter', $._expression),
       $._newlines,
-      $.body,
+      optional($.body),
       'end',
     ),
 
     loop: $ => seq(
       'loop',
-      $.body,
+      $._newlines,
+      optional($.body),
       optional(
         seq(
           'until',
-          $._expression,
+          field('condition',
+            $._expression,
+          ),
         ),
       ),
       'end',
@@ -368,7 +368,7 @@ module.exports = grammar({
     case: $ => seq(
       $._expression,
       '=>',
-      $.body,
+      optional($.body),
       'end',
     ),
 
@@ -387,7 +387,7 @@ module.exports = grammar({
       'do',
       optional($.parameters),
       $._newlines,
-      $.body,
+      optional($.body),
       'end',
     )),
 
@@ -419,7 +419,7 @@ module.exports = grammar({
       ),
       optional($.parameters),
       $._newlines,
-      $.body,
+      optional($.body),
       'end',
     )),
 
@@ -501,6 +501,6 @@ module.exports = grammar({
 
     _newlines: $ => repeat1($._newline),
 
-    number: _ => token(/\d+/),
+    number: _ => token(/\d+(\.\d)?/),
   }
 })

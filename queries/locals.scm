@@ -9,5 +9,6 @@
 (object_definition name: (identifier) @definition)
 (assignment left: (identifier) @definition)
 (parameters (identifier) @definition)
+(for local: (identifier) @definition)
 
 (identifier) @reference

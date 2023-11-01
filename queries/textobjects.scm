@@ -3,7 +3,8 @@
 (assignment) @assignment.outer
 
 (body) @block.outer
-(body _* @block.inner)
+(body . (_) @_start (_)? @_end .
+      (#make-range! "block.inner" @_start @_end))
 
 (function_definition) @function.outer
 (function_definition (body) @function.inner)
@@ -12,7 +13,9 @@
 (loop (body) @loop.inner)
 
 (object_definition) @class.outer
-(object_definition value: (record (record_item) @class.inner))
+(object_definition
+  value: (record . "{" . (_) @_start (_)? @_end . "}"
+  (#make-range! "class.inner" @_start @_end)))
 
 (parameters) @parameters.outer
 (parameters (identifier) @parameters.inner)
