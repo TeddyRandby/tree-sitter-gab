@@ -24,4 +24,4 @@
 (return _* @return.inner)
 
 (send) @call.outer
-(send arguments: _* @call.inner)
+(send argument: _* @call.inner)

@@ -1,3 +1,3 @@
 #! /usr/bin/bash
 
-cp ./queries/*.scm ~/.config/nvim/queries/gab/
+cp ./queries/*.scm ~/.config/nvim/queries/gab
