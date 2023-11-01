@@ -65,7 +65,7 @@
         "type": "SEQ",
         "members": [
           {
-            "type": "REPEAT1",
+            "type": "REPEAT",
             "content": {
               "type": "PREC",
               "value": 1,
@@ -77,19 +77,19 @@
                     "name": "_expression"
                   },
                   {
-                    "type": "CHOICE",
-                    "members": [
-                      {
-                        "type": "STRING",
-                        "value": ","
-                      },
-                      {
-                        "type": "BLANK"
-                      }
-                    ]
+                    "type": "STRING",
+                    "value": ","
                   }
                 ]
               }
+            }
+          },
+          {
+            "type": "PREC",
+            "value": 1,
+            "content": {
+              "type": "SYMBOL",
+              "name": "_expression"
             }
           }
         ]

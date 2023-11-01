@@ -34,15 +34,20 @@ module.exports = grammar({
       ')',
     )),
 
-    _tuple: $ => prec.right(PREC_TUP, seq(
-      repeat1(
-        prec(PREC_TUP, seq(
-          $._expression,
-          optional(','),
+    _tuple: $ => prec.right(
+      PREC_TUP,
+      seq(
+        repeat(
+          prec(PREC_TUP,
+            seq(
+              $._expression,
+              ',',
+            ),
+          ),
         ),
-        ),
-      )
-    )),
+        prec(PREC_TUP, $._expression),
+      ),
+    ),
 
     _definition: $ => choice(
       $.function_definition,
