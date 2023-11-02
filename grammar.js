@@ -154,6 +154,7 @@ module.exports = grammar({
       prec(PREC_FACTOR, seq($._lhs, '*', $._expression)),
       prec(PREC_FACTOR, seq($._lhs, '/', $._expression)),
       prec(PREC_FACTOR, seq($._lhs, '%', $._expression)),
+      prec(PREC_FACTOR, seq($._lhs, '^', $._expression)),
       prec(PREC_FACTOR, seq($._lhs, '&', $._expression)),
       prec(PREC_FACTOR, seq($._lhs, '|', $._expression)),
       prec(PREC_FACTOR, seq($._lhs, '<<', $._expression)),
@@ -499,7 +500,7 @@ module.exports = grammar({
       choice(
         seq(
           optional('..'),
-          /[a-zA-Z_]+[?!]?/,
+          /[a-zA-Z_][a-zA-Z_\.]*[?!]?/,
         ),
         /@[0-9]*/,
       ),

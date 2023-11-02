@@ -81,6 +81,7 @@
   "|"
   ">>"
   "<<"
+  "^"
 ] @operator
 
 (call callee: (identifier) @method.call)
