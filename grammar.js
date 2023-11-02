@@ -451,7 +451,7 @@ module.exports = grammar({
 
     symbol: _ => token(seq(
       '.',
-      /[_a-zA-Z]*/,
+      /[a-zA-Z_][a-zA-Z_\.]*[?!]?/,
     )),
 
     message: $ => seq(
