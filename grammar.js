@@ -85,7 +85,10 @@ module.exports = grammar({
       $._newlines,
     ),
 
-    body: $ => repeat1($._statement),
+    body: $ => choice(
+      seq(repeat($._statement), $._expression),
+      repeat1($._statement),
+    ),
 
     _expression: $ => prec.right(PREC_EXP,
       choice(
@@ -157,8 +160,8 @@ module.exports = grammar({
       prec(PREC_FACTOR, seq($._lhs, '>>', $._expression)),
       prec(PREC_AND, seq($._lhs, 'and', $._expression)),
       prec(PREC_OR, seq($._lhs, 'or', $._expression)),
-      prec(PREC_AND, seq($._lhs, 'then', $._newlines, optional($.body), 'end')),
-      prec(PREC_OR, seq($._lhs, 'else', $._newlines, optional($.body), 'end')),
+      prec(PREC_AND, seq($._lhs, 'then', $._newlines, $.body, 'end')),
+      prec(PREC_OR, seq($._lhs, 'else', $._newlines, $.body, 'end')),
       prec(PREC_COMPARISON, seq($._lhs, '<', $._expression)),
       prec(PREC_COMPARISON, seq($._lhs, '>', $._expression)),
       prec(PREC_EQUALITY, seq($._lhs, '==', $._expression)),
@@ -424,7 +427,7 @@ module.exports = grammar({
       ),
       optional($.parameters),
       $._newlines,
-      optional($.body),
+      $.body,
       'end',
     )),
 

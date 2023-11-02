@@ -12,13 +12,17 @@
 (loop) @loop.outer
 (loop (body) @loop.inner)
 
-(object_definition) @class.outer
-(object_definition
-  value: (record . "{" . (_) @_start (_)? @_end . "}"
-  (#make-range! "class.inner" @_start @_end)))
+(record) @class.outer
+(record . "{" . (_) @_start (_)? @_end . "}"
+  (#make-range! "class.inner" @_start @_end))
+
+(list) @class.outer
+(list . "[" . (_) @_start (_)? @_end . "]"
+  (#make-range! "class.inner" @_start @_end))
 
 (parameters) @parameters.outer
-(parameters (identifier) @parameters.inner)
+(parameters . "(" . (_) @_start (_)? @_end . ")"
+  (#make-range! "parameters.inner" @_start @_end))
 
 (return) @return.outer
 (return _* @return.inner)
