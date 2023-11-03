@@ -6,4 +6,6 @@ def spec.def[](name, spec)
       register(registry.help, name, help)
     end
     else => .UHOH:panic end
+
+  return a, b, c
 end

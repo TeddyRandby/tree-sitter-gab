@@ -1,6 +1,6 @@
 const PREC_BLOCK = -1
+const PREC_TUPLE = -1
 const PREC_EXP = 0
-const PREC_TUP = 1
 const PREC_OR = 2
 const PREC_AND = 3
 const PREC_MATCH = 4
@@ -37,11 +37,11 @@ module.exports = grammar({
     _tuple: $ => seq(
       repeat(
         seq(
-          prec(PREC_TUP, $._expression),
+          prec(PREC_TUPLE, $._expression),
           ',',
         ),
       ),
-      prec(PREC_TUP, $._expression),
+      prec(PREC_TUPLE, $._expression),
     ),
 
     _definition: $ => choice(

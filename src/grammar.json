@@ -68,7 +68,7 @@
             "members": [
               {
                 "type": "PREC",
-                "value": 1,
+                "value": -1,
                 "content": {
                   "type": "SYMBOL",
                   "name": "_expression"
@@ -83,7 +83,7 @@
         },
         {
           "type": "PREC",
-          "value": 1,
+          "value": -1,
           "content": {
             "type": "SYMBOL",
             "name": "_expression"
