@@ -34,19 +34,14 @@ module.exports = grammar({
       ')',
     )),
 
-    _tuple: $ => prec.right(
-      PREC_TUP,
-      seq(
-        repeat(
-          prec(PREC_TUP,
-            seq(
-              $._expression,
-              ',',
-            ),
-          ),
+    _tuple: $ => seq(
+      repeat(
+        seq(
+          prec(PREC_TUP, $._expression),
+          ',',
         ),
-        prec(PREC_TUP, $._expression),
       ),
+      prec(PREC_TUP, $._expression),
     ),
 
     _definition: $ => choice(
@@ -111,6 +106,9 @@ module.exports = grammar({
         $.index,
         $.assignment,
         $.send,
+        $.strcall,
+        $.reccall,
+        $.blkcall,
         $.call,
         $.match,
         $.yield,
@@ -172,10 +170,7 @@ module.exports = grammar({
 
     record: $ => seq(
       '{',
-      repeat(
-        seq($.record_item,
-          optional(','),
-        )),
+      repeat($.record_item),
       '}',
     ),
 
@@ -212,117 +207,31 @@ module.exports = grammar({
       ),
     )),
 
+    blkcall: $ => prec.right(PREC_SEND, seq(
+      field('callee', $._expression),
+      $.block,
+    )),
+
+    reccall: $ => prec.right(PREC_SEND, seq(
+      field('callee', $._expression),
+      $.record,
+      optional($.block),
+    )),
+
+    strcall: $ => prec.right(PREC_SEND, seq(
+      field('callee', $._expression),
+      $.string,
+      optional($.record),
+      optional($.block),
+    )),
+
     call: $ => prec.right(PREC_SEND, seq(
       field('callee', $._expression),
       field('argument',
-        choice(
-          seq(
-            '(',
-            optional($._tuple),
-            ')',
-          ),
-
-          $.string,
-
-          $.record,
-
-          $.block,
-
-          seq(
-            seq(
-              '(',
-              optional($._tuple),
-              ')',
-            ),
-            $.string,
-          ),
-
-          seq(
-            seq(
-              '(',
-              optional($._tuple),
-              ')',
-            ),
-            $.record,
-          ),
-
-          seq(
-            seq(
-              '(',
-              optional($._tuple),
-              ')',
-            ),
-            $.block,
-          ),
-
-          seq(
-            $.string,
-            $.record,
-          ),
-
-          seq(
-            $.string,
-            $.block,
-          ),
-
-          seq(
-            $.record,
-            $.block,
-          ),
-
-          seq(
-            seq(
-              '(',
-              optional($._tuple),
-              ')',
-            ),
-            $.string,
-            $.record,
-          ),
-
-          seq(
-            seq(
-              '(',
-              optional($._tuple),
-              ')',
-            ),
-            $.string,
-            $.block,
-          ),
-
-          seq(
-            seq(
-              '(',
-              optional($._tuple),
-              ')',
-            ),
-            $.record,
-            $.block,
-          ),
-
-          seq(
-            $.string,
-            $.record,
-            $.block,
-          ),
-
-          seq(
-            seq(
-              '(',
-              optional($._tuple),
-              ')',
-            ),
-            $.string,
-            $.record,
-            $.block,
-          ),
-        ),
         seq(
-          optional(seq(
-            '(',
-            optional($._tuple),
-            ')',
-          )),
+          '(',
+          optional($._tuple),
+          ')',
           optional($.string),
           optional($.record),
           optional($.block),

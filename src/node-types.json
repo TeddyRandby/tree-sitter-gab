@@ -20,6 +20,10 @@
             "named": true
           },
           {
+            "type": "blkcall",
+            "named": true
+          },
+          {
             "type": "block",
             "named": true
           },
@@ -80,6 +84,10 @@
             "named": true
           },
           {
+            "type": "reccall",
+            "named": true
+          },
+          {
             "type": "record",
             "named": true
           },
@@ -89,6 +97,10 @@
           },
           {
             "type": "send",
+            "named": true
+          },
+          {
+            "type": "strcall",
             "named": true
           },
           {
@@ -126,6 +138,10 @@
             "named": true
           },
           {
+            "type": "blkcall",
+            "named": true
+          },
+          {
             "type": "block",
             "named": true
           },
@@ -186,6 +202,10 @@
             "named": true
           },
           {
+            "type": "reccall",
+            "named": true
+          },
+          {
             "type": "record",
             "named": true
           },
@@ -195,6 +215,10 @@
           },
           {
             "type": "send",
+            "named": true
+          },
+          {
+            "type": "strcall",
             "named": true
           },
           {
@@ -231,6 +255,10 @@
         },
         {
           "type": "binary",
+          "named": true
+        },
+        {
+          "type": "blkcall",
           "named": true
         },
         {
@@ -298,6 +326,10 @@
           "named": true
         },
         {
+          "type": "reccall",
+          "named": true
+        },
+        {
           "type": "record",
           "named": true
         },
@@ -307,6 +339,10 @@
         },
         {
           "type": "send",
+          "named": true
+        },
+        {
+          "type": "strcall",
           "named": true
         },
         {
@@ -323,6 +359,136 @@
         },
         {
           "type": "yield",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "blkcall",
+    "named": true,
+    "fields": {
+      "callee": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "assignment",
+            "named": true
+          },
+          {
+            "type": "binary",
+            "named": true
+          },
+          {
+            "type": "blkcall",
+            "named": true
+          },
+          {
+            "type": "block",
+            "named": true
+          },
+          {
+            "type": "bool",
+            "named": true
+          },
+          {
+            "type": "call",
+            "named": true
+          },
+          {
+            "type": "const_definition",
+            "named": true
+          },
+          {
+            "type": "for",
+            "named": true
+          },
+          {
+            "type": "function_definition",
+            "named": true
+          },
+          {
+            "type": "group",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "index",
+            "named": true
+          },
+          {
+            "type": "list",
+            "named": true
+          },
+          {
+            "type": "loop",
+            "named": true
+          },
+          {
+            "type": "match",
+            "named": true
+          },
+          {
+            "type": "nil",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "object_definition",
+            "named": true
+          },
+          {
+            "type": "reccall",
+            "named": true
+          },
+          {
+            "type": "record",
+            "named": true
+          },
+          {
+            "type": "return",
+            "named": true
+          },
+          {
+            "type": "send",
+            "named": true
+          },
+          {
+            "type": "strcall",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "unary",
+            "named": true
+          },
+          {
+            "type": "yield",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "block",
           "named": true
         }
       ]
@@ -364,6 +530,10 @@
           "named": true
         },
         {
+          "type": "blkcall",
+          "named": true
+        },
+        {
           "type": "block",
           "named": true
         },
@@ -424,6 +594,10 @@
           "named": true
         },
         {
+          "type": "reccall",
+          "named": true
+        },
+        {
           "type": "record",
           "named": true
         },
@@ -433,6 +607,10 @@
         },
         {
           "type": "send",
+          "named": true
+        },
+        {
+          "type": "strcall",
           "named": true
         },
         {
@@ -488,6 +666,10 @@
             "named": true
           },
           {
+            "type": "blkcall",
+            "named": true
+          },
+          {
             "type": "block",
             "named": true
           },
@@ -548,6 +730,10 @@
             "named": true
           },
           {
+            "type": "reccall",
+            "named": true
+          },
+          {
             "type": "record",
             "named": true
           },
@@ -557,6 +743,10 @@
           },
           {
             "type": "send",
+            "named": true
+          },
+          {
+            "type": "strcall",
             "named": true
           },
           {
@@ -590,6 +780,10 @@
             "named": true
           },
           {
+            "type": "blkcall",
+            "named": true
+          },
+          {
             "type": "block",
             "named": true
           },
@@ -650,6 +844,10 @@
             "named": true
           },
           {
+            "type": "reccall",
+            "named": true
+          },
+          {
             "type": "record",
             "named": true
           },
@@ -659,6 +857,10 @@
           },
           {
             "type": "send",
+            "named": true
+          },
+          {
+            "type": "strcall",
             "named": true
           },
           {
@@ -695,6 +897,10 @@
         },
         {
           "type": "binary",
+          "named": true
+        },
+        {
+          "type": "blkcall",
           "named": true
         },
         {
@@ -762,6 +968,10 @@
           "named": true
         },
         {
+          "type": "reccall",
+          "named": true
+        },
+        {
           "type": "record",
           "named": true
         },
@@ -771,6 +981,10 @@
         },
         {
           "type": "send",
+          "named": true
+        },
+        {
+          "type": "strcall",
           "named": true
         },
         {
@@ -827,6 +1041,10 @@
             "named": true
           },
           {
+            "type": "blkcall",
+            "named": true
+          },
+          {
             "type": "block",
             "named": true
           },
@@ -887,6 +1105,10 @@
             "named": true
           },
           {
+            "type": "reccall",
+            "named": true
+          },
+          {
             "type": "record",
             "named": true
           },
@@ -896,6 +1118,10 @@
           },
           {
             "type": "send",
+            "named": true
+          },
+          {
+            "type": "strcall",
             "named": true
           },
           {
@@ -935,6 +1161,10 @@
             "named": true
           },
           {
+            "type": "blkcall",
+            "named": true
+          },
+          {
             "type": "block",
             "named": true
           },
@@ -995,6 +1225,10 @@
             "named": true
           },
           {
+            "type": "reccall",
+            "named": true
+          },
+          {
             "type": "record",
             "named": true
           },
@@ -1004,6 +1238,10 @@
           },
           {
             "type": "send",
+            "named": true
+          },
+          {
+            "type": "strcall",
             "named": true
           },
           {
@@ -1133,6 +1371,10 @@
             "named": true
           },
           {
+            "type": "blkcall",
+            "named": true
+          },
+          {
             "type": "block",
             "named": true
           },
@@ -1193,6 +1435,10 @@
             "named": true
           },
           {
+            "type": "reccall",
+            "named": true
+          },
+          {
             "type": "record",
             "named": true
           },
@@ -1202,6 +1448,10 @@
           },
           {
             "type": "send",
+            "named": true
+          },
+          {
+            "type": "strcall",
             "named": true
           },
           {
@@ -1255,6 +1505,10 @@
           "named": true
         },
         {
+          "type": "blkcall",
+          "named": true
+        },
+        {
           "type": "block",
           "named": true
         },
@@ -1315,6 +1569,10 @@
           "named": true
         },
         {
+          "type": "reccall",
+          "named": true
+        },
+        {
           "type": "record",
           "named": true
         },
@@ -1324,6 +1582,10 @@
         },
         {
           "type": "send",
+          "named": true
+        },
+        {
+          "type": "strcall",
           "named": true
         },
         {
@@ -1362,6 +1624,10 @@
             "named": true
           },
           {
+            "type": "blkcall",
+            "named": true
+          },
+          {
             "type": "block",
             "named": true
           },
@@ -1422,6 +1688,10 @@
             "named": true
           },
           {
+            "type": "reccall",
+            "named": true
+          },
+          {
             "type": "record",
             "named": true
           },
@@ -1431,6 +1701,10 @@
           },
           {
             "type": "send",
+            "named": true
+          },
+          {
+            "type": "strcall",
             "named": true
           },
           {
@@ -1464,6 +1738,10 @@
             "named": true
           },
           {
+            "type": "blkcall",
+            "named": true
+          },
+          {
             "type": "block",
             "named": true
           },
@@ -1524,6 +1802,10 @@
             "named": true
           },
           {
+            "type": "reccall",
+            "named": true
+          },
+          {
             "type": "record",
             "named": true
           },
@@ -1533,6 +1815,10 @@
           },
           {
             "type": "send",
+            "named": true
+          },
+          {
+            "type": "strcall",
             "named": true
           },
           {
@@ -1572,6 +1858,10 @@
           "named": true
         },
         {
+          "type": "blkcall",
+          "named": true
+        },
+        {
           "type": "block",
           "named": true
         },
@@ -1632,6 +1922,10 @@
           "named": true
         },
         {
+          "type": "reccall",
+          "named": true
+        },
+        {
           "type": "record",
           "named": true
         },
@@ -1641,6 +1935,10 @@
         },
         {
           "type": "send",
+          "named": true
+        },
+        {
+          "type": "strcall",
           "named": true
         },
         {
@@ -1676,6 +1974,10 @@
           },
           {
             "type": "binary",
+            "named": true
+          },
+          {
+            "type": "blkcall",
             "named": true
           },
           {
@@ -1739,6 +2041,10 @@
             "named": true
           },
           {
+            "type": "reccall",
+            "named": true
+          },
+          {
             "type": "record",
             "named": true
           },
@@ -1748,6 +2054,10 @@
           },
           {
             "type": "send",
+            "named": true
+          },
+          {
+            "type": "strcall",
             "named": true
           },
           {
@@ -1794,6 +2104,10 @@
         },
         {
           "type": "binary",
+          "named": true
+        },
+        {
+          "type": "blkcall",
           "named": true
         },
         {
@@ -1865,6 +2179,10 @@
           "named": true
         },
         {
+          "type": "reccall",
+          "named": true
+        },
+        {
           "type": "record",
           "named": true
         },
@@ -1874,6 +2192,10 @@
         },
         {
           "type": "send",
+          "named": true
+        },
+        {
+          "type": "strcall",
           "named": true
         },
         {
@@ -1953,6 +2275,140 @@
     }
   },
   {
+    "type": "reccall",
+    "named": true,
+    "fields": {
+      "callee": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "assignment",
+            "named": true
+          },
+          {
+            "type": "binary",
+            "named": true
+          },
+          {
+            "type": "blkcall",
+            "named": true
+          },
+          {
+            "type": "block",
+            "named": true
+          },
+          {
+            "type": "bool",
+            "named": true
+          },
+          {
+            "type": "call",
+            "named": true
+          },
+          {
+            "type": "const_definition",
+            "named": true
+          },
+          {
+            "type": "for",
+            "named": true
+          },
+          {
+            "type": "function_definition",
+            "named": true
+          },
+          {
+            "type": "group",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "index",
+            "named": true
+          },
+          {
+            "type": "list",
+            "named": true
+          },
+          {
+            "type": "loop",
+            "named": true
+          },
+          {
+            "type": "match",
+            "named": true
+          },
+          {
+            "type": "nil",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "object_definition",
+            "named": true
+          },
+          {
+            "type": "reccall",
+            "named": true
+          },
+          {
+            "type": "record",
+            "named": true
+          },
+          {
+            "type": "return",
+            "named": true
+          },
+          {
+            "type": "send",
+            "named": true
+          },
+          {
+            "type": "strcall",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "unary",
+            "named": true
+          },
+          {
+            "type": "yield",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "block",
+          "named": true
+        },
+        {
+          "type": "record",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "record",
     "named": true,
     "fields": {},
@@ -1992,6 +2448,10 @@
             "named": true
           },
           {
+            "type": "blkcall",
+            "named": true
+          },
+          {
             "type": "block",
             "named": true
           },
@@ -2052,6 +2512,10 @@
             "named": true
           },
           {
+            "type": "reccall",
+            "named": true
+          },
+          {
             "type": "record",
             "named": true
           },
@@ -2061,6 +2525,10 @@
           },
           {
             "type": "send",
+            "named": true
+          },
+          {
+            "type": "strcall",
             "named": true
           },
           {
@@ -2094,6 +2562,10 @@
             "named": true
           },
           {
+            "type": "blkcall",
+            "named": true
+          },
+          {
             "type": "block",
             "named": true
           },
@@ -2154,6 +2626,10 @@
             "named": true
           },
           {
+            "type": "reccall",
+            "named": true
+          },
+          {
             "type": "record",
             "named": true
           },
@@ -2163,6 +2639,10 @@
           },
           {
             "type": "send",
+            "named": true
+          },
+          {
+            "type": "strcall",
             "named": true
           },
           {
@@ -2206,6 +2686,10 @@
             "named": true
           },
           {
+            "type": "blkcall",
+            "named": true
+          },
+          {
             "type": "block",
             "named": true
           },
@@ -2266,6 +2750,10 @@
             "named": true
           },
           {
+            "type": "reccall",
+            "named": true
+          },
+          {
             "type": "record",
             "named": true
           },
@@ -2275,6 +2763,10 @@
           },
           {
             "type": "send",
+            "named": true
+          },
+          {
+            "type": "strcall",
             "named": true
           },
           {
@@ -2326,6 +2818,10 @@
             "named": true
           },
           {
+            "type": "blkcall",
+            "named": true
+          },
+          {
             "type": "block",
             "named": true
           },
@@ -2386,6 +2882,10 @@
             "named": true
           },
           {
+            "type": "reccall",
+            "named": true
+          },
+          {
             "type": "record",
             "named": true
           },
@@ -2395,6 +2895,10 @@
           },
           {
             "type": "send",
+            "named": true
+          },
+          {
+            "type": "strcall",
             "named": true
           },
           {
@@ -2438,6 +2942,10 @@
             "named": true
           },
           {
+            "type": "blkcall",
+            "named": true
+          },
+          {
             "type": "block",
             "named": true
           },
@@ -2498,6 +3006,10 @@
             "named": true
           },
           {
+            "type": "reccall",
+            "named": true
+          },
+          {
             "type": "record",
             "named": true
           },
@@ -2507,6 +3019,10 @@
           },
           {
             "type": "send",
+            "named": true
+          },
+          {
+            "type": "strcall",
             "named": true
           },
           {
@@ -2543,6 +3059,10 @@
         },
         {
           "type": "binary",
+          "named": true
+        },
+        {
+          "type": "blkcall",
           "named": true
         },
         {
@@ -2606,6 +3126,10 @@
           "named": true
         },
         {
+          "type": "reccall",
+          "named": true
+        },
+        {
           "type": "record",
           "named": true
         },
@@ -2615,6 +3139,10 @@
         },
         {
           "type": "send",
+          "named": true
+        },
+        {
+          "type": "strcall",
           "named": true
         },
         {
@@ -2637,6 +3165,144 @@
     }
   },
   {
+    "type": "strcall",
+    "named": true,
+    "fields": {
+      "callee": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "assignment",
+            "named": true
+          },
+          {
+            "type": "binary",
+            "named": true
+          },
+          {
+            "type": "blkcall",
+            "named": true
+          },
+          {
+            "type": "block",
+            "named": true
+          },
+          {
+            "type": "bool",
+            "named": true
+          },
+          {
+            "type": "call",
+            "named": true
+          },
+          {
+            "type": "const_definition",
+            "named": true
+          },
+          {
+            "type": "for",
+            "named": true
+          },
+          {
+            "type": "function_definition",
+            "named": true
+          },
+          {
+            "type": "group",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "index",
+            "named": true
+          },
+          {
+            "type": "list",
+            "named": true
+          },
+          {
+            "type": "loop",
+            "named": true
+          },
+          {
+            "type": "match",
+            "named": true
+          },
+          {
+            "type": "nil",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "object_definition",
+            "named": true
+          },
+          {
+            "type": "reccall",
+            "named": true
+          },
+          {
+            "type": "record",
+            "named": true
+          },
+          {
+            "type": "return",
+            "named": true
+          },
+          {
+            "type": "send",
+            "named": true
+          },
+          {
+            "type": "strcall",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "unary",
+            "named": true
+          },
+          {
+            "type": "yield",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "block",
+          "named": true
+        },
+        {
+          "type": "record",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "string",
     "named": true,
     "fields": {},
@@ -2650,6 +3316,10 @@
         },
         {
           "type": "binary",
+          "named": true
+        },
+        {
+          "type": "blkcall",
           "named": true
         },
         {
@@ -2717,6 +3387,10 @@
           "named": true
         },
         {
+          "type": "reccall",
+          "named": true
+        },
+        {
           "type": "record",
           "named": true
         },
@@ -2726,6 +3400,10 @@
         },
         {
           "type": "send",
+          "named": true
+        },
+        {
+          "type": "strcall",
           "named": true
         },
         {
@@ -2765,6 +3443,10 @@
         },
         {
           "type": "binary",
+          "named": true
+        },
+        {
+          "type": "blkcall",
           "named": true
         },
         {
@@ -2832,6 +3514,10 @@
           "named": true
         },
         {
+          "type": "reccall",
+          "named": true
+        },
+        {
           "type": "record",
           "named": true
         },
@@ -2841,6 +3527,10 @@
         },
         {
           "type": "send",
+          "named": true
+        },
+        {
+          "type": "strcall",
           "named": true
         },
         {
@@ -2876,6 +3566,10 @@
         },
         {
           "type": "binary",
+          "named": true
+        },
+        {
+          "type": "blkcall",
           "named": true
         },
         {
@@ -2939,6 +3633,10 @@
           "named": true
         },
         {
+          "type": "reccall",
+          "named": true
+        },
+        {
           "type": "record",
           "named": true
         },
@@ -2948,6 +3646,10 @@
         },
         {
           "type": "send",
+          "named": true
+        },
+        {
+          "type": "strcall",
           "named": true
         },
         {

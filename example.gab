@@ -1,1 +1,9 @@
-def has[.map](k); self:at(k) == .some; end
+def spec.def[](name, spec)
+  ?spec match
+    .Block   => register(registry.spec, name, a, s) end
+    .Message => register(registry.spec, name, spec) end
+    ?{ spec help } => 
+      register(registry.help, name, help)
+    end
+    else => .UHOH:panic end
+end

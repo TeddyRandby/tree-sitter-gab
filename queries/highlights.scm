@@ -84,7 +84,12 @@
   "^"
 ] @operator
 
-(call callee: (identifier) @method.call)
+[
+ call callee: (identifier)
+ blcall callee: (identifier)
+ strcall callee: (identifier)
+ reccall callee: (identifier)
+] @method.call
 
 (send (message name: (identifier) @constructor))
 

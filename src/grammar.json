@@ -59,41 +59,37 @@
       ]
     },
     "_tuple": {
-      "type": "PREC_RIGHT",
-      "value": 1,
-      "content": {
-        "type": "SEQ",
-        "members": [
-          {
-            "type": "REPEAT",
-            "content": {
-              "type": "PREC",
-              "value": 1,
-              "content": {
-                "type": "SEQ",
-                "members": [
-                  {
-                    "type": "SYMBOL",
-                    "name": "_expression"
-                  },
-                  {
-                    "type": "STRING",
-                    "value": ","
-                  }
-                ]
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "PREC",
+                "value": 1,
+                "content": {
+                  "type": "SYMBOL",
+                  "name": "_expression"
+                }
+              },
+              {
+                "type": "STRING",
+                "value": ","
               }
-            }
-          },
-          {
-            "type": "PREC",
-            "value": 1,
-            "content": {
-              "type": "SYMBOL",
-              "name": "_expression"
-            }
+            ]
           }
-        ]
-      }
+        },
+        {
+          "type": "PREC",
+          "value": 1,
+          "content": {
+            "type": "SYMBOL",
+            "name": "_expression"
+          }
+        }
+      ]
     },
     "_definition": {
       "type": "CHOICE",
@@ -336,6 +332,18 @@
           {
             "type": "SYMBOL",
             "name": "send"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "strcall"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "reccall"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "blkcall"
           },
           {
             "type": "SYMBOL",
@@ -941,25 +949,8 @@
         {
           "type": "REPEAT",
           "content": {
-            "type": "SEQ",
-            "members": [
-              {
-                "type": "SYMBOL",
-                "name": "record_item"
-              },
-              {
-                "type": "CHOICE",
-                "members": [
-                  {
-                    "type": "STRING",
-                    "value": ","
-                  },
-                  {
-                    "type": "BLANK"
-                  }
-                ]
-              }
-            ]
+            "type": "SYMBOL",
+            "name": "record_item"
           }
         },
         {
@@ -1150,6 +1141,105 @@
         ]
       }
     },
+    "blkcall": {
+      "type": "PREC_RIGHT",
+      "value": 11,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "FIELD",
+            "name": "callee",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_expression"
+            }
+          },
+          {
+            "type": "SYMBOL",
+            "name": "block"
+          }
+        ]
+      }
+    },
+    "reccall": {
+      "type": "PREC_RIGHT",
+      "value": 11,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "FIELD",
+            "name": "callee",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_expression"
+            }
+          },
+          {
+            "type": "SYMBOL",
+            "name": "record"
+          },
+          {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "block"
+              },
+              {
+                "type": "BLANK"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "strcall": {
+      "type": "PREC_RIGHT",
+      "value": 11,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "FIELD",
+            "name": "callee",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_expression"
+            }
+          },
+          {
+            "type": "SYMBOL",
+            "name": "string"
+          },
+          {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "record"
+              },
+              {
+                "type": "BLANK"
+              }
+            ]
+          },
+          {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "block"
+              },
+              {
+                "type": "BLANK"
+              }
+            ]
+          }
+        ]
+      }
+    },
     "call": {
       "type": "PREC_RIGHT",
       "value": 11,
@@ -1168,356 +1258,61 @@
             "type": "FIELD",
             "name": "argument",
             "content": {
-              "type": "CHOICE",
+              "type": "SEQ",
               "members": [
                 {
-                  "type": "SEQ",
+                  "type": "STRING",
+                  "value": "("
+                },
+                {
+                  "type": "CHOICE",
                   "members": [
-                    {
-                      "type": "STRING",
-                      "value": "("
-                    },
-                    {
-                      "type": "CHOICE",
-                      "members": [
-                        {
-                          "type": "SYMBOL",
-                          "name": "_tuple"
-                        },
-                        {
-                          "type": "BLANK"
-                        }
-                      ]
-                    },
-                    {
-                      "type": "STRING",
-                      "value": ")"
-                    }
-                  ]
-                },
-                {
-                  "type": "SYMBOL",
-                  "name": "string"
-                },
-                {
-                  "type": "SYMBOL",
-                  "name": "record"
-                },
-                {
-                  "type": "SYMBOL",
-                  "name": "block"
-                },
-                {
-                  "type": "SEQ",
-                  "members": [
-                    {
-                      "type": "SEQ",
-                      "members": [
-                        {
-                          "type": "STRING",
-                          "value": "("
-                        },
-                        {
-                          "type": "CHOICE",
-                          "members": [
-                            {
-                              "type": "SYMBOL",
-                              "name": "_tuple"
-                            },
-                            {
-                              "type": "BLANK"
-                            }
-                          ]
-                        },
-                        {
-                          "type": "STRING",
-                          "value": ")"
-                        }
-                      ]
-                    },
                     {
                       "type": "SYMBOL",
-                      "name": "string"
-                    }
-                  ]
-                },
-                {
-                  "type": "SEQ",
-                  "members": [
-                    {
-                      "type": "SEQ",
-                      "members": [
-                        {
-                          "type": "STRING",
-                          "value": "("
-                        },
-                        {
-                          "type": "CHOICE",
-                          "members": [
-                            {
-                              "type": "SYMBOL",
-                              "name": "_tuple"
-                            },
-                            {
-                              "type": "BLANK"
-                            }
-                          ]
-                        },
-                        {
-                          "type": "STRING",
-                          "value": ")"
-                        }
-                      ]
+                      "name": "_tuple"
                     },
                     {
-                      "type": "SYMBOL",
-                      "name": "record"
+                      "type": "BLANK"
                     }
                   ]
                 },
                 {
-                  "type": "SEQ",
-                  "members": [
-                    {
-                      "type": "SEQ",
-                      "members": [
-                        {
-                          "type": "STRING",
-                          "value": "("
-                        },
-                        {
-                          "type": "CHOICE",
-                          "members": [
-                            {
-                              "type": "SYMBOL",
-                              "name": "_tuple"
-                            },
-                            {
-                              "type": "BLANK"
-                            }
-                          ]
-                        },
-                        {
-                          "type": "STRING",
-                          "value": ")"
-                        }
-                      ]
-                    },
-                    {
-                      "type": "SYMBOL",
-                      "name": "block"
-                    }
-                  ]
+                  "type": "STRING",
+                  "value": ")"
                 },
                 {
-                  "type": "SEQ",
+                  "type": "CHOICE",
                   "members": [
                     {
                       "type": "SYMBOL",
                       "name": "string"
                     },
                     {
-                      "type": "SYMBOL",
-                      "name": "record"
+                      "type": "BLANK"
                     }
                   ]
                 },
                 {
-                  "type": "SEQ",
-                  "members": [
-                    {
-                      "type": "SYMBOL",
-                      "name": "string"
-                    },
-                    {
-                      "type": "SYMBOL",
-                      "name": "block"
-                    }
-                  ]
-                },
-                {
-                  "type": "SEQ",
+                  "type": "CHOICE",
                   "members": [
                     {
                       "type": "SYMBOL",
                       "name": "record"
                     },
                     {
-                      "type": "SYMBOL",
-                      "name": "block"
+                      "type": "BLANK"
                     }
                   ]
                 },
                 {
-                  "type": "SEQ",
+                  "type": "CHOICE",
                   "members": [
-                    {
-                      "type": "SEQ",
-                      "members": [
-                        {
-                          "type": "STRING",
-                          "value": "("
-                        },
-                        {
-                          "type": "CHOICE",
-                          "members": [
-                            {
-                              "type": "SYMBOL",
-                              "name": "_tuple"
-                            },
-                            {
-                              "type": "BLANK"
-                            }
-                          ]
-                        },
-                        {
-                          "type": "STRING",
-                          "value": ")"
-                        }
-                      ]
-                    },
-                    {
-                      "type": "SYMBOL",
-                      "name": "string"
-                    },
-                    {
-                      "type": "SYMBOL",
-                      "name": "record"
-                    }
-                  ]
-                },
-                {
-                  "type": "SEQ",
-                  "members": [
-                    {
-                      "type": "SEQ",
-                      "members": [
-                        {
-                          "type": "STRING",
-                          "value": "("
-                        },
-                        {
-                          "type": "CHOICE",
-                          "members": [
-                            {
-                              "type": "SYMBOL",
-                              "name": "_tuple"
-                            },
-                            {
-                              "type": "BLANK"
-                            }
-                          ]
-                        },
-                        {
-                          "type": "STRING",
-                          "value": ")"
-                        }
-                      ]
-                    },
-                    {
-                      "type": "SYMBOL",
-                      "name": "string"
-                    },
                     {
                       "type": "SYMBOL",
                       "name": "block"
-                    }
-                  ]
-                },
-                {
-                  "type": "SEQ",
-                  "members": [
-                    {
-                      "type": "SEQ",
-                      "members": [
-                        {
-                          "type": "STRING",
-                          "value": "("
-                        },
-                        {
-                          "type": "CHOICE",
-                          "members": [
-                            {
-                              "type": "SYMBOL",
-                              "name": "_tuple"
-                            },
-                            {
-                              "type": "BLANK"
-                            }
-                          ]
-                        },
-                        {
-                          "type": "STRING",
-                          "value": ")"
-                        }
-                      ]
                     },
                     {
-                      "type": "SYMBOL",
-                      "name": "record"
-                    },
-                    {
-                      "type": "SYMBOL",
-                      "name": "block"
-                    }
-                  ]
-                },
-                {
-                  "type": "SEQ",
-                  "members": [
-                    {
-                      "type": "SYMBOL",
-                      "name": "string"
-                    },
-                    {
-                      "type": "SYMBOL",
-                      "name": "record"
-                    },
-                    {
-                      "type": "SYMBOL",
-                      "name": "block"
-                    }
-                  ]
-                },
-                {
-                  "type": "SEQ",
-                  "members": [
-                    {
-                      "type": "SEQ",
-                      "members": [
-                        {
-                          "type": "STRING",
-                          "value": "("
-                        },
-                        {
-                          "type": "CHOICE",
-                          "members": [
-                            {
-                              "type": "SYMBOL",
-                              "name": "_tuple"
-                            },
-                            {
-                              "type": "BLANK"
-                            }
-                          ]
-                        },
-                        {
-                          "type": "STRING",
-                          "value": ")"
-                        }
-                      ]
-                    },
-                    {
-                      "type": "SYMBOL",
-                      "name": "string"
-                    },
-                    {
-                      "type": "SYMBOL",
-                      "name": "record"
-                    },
-                    {
-                      "type": "SYMBOL",
-                      "name": "block"
+                      "type": "BLANK"
                     }
                   ]
                 }
