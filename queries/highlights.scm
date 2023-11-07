@@ -21,7 +21,6 @@
  "in"
  "loop"
  "until"
- "break"
 ] @repeat
 
 [
@@ -86,10 +85,10 @@
 ] @operator
 
 [
- call callee: (identifier)
- blcall callee: (identifier)
- strcall callee: (identifier)
- reccall callee: (identifier)
+ (call callee: (identifier))
+ (blkcall callee: (identifier))
+ (strcall callee: (identifier))
+ (reccall callee: (identifier))
 ] @method.call
 
 (send (message name: (identifier) @constructor))
