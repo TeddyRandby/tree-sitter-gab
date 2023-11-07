@@ -88,6 +88,7 @@ module.exports = grammar({
     _expression: $ => prec.right(PREC_EXP,
       choice(
         $._definition,
+        $.break,
         $.symbol,
         $.record,
         $.list,
@@ -141,7 +142,7 @@ module.exports = grammar({
       )),
     )),
 
-    _lhs: $ => prec(PREC_EXP, seq(
+    _lhs: $ => prec(PREC_EXP + 1, seq(
       $._expression,
       optional('in'),
     )),
@@ -267,6 +268,11 @@ module.exports = grammar({
       optional($.body),
       'end',
     ),
+
+    break: $ => prec.left(seq(
+      'break',
+      optional($._expression),
+    )),
 
     loop: $ => seq(
       'loop',

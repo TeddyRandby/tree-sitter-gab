@@ -263,6 +263,10 @@
           },
           {
             "type": "SYMBOL",
+            "name": "break"
+          },
+          {
+            "type": "SYMBOL",
             "name": "symbol"
           },
           {
@@ -496,7 +500,7 @@
     },
     "_lhs": {
       "type": "PREC",
-      "value": 0,
+      "value": 1,
       "content": {
         "type": "SEQ",
         "members": [
@@ -1453,6 +1457,31 @@
           "value": "end"
         }
       ]
+    },
+    "break": {
+      "type": "PREC_LEFT",
+      "value": 0,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "STRING",
+            "value": "break"
+          },
+          {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "_expression"
+              },
+              {
+                "type": "BLANK"
+              }
+            ]
+          }
+        ]
+      }
     },
     "loop": {
       "type": "SEQ",
