@@ -88,6 +88,7 @@
 [
  (call callee: (identifier))
  (blkcall callee: (identifier))
+ (symcall callee: (identifier))
  (strcall callee: (identifier))
  (reccall callee: (identifier))
 ] @method.call
