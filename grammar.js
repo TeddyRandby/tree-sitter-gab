@@ -422,7 +422,7 @@ module.exports = grammar({
     identifier: _ => token(
       choice(
         seq(
-          optional('..'),
+          optional('*'),
           /[a-zA-Z_][a-zA-Z_\.]*[?!]?/,
         ),
         /@[0-9]*/,

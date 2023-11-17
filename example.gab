@@ -1,3 +1,3 @@
-for i in values:each
+for *i in values:each
   i == something and break i
 end
