@@ -107,6 +107,7 @@ module.exports = grammar({
         $.index,
         $.assignment,
         $.send,
+        $.symcall,
         $.strcall,
         $.reccall,
         $.blkcall,
@@ -216,6 +217,13 @@ module.exports = grammar({
     reccall: $ => prec.right(PREC_SEND, seq(
       field('callee', $._expression),
       $.record,
+      optional($.block),
+    )),
+
+    symcall: $ => prec.right(PREC_SEND, seq(
+      field('callee', $._expression),
+      $.symbol,
+      optional($.record),
       optional($.block),
     )),
 
