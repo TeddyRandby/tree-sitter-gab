@@ -1,3 +1,5 @@
 for *i in values:each
   i == something and break i
 end
+
+1:(&+)(1)

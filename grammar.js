@@ -107,6 +107,7 @@ module.exports = grammar({
         $.index,
         $.assignment,
         $.send,
+        $.dynsend,
         $.symcall,
         $.strcall,
         $.reccall,
@@ -191,6 +192,27 @@ module.exports = grammar({
       'return',
       field('value', optional($._tuple)),
     )),
+
+    dynsend: $ => prec.right(PREC_SEND, seq(
+      field('receiver', $._expression),
+      ':',
+      '(',
+      field('message', $._expression),
+      ')',
+      field('argument',
+        seq(
+          optional(seq(
+            '(',
+            optional($._tuple),
+            ')',
+          )),
+          optional($.string),
+          optional($.record),
+          optional($.block),
+        ),
+      ),
+    )),
+
 
     send: $ => prec.right(PREC_SEND, seq(
       optional(field('receiver', $._expression)),
