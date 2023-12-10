@@ -17,8 +17,6 @@
 ] @string
 
 [
- "for"
- "in"
  "loop"
  "until"
  "break"
@@ -51,6 +49,7 @@
 ] @punctuation.delimiter
 
 [
+  "in"
   "do"
   "end"
 ] @keyword
