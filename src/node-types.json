@@ -48,10 +48,6 @@
             "named": true
           },
           {
-            "type": "for",
-            "named": true
-          },
-          {
             "type": "function_definition",
             "named": true
           },
@@ -175,10 +171,6 @@
           },
           {
             "type": "dynsend",
-            "named": true
-          },
-          {
-            "type": "for",
             "named": true
           },
           {
@@ -314,10 +306,6 @@
           "named": true
         },
         {
-          "type": "for",
-          "named": true
-        },
-        {
           "type": "function_definition",
           "named": true
         },
@@ -442,10 +430,6 @@
           },
           {
             "type": "dynsend",
-            "named": true
-          },
-          {
-            "type": "for",
             "named": true
           },
           {
@@ -606,10 +590,6 @@
           "named": true
         },
         {
-          "type": "for",
-          "named": true
-        },
-        {
           "type": "function_definition",
           "named": true
         },
@@ -739,10 +719,6 @@
         },
         {
           "type": "dynsend",
-          "named": true
-        },
-        {
-          "type": "for",
           "named": true
         },
         {
@@ -885,10 +861,6 @@
             "named": true
           },
           {
-            "type": "for",
-            "named": true
-          },
-          {
             "type": "function_definition",
             "named": true
           },
@@ -1008,10 +980,6 @@
           },
           {
             "type": "dynsend",
-            "named": true
-          },
-          {
-            "type": "for",
             "named": true
           },
           {
@@ -1144,10 +1112,6 @@
         },
         {
           "type": "dynsend",
-          "named": true
-        },
-        {
-          "type": "for",
           "named": true
         },
         {
@@ -1296,10 +1260,6 @@
             "named": true
           },
           {
-            "type": "for",
-            "named": true
-          },
-          {
             "type": "function_definition",
             "named": true
           },
@@ -1440,10 +1400,6 @@
             "named": true
           },
           {
-            "type": "for",
-            "named": true
-          },
-          {
             "type": "function_definition",
             "named": true
           },
@@ -1563,10 +1519,6 @@
           },
           {
             "type": "dynsend",
-            "named": true
-          },
-          {
-            "type": "for",
             "named": true
           },
           {
@@ -1692,10 +1644,6 @@
             "named": true
           },
           {
-            "type": "for",
-            "named": true
-          },
-          {
             "type": "function_definition",
             "named": true
           },
@@ -1777,162 +1725,6 @@
           }
         ]
       }
-    }
-  },
-  {
-    "type": "for",
-    "named": true,
-    "fields": {
-      "iter": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "assignment",
-            "named": true
-          },
-          {
-            "type": "binary",
-            "named": true
-          },
-          {
-            "type": "blkcall",
-            "named": true
-          },
-          {
-            "type": "block",
-            "named": true
-          },
-          {
-            "type": "bool",
-            "named": true
-          },
-          {
-            "type": "break",
-            "named": true
-          },
-          {
-            "type": "call",
-            "named": true
-          },
-          {
-            "type": "const_definition",
-            "named": true
-          },
-          {
-            "type": "dynsend",
-            "named": true
-          },
-          {
-            "type": "for",
-            "named": true
-          },
-          {
-            "type": "function_definition",
-            "named": true
-          },
-          {
-            "type": "group",
-            "named": true
-          },
-          {
-            "type": "identifier",
-            "named": true
-          },
-          {
-            "type": "index",
-            "named": true
-          },
-          {
-            "type": "list",
-            "named": true
-          },
-          {
-            "type": "loop",
-            "named": true
-          },
-          {
-            "type": "match",
-            "named": true
-          },
-          {
-            "type": "nil",
-            "named": true
-          },
-          {
-            "type": "number",
-            "named": true
-          },
-          {
-            "type": "object_definition",
-            "named": true
-          },
-          {
-            "type": "reccall",
-            "named": true
-          },
-          {
-            "type": "record",
-            "named": true
-          },
-          {
-            "type": "return",
-            "named": true
-          },
-          {
-            "type": "send",
-            "named": true
-          },
-          {
-            "type": "strcall",
-            "named": true
-          },
-          {
-            "type": "string",
-            "named": true
-          },
-          {
-            "type": "symbol",
-            "named": true
-          },
-          {
-            "type": "symcall",
-            "named": true
-          },
-          {
-            "type": "unary",
-            "named": true
-          },
-          {
-            "type": "yield",
-            "named": true
-          }
-        ]
-      },
-      "local": {
-        "multiple": true,
-        "required": true,
-        "types": [
-          {
-            "type": ",",
-            "named": false
-          },
-          {
-            "type": "identifier",
-            "named": true
-          }
-        ]
-      }
-    },
-    "children": {
-      "multiple": false,
-      "required": false,
-      "types": [
-        {
-          "type": "body",
-          "named": true
-        }
-      ]
     }
   },
   {
@@ -2043,10 +1835,6 @@
           },
           {
             "type": "dynsend",
-            "named": true
-          },
-          {
-            "type": "for",
             "named": true
           },
           {
@@ -2192,10 +1980,6 @@
           "named": true
         },
         {
-          "type": "for",
-          "named": true
-        },
-        {
           "type": "function_definition",
           "named": true
         },
@@ -2323,10 +2107,6 @@
             "named": true
           },
           {
-            "type": "for",
-            "named": true
-          },
-          {
             "type": "function_definition",
             "named": true
           },
@@ -2446,10 +2226,6 @@
           },
           {
             "type": "dynsend",
-            "named": true
-          },
-          {
-            "type": "for",
             "named": true
           },
           {
@@ -2581,10 +2357,6 @@
           "named": true
         },
         {
-          "type": "for",
-          "named": true
-        },
-        {
           "type": "function_definition",
           "named": true
         },
@@ -2709,10 +2481,6 @@
           },
           {
             "type": "dynsend",
-            "named": true
-          },
-          {
-            "type": "for",
             "named": true
           },
           {
@@ -2859,10 +2627,6 @@
         },
         {
           "type": "dynsend",
-          "named": true
-        },
-        {
-          "type": "for",
           "named": true
         },
         {
@@ -3050,10 +2814,6 @@
             "named": true
           },
           {
-            "type": "for",
-            "named": true
-          },
-          {
             "type": "function_definition",
             "named": true
           },
@@ -3219,10 +2979,6 @@
             "named": true
           },
           {
-            "type": "for",
-            "named": true
-          },
-          {
             "type": "function_definition",
             "named": true
           },
@@ -3342,10 +3098,6 @@
           },
           {
             "type": "dynsend",
-            "named": true
-          },
-          {
-            "type": "for",
             "named": true
           },
           {
@@ -3478,10 +3230,6 @@
           },
           {
             "type": "dynsend",
-            "named": true
-          },
-          {
-            "type": "for",
             "named": true
           },
           {
@@ -3625,10 +3373,6 @@
             "named": true
           },
           {
-            "type": "for",
-            "named": true
-          },
-          {
             "type": "function_definition",
             "named": true
           },
@@ -3761,10 +3505,6 @@
             "named": true
           },
           {
-            "type": "for",
-            "named": true
-          },
-          {
             "type": "function_definition",
             "named": true
           },
@@ -3893,10 +3633,6 @@
           "named": true
         },
         {
-          "type": "for",
-          "named": true
-        },
-        {
           "type": "function_definition",
           "named": true
         },
@@ -4021,10 +3757,6 @@
           },
           {
             "type": "dynsend",
-            "named": true
-          },
-          {
-            "type": "for",
             "named": true
           },
           {
@@ -4174,10 +3906,6 @@
           "named": true
         },
         {
-          "type": "for",
-          "named": true
-        },
-        {
           "type": "function_definition",
           "named": true
         },
@@ -4310,10 +4038,6 @@
           },
           {
             "type": "dynsend",
-            "named": true
-          },
-          {
-            "type": "for",
             "named": true
           },
           {
@@ -4463,10 +4187,6 @@
           "named": true
         },
         {
-          "type": "for",
-          "named": true
-        },
-        {
           "type": "function_definition",
           "named": true
         },
@@ -4595,10 +4315,6 @@
         },
         {
           "type": "dynsend",
-          "named": true
-        },
-        {
-          "type": "for",
           "named": true
         },
         {
@@ -4826,10 +4542,6 @@
   },
   {
     "type": "false",
-    "named": false
-  },
-  {
-    "type": "for",
     "named": false
   },
   {

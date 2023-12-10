@@ -50,30 +50,25 @@ module.exports = grammar({
       $.const_definition,
     ),
 
-    record_item: $ => (seq(
-      choice(
-        field('key', $.identifier),
-        field('key', seq(
-          '[',
-          $._expression,
-          ']'
-        )),
-        seq(
-          field('key', $.identifier),
-          ':',
-          field('value', $._expression),
+    record_item: $ =>
+      seq(
+        field('key',
+          choice(
+            $.identifier,
+            $.symbol,
+            $.string,
+            seq(
+              '[',
+              $._expression,
+              ']'
+            ),
+          ),
         ),
-        seq(
-          field('key', seq(
-            '[',
-            $._expression,
-            ']'
-          )),
+        optional(seq(
           ':',
           field('value', $._expression),
-        )
+        )),
       ),
-    )),
 
     _statement: $ => seq(
       $._expression,
@@ -92,7 +87,6 @@ module.exports = grammar({
         $.symbol,
         $.record,
         $.list,
-        $.for,
         $.loop,
         $.block,
         $.return,
@@ -287,16 +281,6 @@ module.exports = grammar({
       '(',
       $._expression,
       ')',
-    ),
-
-    for: $ => seq(
-      'for',
-      prec(PREC_EXP + 1, field('local', $._identifiers)), // Parse the identifiers with a higher precendence than an IN
-      'in',
-      field('iter', $._expression),
-      $._newlines,
-      optional($.body),
-      'end',
     ),
 
     break: $ => prec.left(seq(
