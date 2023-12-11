@@ -3,7 +3,6 @@ const PREC_TUPLE = -1
 const PREC_EXP = 0
 const PREC_OR = 2
 const PREC_AND = 3
-const PREC_MATCH = 4
 const PREC_EQUALITY = 5
 const PREC_COMPARISON = 6
 const PREC_TERM = 7
@@ -107,7 +106,6 @@ module.exports = grammar({
         $.reccall,
         $.blkcall,
         $.call,
-        $.match,
         $.yield,
       ),
     ),
@@ -309,17 +307,6 @@ module.exports = grammar({
       optional($.body),
       'end',
     ),
-
-    match: $ => prec(PREC_MATCH, seq(
-      $._lhs,
-      'match',
-      $._newlines,
-      repeat($.case),
-      'else',
-      '=>',
-      $.body,
-      'end',
-    )),
 
     block: $ => prec(PREC_BLOCK, seq(
       'do',

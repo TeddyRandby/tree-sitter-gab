@@ -23,7 +23,6 @@
 ] @repeat
 
 [
- "match"
  "and"
  "or"
  "then"

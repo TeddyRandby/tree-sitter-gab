@@ -325,10 +325,6 @@
           },
           {
             "type": "SYMBOL",
-            "name": "match"
-          },
-          {
-            "type": "SYMBOL",
             "name": "yield"
           }
         ]
@@ -1642,50 +1638,6 @@
           "value": "end"
         }
       ]
-    },
-    "match": {
-      "type": "PREC",
-      "value": 4,
-      "content": {
-        "type": "SEQ",
-        "members": [
-          {
-            "type": "SYMBOL",
-            "name": "_lhs"
-          },
-          {
-            "type": "STRING",
-            "value": "match"
-          },
-          {
-            "type": "SYMBOL",
-            "name": "_newlines"
-          },
-          {
-            "type": "REPEAT",
-            "content": {
-              "type": "SYMBOL",
-              "name": "case"
-            }
-          },
-          {
-            "type": "STRING",
-            "value": "else"
-          },
-          {
-            "type": "STRING",
-            "value": "=>"
-          },
-          {
-            "type": "SYMBOL",
-            "name": "body"
-          },
-          {
-            "type": "STRING",
-            "value": "end"
-          }
-        ]
-      }
     },
     "block": {
       "type": "PREC",
