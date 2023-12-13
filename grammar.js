@@ -57,9 +57,9 @@ module.exports = grammar({
             $.symbol,
             $.string,
             seq(
-              '|',
+              '[',
               $._expression,
-              '|'
+              ']'
             ),
           ),
         ),
