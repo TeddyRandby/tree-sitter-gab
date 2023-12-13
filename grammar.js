@@ -57,14 +57,14 @@ module.exports = grammar({
             $.symbol,
             $.string,
             seq(
-              '[',
+              '|',
               $._expression,
-              ']'
+              '|'
             ),
           ),
         ),
         optional(seq(
-          ':',
+          '=',
           field('value', $._expression),
         )),
       ),

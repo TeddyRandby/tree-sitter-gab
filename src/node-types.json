@@ -2123,7 +2123,7 @@
     "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
         {
           "type": "assignment",
@@ -2593,14 +2593,6 @@
         "required": true,
         "types": [
           {
-            "type": "[",
-            "named": false
-          },
-          {
-            "type": "]",
-            "named": false
-          },
-          {
             "type": "assignment",
             "named": true
           },
@@ -2711,6 +2703,10 @@
           {
             "type": "yield",
             "named": true
+          },
+          {
+            "type": "|",
+            "named": false
           }
         ]
       },

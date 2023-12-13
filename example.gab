@@ -1,7 +1,8 @@
-for *i in values:each
-  i == something and break i
+def [][.String](opts)
+    ?opts :match {
+        [?{ from to }] = do; self:slice(opts:from, opts:to) end
+        [?{ from }   ] = do; self:slice(opts:from)          end
+        [?{ to }     ] = do; self:slice(nil, opts:to)       end
+        .Number        = do; self:slice(opts)               end
+    }
 end
-
-1:(&+)(1)
-
-{ a: 2 }
