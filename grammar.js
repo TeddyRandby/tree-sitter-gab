@@ -50,7 +50,7 @@ module.exports = grammar({
     ),
 
     record_item: $ =>
-      seq(
+      prec(PREC_EXP + 1, seq(
         field('key',
           choice(
             $.identifier,
@@ -67,7 +67,8 @@ module.exports = grammar({
           '=',
           field('value', $._expression),
         )),
-      ),
+        optional(','),
+      )),
 
     _statement: $ => seq(
       $._expression,
