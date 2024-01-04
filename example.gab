@@ -1,10 +1,11 @@
-def [][.String](opts)
-    ?opts :match {
-        [?{ from, to }] = do; self:slice(opts:from, opts:to) end
-        [?{ from }   ] = do; self:slice(opts:from)          end
-        [?{ to }     ] = do; self:slice(nil, opts:to)       end
-        .Number        = do; self:slice(opts)               end
-    }
+def explain_specs(specs, separator)
+  specs:tuple.collect(
+    &:map,
+    &:values,
+    &:spec.explain,
+    specs:len
+  ):join(
+    &:values,
+    separator,
+    &+)
 end
-
-{ from = 1, to = 3, ['hi'], .world = 3 }

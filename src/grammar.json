@@ -59,37 +59,53 @@
       ]
     },
     "_tuple": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "REPEAT",
-          "content": {
-            "type": "SEQ",
-            "members": [
-              {
-                "type": "PREC",
-                "value": -1,
-                "content": {
-                  "type": "SYMBOL",
-                  "name": "_expression"
+      "type": "PREC",
+      "value": -1,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "REPEAT",
+            "content": {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "PREC",
+                  "value": -1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "_expression"
+                  }
+                },
+                {
+                  "type": "STRING",
+                  "value": ","
                 }
-              },
+              ]
+            }
+          },
+          {
+            "type": "PREC",
+            "value": -1,
+            "content": {
+              "type": "SYMBOL",
+              "name": "_expression"
+            }
+          },
+          {
+            "type": "CHOICE",
+            "members": [
               {
                 "type": "STRING",
                 "value": ","
+              },
+              {
+                "type": "BLANK"
               }
             ]
           }
-        },
-        {
-          "type": "PREC",
-          "value": -1,
-          "content": {
-            "type": "SYMBOL",
-            "name": "_expression"
-          }
-        }
-      ]
+        ]
+      }
     },
     "_definition": {
       "type": "CHOICE",
@@ -1548,7 +1564,7 @@
       ]
     },
     "break": {
-      "type": "PREC_LEFT",
+      "type": "PREC_RIGHT",
       "value": 0,
       "content": {
         "type": "SEQ",

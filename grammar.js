@@ -33,7 +33,7 @@ module.exports = grammar({
       ')',
     )),
 
-    _tuple: $ => seq(
+    _tuple: $ => prec(PREC_TUPLE, seq(
       repeat(
         seq(
           prec(PREC_TUPLE, $._expression),
@@ -41,7 +41,8 @@ module.exports = grammar({
         ),
       ),
       prec(PREC_TUPLE, $._expression),
-    ),
+      optional(','),
+    )),
 
     _definition: $ => choice(
       $.function_definition,
@@ -282,7 +283,7 @@ module.exports = grammar({
       ')',
     ),
 
-    break: $ => prec.left(seq(
+    break: $ => prec.right(seq(
       'break',
       optional($._expression),
     )),
