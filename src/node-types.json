@@ -1047,6 +1047,10 @@
             "named": false
           },
           {
+            "type": "..",
+            "named": false
+          },
+          {
             "type": "identifier",
             "named": true
           }
@@ -1570,6 +1574,10 @@
           },
           {
             "type": "-",
+            "named": false
+          },
+          {
+            "type": "..",
             "named": false
           },
           {
@@ -4059,6 +4067,10 @@
     "named": false
   },
   {
+    "type": "..",
+    "named": false
+  },
+  {
     "type": "/",
     "named": false
   },
@@ -4161,10 +4173,6 @@
   {
     "type": "identifier",
     "named": true
-  },
-  {
-    "type": "in",
-    "named": false
   },
   {
     "type": "loop",

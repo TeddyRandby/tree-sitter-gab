@@ -1,11 +1,1 @@
-def explain_specs(specs, separator)
-  specs:tuple.collect(
-    &:map,
-    &:values,
-    &:spec.explain,
-    specs:len
-  ):join(
-    &:values,
-    separator,
-    &+)
-end
+..a = .. b

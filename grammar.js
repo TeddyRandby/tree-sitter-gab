@@ -25,7 +25,7 @@ module.exports = grammar({
   rules: {
     source_file: $ => repeat($._statement),
 
-    _identifiers: $ => repeat1(seq($.identifier, optional(','))),
+    _identifiers: $ => repeat1(seq(optional('..'), $.identifier, optional(','))),
 
     parameters: $ => (seq(
       '(',
@@ -116,8 +116,10 @@ module.exports = grammar({
       seq('-', $._expression),
       seq('not', $._expression),
       seq('?', $._expression),
+      seq('..', $._expression),
       seq('&', choice(
         $.message,
+        '..',
         '[]',
         '[=]',
         '()',
@@ -138,31 +140,26 @@ module.exports = grammar({
       )),
     )),
 
-    _lhs: $ => prec(PREC_EXP + 1, seq(
-      $._expression,
-      optional('in'),
-    )),
-
-    binary: $ => (choice(
-      prec(PREC_TERM, seq($._lhs, '+', $._expression)),
-      prec(PREC_TERM, seq($._lhs, '-', $._expression)),
-      prec(PREC_FACTOR, seq($._lhs, '*', $._expression)),
-      prec(PREC_FACTOR, seq($._lhs, '/', $._expression)),
-      prec(PREC_FACTOR, seq($._lhs, '%', $._expression)),
-      prec(PREC_FACTOR, seq($._lhs, '^', $._expression)),
-      prec(PREC_FACTOR, seq($._lhs, '&', $._expression)),
-      prec(PREC_FACTOR, seq($._lhs, '|', $._expression)),
-      prec(PREC_FACTOR, seq($._lhs, '<<', $._expression)),
-      prec(PREC_FACTOR, seq($._lhs, '>>', $._expression)),
-      prec(PREC_AND, seq($._lhs, 'and', $._expression)),
-      prec(PREC_OR, seq($._lhs, 'or', $._expression)),
-      prec(PREC_AND, seq($._lhs, 'then', $._newlines, $.body, 'end')),
-      prec(PREC_OR, seq($._lhs, 'else', $._newlines, $.body, 'end')),
-      prec(PREC_COMPARISON, seq($._lhs, '<', $._expression)),
-      prec(PREC_COMPARISON, seq($._lhs, '>', $._expression)),
-      prec(PREC_EQUALITY, seq($._lhs, '==', $._expression)),
-      prec(PREC_EQUALITY, seq($._lhs, '<=', $._expression)),
-      prec(PREC_EQUALITY, seq($._lhs, '>=', $._expression)),
+    binary: $ => prec.right(choice(
+      prec(PREC_TERM, seq($._expression, '+', $._expression)),
+      prec(PREC_TERM, seq($._expression, '-', $._expression)),
+      prec(PREC_FACTOR, seq($._expression, '*', $._expression)),
+      prec(PREC_FACTOR, seq($._expression, '/', $._expression)),
+      prec(PREC_FACTOR, seq($._expression, '%', $._expression)),
+      prec(PREC_FACTOR, seq($._expression, '^', $._expression)),
+      prec(PREC_FACTOR, seq($._expression, '&', $._expression)),
+      prec(PREC_FACTOR, seq($._expression, '|', $._expression)),
+      prec(PREC_FACTOR, seq($._expression, '<<', $._expression)),
+      prec(PREC_FACTOR, seq($._expression, '>>', $._expression)),
+      prec(PREC_AND, seq($._expression, 'and', $._expression)),
+      prec(PREC_OR, seq($._expression, 'or', $._expression)),
+      prec(PREC_AND, seq($._expression, 'then', $._newlines, $.body, 'end')),
+      prec(PREC_OR, seq($._expression, 'else', $._newlines, $.body, 'end')),
+      prec(PREC_COMPARISON, seq($._expression, '<', $._expression)),
+      prec(PREC_COMPARISON, seq($._expression, '>', $._expression)),
+      prec(PREC_EQUALITY, seq($._expression, '==', $._expression)),
+      prec(PREC_EQUALITY, seq($._expression, '<=', $._expression)),
+      prec(PREC_EQUALITY, seq($._expression, '>=', $._expression)),
     )),
 
     record: $ => seq(
@@ -322,6 +319,7 @@ module.exports = grammar({
       'def',
       field('name', choice(
         $.identifier,
+        '..',
         '+',
         '-',
         '*',
@@ -416,10 +414,7 @@ module.exports = grammar({
 
     identifier: _ => token(
       choice(
-        seq(
-          optional('*'),
-          /[a-zA-Z_][a-zA-Z_\.]*[?!]?/,
-        ),
+        /[a-zA-Z_][a-zA-Z_\.]*[?!]?/,
         /@[0-9]*/,
       ),
     ),
