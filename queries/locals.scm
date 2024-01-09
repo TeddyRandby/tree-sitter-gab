@@ -1,13 +1,15 @@
 [
-  (body)
-  (function_definition)
   (block)
-] @local.scope
+  (function_definition)
+] @scope
 
-(const_definition name: (identifier) @local.definition)
-(function_definition name: (identifier) @local.definition)
-(object_definition name: (identifier) @local.definition)
-(assignment left: (identifier) @local.definition)
-(parameters (identifier) @local.definition)
+(parameters
+  (identifier) @definition.parameter
+  (#set! "definition.var.scope" "parent"))
 
-(identifier) @local.reference
+(const_definition name: (identifier) @definition.var)
+(function_definition name: (identifier) @definition.var)
+(object_definition name: (identifier) @definition.var)
+(assignment left: (identifier) @definition.var)
+
+(identifier) @reference

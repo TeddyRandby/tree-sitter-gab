@@ -375,42 +375,48 @@ module.exports = grammar({
       field('name', $.identifier),
     ),
 
-    stringcontent: _ => /[^\{\}\']*/,
+    interpbegin: _ => token(seq(
+      '\'',
+      /[^\{]*/,
+      '{',
+    )),
 
-    _interp: $ => seq(
-      $.stringcontent,
-      repeat(seq(
-        '{',
-        $._expression,
-        '}',
-        $.stringcontent,
-      )),
-    ),
+    interpmiddle: _ => token(seq(
+      '}',
+      /[^\{]*/,
+      '{',
+    )),
+
+    interpend: _ => token(seq(
+      '}',
+      /[^\']*/,
+      '\'',
+    )),
+
+    singlestring: _ => token(seq(
+      '\'',
+      /.*/,
+      '\'',
+    )),
+
+    doublestring: _ => token(seq(
+      '"',
+      /.*/,
+      '"',
+    )),
 
     string: $ => choice(
       seq(
-        '\'',
-        $._interp,
-        '\'',
+        $.interpbegin,
+        $._expression,
+        repeat(seq($.interpmiddle, $._expression)),
+        $.interpend,
       ),
-      $._rawstring,
+      $.singlestring,
+      $.doublestring,
     ),
 
-    rawstringcontent: _ => /[^\"]*/,
-
-    _rawstring: $ => seq(
-      '"',
-      $.rawstringcontent,
-      '"',
-    ),
-
-    comment: _ => token(
-      seq(
-        '#',
-        /[^\n]*/,
-        '\n',
-      )
-    ),
+    comment: _ => token.immediate(seq('#', /.*/)),
 
     identifier: _ => token(
       choice(

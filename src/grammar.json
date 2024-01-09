@@ -1971,42 +1971,105 @@
         }
       ]
     },
-    "stringcontent": {
-      "type": "PATTERN",
-      "value": "[^\\{\\}\\']*"
-    },
-    "_interp": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "SYMBOL",
-          "name": "stringcontent"
-        },
-        {
-          "type": "REPEAT",
-          "content": {
-            "type": "SEQ",
-            "members": [
-              {
-                "type": "STRING",
-                "value": "{"
-              },
-              {
-                "type": "SYMBOL",
-                "name": "_expression"
-              },
-              {
-                "type": "STRING",
-                "value": "}"
-              },
-              {
-                "type": "SYMBOL",
-                "name": "stringcontent"
-              }
-            ]
+    "interpbegin": {
+      "type": "TOKEN",
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "STRING",
+            "value": "'"
+          },
+          {
+            "type": "PATTERN",
+            "value": "[^\\{]*"
+          },
+          {
+            "type": "STRING",
+            "value": "{"
           }
-        }
-      ]
+        ]
+      }
+    },
+    "interpmiddle": {
+      "type": "TOKEN",
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "STRING",
+            "value": "}"
+          },
+          {
+            "type": "PATTERN",
+            "value": "[^\\{]*"
+          },
+          {
+            "type": "STRING",
+            "value": "{"
+          }
+        ]
+      }
+    },
+    "interpend": {
+      "type": "TOKEN",
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "STRING",
+            "value": "}"
+          },
+          {
+            "type": "PATTERN",
+            "value": "[^\\']*"
+          },
+          {
+            "type": "STRING",
+            "value": "'"
+          }
+        ]
+      }
+    },
+    "singlestring": {
+      "type": "TOKEN",
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "STRING",
+            "value": "'"
+          },
+          {
+            "type": "PATTERN",
+            "value": ".*"
+          },
+          {
+            "type": "STRING",
+            "value": "'"
+          }
+        ]
+      }
+    },
+    "doublestring": {
+      "type": "TOKEN",
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "STRING",
+            "value": "\""
+          },
+          {
+            "type": "PATTERN",
+            "value": ".*"
+          },
+          {
+            "type": "STRING",
+            "value": "\""
+          }
+        ]
+      }
     },
     "string": {
       "type": "CHOICE",
@@ -2015,48 +2078,47 @@
           "type": "SEQ",
           "members": [
             {
-              "type": "STRING",
-              "value": "'"
+              "type": "SYMBOL",
+              "name": "interpbegin"
             },
             {
               "type": "SYMBOL",
-              "name": "_interp"
+              "name": "_expression"
             },
             {
-              "type": "STRING",
-              "value": "'"
+              "type": "REPEAT",
+              "content": {
+                "type": "SEQ",
+                "members": [
+                  {
+                    "type": "SYMBOL",
+                    "name": "interpmiddle"
+                  },
+                  {
+                    "type": "SYMBOL",
+                    "name": "_expression"
+                  }
+                ]
+              }
+            },
+            {
+              "type": "SYMBOL",
+              "name": "interpend"
             }
           ]
         },
         {
           "type": "SYMBOL",
-          "name": "_rawstring"
-        }
-      ]
-    },
-    "rawstringcontent": {
-      "type": "PATTERN",
-      "value": "[^\\\"]*"
-    },
-    "_rawstring": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "\""
+          "name": "singlestring"
         },
         {
           "type": "SYMBOL",
-          "name": "rawstringcontent"
-        },
-        {
-          "type": "STRING",
-          "value": "\""
+          "name": "doublestring"
         }
       ]
     },
     "comment": {
-      "type": "TOKEN",
+      "type": "IMMEDIATE_TOKEN",
       "content": {
         "type": "SEQ",
         "members": [
@@ -2066,11 +2128,7 @@
           },
           {
             "type": "PATTERN",
-            "value": "[^\\n]*"
-          },
-          {
-            "type": "STRING",
-            "value": "\n"
+            "value": ".*"
           }
         ]
       }

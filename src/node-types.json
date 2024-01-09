@@ -3540,6 +3540,10 @@
           "named": true
         },
         {
+          "type": "doublestring",
+          "named": true
+        },
+        {
           "type": "dynsend",
           "named": true
         },
@@ -3557,6 +3561,18 @@
         },
         {
           "type": "index",
+          "named": true
+        },
+        {
+          "type": "interpbegin",
+          "named": true
+        },
+        {
+          "type": "interpend",
+          "named": true
+        },
+        {
+          "type": "interpmiddle",
           "named": true
         },
         {
@@ -3580,10 +3596,6 @@
           "named": true
         },
         {
-          "type": "rawstringcontent",
-          "named": true
-        },
-        {
           "type": "reccall",
           "named": true
         },
@@ -3600,15 +3612,15 @@
           "named": true
         },
         {
+          "type": "singlestring",
+          "named": true
+        },
+        {
           "type": "strcall",
           "named": true
         },
         {
           "type": "string",
-          "named": true
-        },
-        {
-          "type": "stringcontent",
           "named": true
         },
         {
@@ -4023,19 +4035,11 @@
     }
   },
   {
-    "type": "\"",
-    "named": false
-  },
-  {
     "type": "%",
     "named": false
   },
   {
     "type": "&",
-    "named": false
-  },
-  {
-    "type": "'",
     "named": false
   },
   {
@@ -4159,6 +4163,10 @@
     "named": false
   },
   {
+    "type": "doublestring",
+    "named": true
+  },
+  {
     "type": "else",
     "named": false
   },
@@ -4172,6 +4180,18 @@
   },
   {
     "type": "identifier",
+    "named": true
+  },
+  {
+    "type": "interpbegin",
+    "named": true
+  },
+  {
+    "type": "interpend",
+    "named": true
+  },
+  {
+    "type": "interpmiddle",
     "named": true
   },
   {
@@ -4195,15 +4215,11 @@
     "named": false
   },
   {
-    "type": "rawstringcontent",
-    "named": true
-  },
-  {
     "type": "return",
     "named": false
   },
   {
-    "type": "stringcontent",
+    "type": "singlestring",
     "named": true
   },
   {

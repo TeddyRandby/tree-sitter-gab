@@ -1,13 +1,19 @@
 (call
   callee: (identifier) @injection.language
   [
-   (string (stringcontent)  @injection.content)
-   (string (rawstringcontent)  @injection.content)
+   (string (doublestring)  @injection.content (#offset! @doublestring 0 1 0 -1)
+   (string (singlestring)  @injection.content (#offset! @doublestring 0 1 0 -1))
+   (string (interpbegin)  @injection.content (#offset! @doublestring 0 1 0 -1))
+   (string (interpmiddle)  @injection.content (#offset! @doublestring 0 1 0 -1))
+   (string (interpend)  @injection.content (#offset! @doublestring 0 1 0 -1))
   ])
 
 (send
   message: (message (identifier) @injection.language)
   [
-   (string (stringcontent)  @injection.content)
-   (string (rawstringcontent)  @injection.content)
+   (string (doublestring)  @injection.content (#offset! @doublestring 0 1 0 -1)
+   (string (singlestring)  @injection.content (#offset! @doublestring 0 1 0 -1))
+   (string (interpbegin)  @injection.content (#offset! @doublestring 0 1 0 -1))
+   (string (interpmiddle)  @injection.content (#offset! @doublestring 0 1 0 -1))
+   (string (interpend)  @injection.content (#offset! @doublestring 0 1 0 -1))
   ])
