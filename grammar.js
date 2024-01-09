@@ -224,27 +224,39 @@ module.exports = grammar({
 
     blkcall: $ => prec.right(PREC_SEND, seq(
       field('callee', $._expression),
-      $.block,
+      field('argument', $.block),
     )),
 
     reccall: $ => prec.right(PREC_SEND, seq(
       field('callee', $._expression),
-      $.record,
-      optional($.block),
+      field('argument',
+        seq(
+          $.record,
+          optional($.block),
+        ),
+      ),
     )),
 
     symcall: $ => prec.right(PREC_SEND, seq(
       field('callee', $._expression),
-      $.symbol,
-      optional($.record),
-      optional($.block),
+      field('argument',
+        seq(
+          $.symbol,
+          optional($.record),
+          optional($.block),
+        ),
+      ),
     )),
 
     strcall: $ => prec.right(PREC_SEND, seq(
       field('callee', $._expression),
-      $.string,
-      optional($.record),
-      optional($.block),
+      field('argument',
+        seq(
+          $.string,
+          optional($.record),
+          optional($.block),
+        ),
+      ),
     )),
 
     call: $ => prec.right(PREC_SEND, seq(

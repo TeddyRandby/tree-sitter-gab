@@ -380,6 +380,16 @@
     "type": "blkcall",
     "named": true,
     "fields": {
+      "argument": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "block",
+            "named": true
+          }
+        ]
+      },
       "callee": {
         "multiple": false,
         "required": true,
@@ -498,16 +508,6 @@
           }
         ]
       }
-    },
-    "children": {
-      "multiple": false,
-      "required": true,
-      "types": [
-        {
-          "type": "block",
-          "named": true
-        }
-      ]
     }
   },
   {
@@ -2443,6 +2443,20 @@
     "type": "reccall",
     "named": true,
     "fields": {
+      "argument": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "block",
+            "named": true
+          },
+          {
+            "type": "record",
+            "named": true
+          }
+        ]
+      },
       "callee": {
         "multiple": false,
         "required": true,
@@ -2561,20 +2575,6 @@
           }
         ]
       }
-    },
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "block",
-          "named": true
-        },
-        {
-          "type": "record",
-          "named": true
-        }
-      ]
     }
   },
   {
@@ -3361,6 +3361,24 @@
     "type": "strcall",
     "named": true,
     "fields": {
+      "argument": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "block",
+            "named": true
+          },
+          {
+            "type": "record",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          }
+        ]
+      },
       "callee": {
         "multiple": false,
         "required": true,
@@ -3479,24 +3497,6 @@
           }
         ]
       }
-    },
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "block",
-          "named": true
-        },
-        {
-          "type": "record",
-          "named": true
-        },
-        {
-          "type": "string",
-          "named": true
-        }
-      ]
     }
   },
   {
@@ -3646,6 +3646,24 @@
     "type": "symcall",
     "named": true,
     "fields": {
+      "argument": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "block",
+            "named": true
+          },
+          {
+            "type": "record",
+            "named": true
+          },
+          {
+            "type": "symbol",
+            "named": true
+          }
+        ]
+      },
       "callee": {
         "multiple": false,
         "required": true,
@@ -3764,24 +3782,6 @@
           }
         ]
       }
-    },
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "block",
-          "named": true
-        },
-        {
-          "type": "record",
-          "named": true
-        },
-        {
-          "type": "symbol",
-          "named": true
-        }
-      ]
     }
   },
   {

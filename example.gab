@@ -1,5 +1,3 @@
-"# adsjf#akjds"
-
-:html 'ajlksd'
-
-:css 'aad{1}alkds'
+html '
+  <div>{value}</div>
+'
