@@ -377,43 +377,43 @@ module.exports = grammar({
 
     interpbegin: _ => token(seq(
       '\'',
-      /[^\{]*/,
+      /[^\{\']*/,
       '{',
     )),
 
     interpmiddle: _ => token(seq(
       '}',
-      /[^\{]*/,
+      /[^\{\']*/,
       '{',
     )),
 
     interpend: _ => token(seq(
       '}',
-      /[^\']*/,
+      /[^\'\{]*/,
       '\'',
     )),
 
     singlestring: _ => token(seq(
       '\'',
-      /.*/,
+      /[^\'\{]*/,
       '\'',
     )),
 
     doublestring: _ => token(seq(
       '"',
-      /.*/,
+      /[^\"]*/,
       '"',
     )),
 
     string: $ => choice(
+      $.singlestring,
+      $.doublestring,
       seq(
         $.interpbegin,
         $._expression,
         repeat(seq($.interpmiddle, $._expression)),
         $.interpend,
       ),
-      $.singlestring,
-      $.doublestring,
     ),
 
     comment: _ => token.immediate(seq('#', /.*/)),

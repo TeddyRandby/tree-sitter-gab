@@ -1982,7 +1982,7 @@
           },
           {
             "type": "PATTERN",
-            "value": "[^\\{]*"
+            "value": "[^\\{\\']*"
           },
           {
             "type": "STRING",
@@ -2002,7 +2002,7 @@
           },
           {
             "type": "PATTERN",
-            "value": "[^\\{]*"
+            "value": "[^\\{\\']*"
           },
           {
             "type": "STRING",
@@ -2022,7 +2022,7 @@
           },
           {
             "type": "PATTERN",
-            "value": "[^\\']*"
+            "value": "[^\\'\\{]*"
           },
           {
             "type": "STRING",
@@ -2042,7 +2042,7 @@
           },
           {
             "type": "PATTERN",
-            "value": ".*"
+            "value": "[^\\'\\{]*"
           },
           {
             "type": "STRING",
@@ -2062,7 +2062,7 @@
           },
           {
             "type": "PATTERN",
-            "value": ".*"
+            "value": "[^\\\"]*"
           },
           {
             "type": "STRING",
@@ -2074,6 +2074,14 @@
     "string": {
       "type": "CHOICE",
       "members": [
+        {
+          "type": "SYMBOL",
+          "name": "singlestring"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "doublestring"
+        },
         {
           "type": "SEQ",
           "members": [
@@ -2106,14 +2114,6 @@
               "name": "interpend"
             }
           ]
-        },
-        {
-          "type": "SYMBOL",
-          "name": "singlestring"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "doublestring"
         }
       ]
     },
