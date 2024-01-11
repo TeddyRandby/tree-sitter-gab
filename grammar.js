@@ -428,7 +428,7 @@ module.exports = grammar({
       ),
     ),
 
-    comment: _ => token.immediate(seq('#', /.*/)),
+    comment: _ => token(seq('#', /.*/)),
 
     identifier: _ => token(
       choice(
