@@ -344,6 +344,11 @@ module.exports = grammar({
         '[]',
         '[=]',
         '()',
+        seq(
+          '(',
+          $._expression,
+          ')',
+        ),
       )),
       optional(
         field('type',
