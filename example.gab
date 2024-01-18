@@ -2,8 +2,6 @@
   <div>{value}</div>
 ')
 
-  # test
-
-#test
-
 def (test)[For](input); .pass end
+
+list:fold(&:values, 0) => @1 + @2

@@ -32,6 +32,7 @@
 [
  "yield"
  "return"
+ "=>"
 ] @keyword.return
 
 [

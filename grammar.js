@@ -90,6 +90,7 @@ module.exports = grammar({
         $.list,
         $.loop,
         $.block,
+        $.lambda,
         $.return,
         $.identifier,
         $.number,
@@ -217,14 +218,14 @@ module.exports = grammar({
           )),
           optional($.string),
           optional($.record),
-          optional($.block),
+          optional(choice($.block, $.lambda)),
         ),
       ),
     )),
 
     blkcall: $ => prec.right(PREC_SEND, seq(
       field('callee', $._expression),
-      field('argument', $.block),
+      field('argument', choice($.block, $.lambda)),
     )),
 
     reccall: $ => prec.right(PREC_SEND, seq(
@@ -232,7 +233,7 @@ module.exports = grammar({
       field('argument',
         seq(
           $.record,
-          optional($.block),
+          optional(choice($.block, $.lambda)),
         ),
       ),
     )),
@@ -243,7 +244,7 @@ module.exports = grammar({
         seq(
           $.symbol,
           optional($.record),
-          optional($.block),
+          optional(choice($.block, $.lambda)),
         ),
       ),
     )),
@@ -254,7 +255,7 @@ module.exports = grammar({
         seq(
           $.string,
           optional($.record),
-          optional($.block),
+          optional(choice($.block, $.lambda)),
         ),
       ),
     )),
@@ -268,7 +269,7 @@ module.exports = grammar({
           ')',
           optional($.string),
           optional($.record),
-          optional($.block),
+          optional(choice($.block, $.lambda)),
         ),
       ),
     )),
@@ -318,6 +319,11 @@ module.exports = grammar({
       optional($.body),
       'end',
     ),
+
+    lambda: $ => prec(PREC_EXP, seq(
+      '=>',
+      $._expression,
+    )),
 
     block: $ => prec(PREC_BLOCK, seq(
       'do',

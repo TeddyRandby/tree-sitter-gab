@@ -297,6 +297,10 @@
           },
           {
             "type": "SYMBOL",
+            "name": "lambda"
+          },
+          {
+            "type": "SYMBOL",
             "name": "return"
           },
           {
@@ -1252,8 +1256,17 @@
                   "type": "CHOICE",
                   "members": [
                     {
-                      "type": "SYMBOL",
-                      "name": "block"
+                      "type": "CHOICE",
+                      "members": [
+                        {
+                          "type": "SYMBOL",
+                          "name": "block"
+                        },
+                        {
+                          "type": "SYMBOL",
+                          "name": "lambda"
+                        }
+                      ]
                     },
                     {
                       "type": "BLANK"
@@ -1284,8 +1297,17 @@
             "type": "FIELD",
             "name": "argument",
             "content": {
-              "type": "SYMBOL",
-              "name": "block"
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "block"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "lambda"
+                }
+              ]
             }
           }
         ]
@@ -1319,8 +1341,17 @@
                   "type": "CHOICE",
                   "members": [
                     {
-                      "type": "SYMBOL",
-                      "name": "block"
+                      "type": "CHOICE",
+                      "members": [
+                        {
+                          "type": "SYMBOL",
+                          "name": "block"
+                        },
+                        {
+                          "type": "SYMBOL",
+                          "name": "lambda"
+                        }
+                      ]
                     },
                     {
                       "type": "BLANK"
@@ -1373,8 +1404,17 @@
                   "type": "CHOICE",
                   "members": [
                     {
-                      "type": "SYMBOL",
-                      "name": "block"
+                      "type": "CHOICE",
+                      "members": [
+                        {
+                          "type": "SYMBOL",
+                          "name": "block"
+                        },
+                        {
+                          "type": "SYMBOL",
+                          "name": "lambda"
+                        }
+                      ]
                     },
                     {
                       "type": "BLANK"
@@ -1427,8 +1467,17 @@
                   "type": "CHOICE",
                   "members": [
                     {
-                      "type": "SYMBOL",
-                      "name": "block"
+                      "type": "CHOICE",
+                      "members": [
+                        {
+                          "type": "SYMBOL",
+                          "name": "block"
+                        },
+                        {
+                          "type": "SYMBOL",
+                          "name": "lambda"
+                        }
+                      ]
                     },
                     {
                       "type": "BLANK"
@@ -1509,8 +1558,17 @@
                   "type": "CHOICE",
                   "members": [
                     {
-                      "type": "SYMBOL",
-                      "name": "block"
+                      "type": "CHOICE",
+                      "members": [
+                        {
+                          "type": "SYMBOL",
+                          "name": "block"
+                        },
+                        {
+                          "type": "SYMBOL",
+                          "name": "lambda"
+                        }
+                      ]
                     },
                     {
                       "type": "BLANK"
@@ -1709,6 +1767,23 @@
           "value": "end"
         }
       ]
+    },
+    "lambda": {
+      "type": "PREC",
+      "value": 0,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "STRING",
+            "value": "=>"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "_expression"
+          }
+        ]
+      }
     },
     "block": {
       "type": "PREC",
