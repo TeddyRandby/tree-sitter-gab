@@ -2027,19 +2027,7 @@
           "name": "name",
           "content": {
             "type": "SYMBOL",
-            "name": "_identifiers"
-          }
-        },
-        {
-          "type": "STRING",
-          "value": "="
-        },
-        {
-          "type": "FIELD",
-          "name": "value",
-          "content": {
-            "type": "SYMBOL",
-            "name": "_tuple"
+            "name": "identifier"
           }
         }
       ]

@@ -5,3 +5,5 @@
 def (test)[For](input); .pass end
 
 list:fold(&:values, 0) => @1 + @2
+
+def a, def b = 1,2

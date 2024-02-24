@@ -379,9 +379,7 @@ module.exports = grammar({
 
     const_definition: $ => (seq(
       'def',
-      field('name', $._identifiers),
-      '=',
-      field('value', $._tuple),
+      field('name', $.identifier),
     )),
 
     bool: _ => choice('true', 'false'),
