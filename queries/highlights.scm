@@ -5,7 +5,7 @@
 
 (identifier) @variable
 ((identifier) @variable.builtin (#eq? @variable.builtin "self"))
-((identifier) @variable.parameter (#match? @variable.parameter "^@[0-9]*"))
+((identifier) @variable.parameter (#lua-match? @variable.parameter "^%@[0-9]*"))
 
 (symbol) @string.special
 
