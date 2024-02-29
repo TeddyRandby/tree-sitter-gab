@@ -4,8 +4,6 @@
 (number) @number
 
 (identifier) @variable
-((identifier) @variable.builtin (#eq? @variable.builtin "self"))
-((identifier) @variable.parameter (#lua-match? @variable.parameter "^%@[0-9]*"))
 
 (symbol) @string.special
 
@@ -97,3 +95,7 @@
 (object_definition name: (identifier) @type)
 
 (record_item key: (identifier) @field)
+
+((identifier) @variable.builtin (#eq? @variable.builtin "self"))
+
+((identifier) @variable.parameter (#lua-match? @variable.parameter "^%@[0-9]*"))
