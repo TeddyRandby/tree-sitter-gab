@@ -1,17 +1,11 @@
 const PREC_BLOCK = -1
 const PREC_TUPLE = -1
 const PREC_EXP = 0
-const PREC_OR = 2
-const PREC_AND = 3
-const PREC_EQUALITY = 5
-const PREC_COMPARISON = 6
-const PREC_TERM = 7
-const PREC_FACTOR = 8
-const PREC_UNARY = 9
-const PREC_SEND = 11
-const PREC_SPEC = 12
-const PREC_OBJ = 13
-const PREC_ASSIGNMENT = 14
+const PREC_UNARY = 3
+const PREC_SEND = 2
+const PREC_SPEC = 4
+const PREC_OBJ = 5
+const PREC_ASSIGNMENT = 6
 
 module.exports = grammar({
   name: 'gab',
@@ -84,11 +78,9 @@ module.exports = grammar({
     _expression: $ => prec.right(PREC_EXP,
       choice(
         $._definition,
-        $.break,
         $.symbol,
         $.record,
         $.list,
-        $.loop,
         $.block,
         $.lambda,
         $.return,
@@ -141,26 +133,22 @@ module.exports = grammar({
       )),
     )),
 
-    binary: $ => prec.right(choice(
-      prec(PREC_TERM, seq($._expression, '+', $._expression)),
-      prec(PREC_TERM, seq($._expression, '-', $._expression)),
-      prec(PREC_FACTOR, seq($._expression, '*', $._expression)),
-      prec(PREC_FACTOR, seq($._expression, '/', $._expression)),
-      prec(PREC_FACTOR, seq($._expression, '%', $._expression)),
-      prec(PREC_FACTOR, seq($._expression, '^', $._expression)),
-      prec(PREC_FACTOR, seq($._expression, '&', $._expression)),
-      prec(PREC_FACTOR, seq($._expression, '|', $._expression)),
-      prec(PREC_FACTOR, seq($._expression, '<<', $._expression)),
-      prec(PREC_FACTOR, seq($._expression, '>>', $._expression)),
-      prec(PREC_AND, seq($._expression, 'and', $._expression)),
-      prec(PREC_OR, seq($._expression, 'or', $._expression)),
-      prec(PREC_AND, seq($._expression, 'then', $._newlines, $.body, 'end')),
-      prec(PREC_OR, seq($._expression, 'else', $._newlines, $.body, 'end')),
-      prec(PREC_COMPARISON, seq($._expression, '<', $._expression)),
-      prec(PREC_COMPARISON, seq($._expression, '>', $._expression)),
-      prec(PREC_EQUALITY, seq($._expression, '==', $._expression)),
-      prec(PREC_EQUALITY, seq($._expression, '<=', $._expression)),
-      prec(PREC_EQUALITY, seq($._expression, '>=', $._expression)),
+    binary: $ => prec.left(PREC_SEND, choice(
+      seq($._expression, '+', $._expression),
+      seq($._expression, '-', $._expression),
+      seq($._expression, '*', $._expression),
+      seq($._expression, '/', $._expression),
+      seq($._expression, '%', $._expression),
+      seq($._expression, '^', $._expression),
+      seq($._expression, '&', $._expression),
+      seq($._expression, '|', $._expression),
+      seq($._expression, '<<', $._expression),
+      seq($._expression, '>>', $._expression),
+      seq($._expression, '<', $._expression),
+      seq($._expression, '>', $._expression),
+      seq($._expression, '==', $._expression),
+      seq($._expression, '<=', $._expression),
+      seq($._expression, '>=', $._expression),
     )),
 
     record: $ => seq(
@@ -291,26 +279,6 @@ module.exports = grammar({
       '(',
       $._expression,
       ')',
-    ),
-
-    break: $ => prec.right(seq(
-      'break',
-      optional($._expression),
-    )),
-
-    loop: $ => seq(
-      'loop',
-      $._newlines,
-      optional($.body),
-      optional(
-        seq(
-          'until',
-          field('condition',
-            $._expression,
-          ),
-        ),
-      ),
-      'end',
     ),
 
     case: $ => seq(

@@ -19,19 +19,6 @@
 ] @string
 
 [
- "loop"
- "until"
- "break"
-] @repeat
-
-[
- "and"
- "or"
- "then"
- "else"
-] @conditional
-
-[
  "yield"
  "return"
  "=>"
