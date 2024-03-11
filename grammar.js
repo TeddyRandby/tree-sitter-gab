@@ -163,7 +163,7 @@ module.exports = grammar({
 
     message_literal: $ => seq(
       '\\',
-      choice($.identifier, $.operator)
+      field('name', choice($.identifier, $.operator))
     ),
 
     interpbegin: _ => token(seq(

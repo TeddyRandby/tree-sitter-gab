@@ -7,6 +7,10 @@
 
 (symbol) @string.special
 
+(message_literal) @constant
+(message_literal name: (identifier) @constant)
+(message_literal name: (operator) @constant)
+
 [
  (bool)
  (nil)
@@ -41,6 +45,7 @@
 (operator) @operator
 
 (message) @method.call
+(message name: (identifier) @method.call)
 
 (parameters (identifier) @parameter)
 
