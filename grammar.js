@@ -60,7 +60,7 @@ module.exports = grammar({
       $._newlines,
     ),
 
-    body: $ => repeat1($._statement),
+    body: $ => seq(repeat($._statement), $._expression, optional($._newlines)),
 
     _expression: $ => prec.right(PREC_EXP,
       choice(
