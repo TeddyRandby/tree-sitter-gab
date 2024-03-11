@@ -17,22 +17,8 @@
 ] @string
 
 [
- "yield"
- "return"
- "=>"
-] @keyword.return
-
-[
-  "not"
-] @keyword.operator
-
-[
-  "def"
-] @keyword.storage.type
-
-[
   ","
-  ":"
+  ";"
 ] @punctuation.delimiter
 
 [
@@ -50,52 +36,15 @@
 ] @punctuation.bracket
 
 [
-  "+"
-  "-"
-  "%"
-  "*"
-  "/"
-  "="
-  "=="
-  "<"
-  "<="
-  ">"
-  ">="
-  "?"
-  "=>"
-  "&"
-  "|"
-  ">>"
-  "<<"
-  "^"
-  ".."
-] @operator
-
-[
- (call callee: (identifier))
- (blkcall callee: (identifier))
- (symcall callee: (identifier))
- (strcall callee: (identifier))
- (reccall callee: (identifier))
+ (call lhs (identifier))
 ] @method.call
 
-(send (message name: (identifier) @constructor))
+(operator) @operator
 
-(send
-       receiver: (_)
-       message: (message name: (identifier) @method.call)
-)
+(message) @method.call
 
 (parameters (identifier) @parameter)
-
-(function_definition name: (identifier) @method)
-
-(function_definition type: (identifier) @type)
-
-(object_definition name: (identifier) @type)
 
 (record_item key: (identifier) @field)
 
 ((identifier) @variable.builtin (#eq? @variable.builtin "self"))
-
-((identifier) @variable.parameter (#lua-match? @variable.parameter "^%@[0-9]*"))

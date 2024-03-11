@@ -3,8 +3,6 @@ const PREC_TUPLE = -1
 const PREC_EXP = 0
 const PREC_UNARY = 3
 const PREC_SEND = 2
-const PREC_SPEC = 4
-const PREC_OBJ = 5
 const PREC_ASSIGNMENT = 6
 
 module.exports = grammar({
@@ -21,11 +19,10 @@ module.exports = grammar({
 
     _identifiers: $ => repeat1(seq(optional('..'), $.identifier, optional(','))),
 
-    parameters: $ => (seq(
-      '(',
+    parameters: $ => seq(
       optional($._identifiers),
-      ')',
-    )),
+      $._newlines,
+    ),
 
     _tuple: $ => prec(PREC_TUPLE, seq(
       repeat(
@@ -37,12 +34,6 @@ module.exports = grammar({
       prec(PREC_TUPLE, $._expression),
       optional(','),
     )),
-
-    _definition: $ => choice(
-      $.function_definition,
-      $.object_definition,
-      $.const_definition,
-    ),
 
     record_item: $ =>
       prec(PREC_EXP + 1, seq(
@@ -77,78 +68,34 @@ module.exports = grammar({
 
     _expression: $ => prec.right(PREC_EXP,
       choice(
-        $._definition,
         $.symbol,
         $.record,
         $.list,
         $.block,
-        $.lambda,
-        $.return,
         $.identifier,
         $.number,
         $.string,
         $.bool,
         $.nil,
-        $.group,
+        $.tuple_exp,
         $.binary,
         $.unary,
-        $.index,
         $.assignment,
-        $.send,
         $.dynsend,
-        $.symcall,
-        $.strcall,
-        $.reccall,
-        $.blkcall,
         $.call,
-        $.yield,
+        $.message_literal,
       ),
     ),
 
-    unary: $ => prec(PREC_UNARY, choice(
-      seq('-', $._expression),
-      seq('not', $._expression),
-      seq('?', $._expression),
-      seq('..', $._expression),
-      seq('&', choice(
-        $.message,
-        '..',
-        '[]',
-        '[=]',
-        '()',
-        '<<',
-        '>>',
-        '|',
-        '&',
-        '==',
-        '<=',
-        '>=',
-        '<',
-        '>',
-        '+',
-        '-',
-        '*',
-        '/',
-        '%',
-      )),
+    unary: $ => prec(PREC_UNARY, seq(
+      $._expression,
+      $.operator,
     )),
 
-    binary: $ => prec.left(PREC_SEND, choice(
-      seq($._expression, '+', $._expression),
-      seq($._expression, '-', $._expression),
-      seq($._expression, '*', $._expression),
-      seq($._expression, '/', $._expression),
-      seq($._expression, '%', $._expression),
-      seq($._expression, '^', $._expression),
-      seq($._expression, '&', $._expression),
-      seq($._expression, '|', $._expression),
-      seq($._expression, '<<', $._expression),
-      seq($._expression, '>>', $._expression),
-      seq($._expression, '<', $._expression),
-      seq($._expression, '>', $._expression),
-      seq($._expression, '==', $._expression),
-      seq($._expression, '<=', $._expression),
-      seq($._expression, '>=', $._expression),
+    binary: $ => prec.left(PREC_SEND, seq(
+      $._expression,
+      choice($.operator, $.message),
+      $._expression,
     )),
 
     record: $ => seq(
@@ -163,110 +110,22 @@ module.exports = grammar({
       ']',
     ),
 
-    yield: $ => prec.right(seq(
-      'yield',
-      optional($._tuple),
-    )),
-
-    return: $ => prec.right(seq(
-      'return',
-      field('value', optional($._tuple)),
-    )),
-
     dynsend: $ => prec.right(PREC_SEND, seq(
-      field('receiver', $._expression),
+      field('lhs', $._expression),
       ':',
-      '(',
+      '{',
       field('message', $._expression),
-      ')',
-      field('argument',
-        seq(
-          optional(seq(
-            '(',
-            optional($._tuple),
-            ')',
-          )),
-          optional($.string),
-          optional($.record),
-          optional($.block),
-        ),
-      ),
+      '}',
+      field('rhs', $._expression),
     )),
 
-
-    send: $ => prec.right(PREC_SEND, seq(
-      optional(field('receiver', $._expression)),
-      field('message', $.message),
-      field('argument',
-        seq(
-          optional(seq(
-            '(',
-            optional($._tuple),
-            ')',
-          )),
-          optional($.string),
-          optional($.record),
-          optional(choice($.block, $.lambda)),
-        ),
-      ),
-    )),
-
-    blkcall: $ => prec.right(PREC_SEND, seq(
-      field('callee', $._expression),
-      field('argument', choice($.block, $.lambda)),
-    )),
-
-    reccall: $ => prec.right(PREC_SEND, seq(
-      field('callee', $._expression),
-      field('argument',
-        seq(
-          $.record,
-          optional(choice($.block, $.lambda)),
-        ),
-      ),
-    )),
-
-    symcall: $ => prec.right(PREC_SEND, seq(
-      field('callee', $._expression),
-      field('argument',
-        seq(
-          $.symbol,
-          optional($.record),
-          optional(choice($.block, $.lambda)),
-        ),
-      ),
-    )),
-
-    strcall: $ => prec.right(PREC_SEND, seq(
-      field('callee', $._expression),
-      field('argument',
-        seq(
-          $.string,
-          optional($.record),
-          optional(choice($.block, $.lambda)),
-        ),
-      ),
-    )),
 
     call: $ => prec.right(PREC_SEND, seq(
-      field('callee', $._expression),
-      field('argument',
-        seq(
-          '(',
-          optional($._tuple),
-          ')',
-          optional($.string),
-          optional($.record),
-          optional(choice($.block, $.lambda)),
-        ),
-      ),
-    )),
-
-    index: $ => prec(PREC_SEND, seq(
-      field('receiver', $._expression),
-      '[',
-      field('property', $._expression),
-      ']'
+      field('lhs', $._expression),
+      ':',
+      '(',
+      field('rhs', $._tuple),
+      ')',
     )),
 
     assignment: $ => prec.right(PREC_ASSIGNMENT, seq(
@@ -275,79 +134,17 @@ module.exports = grammar({
       field('right', $._tuple),
     )),
 
-    group: $ => seq(
+    tuple_exp: $ => seq(
       '(',
-      $._expression,
+      $._tuple,
       ')',
     ),
 
-    case: $ => seq(
-      $._expression,
-      '=>',
-      optional($.body),
-      'end',
-    ),
-
-    lambda: $ => prec(PREC_EXP, seq(
-      '=>',
-      $._expression,
-    )),
-
     block: $ => prec(PREC_BLOCK, seq(
       'do',
-      optional($.parameters),
-      $._newlines,
+      $.parameters,
       optional($.body),
       'end',
-    )),
-
-    function_definition: $ => prec(PREC_SPEC, seq(
-      'def',
-      field('name', choice(
-        $.identifier,
-        '..',
-        '+',
-        '-',
-        '*',
-        '/',
-        '<',
-        '<<',
-        '>',
-        '>>',
-        '==',
-        '[]',
-        '[=]',
-        '()',
-        seq(
-          '(',
-          $._expression,
-          ')',
-        ),
-      )),
-      optional(
-        field('type',
-          seq(
-            '[',
-            optional($._expression),
-            ']',
-          ),
-        ),
-      ),
-      optional($.parameters),
-      $._newlines,
-      $.body,
-      'end',
-    )),
-
-    object_definition: $ => prec(PREC_OBJ, seq(
-      'def',
-      field('name', $.identifier),
-      field('value', $.record),
-    )),
-
-    const_definition: $ => (seq(
-      'def',
-      field('name', $.identifier),
     )),
 
     bool: _ => choice('true', 'false'),
@@ -362,6 +159,11 @@ module.exports = grammar({
     message: $ => seq(
       ':',
       field('name', $.identifier),
+    ),
+
+    message_literal: $ => seq(
+      '\\',
+      choice($.identifier, $.operator)
     ),
 
     interpbegin: _ => token(seq(
@@ -407,11 +209,16 @@ module.exports = grammar({
 
     comment: _ => token(seq('#', /.*/)),
 
-    identifier: _ => token(
+    operator: _ => token(
       choice(
-        /[a-zA-Z_][a-zA-Z_\.]*[?!]?/,
-        /@[0-9]*/,
+        /[\+\-\*\&\|\/\!\%\=\?><]+/,
+        '..',
+        '()',
       ),
+    ),
+
+    identifier: _ => token(
+      /[a-zA-Z_][a-zA-Z_\.]+[?!]?/,
     ),
 
     _newline: _ => token(/[\n;]/),
