@@ -1,15 +1,1 @@
-:html('
-  <div>{value}</div>
-')
-
-def (test)[For](input); .pass end
-
-list:fold(&:values, 0) => @1 + @2
-
-def a, def b = 1,2
-
-1 + 2 * 3 :print
-
-c = not 1 :print
-
-def test [false]; nil end [true]; 1 end
+ab = 'hi'

@@ -99,18 +99,6 @@
               "type": "SYMBOL",
               "name": "_expression"
             }
-          },
-          {
-            "type": "CHOICE",
-            "members": [
-              {
-                "type": "STRING",
-                "value": ","
-              },
-              {
-                "type": "BLANK"
-              }
-            ]
           }
         ]
       }
@@ -213,32 +201,11 @@
       ]
     },
     "body": {
-      "type": "CHOICE",
-      "members": [
-        {
-          "type": "SEQ",
-          "members": [
-            {
-              "type": "REPEAT",
-              "content": {
-                "type": "SYMBOL",
-                "name": "_statement"
-              }
-            },
-            {
-              "type": "SYMBOL",
-              "name": "_expression"
-            }
-          ]
-        },
-        {
-          "type": "REPEAT1",
-          "content": {
-            "type": "SYMBOL",
-            "name": "_statement"
-          }
-        }
-      ]
+      "type": "REPEAT1",
+      "content": {
+        "type": "SYMBOL",
+        "name": "_statement"
+      }
     },
     "_expression": {
       "type": "PREC_RIGHT",
@@ -324,8 +291,17 @@
             "name": "_expression"
           },
           {
-            "type": "SYMBOL",
-            "name": "operator"
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "operator"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "message"
+              }
+            ]
           }
         ]
       }
@@ -493,7 +469,7 @@
     },
     "assignment": {
       "type": "PREC_RIGHT",
-      "value": 6,
+      "value": 1,
       "content": {
         "type": "SEQ",
         "members": [
@@ -552,16 +528,8 @@
             "name": "parameters"
           },
           {
-            "type": "CHOICE",
-            "members": [
-              {
-                "type": "SYMBOL",
-                "name": "body"
-              },
-              {
-                "type": "BLANK"
-              }
-            ]
+            "type": "SYMBOL",
+            "name": "body"
           },
           {
             "type": "STRING",

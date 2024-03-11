@@ -3,7 +3,7 @@ const PREC_TUPLE = -1
 const PREC_EXP = 0
 const PREC_UNARY = 3
 const PREC_SEND = 2
-const PREC_ASSIGNMENT = 6
+const PREC_ASSIGNMENT = 1
 
 module.exports = grammar({
   name: 'gab',
@@ -32,7 +32,6 @@ module.exports = grammar({
         ),
       ),
       prec(PREC_TUPLE, $._expression),
-      optional(','),
     )),
 
     record_item: $ =>
@@ -61,10 +60,7 @@ module.exports = grammar({
       $._newlines,
     ),
 
-    body: $ => choice(
-      seq(repeat($._statement), $._expression),
-      repeat1($._statement),
-    ),
+    body: $ => repeat1($._statement),
 
     _expression: $ => prec.right(PREC_EXP,
       choice(
@@ -89,7 +85,7 @@ module.exports = grammar({
 
     unary: $ => prec(PREC_UNARY, seq(
       $._expression,
-      $.operator,
+      choice($.operator, $.message),
     )),
 
     binary: $ => prec.left(PREC_SEND, seq(
@@ -143,7 +139,7 @@ module.exports = grammar({
     block: $ => prec(PREC_BLOCK, seq(
       'do',
       $.parameters,
-      optional($.body),
+      $.body,
       'end',
     )),
 
@@ -218,7 +214,7 @@ module.exports = grammar({
     ),
 
     identifier: _ => token(
-      /[a-zA-Z_][a-zA-Z_\.]+[?!]?/,
+      /[a-zA-Z_][a-zA-Z_\.]*[?!]?/,
     ),
 
     _newline: _ => token(/[\n;]/),

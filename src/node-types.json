@@ -1359,6 +1359,10 @@
           "named": true
         },
         {
+          "type": "message",
+          "named": true
+        },
+        {
           "type": "message_literal",
           "named": true
         },
