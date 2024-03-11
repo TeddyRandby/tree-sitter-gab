@@ -93,9 +93,9 @@ module.exports = grammar({
     )),
 
     binary: $ => prec.left(PREC_SEND, seq(
-      $._expression,
-      choice($.operator, $.message),
-      $._expression,
+      field('lhs', $._expression),
+      field('message', choice($.operator, $.message)),
+      field('rhs', $._expression),
     )),
 
     record: $ => seq(

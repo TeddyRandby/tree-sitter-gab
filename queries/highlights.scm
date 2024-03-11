@@ -18,7 +18,6 @@
 
 [
   ","
-  ";"
 ] @punctuation.delimiter
 
 [
@@ -36,7 +35,7 @@
 ] @punctuation.bracket
 
 [
- (call lhs (identifier))
+ (call lhs: (identifier))
 ] @method.call
 
 (operator) @operator
