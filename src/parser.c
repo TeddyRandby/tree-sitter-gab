@@ -430,8 +430,8 @@ static const char * const ts_field_names[] = {
 
 static const TSFieldMapSlice ts_field_map_slices[PRODUCTION_ID_COUNT] = {
   [1] = {.index = 0, .length = 1},
-  [2] = {.index = 1, .length = 2},
-  [3] = {.index = 3, .length = 1},
+  [2] = {.index = 1, .length = 1},
+  [3] = {.index = 2, .length = 2},
   [4] = {.index = 4, .length = 3},
   [5] = {.index = 7, .length = 3},
   [6] = {.index = 10, .length = 2},
@@ -444,10 +444,10 @@ static const TSFieldMapEntry ts_field_map_entries[] = {
   [0] =
     {field_key, 0},
   [1] =
+    {field_name, 1},
+  [2] =
     {field_left, 0},
     {field_right, 2},
-  [3] =
-    {field_name, 1},
   [4] =
     {field_lhs, 0},
     {field_message, 1},
@@ -5465,7 +5465,7 @@ static const TSParseActionEntry ts_parse_actions[] = {
   [200] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_record_item, 6, .production_id = 8),
   [202] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_parameters, 2),
   [204] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_record_item, 4, .production_id = 6),
-  [206] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_message, 2, .production_id = 3),
+  [206] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_message, 2, .production_id = 2),
   [208] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_string, 4),
   [210] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_string, 3),
   [212] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_string, 1),
@@ -5484,10 +5484,10 @@ static const TSParseActionEntry ts_parse_actions[] = {
   [239] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_block, 3),
   [241] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_record, 3),
   [243] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_list, 3),
-  [245] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_assignment, 3, .production_id = 2),
+  [245] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_assignment, 3, .production_id = 3),
   [247] = {.entry = {.count = 1, .reusable = false}}, SHIFT(27),
   [249] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_tuple_exp, 3),
-  [251] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_message_literal, 2),
+  [251] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_message_literal, 2, .production_id = 2),
   [253] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_record, 2),
   [255] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_bool, 1),
   [257] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_block, 4),
@@ -5549,10 +5549,10 @@ static const TSParseActionEntry ts_parse_actions[] = {
   [373] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_bool, 1),
   [375] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_block, 3),
   [377] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_record, 2),
-  [379] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_message_literal, 2),
+  [379] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_message_literal, 2, .production_id = 2),
   [381] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_string, 3),
   [383] = {.entry = {.count = 1, .reusable = false}}, SHIFT(29),
-  [385] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_assignment, 3, .production_id = 2),
+  [385] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_assignment, 3, .production_id = 3),
   [387] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_call, 5, .production_id = 7),
   [389] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_list, 3),
   [391] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_block, 4),
