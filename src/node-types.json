@@ -12,6 +12,10 @@
             "named": false
           },
           {
+            "type": "[]",
+            "named": false
+          },
+          {
             "type": "assignment",
             "named": true
           },
@@ -21,14 +25,6 @@
           },
           {
             "type": "block",
-            "named": true
-          },
-          {
-            "type": "bool",
-            "named": true
-          },
-          {
-            "type": "call",
             "named": true
           },
           {
@@ -45,10 +41,6 @@
           },
           {
             "type": "message_literal",
-            "named": true
-          },
-          {
-            "type": "nil",
             "named": true
           },
           {
@@ -86,6 +78,10 @@
             "named": false
           },
           {
+            "type": "[]",
+            "named": false
+          },
+          {
             "type": "assignment",
             "named": true
           },
@@ -95,14 +91,6 @@
           },
           {
             "type": "block",
-            "named": true
-          },
-          {
-            "type": "bool",
-            "named": true
-          },
-          {
-            "type": "call",
             "named": true
           },
           {
@@ -119,10 +107,6 @@
           },
           {
             "type": "message_literal",
-            "named": true
-          },
-          {
-            "type": "nil",
             "named": true
           },
           {
@@ -158,9 +142,13 @@
     "named": true,
     "fields": {
       "lhs": {
-        "multiple": false,
+        "multiple": true,
         "required": true,
         "types": [
+          {
+            "type": "[]",
+            "named": false
+          },
           {
             "type": "assignment",
             "named": true
@@ -171,14 +159,6 @@
           },
           {
             "type": "block",
-            "named": true
-          },
-          {
-            "type": "bool",
-            "named": true
-          },
-          {
-            "type": "call",
             "named": true
           },
           {
@@ -195,10 +175,6 @@
           },
           {
             "type": "message_literal",
-            "named": true
-          },
-          {
-            "type": "nil",
             "named": true
           },
           {
@@ -242,9 +218,13 @@
         ]
       },
       "rhs": {
-        "multiple": false,
+        "multiple": true,
         "required": true,
         "types": [
+          {
+            "type": "[]",
+            "named": false
+          },
           {
             "type": "assignment",
             "named": true
@@ -255,14 +235,6 @@
           },
           {
             "type": "block",
-            "named": true
-          },
-          {
-            "type": "bool",
-            "named": true
-          },
-          {
-            "type": "call",
             "named": true
           },
           {
@@ -279,10 +251,6 @@
           },
           {
             "type": "message_literal",
-            "named": true
-          },
-          {
-            "type": "nil",
             "named": true
           },
           {
@@ -353,14 +321,6 @@
           "named": true
         },
         {
-          "type": "bool",
-          "named": true
-        },
-        {
-          "type": "call",
-          "named": true
-        },
-        {
           "type": "dynsend",
           "named": true
         },
@@ -374,10 +334,6 @@
         },
         {
           "type": "message_literal",
-          "named": true
-        },
-        {
-          "type": "nil",
           "named": true
         },
         {
@@ -408,18 +364,17 @@
     }
   },
   {
-    "type": "bool",
-    "named": true,
-    "fields": {}
-  },
-  {
-    "type": "call",
+    "type": "dynsend",
     "named": true,
     "fields": {
       "lhs": {
-        "multiple": false,
+        "multiple": true,
         "required": true,
         "types": [
+          {
+            "type": "[]",
+            "named": false
+          },
           {
             "type": "assignment",
             "named": true
@@ -430,14 +385,6 @@
           },
           {
             "type": "block",
-            "named": true
-          },
-          {
-            "type": "bool",
-            "named": true
-          },
-          {
-            "type": "call",
             "named": true
           },
           {
@@ -457,7 +404,65 @@
             "named": true
           },
           {
-            "type": "nil",
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "record",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "tuple_exp",
+            "named": true
+          },
+          {
+            "type": "unary",
+            "named": true
+          }
+        ]
+      },
+      "message": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "[]",
+            "named": false
+          },
+          {
+            "type": "assignment",
+            "named": true
+          },
+          {
+            "type": "binary",
+            "named": true
+          },
+          {
+            "type": "block",
+            "named": true
+          },
+          {
+            "type": "dynsend",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "list",
+            "named": true
+          },
+          {
+            "type": "message_literal",
             "named": true
           },
           {
@@ -491,7 +496,7 @@
         "required": true,
         "types": [
           {
-            "type": ",",
+            "type": "[]",
             "named": false
           },
           {
@@ -507,14 +512,6 @@
             "named": true
           },
           {
-            "type": "bool",
-            "named": true
-          },
-          {
-            "type": "call",
-            "named": true
-          },
-          {
             "type": "dynsend",
             "named": true
           },
@@ -528,226 +525,6 @@
           },
           {
             "type": "message_literal",
-            "named": true
-          },
-          {
-            "type": "nil",
-            "named": true
-          },
-          {
-            "type": "number",
-            "named": true
-          },
-          {
-            "type": "record",
-            "named": true
-          },
-          {
-            "type": "string",
-            "named": true
-          },
-          {
-            "type": "symbol",
-            "named": true
-          },
-          {
-            "type": "tuple_exp",
-            "named": true
-          },
-          {
-            "type": "unary",
-            "named": true
-          }
-        ]
-      }
-    }
-  },
-  {
-    "type": "dynsend",
-    "named": true,
-    "fields": {
-      "lhs": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "assignment",
-            "named": true
-          },
-          {
-            "type": "binary",
-            "named": true
-          },
-          {
-            "type": "block",
-            "named": true
-          },
-          {
-            "type": "bool",
-            "named": true
-          },
-          {
-            "type": "call",
-            "named": true
-          },
-          {
-            "type": "dynsend",
-            "named": true
-          },
-          {
-            "type": "identifier",
-            "named": true
-          },
-          {
-            "type": "list",
-            "named": true
-          },
-          {
-            "type": "message_literal",
-            "named": true
-          },
-          {
-            "type": "nil",
-            "named": true
-          },
-          {
-            "type": "number",
-            "named": true
-          },
-          {
-            "type": "record",
-            "named": true
-          },
-          {
-            "type": "string",
-            "named": true
-          },
-          {
-            "type": "symbol",
-            "named": true
-          },
-          {
-            "type": "tuple_exp",
-            "named": true
-          },
-          {
-            "type": "unary",
-            "named": true
-          }
-        ]
-      },
-      "message": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "assignment",
-            "named": true
-          },
-          {
-            "type": "binary",
-            "named": true
-          },
-          {
-            "type": "block",
-            "named": true
-          },
-          {
-            "type": "bool",
-            "named": true
-          },
-          {
-            "type": "call",
-            "named": true
-          },
-          {
-            "type": "dynsend",
-            "named": true
-          },
-          {
-            "type": "identifier",
-            "named": true
-          },
-          {
-            "type": "list",
-            "named": true
-          },
-          {
-            "type": "message_literal",
-            "named": true
-          },
-          {
-            "type": "nil",
-            "named": true
-          },
-          {
-            "type": "number",
-            "named": true
-          },
-          {
-            "type": "record",
-            "named": true
-          },
-          {
-            "type": "string",
-            "named": true
-          },
-          {
-            "type": "symbol",
-            "named": true
-          },
-          {
-            "type": "tuple_exp",
-            "named": true
-          },
-          {
-            "type": "unary",
-            "named": true
-          }
-        ]
-      },
-      "rhs": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "assignment",
-            "named": true
-          },
-          {
-            "type": "binary",
-            "named": true
-          },
-          {
-            "type": "block",
-            "named": true
-          },
-          {
-            "type": "bool",
-            "named": true
-          },
-          {
-            "type": "call",
-            "named": true
-          },
-          {
-            "type": "dynsend",
-            "named": true
-          },
-          {
-            "type": "identifier",
-            "named": true
-          },
-          {
-            "type": "list",
-            "named": true
-          },
-          {
-            "type": "message_literal",
-            "named": true
-          },
-          {
-            "type": "nil",
             "named": true
           },
           {
@@ -799,14 +576,6 @@
           "named": true
         },
         {
-          "type": "bool",
-          "named": true
-        },
-        {
-          "type": "call",
-          "named": true
-        },
-        {
           "type": "dynsend",
           "named": true
         },
@@ -820,10 +589,6 @@
         },
         {
           "type": "message_literal",
-          "named": true
-        },
-        {
-          "type": "nil",
           "named": true
         },
         {
@@ -932,6 +697,10 @@
             "named": false
           },
           {
+            "type": "[]",
+            "named": false
+          },
+          {
             "type": "]",
             "named": false
           },
@@ -948,14 +717,6 @@
             "named": true
           },
           {
-            "type": "bool",
-            "named": true
-          },
-          {
-            "type": "call",
-            "named": true
-          },
-          {
             "type": "dynsend",
             "named": true
           },
@@ -969,10 +730,6 @@
           },
           {
             "type": "message_literal",
-            "named": true
-          },
-          {
-            "type": "nil",
             "named": true
           },
           {
@@ -1002,9 +759,13 @@
         ]
       },
       "value": {
-        "multiple": false,
+        "multiple": true,
         "required": false,
         "types": [
+          {
+            "type": "[]",
+            "named": false
+          },
           {
             "type": "assignment",
             "named": true
@@ -1015,14 +776,6 @@
           },
           {
             "type": "block",
-            "named": true
-          },
-          {
-            "type": "bool",
-            "named": true
-          },
-          {
-            "type": "call",
             "named": true
           },
           {
@@ -1039,10 +792,6 @@
           },
           {
             "type": "message_literal",
-            "named": true
-          },
-          {
-            "type": "nil",
             "named": true
           },
           {
@@ -1094,14 +843,6 @@
           "named": true
         },
         {
-          "type": "bool",
-          "named": true
-        },
-        {
-          "type": "call",
-          "named": true
-        },
-        {
           "type": "dynsend",
           "named": true
         },
@@ -1115,10 +856,6 @@
         },
         {
           "type": "message_literal",
-          "named": true
-        },
-        {
-          "type": "nil",
           "named": true
         },
         {
@@ -1169,14 +906,6 @@
           "named": true
         },
         {
-          "type": "bool",
-          "named": true
-        },
-        {
-          "type": "call",
-          "named": true
-        },
-        {
           "type": "doublestring",
           "named": true
         },
@@ -1206,10 +935,6 @@
         },
         {
           "type": "message_literal",
-          "named": true
-        },
-        {
-          "type": "nil",
           "named": true
         },
         {
@@ -1264,14 +989,6 @@
           "named": true
         },
         {
-          "type": "bool",
-          "named": true
-        },
-        {
-          "type": "call",
-          "named": true
-        },
-        {
           "type": "dynsend",
           "named": true
         },
@@ -1285,10 +1002,6 @@
         },
         {
           "type": "message_literal",
-          "named": true
-        },
-        {
-          "type": "nil",
           "named": true
         },
         {
@@ -1339,14 +1052,6 @@
           "named": true
         },
         {
-          "type": "bool",
-          "named": true
-        },
-        {
-          "type": "call",
-          "named": true
-        },
-        {
           "type": "dynsend",
           "named": true
         },
@@ -1364,10 +1069,6 @@
         },
         {
           "type": "message_literal",
-          "named": true
-        },
-        {
-          "type": "nil",
           "named": true
         },
         {
@@ -1414,10 +1115,6 @@
     "named": false
   },
   {
-    "type": "..",
-    "named": false
-  },
-  {
     "type": ":",
     "named": false
   },
@@ -1427,6 +1124,10 @@
   },
   {
     "type": "[",
+    "named": false
+  },
+  {
+    "type": "[]",
     "named": false
   },
   {
@@ -1454,10 +1155,6 @@
     "named": false
   },
   {
-    "type": "false",
-    "named": false
-  },
-  {
     "type": "identifier",
     "named": true
   },
@@ -1471,10 +1168,6 @@
   },
   {
     "type": "interpmiddle",
-    "named": true
-  },
-  {
-    "type": "nil",
     "named": true
   },
   {
@@ -1492,10 +1185,6 @@
   {
     "type": "symbol",
     "named": true
-  },
-  {
-    "type": "true",
-    "named": false
   },
   {
     "type": "{",

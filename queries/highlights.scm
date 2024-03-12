@@ -5,18 +5,12 @@
 
 (identifier) @variable
 
-
 (symbol) @string.special
 
 (operator) @operator
 (message_literal) @constant
 (message_literal name: (identifier) @constant)
 (message_literal name: (operator) @constant)
-
-[
- (bool)
- (nil)
-] @boolean
 
 [
   (string)
@@ -39,10 +33,6 @@
   "("
   ")"
 ] @punctuation.bracket
-
-[
- (call lhs: (identifier))
-] @method.call
 
 (message) @method.call
 (message name: (identifier) @method.call)

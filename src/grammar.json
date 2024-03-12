@@ -15,20 +15,20 @@
         "type": "SEQ",
         "members": [
           {
+            "type": "SYMBOL",
+            "name": "identifier"
+          },
+          {
             "type": "CHOICE",
             "members": [
               {
                 "type": "STRING",
-                "value": ".."
+                "value": "[]"
               },
               {
                 "type": "BLANK"
               }
             ]
-          },
-          {
-            "type": "SYMBOL",
-            "name": "identifier"
           },
           {
             "type": "CHOICE",
@@ -264,14 +264,6 @@
           },
           {
             "type": "SYMBOL",
-            "name": "bool"
-          },
-          {
-            "type": "SYMBOL",
-            "name": "nil"
-          },
-          {
-            "type": "SYMBOL",
             "name": "tuple_exp"
           },
           {
@@ -292,11 +284,20 @@
           },
           {
             "type": "SYMBOL",
-            "name": "call"
+            "name": "message_literal"
           },
           {
-            "type": "SYMBOL",
-            "name": "message_literal"
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "identifier"
+              },
+              {
+                "type": "STRING",
+                "value": "[]"
+              }
+            ]
           }
         ]
       }
@@ -451,43 +452,6 @@
         ]
       }
     },
-    "call": {
-      "type": "PREC_RIGHT",
-      "value": 2,
-      "content": {
-        "type": "SEQ",
-        "members": [
-          {
-            "type": "FIELD",
-            "name": "lhs",
-            "content": {
-              "type": "SYMBOL",
-              "name": "_expression"
-            }
-          },
-          {
-            "type": "STRING",
-            "value": ":"
-          },
-          {
-            "type": "STRING",
-            "value": "("
-          },
-          {
-            "type": "FIELD",
-            "name": "rhs",
-            "content": {
-              "type": "SYMBOL",
-              "name": "_tuple"
-            }
-          },
-          {
-            "type": "STRING",
-            "value": ")"
-          }
-        ]
-      }
-    },
     "assignment": {
       "type": "PREC_RIGHT",
       "value": 1,
@@ -558,23 +522,6 @@
           }
         ]
       }
-    },
-    "bool": {
-      "type": "CHOICE",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "true"
-        },
-        {
-          "type": "STRING",
-          "value": "false"
-        }
-      ]
-    },
-    "nil": {
-      "type": "STRING",
-      "value": "nil"
     },
     "symbol": {
       "type": "TOKEN",
@@ -804,7 +751,7 @@
         "members": [
           {
             "type": "PATTERN",
-            "value": "[\\+\\-\\*\\&\\|\\/\\!\\%\\=\\?><~$@]+"
+            "value": "[\\+\\-\\*\\&\\|\\/\\!\\%\\=\\?><~$@\\^]+"
           }
         ]
       }

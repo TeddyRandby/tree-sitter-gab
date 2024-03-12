@@ -17,7 +17,7 @@ module.exports = grammar({
   rules: {
     source_file: $ => repeat($._statement),
 
-    _identifiers: $ => repeat1(seq(optional('..'), $.identifier, optional(','))),
+    _identifiers: $ => repeat1(seq($.identifier, optional('[]'), optional(','))),
 
     parameters: $ => seq(
       optional($._identifiers),
@@ -71,15 +71,13 @@ module.exports = grammar({
         $.identifier,
         $.number,
         $.string,
-        $.bool,
-        $.nil,
         $.tuple_exp,
         $.binary,
         $.unary,
         $.assignment,
         $.dynsend,
-        $.call,
         $.message_literal,
+        seq($.identifier, '[]'),
       ),
     ),
 
@@ -115,15 +113,6 @@ module.exports = grammar({
       field('rhs', $._expression),
     )),
 
-
-    call: $ => prec.right(PREC_SEND, seq(
-      field('lhs', $._expression),
-      ':',
-      '(',
-      field('rhs', $._tuple),
-      ')',
-    )),
-
     assignment: $ => prec.right(PREC_ASSIGNMENT, seq(
       field('left', $._tuple),
       '=',
@@ -142,10 +131,6 @@ module.exports = grammar({
       $.body,
       'end',
     )),
-
-    bool: _ => choice('true', 'false'),
-
-    nil: _ => 'nil',
 
     symbol: _ => token(seq(
       '.',
@@ -207,7 +192,7 @@ module.exports = grammar({
 
     operator: _ => token(
       choice(
-        /[\+\-\*\&\|\/\!\%\=\?><~$@]+/,
+        /[\+\-\*\&\|\/\!\%\=\?><~$@\^]+/,
       ),
     ),
 
