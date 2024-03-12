@@ -5,8 +5,10 @@
 
 (identifier) @variable
 
+
 (symbol) @string.special
 
+(operator) @operator
 (message_literal) @constant
 (message_literal name: (identifier) @constant)
 (message_literal name: (operator) @constant)
@@ -41,8 +43,6 @@
 [
  (call lhs: (identifier))
 ] @method.call
-
-(operator) @operator
 
 (message) @method.call
 (message name: (identifier) @method.call)
