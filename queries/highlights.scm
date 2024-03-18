@@ -8,9 +8,6 @@
 (symbol) @string.special
 
 (operator) @operator
-(message_literal) @constant
-(message_literal name: (identifier) @constant)
-(message_literal name: (operator) @constant)
 
 [
   (string)
@@ -42,3 +39,7 @@
 (record_item key: (identifier) @field)
 
 ((identifier) @variable.builtin (#eq? @variable.builtin "self"))
+
+(message_literal) @constant
+(message_literal name: (identifier) @constant)
+(message_literal name: (operator) @constant)

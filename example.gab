@@ -20,7 +20,7 @@ end)
     something**
   end,
   .other = do hi[]
-    else**
+    else**$
   end,
   .else = do
     .UNWRAP_ERR:panic
