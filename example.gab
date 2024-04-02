@@ -1,28 +1,2 @@
-T = records:make(TestState ?):reset 
 
-\fail :def! (TestState, do got, expected
-  self:fails = self:fails + 1
-  self:errs:push!([got, expected])
-end)
-
-\passed? :def! (TestState, do
-  self:fails == 0
-end)
-
-\show_errs :def! (TestState, do
-  self:errs:for(\values, do mismatch
-      '     - got {mismatch:at(0)}, expecting {mismatch:at(1)}':print
-  end)
-end)
-
-\something :defcase! {
-  .some = do hi[]
-    something**
-  end,
-  .other = do hi[]
-    else**$
-  end,
-  .else = do
-    .UNWRAP_ERR:panic
-  end,
-}
+{ [spec] = { a, b }, spec.b }

@@ -3,7 +3,7 @@ const PREC_TUPLE = -1
 const PREC_EXP = 0
 const PREC_UNARY = 3
 const PREC_SEND = 2
-const PREC_APPLICATION = 1
+const PREC_APPLICATION = 4
 const PREC_ASSIGNMENT = 1
 
 module.exports = grammar({
@@ -37,7 +37,7 @@ module.exports = grammar({
     )),
 
     record_item: $ =>
-      prec(PREC_EXP + 1, seq(
+      prec(PREC_ASSIGNMENT + 1, seq(
         field('key',
           choice(
             $.identifier,
@@ -54,7 +54,6 @@ module.exports = grammar({
           '=',
           field('value', $._expression),
         )),
-        ',',
       )),
 
     _statement: $ => seq(
