@@ -1,5 +1,72 @@
 [
   {
+    "type": "application",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "application",
+          "named": true
+        },
+        {
+          "type": "assignment",
+          "named": true
+        },
+        {
+          "type": "binary",
+          "named": true
+        },
+        {
+          "type": "block",
+          "named": true
+        },
+        {
+          "type": "dynsend",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "list",
+          "named": true
+        },
+        {
+          "type": "message_literal",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "record",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "symbol",
+          "named": true
+        },
+        {
+          "type": "tuple_exp",
+          "named": true
+        },
+        {
+          "type": "unary",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "assignment",
     "named": true,
     "fields": {
@@ -14,6 +81,10 @@
           {
             "type": "[]",
             "named": false
+          },
+          {
+            "type": "application",
+            "named": true
           },
           {
             "type": "assignment",
@@ -82,6 +153,10 @@
             "named": false
           },
           {
+            "type": "application",
+            "named": true
+          },
+          {
             "type": "assignment",
             "named": true
           },
@@ -148,6 +223,10 @@
           {
             "type": "[]",
             "named": false
+          },
+          {
+            "type": "application",
+            "named": true
           },
           {
             "type": "assignment",
@@ -224,6 +303,10 @@
           {
             "type": "[]",
             "named": false
+          },
+          {
+            "type": "application",
+            "named": true
           },
           {
             "type": "assignment",
@@ -309,6 +392,10 @@
       "required": true,
       "types": [
         {
+          "type": "application",
+          "named": true
+        },
+        {
           "type": "assignment",
           "named": true
         },
@@ -376,6 +463,10 @@
             "named": false
           },
           {
+            "type": "application",
+            "named": true
+          },
+          {
             "type": "assignment",
             "named": true
           },
@@ -438,6 +529,10 @@
             "named": false
           },
           {
+            "type": "application",
+            "named": true
+          },
+          {
             "type": "assignment",
             "named": true
           },
@@ -498,6 +593,10 @@
           {
             "type": "[]",
             "named": false
+          },
+          {
+            "type": "application",
+            "named": true
           },
           {
             "type": "assignment",
@@ -563,6 +662,10 @@
       "multiple": true,
       "required": false,
       "types": [
+        {
+          "type": "application",
+          "named": true
+        },
         {
           "type": "assignment",
           "named": true
@@ -675,7 +778,7 @@
     "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
         {
           "type": "record_item",
@@ -703,6 +806,10 @@
           {
             "type": "]",
             "named": false
+          },
+          {
+            "type": "application",
+            "named": true
           },
           {
             "type": "assignment",
@@ -765,6 +872,10 @@
           {
             "type": "[]",
             "named": false
+          },
+          {
+            "type": "application",
+            "named": true
           },
           {
             "type": "assignment",
@@ -831,6 +942,10 @@
       "required": false,
       "types": [
         {
+          "type": "application",
+          "named": true
+        },
+        {
           "type": "assignment",
           "named": true
         },
@@ -893,6 +1008,10 @@
       "multiple": true,
       "required": true,
       "types": [
+        {
+          "type": "application",
+          "named": true
+        },
         {
           "type": "assignment",
           "named": true
@@ -977,6 +1096,10 @@
       "required": false,
       "types": [
         {
+          "type": "application",
+          "named": true
+        },
+        {
           "type": "assignment",
           "named": true
         },
@@ -1039,6 +1162,10 @@
       "multiple": true,
       "required": true,
       "types": [
+        {
+          "type": "application",
+          "named": true
+        },
         {
           "type": "assignment",
           "named": true

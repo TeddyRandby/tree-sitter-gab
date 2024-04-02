@@ -3,6 +3,7 @@ const PREC_TUPLE = -1
 const PREC_EXP = 0
 const PREC_UNARY = 3
 const PREC_SEND = 2
+const PREC_APPLICATION = 1
 const PREC_ASSIGNMENT = 1
 
 module.exports = grammar({
@@ -32,6 +33,7 @@ module.exports = grammar({
         ),
       ),
       prec(PREC_TUPLE, $._expression),
+      optional(','),
     )),
 
     record_item: $ =>
@@ -52,7 +54,7 @@ module.exports = grammar({
           '=',
           field('value', $._expression),
         )),
-        optional(','),
+        ',',
       )),
 
     _statement: $ => seq(
@@ -77,9 +79,15 @@ module.exports = grammar({
         $.assignment,
         $.dynsend,
         $.message_literal,
+        $.application,
         seq($.identifier, '[]'),
       ),
     ),
+
+    application: $ => prec.left(PREC_APPLICATION, seq(
+      $._expression,
+      $._expression,
+    )),
 
     unary: $ => prec(PREC_UNARY, seq(
       $._expression,
@@ -94,7 +102,14 @@ module.exports = grammar({
 
     record: $ => seq(
       '{',
-      repeat($.record_item),
+      repeat(
+        seq(
+          $.record_item,
+          ',',
+        ),
+      ),
+      $.record_item,
+      optional(','),
       '}',
     ),
 

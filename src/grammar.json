@@ -99,6 +99,18 @@
               "type": "SYMBOL",
               "name": "_expression"
             }
+          },
+          {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "STRING",
+                "value": ","
+              },
+              {
+                "type": "BLANK"
+              }
+            ]
           }
         ]
       }
@@ -173,16 +185,8 @@
             ]
           },
           {
-            "type": "CHOICE",
-            "members": [
-              {
-                "type": "STRING",
-                "value": ","
-              },
-              {
-                "type": "BLANK"
-              }
-            ]
+            "type": "STRING",
+            "value": ","
           }
         ]
       }
@@ -287,6 +291,10 @@
             "name": "message_literal"
           },
           {
+            "type": "SYMBOL",
+            "name": "application"
+          },
+          {
             "type": "SEQ",
             "members": [
               {
@@ -298,6 +306,23 @@
                 "value": "[]"
               }
             ]
+          }
+        ]
+      }
+    },
+    "application": {
+      "type": "PREC_LEFT",
+      "value": 1,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "SYMBOL",
+            "name": "_expression"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "_expression"
           }
         ]
       }
@@ -380,9 +405,34 @@
         {
           "type": "REPEAT",
           "content": {
-            "type": "SYMBOL",
-            "name": "record_item"
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "record_item"
+              },
+              {
+                "type": "STRING",
+                "value": ","
+              }
+            ]
           }
+        },
+        {
+          "type": "SYMBOL",
+          "name": "record_item"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "STRING",
+              "value": ","
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
         },
         {
           "type": "STRING",
