@@ -24,10 +24,6 @@
           "named": true
         },
         {
-          "type": "dynsend",
-          "named": true
-        },
-        {
           "type": "identifier",
           "named": true
         },
@@ -99,10 +95,6 @@
             "named": true
           },
           {
-            "type": "dynsend",
-            "named": true
-          },
-          {
             "type": "identifier",
             "named": true
           },
@@ -166,10 +158,6 @@
           },
           {
             "type": "block",
-            "named": true
-          },
-          {
-            "type": "dynsend",
             "named": true
           },
           {
@@ -238,10 +226,6 @@
           },
           {
             "type": "block",
-            "named": true
-          },
-          {
-            "type": "dynsend",
             "named": true
           },
           {
@@ -318,10 +302,6 @@
           },
           {
             "type": "block",
-            "named": true
-          },
-          {
-            "type": "dynsend",
             "named": true
           },
           {
@@ -408,10 +388,6 @@
           "named": true
         },
         {
-          "type": "dynsend",
-          "named": true
-        },
-        {
           "type": "identifier",
           "named": true
         },
@@ -451,210 +427,6 @@
     }
   },
   {
-    "type": "dynsend",
-    "named": true,
-    "fields": {
-      "lhs": {
-        "multiple": true,
-        "required": true,
-        "types": [
-          {
-            "type": "[]",
-            "named": false
-          },
-          {
-            "type": "application",
-            "named": true
-          },
-          {
-            "type": "assignment",
-            "named": true
-          },
-          {
-            "type": "binary",
-            "named": true
-          },
-          {
-            "type": "block",
-            "named": true
-          },
-          {
-            "type": "dynsend",
-            "named": true
-          },
-          {
-            "type": "identifier",
-            "named": true
-          },
-          {
-            "type": "list",
-            "named": true
-          },
-          {
-            "type": "message_literal",
-            "named": true
-          },
-          {
-            "type": "number",
-            "named": true
-          },
-          {
-            "type": "record",
-            "named": true
-          },
-          {
-            "type": "string",
-            "named": true
-          },
-          {
-            "type": "symbol",
-            "named": true
-          },
-          {
-            "type": "tuple_exp",
-            "named": true
-          },
-          {
-            "type": "unary",
-            "named": true
-          }
-        ]
-      },
-      "message": {
-        "multiple": true,
-        "required": true,
-        "types": [
-          {
-            "type": "[]",
-            "named": false
-          },
-          {
-            "type": "application",
-            "named": true
-          },
-          {
-            "type": "assignment",
-            "named": true
-          },
-          {
-            "type": "binary",
-            "named": true
-          },
-          {
-            "type": "block",
-            "named": true
-          },
-          {
-            "type": "dynsend",
-            "named": true
-          },
-          {
-            "type": "identifier",
-            "named": true
-          },
-          {
-            "type": "list",
-            "named": true
-          },
-          {
-            "type": "message_literal",
-            "named": true
-          },
-          {
-            "type": "number",
-            "named": true
-          },
-          {
-            "type": "record",
-            "named": true
-          },
-          {
-            "type": "string",
-            "named": true
-          },
-          {
-            "type": "symbol",
-            "named": true
-          },
-          {
-            "type": "tuple_exp",
-            "named": true
-          },
-          {
-            "type": "unary",
-            "named": true
-          }
-        ]
-      },
-      "rhs": {
-        "multiple": true,
-        "required": true,
-        "types": [
-          {
-            "type": "[]",
-            "named": false
-          },
-          {
-            "type": "application",
-            "named": true
-          },
-          {
-            "type": "assignment",
-            "named": true
-          },
-          {
-            "type": "binary",
-            "named": true
-          },
-          {
-            "type": "block",
-            "named": true
-          },
-          {
-            "type": "dynsend",
-            "named": true
-          },
-          {
-            "type": "identifier",
-            "named": true
-          },
-          {
-            "type": "list",
-            "named": true
-          },
-          {
-            "type": "message_literal",
-            "named": true
-          },
-          {
-            "type": "number",
-            "named": true
-          },
-          {
-            "type": "record",
-            "named": true
-          },
-          {
-            "type": "string",
-            "named": true
-          },
-          {
-            "type": "symbol",
-            "named": true
-          },
-          {
-            "type": "tuple_exp",
-            "named": true
-          },
-          {
-            "type": "unary",
-            "named": true
-          }
-        ]
-      }
-    }
-  },
-  {
     "type": "list",
     "named": true,
     "fields": {},
@@ -676,10 +448,6 @@
         },
         {
           "type": "block",
-          "named": true
-        },
-        {
-          "type": "dynsend",
           "named": true
         },
         {
@@ -743,7 +511,7 @@
     "fields": {
       "name": {
         "multiple": false,
-        "required": true,
+        "required": false,
         "types": [
           {
             "type": "identifier",
@@ -824,10 +592,6 @@
             "named": true
           },
           {
-            "type": "dynsend",
-            "named": true
-          },
-          {
             "type": "identifier",
             "named": true
           },
@@ -887,10 +651,6 @@
           },
           {
             "type": "block",
-            "named": true
-          },
-          {
-            "type": "dynsend",
             "named": true
           },
           {
@@ -958,10 +718,6 @@
           "named": true
         },
         {
-          "type": "dynsend",
-          "named": true
-        },
-        {
           "type": "identifier",
           "named": true
         },
@@ -1026,10 +782,6 @@
         },
         {
           "type": "doublestring",
-          "named": true
-        },
-        {
-          "type": "dynsend",
           "named": true
         },
         {
@@ -1112,10 +864,6 @@
           "named": true
         },
         {
-          "type": "dynsend",
-          "named": true
-        },
-        {
           "type": "identifier",
           "named": true
         },
@@ -1176,10 +924,6 @@
         },
         {
           "type": "block",
-          "named": true
-        },
-        {
-          "type": "dynsend",
           "named": true
         },
         {

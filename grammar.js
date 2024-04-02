@@ -1,8 +1,5 @@
-const PREC_BLOCK = -1
-const PREC_TUPLE = -1
-const PREC_EXP = 0
-const PREC_UNARY = 3
-const PREC_SEND = 2
+const PREC_UNARY = 2
+const PREC_BINARY = 3
 const PREC_APPLICATION = 4
 const PREC_ASSIGNMENT = 1
 
@@ -25,16 +22,16 @@ module.exports = grammar({
       $._newlines,
     ),
 
-    _tuple: $ => prec(PREC_TUPLE, seq(
+    _tuple: $ => seq(
       repeat(
         seq(
-          prec(PREC_TUPLE, $._expression),
+          $._expression,
           ',',
         ),
       ),
-      prec(PREC_TUPLE, $._expression),
+      $._expression,
       optional(','),
-    )),
+    ),
 
     record_item: $ =>
       prec(PREC_ASSIGNMENT + 1, seq(
@@ -63,7 +60,7 @@ module.exports = grammar({
 
     body: $ => seq(repeat($._statement), $._expression, optional($._newlines)),
 
-    _expression: $ => prec.right(PREC_EXP,
+    _expression: $ => prec.right(
       choice(
         $.symbol,
         $.record,
@@ -74,29 +71,28 @@ module.exports = grammar({
         $.string,
         $.tuple_exp,
         $.binary,
+        $.application,
         $.unary,
         $.assignment,
-        $.dynsend,
         $.message_literal,
-        $.application,
         seq($.identifier, '[]'),
       ),
     ),
-
-    application: $ => prec.left(PREC_APPLICATION, seq(
-      $._expression,
-      $._expression,
-    )),
 
     unary: $ => prec(PREC_UNARY, seq(
       $._expression,
       choice($.operator, $.message),
     )),
 
-    binary: $ => prec.left(PREC_SEND, seq(
+    binary: $ => prec.left(PREC_BINARY, seq(
       field('lhs', $._expression),
       field('message', choice($.operator, $.message)),
       field('rhs', $._expression),
+    )),
+
+    application: $ => prec.left(PREC_APPLICATION, seq(
+      $._expression,
+      $._expression,
     )),
 
     record: $ => seq(
@@ -118,15 +114,6 @@ module.exports = grammar({
       ']',
     ),
 
-    dynsend: $ => prec.right(PREC_SEND, seq(
-      field('lhs', $._expression),
-      ':',
-      '{',
-      field('message', $._expression),
-      '}',
-      field('rhs', $._expression),
-    )),
-
     assignment: $ => prec.right(PREC_ASSIGNMENT, seq(
       field('left', $._tuple),
       '=',
@@ -139,12 +126,12 @@ module.exports = grammar({
       ')',
     ),
 
-    block: $ => prec(PREC_BLOCK, seq(
+    block: $ => seq(
       'do',
       $.parameters,
       $.body,
       'end',
-    )),
+    ),
 
     symbol: _ => token(seq(
       '.',
@@ -156,10 +143,10 @@ module.exports = grammar({
       field('name', $.identifier),
     ),
 
-    message_literal: $ => seq(
+    message_literal: $ => prec.right(seq(
       '\\',
-      field('name', choice($.identifier, $.operator))
-    ),
+      optional(field('name', choice($.identifier, $.operator))),
+    )),
 
     interpbegin: _ => token(seq(
       '\'',
