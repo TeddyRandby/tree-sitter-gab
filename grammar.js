@@ -40,6 +40,7 @@ module.exports = grammar({
             $.identifier,
             $.symbol,
             $.string,
+            $.message_literal,
             seq(
               '[',
               $._expression,
