@@ -147,8 +147,11 @@ module.exports = grammar({
 
     message_literal: $ => prec.right(seq(
       '\\',
-      optional(field('name', choice($.identifier, $.operator))),
-      optional(/[?!]?/),
+      optional(
+        field('name', seq(
+          choice($.identifier, $.operator),
+          optional(/[?!]?/),
+        ))),
     )),
 
     interpbegin: _ => token(seq(
