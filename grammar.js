@@ -116,9 +116,9 @@ module.exports = grammar({
     ),
 
     assignment: $ => prec.right(PREC_ASSIGNMENT, seq(
-      field('left', $._tuple),
+      field('lhs', $._tuple),
       '=',
-      field('right', $._tuple),
+      field('rhs', $._tuple),
     )),
 
     tuple_exp: $ => seq(

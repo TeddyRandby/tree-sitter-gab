@@ -11,7 +11,7 @@
 #define ALIAS_COUNT 0
 #define TOKEN_COUNT 26
 #define EXTERNAL_TOKEN_COUNT 0
-#define FIELD_COUNT 8
+#define FIELD_COUNT 6
 #define MAX_ALIAS_SEQUENCE_LENGTH 5
 #define PRODUCTION_ID_COUNT 8
 
@@ -378,24 +378,20 @@ static const TSSymbolMetadata ts_symbol_metadata[] = {
 
 enum ts_field_identifiers {
   field_key = 1,
-  field_left = 2,
-  field_lhs = 3,
-  field_message = 4,
-  field_name = 5,
-  field_rhs = 6,
-  field_right = 7,
-  field_value = 8,
+  field_lhs = 2,
+  field_message = 3,
+  field_name = 4,
+  field_rhs = 5,
+  field_value = 6,
 };
 
 static const char * const ts_field_names[] = {
   [0] = NULL,
   [field_key] = "key",
-  [field_left] = "left",
   [field_lhs] = "lhs",
   [field_message] = "message",
   [field_name] = "name",
   [field_rhs] = "rhs",
-  [field_right] = "right",
   [field_value] = "value",
 };
 
@@ -415,8 +411,8 @@ static const TSFieldMapEntry ts_field_map_entries[] = {
   [1] =
     {field_name, 1},
   [2] =
-    {field_left, 0},
-    {field_right, 2},
+    {field_lhs, 0},
+    {field_rhs, 2},
   [4] =
     {field_lhs, 0},
     {field_message, 1},

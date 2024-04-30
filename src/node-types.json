@@ -66,7 +66,7 @@
     "type": "assignment",
     "named": true,
     "fields": {
-      "left": {
+      "lhs": {
         "multiple": true,
         "required": true,
         "types": [
@@ -132,7 +132,7 @@
           }
         ]
       },
-      "right": {
+      "rhs": {
         "multiple": true,
         "required": true,
         "types": [

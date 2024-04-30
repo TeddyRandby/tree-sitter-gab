@@ -449,7 +449,7 @@
         "members": [
           {
             "type": "FIELD",
-            "name": "left",
+            "name": "lhs",
             "content": {
               "type": "SYMBOL",
               "name": "_tuple"
@@ -461,7 +461,7 @@
           },
           {
             "type": "FIELD",
-            "name": "right",
+            "name": "rhs",
             "content": {
               "type": "SYMBOL",
               "name": "_tuple"
