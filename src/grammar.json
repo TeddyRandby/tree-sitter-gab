@@ -570,32 +570,15 @@
                 "type": "FIELD",
                 "name": "name",
                 "content": {
-                  "type": "SEQ",
+                  "type": "CHOICE",
                   "members": [
                     {
-                      "type": "CHOICE",
-                      "members": [
-                        {
-                          "type": "SYMBOL",
-                          "name": "identifier"
-                        },
-                        {
-                          "type": "SYMBOL",
-                          "name": "operator"
-                        }
-                      ]
+                      "type": "SYMBOL",
+                      "name": "identifier"
                     },
                     {
-                      "type": "CHOICE",
-                      "members": [
-                        {
-                          "type": "PATTERN",
-                          "value": "[?!]?"
-                        },
-                        {
-                          "type": "BLANK"
-                        }
-                      ]
+                      "type": "SYMBOL",
+                      "name": "operator"
                     }
                   ]
                 }
@@ -786,7 +769,7 @@
       "type": "TOKEN",
       "content": {
         "type": "PATTERN",
-        "value": "[a-zA-Z_][a-zA-Z_\\.]*"
+        "value": "[a-zA-Z_][a-zA-Z_\\.]*[?!]?"
       }
     },
     "_newline": {

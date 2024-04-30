@@ -148,10 +148,9 @@ module.exports = grammar({
     message_literal: $ => prec.right(seq(
       '\\',
       optional(
-        field('name', seq(
+        field('name',
           choice($.identifier, $.operator),
-          optional(/[?!]?/),
-        ))),
+        )),
     )),
 
     interpbegin: _ => token(seq(
@@ -204,7 +203,7 @@ module.exports = grammar({
     ),
 
     identifier: _ => token(
-      /[a-zA-Z_][a-zA-Z_\.]*/,
+      /[a-zA-Z_][a-zA-Z_\.]*[?!]?/,
     ),
 
     _newline: _ => token(/[\n;]/),
