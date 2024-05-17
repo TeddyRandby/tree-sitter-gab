@@ -141,7 +141,7 @@ module.exports = grammar({
 
     message: $ => seq(
       ':',
-      field('name', $.identifier),
+      field('name', choice($.identifier, $.operator)),
       optional(/[?!]?/),
     ),
 

@@ -500,6 +500,10 @@
           {
             "type": "identifier",
             "named": true
+          },
+          {
+            "type": "operator",
+            "named": true
           }
         ]
       }

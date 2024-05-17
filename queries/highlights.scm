@@ -33,6 +33,7 @@
 
 (message) @method.call
 (message name: (identifier) @method.call)
+(message name: (operator) @method.call)
 
 (parameters (identifier) @parameter)
 
@@ -40,5 +41,5 @@
 
 ((identifier) @variable.builtin (#eq? @variable.builtin "self"))
 
-(message_literal name: (identifier) @method.call)
-(message_literal name: (operator) @operator)
+(message_literal name: (identifier) @method.call) @method.call
+(message_literal name: (operator)) @operator
