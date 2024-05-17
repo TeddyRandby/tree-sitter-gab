@@ -40,6 +40,5 @@
 
 ((identifier) @variable.builtin (#eq? @variable.builtin "self"))
 
-(message_literal) @constant
-(message_literal name: (identifier) @constant)
-(message_literal name: (operator) @constant)
+(message_literal name: (identifier) @method.call)
+(message_literal name: (operator) @operator)
