@@ -123,7 +123,7 @@ module.exports = grammar({
 
     tuple_exp: $ => seq(
       '(',
-      $._tuple,
+      optional($._tuple),
       ')',
     ),
 
