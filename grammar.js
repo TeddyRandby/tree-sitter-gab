@@ -19,7 +19,7 @@ module.exports = grammar({
 
     parameters: $ => seq(
       optional($._identifiers),
-      $._newlines,
+      ':',
     ),
 
     _tuple: $ => seq(

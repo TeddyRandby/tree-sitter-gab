@@ -31,9 +31,8 @@
   ")"
 ] @punctuation.bracket
 
-(message) @method.call
-(message name: (identifier) @method.call)
-(message name: (operator) @method.call)
+(message name: (identifier) @method.call) @method.call
+(message name: (operator)) @operator
 
 (parameters (identifier) @parameter)
 
