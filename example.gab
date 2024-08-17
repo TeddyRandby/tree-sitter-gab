@@ -5,4 +5,6 @@ self? == other?
 
 test:do_work(1,2,3)
 
-do: 1 + 1 end
+do a: 1 + 1 end
+
+test:r . (1,2,3)

@@ -61,7 +61,7 @@ module.exports = grammar({
 
     body: $ => seq(repeat($._statement), $._expression, optional($._newlines)),
 
-    _expression: $ => prec.right(
+    _expression: $ =>
       choice(
         $.symbol,
         $.record,
@@ -78,22 +78,23 @@ module.exports = grammar({
         $.message_literal,
         seq($.identifier, '[]'),
       ),
-    ),
 
     unary: $ => prec(PREC_UNARY, seq(
-      $._expression,
+      field('lhs', $._expression),
       choice($.operator, $.message),
     )),
 
     binary: $ => prec.left(PREC_BINARY, seq(
       field('lhs', $._expression),
+      optional('.'),
       field('message', choice($.operator, $.message)),
       field('rhs', $._expression),
     )),
 
     application: $ => prec.left(PREC_APPLICATION, seq(
-      $._expression,
-      $._expression,
+      field('lhs', $._expression),
+      optional('.'),
+      field('rhs', $._expression),
     )),
 
     record: $ => seq(
