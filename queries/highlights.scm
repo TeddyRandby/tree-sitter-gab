@@ -1,5 +1,7 @@
 ; Highlights.scm for gab
-(comment) @comment
+[
+ (comment)
+] @comment
 
 (number) @number
 
@@ -17,6 +19,7 @@
 
 [
   ","
+ "\;"
 ] @punctuation.delimiter
 
 [

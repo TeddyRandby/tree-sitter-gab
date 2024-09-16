@@ -22,7 +22,7 @@ module.exports = grammar({
 
     parameters: $ => seq(
       optional($._identifiers),
-      ':',
+      $._newline,
     ),
 
     _tuple: $ => seq(
@@ -40,7 +40,7 @@ module.exports = grammar({
       field('key', $._expression),
       ',',
       field('value', $._expression),
-      choice(',', $._newline),
+     $._newline,
     )),
 
     _statement: $ => seq(

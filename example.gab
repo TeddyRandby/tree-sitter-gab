@@ -15,6 +15,6 @@
 ]
 
 {
-  \hi, 'world'
+  \hi,  'world'
   \test, do: a end
 }
