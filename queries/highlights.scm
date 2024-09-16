@@ -9,6 +9,7 @@
 
 (operator) @operator
 (message) @operator
+(message_literal) @function
 
 [
   (string)
