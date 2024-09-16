@@ -1,20 +1,2 @@
-'test {injection}' :sql "other"
 
-" test" :sql
-
-'test' ++
-
-{}
-
-[]
-
-[
-  do a, b:
-   a + b
-  end
-]
-
-{
-  \hi,  'world'
-  \test, do: a end
-}
+{ \hi,  'world'; \test, do; a end;; }
