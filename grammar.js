@@ -40,7 +40,7 @@ module.exports = grammar({
       field('key', $._expression),
       ',',
       field('value', $._expression),
-      optional(','),
+      choice(',', $._newline),
     )),
 
     _statement: $ => seq(
