@@ -413,8 +413,16 @@
           "value": "["
         },
         {
-          "type": "SYMBOL",
-          "name": "_tuple"
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_tuple"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
         },
         {
           "type": "STRING",

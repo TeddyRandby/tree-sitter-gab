@@ -98,7 +98,7 @@ module.exports = grammar({
 
     list: $ => seq(
       '[',
-      $._tuple,
+      optional($._tuple),
       ']',
     ),
 
