@@ -3,6 +3,9 @@ const PREC_BINARY = 3
 const PREC_APPLICATION = 4
 const PREC_ASSIGNMENT = 1
 
+const op_regex = /[\+\-\*\&\|\/\!\%\=\?><~$@\^]+/
+const idn_regex = /[a-zA-Z_][a-zA-Z_\.]*[?!]?/
+
 module.exports = grammar({
   name: 'gab',
 
@@ -49,7 +52,7 @@ module.exports = grammar({
           ),
         ),
         optional(seq(
-          '=',
+          ':',
           field('value', $._expression),
         )),
       )),
@@ -118,7 +121,7 @@ module.exports = grammar({
 
     assignment: $ => prec.right(PREC_ASSIGNMENT, seq(
       field('lhs', $._tuple),
-      '=',
+      ':',
       field('rhs', $._tuple),
     )),
 
@@ -140,18 +143,20 @@ module.exports = grammar({
       /[a-zA-Z_][a-zA-Z_\.]*[?!]?/,
     )),
 
-    message: $ => seq(
+    message: $ => token(seq(
       ':',
-      field('name', choice($.identifier, $.operator)),
-      optional(/[?!]?/),
-    ),
+      choice(
+        op_regex,
+        idn_regex,
+      ),
+    )),
 
-    message_literal: $ => prec.right(seq(
+    message_literal: $ => token(seq(
       '\\',
-      optional(
-        field('name',
-          choice($.identifier, $.operator),
-        )),
+      optional(choice(
+        op_regex,
+        idn_regex,
+      )),
     )),
 
     interpbegin: _ => token(seq(
@@ -197,15 +202,9 @@ module.exports = grammar({
 
     comment: _ => token(seq('#', /.*/)),
 
-    operator: _ => token(
-      choice(
-        /[\+\-\*\&\|\/\!\%\=\?><~$@\^]+/,
-      ),
-    ),
+    operator: _ => token(op_regex,),
 
-    identifier: _ => token(
-      /[a-zA-Z_][a-zA-Z_\.]*[?!]?/,
-    ),
+    identifier: _ => token(idn_regex),
 
     _newline: _ => token(/[\n;]/),
 

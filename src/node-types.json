@@ -557,46 +557,6 @@
     }
   },
   {
-    "type": "message",
-    "named": true,
-    "fields": {
-      "name": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "identifier",
-            "named": true
-          },
-          {
-            "type": "operator",
-            "named": true
-          }
-        ]
-      }
-    }
-  },
-  {
-    "type": "message_literal",
-    "named": true,
-    "fields": {
-      "name": {
-        "multiple": false,
-        "required": false,
-        "types": [
-          {
-            "type": "identifier",
-            "named": true
-          },
-          {
-            "type": "operator",
-            "named": true
-          }
-        ]
-      }
-    }
-  },
-  {
     "type": "parameters",
     "named": true,
     "fields": {},
@@ -1076,19 +1036,11 @@
     "named": false
   },
   {
-    "type": "=",
-    "named": false
-  },
-  {
     "type": "[",
     "named": false
   },
   {
     "type": "[]",
-    "named": false
-  },
-  {
-    "type": "\\",
     "named": false
   },
   {
@@ -1125,6 +1077,14 @@
   },
   {
     "type": "interpmiddle",
+    "named": true
+  },
+  {
+    "type": "message",
+    "named": true
+  },
+  {
+    "type": "message_literal",
     "named": true
   },
   {
