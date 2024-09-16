@@ -1,2 +1,2 @@
 
-{ \hi: 'world', \test: do; a end }
+{ \hi: 'world', \test: do; a end, \other }

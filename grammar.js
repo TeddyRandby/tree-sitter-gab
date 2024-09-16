@@ -38,8 +38,10 @@ module.exports = grammar({
 
     record_item: $ => prec(PREC_ASSIGNMENT + 1, seq(
       field('key', $._expression),
-      ':',
-      field('value', $._expression),
+      optional(seq(
+        ':',
+        field('value', $._expression),
+      )),
     )),
 
     _statement: $ => seq(
@@ -93,7 +95,7 @@ module.exports = grammar({
           ',',
         ),
       ),
-        optional($.record_item),
+      optional($.record_item),
       '}',
     ),
 
