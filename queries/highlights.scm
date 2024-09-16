@@ -19,7 +19,7 @@
 
 [
   ","
- "\;"
+  ";"
 ] @punctuation.delimiter
 
 [
