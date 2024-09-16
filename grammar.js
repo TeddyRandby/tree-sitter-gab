@@ -108,8 +108,7 @@ module.exports = grammar({
           ',',
         ),
       ),
-      $.record_item,
-      optional(','),
+      optional($.record_item),
       '}',
     ),
 

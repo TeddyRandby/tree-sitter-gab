@@ -439,15 +439,11 @@
           }
         },
         {
-          "type": "SYMBOL",
-          "name": "record_item"
-        },
-        {
           "type": "CHOICE",
           "members": [
             {
-              "type": "STRING",
-              "value": ","
+              "type": "SYMBOL",
+              "name": "record_item"
             },
             {
               "type": "BLANK"

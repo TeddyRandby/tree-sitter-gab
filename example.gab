@@ -3,3 +3,11 @@
 " test" :sql
 
 'test' ++
+
+{}
+
+[
+  do a, b:
+   a + b
+  end
+]

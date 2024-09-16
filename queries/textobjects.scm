@@ -2,9 +2,8 @@
 (assignment rhs: (_) @assignment.rhs)
 (assignment) @assignment.outer
 
-(body) @block.outer
-(body . (_) @_start (_)? @_end .
-      (#make-range! "block.inner" @_start @_end))
+(block) @block.outer
+(block (body) @block.inner)
 
 (record) @class.outer
 (record . "{" . (_) @_start (_)? @_end . "}"
