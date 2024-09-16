@@ -1,4 +1,5 @@
+'test {injection}' :sql "other"
 
-a : 2
+" test" :sql
 
-a:print
+'test' ++

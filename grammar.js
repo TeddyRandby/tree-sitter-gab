@@ -41,7 +41,7 @@ module.exports = grammar({
         field('key',
           choice(
             $.identifier,
-            $.symbol,
+            $.sigil,
             $.string,
             $.message_literal,
             seq(
@@ -66,7 +66,7 @@ module.exports = grammar({
 
     _expression: $ =>
       choice(
-        $.symbol,
+        $.sigil,
         $.record,
         $.list,
         $.block,
@@ -84,13 +84,13 @@ module.exports = grammar({
 
     unary: $ => prec(PREC_UNARY, seq(
       field('lhs', $._expression),
-      choice($.operator, $.message),
+      field('message', choice($.message, $.operator)),
     )),
 
     binary: $ => prec.left(PREC_BINARY, seq(
       field('lhs', $._expression),
       optional('.'),
-      field('message', choice($.operator, $.message)),
+      field('message', choice($.message, $.operator)),
       field('rhs', $._expression),
     )),
 
@@ -138,25 +138,25 @@ module.exports = grammar({
       'end',
     ),
 
-    symbol: _ => token(seq(
+    sigil: _ => token(seq(
       '.',
-      /[a-zA-Z_][a-zA-Z_\.]*[?!]?/,
+      idn_regex,
     )),
 
     message: $ => token(seq(
       ':',
-      choice(
+      field("name", choice(
         op_regex,
         idn_regex,
-      ),
+      )),
     )),
 
     message_literal: $ => token(seq(
       '\\',
-      optional(choice(
+      field("name", optional(choice(
         op_regex,
         idn_regex,
-      )),
+      ))),
     )),
 
     interpbegin: _ => token(seq(
@@ -202,7 +202,7 @@ module.exports = grammar({
 
     comment: _ => token(seq('#', /.*/)),
 
-    operator: _ => token(op_regex,),
+    operator: _ => token(op_regex),
 
     identifier: _ => token(idn_regex),
 

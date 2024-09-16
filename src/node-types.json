@@ -48,11 +48,11 @@
             "named": true
           },
           {
-            "type": "string",
+            "type": "sigil",
             "named": true
           },
           {
-            "type": "symbol",
+            "type": "string",
             "named": true
           },
           {
@@ -110,11 +110,11 @@
             "named": true
           },
           {
-            "type": "string",
+            "type": "sigil",
             "named": true
           },
           {
-            "type": "symbol",
+            "type": "string",
             "named": true
           },
           {
@@ -182,11 +182,11 @@
             "named": true
           },
           {
-            "type": "string",
+            "type": "sigil",
             "named": true
           },
           {
-            "type": "symbol",
+            "type": "string",
             "named": true
           },
           {
@@ -248,11 +248,11 @@
             "named": true
           },
           {
-            "type": "string",
+            "type": "sigil",
             "named": true
           },
           {
-            "type": "symbol",
+            "type": "string",
             "named": true
           },
           {
@@ -316,11 +316,11 @@
             "named": true
           },
           {
-            "type": "string",
+            "type": "sigil",
             "named": true
           },
           {
-            "type": "symbol",
+            "type": "string",
             "named": true
           },
           {
@@ -392,11 +392,11 @@
             "named": true
           },
           {
-            "type": "string",
+            "type": "sigil",
             "named": true
           },
           {
-            "type": "symbol",
+            "type": "string",
             "named": true
           },
           {
@@ -475,11 +475,11 @@
           "named": true
         },
         {
-          "type": "string",
+          "type": "sigil",
           "named": true
         },
         {
-          "type": "symbol",
+          "type": "string",
           "named": true
         },
         {
@@ -538,11 +538,11 @@
           "named": true
         },
         {
-          "type": "string",
+          "type": "sigil",
           "named": true
         },
         {
-          "type": "symbol",
+          "type": "string",
           "named": true
         },
         {
@@ -643,11 +643,11 @@
             "named": true
           },
           {
-            "type": "string",
+            "type": "sigil",
             "named": true
           },
           {
-            "type": "symbol",
+            "type": "string",
             "named": true
           },
           {
@@ -705,11 +705,11 @@
             "named": true
           },
           {
-            "type": "string",
+            "type": "sigil",
             "named": true
           },
           {
-            "type": "symbol",
+            "type": "string",
             "named": true
           },
           {
@@ -769,11 +769,11 @@
           "named": true
         },
         {
-          "type": "string",
+          "type": "sigil",
           "named": true
         },
         {
-          "type": "symbol",
+          "type": "string",
           "named": true
         },
         {
@@ -848,15 +848,15 @@
           "named": true
         },
         {
+          "type": "sigil",
+          "named": true
+        },
+        {
           "type": "singlestring",
           "named": true
         },
         {
           "type": "string",
-          "named": true
-        },
-        {
-          "type": "symbol",
           "named": true
         },
         {
@@ -915,11 +915,11 @@
           "named": true
         },
         {
-          "type": "string",
+          "type": "sigil",
           "named": true
         },
         {
-          "type": "symbol",
+          "type": "string",
           "named": true
         },
         {
@@ -982,11 +982,11 @@
             "named": true
           },
           {
-            "type": "string",
+            "type": "sigil",
             "named": true
           },
           {
-            "type": "symbol",
+            "type": "string",
             "named": true
           },
           {
@@ -998,21 +998,21 @@
             "named": true
           }
         ]
+      },
+      "message": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "message",
+            "named": true
+          },
+          {
+            "type": "operator",
+            "named": true
+          }
+        ]
       }
-    },
-    "children": {
-      "multiple": false,
-      "required": true,
-      "types": [
-        {
-          "type": "message",
-          "named": true
-        },
-        {
-          "type": "operator",
-          "named": true
-        }
-      ]
     }
   },
   {
@@ -1096,11 +1096,11 @@
     "named": true
   },
   {
-    "type": "singlestring",
+    "type": "sigil",
     "named": true
   },
   {
-    "type": "symbol",
+    "type": "singlestring",
     "named": true
   },
   {
