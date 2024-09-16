@@ -1,2 +1,1 @@
-
-{ \hi: 'world', \test: do; a end, \other }
+a :: do a; a + 1; end

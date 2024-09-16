@@ -49,7 +49,7 @@ module.exports = grammar({
       $._newlines,
     ),
 
-    body: $ => seq(repeat($._statement), $._expression, optional($._newlines)),
+    body: $ => seq(repeat1($._statement)),
 
     _expression: $ =>
       choice(
