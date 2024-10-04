@@ -1,55 +1,22 @@
 const PREC_UNARY = 2
 const PREC_BINARY = 3
-const PREC_APPLICATION = 4
-const PREC_ASSIGNMENT = 1
+const PREC_SEND = 4
+const PREC_SPECIAL_SEND = 5
 
 const op_regex = /[\+\-\*\&\|\/\!\%\=\?><~$@\^]+/
-const idn_regex = /[a-zA-Z_][a-zA-Z_\.]*[?!]?/
+const sym_regex = /[a-zA-Z_][a-zA-Z_\.]*[?!]?/
 
 module.exports = grammar({
   name: 'gab',
 
-  word: $ => $.identifier,
-
-  conflicts: $ => [[$._tuple]],
+  word: $ => $.symbol,
 
   extras: $ => [$.comment, /\s/, $._newline],
 
   rules: {
-    source_file: $ => repeat($._statement),
+    source_file: $ => repeat($._expression),
 
-    _identifiers: $ => repeat1(seq($.identifier, optional('[]'), optional(','))),
-
-    parameters: $ => seq(
-      optional($._identifiers),
-      $._newline,
-    ),
-
-    _tuple: $ => seq(
-      repeat(
-        seq(
-          $._expression,
-          ',',
-        ),
-      ),
-      $._expression,
-      optional(','),
-    ),
-
-    record_item: $ => prec(PREC_ASSIGNMENT + 1, seq(
-      field('key', $._expression),
-      optional(seq(
-        ':',
-        field('value', $._expression),
-      )),
-    )),
-
-    _statement: $ => seq(
-      $._expression,
-      $._newlines,
-    ),
-
-    body: $ => seq(repeat1($._statement)),
+    body: $ => seq(repeat1($._expression)),
 
     _expression: $ =>
       choice(
@@ -57,33 +24,30 @@ module.exports = grammar({
         $.record,
         $.list,
         $.block,
-        $.identifier,
+        $.symbol,
         $.number,
         $.string,
-        $.tuple_exp,
+        $.tuple,
         $.binary,
-        $.application,
         $.unary,
-        $.assignment,
-        $.message_literal,
-        seq($.identifier, '[]'),
+        $.message,
+        $.special_send,
       ),
 
     unary: $ => prec(PREC_UNARY, seq(
       field('lhs', $._expression),
-      field('message', choice($.message, $.operator)),
+      field('message', choice($.send, $.operator)),
     )),
 
     binary: $ => prec.left(PREC_BINARY, seq(
       field('lhs', $._expression),
-      optional('.'),
-      field('message', choice($.message, $.operator)),
+      field('message', choice($.send, $.operator)),
       field('rhs', $._expression),
     )),
 
-    application: $ => prec.left(PREC_APPLICATION, seq(
+    special_send: $ => prec.left(PREC_SPECIAL_SEND, seq(
       field('lhs', $._expression),
-      optional('.'),
+      field('message', choice('=>', '=')),
       field('rhs', $._expression),
     )),
 
@@ -91,81 +55,55 @@ module.exports = grammar({
       '{',
       repeat(
         seq(
-          $.record_item,
-          ',',
+          $._expression,
+          $._expression,
         ),
       ),
-      optional($.record_item),
       '}',
+    ),
+
+    tuple: $ => seq(
+      '(',
+      repeat($._expression),
+      ')',
     ),
 
     list: $ => seq(
       '[',
-      optional($._tuple),
+      repeat($._expression),
       ']',
-    ),
-
-    assignment: $ => prec.right(PREC_ASSIGNMENT, seq(
-      field('lhs', $._tuple),
-      '::',
-      field('rhs', $._tuple),
-    )),
-
-    tuple_exp: $ => seq(
-      '(',
-      optional($._tuple),
-      ')',
     ),
 
     block: $ => seq(
       'do',
-      $.parameters,
-      $.body,
+      repeat($._expression),
       'end',
     ),
 
     sigil: _ => token(seq(
       '.',
-      idn_regex,
+      sym_regex,
     )),
 
-    message: $ => token(seq(
+    send: _ => token(seq(
       ':',
       field("name", choice(
         op_regex,
-        idn_regex,
+        sym_regex,
       )),
     )),
 
-    message_literal: $ => token(seq(
+    message: _ => token(seq(
       '\\',
       field("name", optional(choice(
         op_regex,
-        idn_regex,
+        sym_regex,
       ))),
-    )),
-
-    interpbegin: _ => token(seq(
-      '\'',
-      /[^\{\']*/,
-      '{',
-    )),
-
-    interpmiddle: _ => token(seq(
-      '}',
-      /[^\{\']*/,
-      '{',
-    )),
-
-    interpend: _ => token(seq(
-      '}',
-      /[^\'\{]*/,
-      '\'',
     )),
 
     singlestring: _ => token(seq(
       '\'',
-      /[^\'\{]*/,
+      /[^\']*/,
       '\'',
     )),
 
@@ -178,23 +116,15 @@ module.exports = grammar({
     string: $ => choice(
       $.singlestring,
       $.doublestring,
-      seq(
-        $.interpbegin,
-        $._expression,
-        repeat(seq($.interpmiddle, $._expression)),
-        $.interpend,
-      ),
     ),
 
     comment: _ => token(seq('#', /.*/)),
 
     operator: _ => token(op_regex),
 
-    identifier: _ => token(idn_regex),
+    symbol: _ => token(sym_regex),
 
-    _newline: _ => token(/[\n;]/),
-
-    _newlines: $ => repeat1($._newline),
+    _newline: _ => token(/[\n;,]/),
 
     number: _ => token(/\d+(\.\d)?/),
   }

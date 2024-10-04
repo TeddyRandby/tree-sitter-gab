@@ -1,162 +1,13 @@
 {
   "name": "gab",
-  "word": "identifier",
+  "word": "symbol",
   "rules": {
     "source_file": {
       "type": "REPEAT",
       "content": {
         "type": "SYMBOL",
-        "name": "_statement"
+        "name": "_expression"
       }
-    },
-    "_identifiers": {
-      "type": "REPEAT1",
-      "content": {
-        "type": "SEQ",
-        "members": [
-          {
-            "type": "SYMBOL",
-            "name": "identifier"
-          },
-          {
-            "type": "CHOICE",
-            "members": [
-              {
-                "type": "STRING",
-                "value": "[]"
-              },
-              {
-                "type": "BLANK"
-              }
-            ]
-          },
-          {
-            "type": "CHOICE",
-            "members": [
-              {
-                "type": "STRING",
-                "value": ","
-              },
-              {
-                "type": "BLANK"
-              }
-            ]
-          }
-        ]
-      }
-    },
-    "parameters": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "SYMBOL",
-              "name": "_identifiers"
-            },
-            {
-              "type": "BLANK"
-            }
-          ]
-        },
-        {
-          "type": "SYMBOL",
-          "name": "_newline"
-        }
-      ]
-    },
-    "_tuple": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "REPEAT",
-          "content": {
-            "type": "SEQ",
-            "members": [
-              {
-                "type": "SYMBOL",
-                "name": "_expression"
-              },
-              {
-                "type": "STRING",
-                "value": ","
-              }
-            ]
-          }
-        },
-        {
-          "type": "SYMBOL",
-          "name": "_expression"
-        },
-        {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "STRING",
-              "value": ","
-            },
-            {
-              "type": "BLANK"
-            }
-          ]
-        }
-      ]
-    },
-    "record_item": {
-      "type": "PREC",
-      "value": 2,
-      "content": {
-        "type": "SEQ",
-        "members": [
-          {
-            "type": "FIELD",
-            "name": "key",
-            "content": {
-              "type": "SYMBOL",
-              "name": "_expression"
-            }
-          },
-          {
-            "type": "CHOICE",
-            "members": [
-              {
-                "type": "SEQ",
-                "members": [
-                  {
-                    "type": "STRING",
-                    "value": ":"
-                  },
-                  {
-                    "type": "FIELD",
-                    "name": "value",
-                    "content": {
-                      "type": "SYMBOL",
-                      "name": "_expression"
-                    }
-                  }
-                ]
-              },
-              {
-                "type": "BLANK"
-              }
-            ]
-          }
-        ]
-      }
-    },
-    "_statement": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "SYMBOL",
-          "name": "_expression"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "_newlines"
-        }
-      ]
     },
     "body": {
       "type": "SEQ",
@@ -165,7 +16,7 @@
           "type": "REPEAT1",
           "content": {
             "type": "SYMBOL",
-            "name": "_statement"
+            "name": "_expression"
           }
         }
       ]
@@ -191,7 +42,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "identifier"
+          "name": "symbol"
         },
         {
           "type": "SYMBOL",
@@ -203,7 +54,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "tuple_exp"
+          "name": "tuple"
         },
         {
           "type": "SYMBOL",
@@ -211,32 +62,15 @@
         },
         {
           "type": "SYMBOL",
-          "name": "application"
-        },
-        {
-          "type": "SYMBOL",
           "name": "unary"
         },
         {
           "type": "SYMBOL",
-          "name": "assignment"
+          "name": "message"
         },
         {
           "type": "SYMBOL",
-          "name": "message_literal"
-        },
-        {
-          "type": "SEQ",
-          "members": [
-            {
-              "type": "SYMBOL",
-              "name": "identifier"
-            },
-            {
-              "type": "STRING",
-              "value": "[]"
-            }
-          ]
+          "name": "special_send"
         }
       ]
     },
@@ -262,7 +96,7 @@
               "members": [
                 {
                   "type": "SYMBOL",
-                  "name": "message"
+                  "name": "send"
                 },
                 {
                   "type": "SYMBOL",
@@ -289,18 +123,6 @@
             }
           },
           {
-            "type": "CHOICE",
-            "members": [
-              {
-                "type": "STRING",
-                "value": "."
-              },
-              {
-                "type": "BLANK"
-              }
-            ]
-          },
-          {
             "type": "FIELD",
             "name": "message",
             "content": {
@@ -308,7 +130,7 @@
               "members": [
                 {
                   "type": "SYMBOL",
-                  "name": "message"
+                  "name": "send"
                 },
                 {
                   "type": "SYMBOL",
@@ -328,9 +150,9 @@
         ]
       }
     },
-    "application": {
+    "special_send": {
       "type": "PREC_LEFT",
-      "value": 4,
+      "value": 5,
       "content": {
         "type": "SEQ",
         "members": [
@@ -343,16 +165,21 @@
             }
           },
           {
-            "type": "CHOICE",
-            "members": [
-              {
-                "type": "STRING",
-                "value": "."
-              },
-              {
-                "type": "BLANK"
-              }
-            ]
+            "type": "FIELD",
+            "name": "message",
+            "content": {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "STRING",
+                  "value": "=>"
+                },
+                {
+                  "type": "STRING",
+                  "value": "="
+                }
+              ]
+            }
           },
           {
             "type": "FIELD",
@@ -379,30 +206,38 @@
             "members": [
               {
                 "type": "SYMBOL",
-                "name": "record_item"
+                "name": "_expression"
               },
               {
-                "type": "STRING",
-                "value": ","
+                "type": "SYMBOL",
+                "name": "_expression"
               }
             ]
           }
         },
         {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "SYMBOL",
-              "name": "record_item"
-            },
-            {
-              "type": "BLANK"
-            }
-          ]
+          "type": "STRING",
+          "value": "}"
+        }
+      ]
+    },
+    "tuple": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "("
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_expression"
+          }
         },
         {
           "type": "STRING",
-          "value": "}"
+          "value": ")"
         }
       ]
     },
@@ -414,74 +249,15 @@
           "value": "["
         },
         {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "SYMBOL",
-              "name": "_tuple"
-            },
-            {
-              "type": "BLANK"
-            }
-          ]
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_expression"
+          }
         },
         {
           "type": "STRING",
           "value": "]"
-        }
-      ]
-    },
-    "assignment": {
-      "type": "PREC_RIGHT",
-      "value": 1,
-      "content": {
-        "type": "SEQ",
-        "members": [
-          {
-            "type": "FIELD",
-            "name": "lhs",
-            "content": {
-              "type": "SYMBOL",
-              "name": "_tuple"
-            }
-          },
-          {
-            "type": "STRING",
-            "value": "::"
-          },
-          {
-            "type": "FIELD",
-            "name": "rhs",
-            "content": {
-              "type": "SYMBOL",
-              "name": "_tuple"
-            }
-          }
-        ]
-      }
-    },
-    "tuple_exp": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "("
-        },
-        {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "SYMBOL",
-              "name": "_tuple"
-            },
-            {
-              "type": "BLANK"
-            }
-          ]
-        },
-        {
-          "type": "STRING",
-          "value": ")"
         }
       ]
     },
@@ -493,12 +269,11 @@
           "value": "do"
         },
         {
-          "type": "SYMBOL",
-          "name": "parameters"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "body"
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_expression"
+          }
         },
         {
           "type": "STRING",
@@ -522,7 +297,7 @@
         ]
       }
     },
-    "message": {
+    "send": {
       "type": "TOKEN",
       "content": {
         "type": "SEQ",
@@ -551,7 +326,7 @@
         ]
       }
     },
-    "message_literal": {
+    "message": {
       "type": "TOKEN",
       "content": {
         "type": "SEQ",
@@ -588,66 +363,6 @@
         ]
       }
     },
-    "interpbegin": {
-      "type": "TOKEN",
-      "content": {
-        "type": "SEQ",
-        "members": [
-          {
-            "type": "STRING",
-            "value": "'"
-          },
-          {
-            "type": "PATTERN",
-            "value": "[^\\{\\']*"
-          },
-          {
-            "type": "STRING",
-            "value": "{"
-          }
-        ]
-      }
-    },
-    "interpmiddle": {
-      "type": "TOKEN",
-      "content": {
-        "type": "SEQ",
-        "members": [
-          {
-            "type": "STRING",
-            "value": "}"
-          },
-          {
-            "type": "PATTERN",
-            "value": "[^\\{\\']*"
-          },
-          {
-            "type": "STRING",
-            "value": "{"
-          }
-        ]
-      }
-    },
-    "interpend": {
-      "type": "TOKEN",
-      "content": {
-        "type": "SEQ",
-        "members": [
-          {
-            "type": "STRING",
-            "value": "}"
-          },
-          {
-            "type": "PATTERN",
-            "value": "[^\\'\\{]*"
-          },
-          {
-            "type": "STRING",
-            "value": "'"
-          }
-        ]
-      }
-    },
     "singlestring": {
       "type": "TOKEN",
       "content": {
@@ -659,7 +374,7 @@
           },
           {
             "type": "PATTERN",
-            "value": "[^\\'\\{]*"
+            "value": "[^\\']*"
           },
           {
             "type": "STRING",
@@ -698,39 +413,6 @@
         {
           "type": "SYMBOL",
           "name": "doublestring"
-        },
-        {
-          "type": "SEQ",
-          "members": [
-            {
-              "type": "SYMBOL",
-              "name": "interpbegin"
-            },
-            {
-              "type": "SYMBOL",
-              "name": "_expression"
-            },
-            {
-              "type": "REPEAT",
-              "content": {
-                "type": "SEQ",
-                "members": [
-                  {
-                    "type": "SYMBOL",
-                    "name": "interpmiddle"
-                  },
-                  {
-                    "type": "SYMBOL",
-                    "name": "_expression"
-                  }
-                ]
-              }
-            },
-            {
-              "type": "SYMBOL",
-              "name": "interpend"
-            }
-          ]
         }
       ]
     },
@@ -757,7 +439,7 @@
         "value": "[\\+\\-\\*\\&\\|\\/\\!\\%\\=\\?><~$@\\^]+"
       }
     },
-    "identifier": {
+    "symbol": {
       "type": "TOKEN",
       "content": {
         "type": "PATTERN",
@@ -768,14 +450,7 @@
       "type": "TOKEN",
       "content": {
         "type": "PATTERN",
-        "value": "[\\n;]"
-      }
-    },
-    "_newlines": {
-      "type": "REPEAT1",
-      "content": {
-        "type": "SYMBOL",
-        "name": "_newline"
+        "value": "[\\n;,]"
       }
     },
     "number": {
@@ -800,11 +475,7 @@
       "name": "_newline"
     }
   ],
-  "conflicts": [
-    [
-      "_tuple"
-    ]
-  ],
+  "conflicts": [],
   "precedences": [],
   "externals": [],
   "inline": [],

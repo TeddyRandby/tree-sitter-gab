@@ -1,292 +1,12 @@
 [
   {
-    "type": "application",
-    "named": true,
-    "fields": {
-      "lhs": {
-        "multiple": true,
-        "required": true,
-        "types": [
-          {
-            "type": "[]",
-            "named": false
-          },
-          {
-            "type": "application",
-            "named": true
-          },
-          {
-            "type": "assignment",
-            "named": true
-          },
-          {
-            "type": "binary",
-            "named": true
-          },
-          {
-            "type": "block",
-            "named": true
-          },
-          {
-            "type": "identifier",
-            "named": true
-          },
-          {
-            "type": "list",
-            "named": true
-          },
-          {
-            "type": "message_literal",
-            "named": true
-          },
-          {
-            "type": "number",
-            "named": true
-          },
-          {
-            "type": "record",
-            "named": true
-          },
-          {
-            "type": "sigil",
-            "named": true
-          },
-          {
-            "type": "string",
-            "named": true
-          },
-          {
-            "type": "tuple_exp",
-            "named": true
-          },
-          {
-            "type": "unary",
-            "named": true
-          }
-        ]
-      },
-      "rhs": {
-        "multiple": true,
-        "required": true,
-        "types": [
-          {
-            "type": "[]",
-            "named": false
-          },
-          {
-            "type": "application",
-            "named": true
-          },
-          {
-            "type": "assignment",
-            "named": true
-          },
-          {
-            "type": "binary",
-            "named": true
-          },
-          {
-            "type": "block",
-            "named": true
-          },
-          {
-            "type": "identifier",
-            "named": true
-          },
-          {
-            "type": "list",
-            "named": true
-          },
-          {
-            "type": "message_literal",
-            "named": true
-          },
-          {
-            "type": "number",
-            "named": true
-          },
-          {
-            "type": "record",
-            "named": true
-          },
-          {
-            "type": "sigil",
-            "named": true
-          },
-          {
-            "type": "string",
-            "named": true
-          },
-          {
-            "type": "tuple_exp",
-            "named": true
-          },
-          {
-            "type": "unary",
-            "named": true
-          }
-        ]
-      }
-    }
-  },
-  {
-    "type": "assignment",
-    "named": true,
-    "fields": {
-      "lhs": {
-        "multiple": true,
-        "required": true,
-        "types": [
-          {
-            "type": ",",
-            "named": false
-          },
-          {
-            "type": "[]",
-            "named": false
-          },
-          {
-            "type": "application",
-            "named": true
-          },
-          {
-            "type": "assignment",
-            "named": true
-          },
-          {
-            "type": "binary",
-            "named": true
-          },
-          {
-            "type": "block",
-            "named": true
-          },
-          {
-            "type": "identifier",
-            "named": true
-          },
-          {
-            "type": "list",
-            "named": true
-          },
-          {
-            "type": "message_literal",
-            "named": true
-          },
-          {
-            "type": "number",
-            "named": true
-          },
-          {
-            "type": "record",
-            "named": true
-          },
-          {
-            "type": "sigil",
-            "named": true
-          },
-          {
-            "type": "string",
-            "named": true
-          },
-          {
-            "type": "tuple_exp",
-            "named": true
-          },
-          {
-            "type": "unary",
-            "named": true
-          }
-        ]
-      },
-      "rhs": {
-        "multiple": true,
-        "required": true,
-        "types": [
-          {
-            "type": ",",
-            "named": false
-          },
-          {
-            "type": "[]",
-            "named": false
-          },
-          {
-            "type": "application",
-            "named": true
-          },
-          {
-            "type": "assignment",
-            "named": true
-          },
-          {
-            "type": "binary",
-            "named": true
-          },
-          {
-            "type": "block",
-            "named": true
-          },
-          {
-            "type": "identifier",
-            "named": true
-          },
-          {
-            "type": "list",
-            "named": true
-          },
-          {
-            "type": "message_literal",
-            "named": true
-          },
-          {
-            "type": "number",
-            "named": true
-          },
-          {
-            "type": "record",
-            "named": true
-          },
-          {
-            "type": "sigil",
-            "named": true
-          },
-          {
-            "type": "string",
-            "named": true
-          },
-          {
-            "type": "tuple_exp",
-            "named": true
-          },
-          {
-            "type": "unary",
-            "named": true
-          }
-        ]
-      }
-    }
-  },
-  {
     "type": "binary",
     "named": true,
     "fields": {
       "lhs": {
-        "multiple": true,
+        "multiple": false,
         "required": true,
         "types": [
-          {
-            "type": "[]",
-            "named": false
-          },
-          {
-            "type": "application",
-            "named": true
-          },
-          {
-            "type": "assignment",
-            "named": true
-          },
           {
             "type": "binary",
             "named": true
@@ -296,15 +16,11 @@
             "named": true
           },
           {
-            "type": "identifier",
-            "named": true
-          },
-          {
             "type": "list",
             "named": true
           },
           {
-            "type": "message_literal",
+            "type": "message",
             "named": true
           },
           {
@@ -320,11 +36,19 @@
             "named": true
           },
           {
+            "type": "special_send",
+            "named": true
+          },
+          {
             "type": "string",
             "named": true
           },
           {
-            "type": "tuple_exp",
+            "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "tuple",
             "named": true
           },
           {
@@ -338,31 +62,19 @@
         "required": true,
         "types": [
           {
-            "type": "message",
+            "type": "operator",
             "named": true
           },
           {
-            "type": "operator",
+            "type": "send",
             "named": true
           }
         ]
       },
       "rhs": {
-        "multiple": true,
+        "multiple": false,
         "required": true,
         "types": [
-          {
-            "type": "[]",
-            "named": false
-          },
-          {
-            "type": "application",
-            "named": true
-          },
-          {
-            "type": "assignment",
-            "named": true
-          },
           {
             "type": "binary",
             "named": true
@@ -372,15 +84,11 @@
             "named": true
           },
           {
-            "type": "identifier",
-            "named": true
-          },
-          {
             "type": "list",
             "named": true
           },
           {
-            "type": "message_literal",
+            "type": "message",
             "named": true
           },
           {
@@ -396,11 +104,19 @@
             "named": true
           },
           {
+            "type": "special_send",
+            "named": true
+          },
+          {
             "type": "string",
             "named": true
           },
           {
-            "type": "tuple_exp",
+            "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "tuple",
             "named": true
           },
           {
@@ -417,35 +133,8 @@
     "fields": {},
     "children": {
       "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "body",
-          "named": true
-        },
-        {
-          "type": "parameters",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "body",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
       "required": false,
       "types": [
-        {
-          "type": "application",
-          "named": true
-        },
-        {
-          "type": "assignment",
-          "named": true
-        },
         {
           "type": "binary",
           "named": true
@@ -455,15 +144,11 @@
           "named": true
         },
         {
-          "type": "identifier",
-          "named": true
-        },
-        {
           "type": "list",
           "named": true
         },
         {
-          "type": "message_literal",
+          "type": "message",
           "named": true
         },
         {
@@ -479,11 +164,19 @@
           "named": true
         },
         {
+          "type": "special_send",
+          "named": true
+        },
+        {
           "type": "string",
           "named": true
         },
         {
-          "type": "tuple_exp",
+          "type": "symbol",
+          "named": true
+        },
+        {
+          "type": "tuple",
           "named": true
         },
         {
@@ -502,14 +195,6 @@
       "required": false,
       "types": [
         {
-          "type": "application",
-          "named": true
-        },
-        {
-          "type": "assignment",
-          "named": true
-        },
-        {
           "type": "binary",
           "named": true
         },
@@ -518,15 +203,11 @@
           "named": true
         },
         {
-          "type": "identifier",
-          "named": true
-        },
-        {
           "type": "list",
           "named": true
         },
         {
-          "type": "message_literal",
+          "type": "message",
           "named": true
         },
         {
@@ -542,30 +223,23 @@
           "named": true
         },
         {
+          "type": "special_send",
+          "named": true
+        },
+        {
           "type": "string",
           "named": true
         },
         {
-          "type": "tuple_exp",
+          "type": "symbol",
+          "named": true
+        },
+        {
+          "type": "tuple",
           "named": true
         },
         {
           "type": "unary",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "parameters",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "identifier",
           "named": true
         }
       ]
@@ -580,140 +254,54 @@
       "required": false,
       "types": [
         {
-          "type": "record_item",
+          "type": "binary",
+          "named": true
+        },
+        {
+          "type": "block",
+          "named": true
+        },
+        {
+          "type": "list",
+          "named": true
+        },
+        {
+          "type": "message",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "record",
+          "named": true
+        },
+        {
+          "type": "sigil",
+          "named": true
+        },
+        {
+          "type": "special_send",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "symbol",
+          "named": true
+        },
+        {
+          "type": "tuple",
+          "named": true
+        },
+        {
+          "type": "unary",
           "named": true
         }
       ]
-    }
-  },
-  {
-    "type": "record_item",
-    "named": true,
-    "fields": {
-      "key": {
-        "multiple": true,
-        "required": true,
-        "types": [
-          {
-            "type": "[]",
-            "named": false
-          },
-          {
-            "type": "application",
-            "named": true
-          },
-          {
-            "type": "assignment",
-            "named": true
-          },
-          {
-            "type": "binary",
-            "named": true
-          },
-          {
-            "type": "block",
-            "named": true
-          },
-          {
-            "type": "identifier",
-            "named": true
-          },
-          {
-            "type": "list",
-            "named": true
-          },
-          {
-            "type": "message_literal",
-            "named": true
-          },
-          {
-            "type": "number",
-            "named": true
-          },
-          {
-            "type": "record",
-            "named": true
-          },
-          {
-            "type": "sigil",
-            "named": true
-          },
-          {
-            "type": "string",
-            "named": true
-          },
-          {
-            "type": "tuple_exp",
-            "named": true
-          },
-          {
-            "type": "unary",
-            "named": true
-          }
-        ]
-      },
-      "value": {
-        "multiple": true,
-        "required": false,
-        "types": [
-          {
-            "type": "[]",
-            "named": false
-          },
-          {
-            "type": "application",
-            "named": true
-          },
-          {
-            "type": "assignment",
-            "named": true
-          },
-          {
-            "type": "binary",
-            "named": true
-          },
-          {
-            "type": "block",
-            "named": true
-          },
-          {
-            "type": "identifier",
-            "named": true
-          },
-          {
-            "type": "list",
-            "named": true
-          },
-          {
-            "type": "message_literal",
-            "named": true
-          },
-          {
-            "type": "number",
-            "named": true
-          },
-          {
-            "type": "record",
-            "named": true
-          },
-          {
-            "type": "sigil",
-            "named": true
-          },
-          {
-            "type": "string",
-            "named": true
-          },
-          {
-            "type": "tuple_exp",
-            "named": true
-          },
-          {
-            "type": "unary",
-            "named": true
-          }
-        ]
-      }
     }
   },
   {
@@ -725,14 +313,6 @@
       "required": false,
       "types": [
         {
-          "type": "application",
-          "named": true
-        },
-        {
-          "type": "assignment",
-          "named": true
-        },
-        {
           "type": "binary",
           "named": true
         },
@@ -741,15 +321,11 @@
           "named": true
         },
         {
-          "type": "identifier",
-          "named": true
-        },
-        {
           "type": "list",
           "named": true
         },
         {
-          "type": "message_literal",
+          "type": "message",
           "named": true
         },
         {
@@ -765,11 +341,19 @@
           "named": true
         },
         {
+          "type": "special_send",
+          "named": true
+        },
+        {
           "type": "string",
           "named": true
         },
         {
-          "type": "tuple_exp",
+          "type": "symbol",
+          "named": true
+        },
+        {
+          "type": "tuple",
           "named": true
         },
         {
@@ -777,6 +361,134 @@
           "named": true
         }
       ]
+    }
+  },
+  {
+    "type": "special_send",
+    "named": true,
+    "fields": {
+      "lhs": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "binary",
+            "named": true
+          },
+          {
+            "type": "block",
+            "named": true
+          },
+          {
+            "type": "list",
+            "named": true
+          },
+          {
+            "type": "message",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "record",
+            "named": true
+          },
+          {
+            "type": "sigil",
+            "named": true
+          },
+          {
+            "type": "special_send",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "tuple",
+            "named": true
+          },
+          {
+            "type": "unary",
+            "named": true
+          }
+        ]
+      },
+      "message": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "=",
+            "named": false
+          },
+          {
+            "type": "=>",
+            "named": false
+          }
+        ]
+      },
+      "rhs": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "binary",
+            "named": true
+          },
+          {
+            "type": "block",
+            "named": true
+          },
+          {
+            "type": "list",
+            "named": true
+          },
+          {
+            "type": "message",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "record",
+            "named": true
+          },
+          {
+            "type": "sigil",
+            "named": true
+          },
+          {
+            "type": "special_send",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "tuple",
+            "named": true
+          },
+          {
+            "type": "unary",
+            "named": true
+          }
+        ]
+      }
     }
   },
   {
@@ -784,86 +496,22 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "types": [
-        {
-          "type": "application",
-          "named": true
-        },
-        {
-          "type": "assignment",
-          "named": true
-        },
-        {
-          "type": "binary",
-          "named": true
-        },
-        {
-          "type": "block",
-          "named": true
-        },
         {
           "type": "doublestring",
           "named": true
         },
         {
-          "type": "identifier",
-          "named": true
-        },
-        {
-          "type": "interpbegin",
-          "named": true
-        },
-        {
-          "type": "interpend",
-          "named": true
-        },
-        {
-          "type": "interpmiddle",
-          "named": true
-        },
-        {
-          "type": "list",
-          "named": true
-        },
-        {
-          "type": "message_literal",
-          "named": true
-        },
-        {
-          "type": "number",
-          "named": true
-        },
-        {
-          "type": "record",
-          "named": true
-        },
-        {
-          "type": "sigil",
-          "named": true
-        },
-        {
           "type": "singlestring",
-          "named": true
-        },
-        {
-          "type": "string",
-          "named": true
-        },
-        {
-          "type": "tuple_exp",
-          "named": true
-        },
-        {
-          "type": "unary",
           "named": true
         }
       ]
     }
   },
   {
-    "type": "tuple_exp",
+    "type": "tuple",
     "named": true,
     "fields": {},
     "children": {
@@ -871,14 +519,6 @@
       "required": false,
       "types": [
         {
-          "type": "application",
-          "named": true
-        },
-        {
-          "type": "assignment",
-          "named": true
-        },
-        {
           "type": "binary",
           "named": true
         },
@@ -887,15 +527,11 @@
           "named": true
         },
         {
-          "type": "identifier",
-          "named": true
-        },
-        {
           "type": "list",
           "named": true
         },
         {
-          "type": "message_literal",
+          "type": "message",
           "named": true
         },
         {
@@ -911,11 +547,19 @@
           "named": true
         },
         {
+          "type": "special_send",
+          "named": true
+        },
+        {
           "type": "string",
           "named": true
         },
         {
-          "type": "tuple_exp",
+          "type": "symbol",
+          "named": true
+        },
+        {
+          "type": "tuple",
           "named": true
         },
         {
@@ -930,21 +574,9 @@
     "named": true,
     "fields": {
       "lhs": {
-        "multiple": true,
+        "multiple": false,
         "required": true,
         "types": [
-          {
-            "type": "[]",
-            "named": false
-          },
-          {
-            "type": "application",
-            "named": true
-          },
-          {
-            "type": "assignment",
-            "named": true
-          },
           {
             "type": "binary",
             "named": true
@@ -954,15 +586,11 @@
             "named": true
           },
           {
-            "type": "identifier",
-            "named": true
-          },
-          {
             "type": "list",
             "named": true
           },
           {
-            "type": "message_literal",
+            "type": "message",
             "named": true
           },
           {
@@ -978,11 +606,19 @@
             "named": true
           },
           {
+            "type": "special_send",
+            "named": true
+          },
+          {
             "type": "string",
             "named": true
           },
           {
-            "type": "tuple_exp",
+            "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "tuple",
             "named": true
           },
           {
@@ -996,11 +632,11 @@
         "required": true,
         "types": [
           {
-            "type": "message",
+            "type": "operator",
             "named": true
           },
           {
-            "type": "operator",
+            "type": "send",
             "named": true
           }
         ]
@@ -1016,27 +652,15 @@
     "named": false
   },
   {
-    "type": ",",
+    "type": "=",
     "named": false
   },
   {
-    "type": ".",
-    "named": false
-  },
-  {
-    "type": ":",
-    "named": false
-  },
-  {
-    "type": "::",
+    "type": "=>",
     "named": false
   },
   {
     "type": "[",
-    "named": false
-  },
-  {
-    "type": "[]",
     "named": false
   },
   {
@@ -1060,27 +684,7 @@
     "named": false
   },
   {
-    "type": "identifier",
-    "named": true
-  },
-  {
-    "type": "interpbegin",
-    "named": true
-  },
-  {
-    "type": "interpend",
-    "named": true
-  },
-  {
-    "type": "interpmiddle",
-    "named": true
-  },
-  {
     "type": "message",
-    "named": true
-  },
-  {
-    "type": "message_literal",
     "named": true
   },
   {
@@ -1092,11 +696,19 @@
     "named": true
   },
   {
+    "type": "send",
+    "named": true
+  },
+  {
     "type": "sigil",
     "named": true
   },
   {
     "type": "singlestring",
+    "named": true
+  },
+  {
+    "type": "symbol",
     "named": true
   },
   {

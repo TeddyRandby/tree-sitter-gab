@@ -5,21 +5,17 @@
 
 (number) @number
 
-(identifier) @variable
+(symbol) @variable
 
 (sigil) @string.special
 
 (operator) @operator
-(message) @operator
-(message_literal) @function
+(send) @operator
+(message) @function
 
 [
   (string)
 ] @string
-
-[
-  ","
-] @punctuation.delimiter
 
 [
   "do"
@@ -35,8 +31,4 @@
   ")"
 ] @punctuation.bracket
 
-(parameters (identifier) @parameter)
-
-(record_item key: (identifier) @field)
-
-((identifier) @variable.builtin (#eq? @variable.builtin "self"))
+((symbol) @variable.builtin (#eq? @variable.builtin "self"))
